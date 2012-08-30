@@ -60,4 +60,8 @@ $JAVA_HOME/bin/jstack -l <PID> > deadlock.out
 ----
 
 
+ANALYSING
+---------
+
+link:deadlock.out[Deadlock thread dump file]
 

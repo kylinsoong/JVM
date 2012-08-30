@@ -38,4 +38,7 @@ $JAVA_HOME/bin/jstack -l <PID> > sleeping.out
 ----
 
 
+ANALYSING
+---------
 
+link:sleeping.out[sleeping thread dump file]

@@ -42,8 +42,13 @@ $JAVA_HOME/bin/java -cp threadpool-1.0.jar com.kylin.lab.Runner
 
 * Generate thread dump
 ----
-$JAVA_HOME/bin/jstack -l <PID> > sleeping.out
+$JAVA_HOME/bin/jstack -l <PID> > threadpool.out
 ----
+
+ANALYSING
+---------
+
+link:threadpool.out[threadpool thread dump file]
 
 
 

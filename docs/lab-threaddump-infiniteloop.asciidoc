@@ -37,5 +37,8 @@ $JAVA_HOME/bin/java -cp infiniteloop-1.0.jar com.kylin.lab.Runner
 $JAVA_HOME/bin/jstack -l <PID> > infiniteloop.out
 ----
 
+ANALYSING
+---------
 
+link:infiniteloop.out[Ininite loop thread dump file]
 

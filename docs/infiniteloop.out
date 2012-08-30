@@ -1,0 +1,85 @@
+2012-08-30 14:56:43
+Full thread dump Java HotSpot(TM) Server VM (20.6-b01 mixed mode):
+
+"Attach Listener" daemon prio=10 tid=0x6e703c00 nid=0x34a5 waiting on condition [0x00000000]
+   java.lang.Thread.State: RUNNABLE
+
+   Locked ownable synchronizers:
+	- None
+
+"lab-threaddump-thread-infiniteloop" prio=10 tid=0xb69dfc00 nid=0x3434 runnable [0x6ea5c000]
+   java.lang.Thread.State: RUNNABLE
+	at com.kylin.lab.threaddump.infiniteloop.InfiniteLoopThread.run(InfiniteLoopThread.java:16)
+	at java.lang.Thread.run(Thread.java:662)
+
+   Locked ownable synchronizers:
+	- None
+
+"Low Memory Detector" daemon prio=10 tid=0xb69bbc00 nid=0x3432 runnable [0x00000000]
+   java.lang.Thread.State: RUNNABLE
+
+   Locked ownable synchronizers:
+	- None
+
+"C2 CompilerThread1" daemon prio=10 tid=0xb69ba000 nid=0x3431 waiting on condition [0x00000000]
+   java.lang.Thread.State: RUNNABLE
+
+   Locked ownable synchronizers:
+	- None
+
+"C2 CompilerThread0" daemon prio=10 tid=0xb69b8000 nid=0x3430 waiting on condition [0x00000000]
+   java.lang.Thread.State: RUNNABLE
+
+   Locked ownable synchronizers:
+	- None
+
+"Signal Dispatcher" daemon prio=10 tid=0xb69b6800 nid=0x342f runnable [0x00000000]
+   java.lang.Thread.State: RUNNABLE
+
+   Locked ownable synchronizers:
+	- None
+
+"Finalizer" daemon prio=10 tid=0xb69a8400 nid=0x342e in Object.wait() [0x6f27d000]
+   java.lang.Thread.State: WAITING (on object monitor)
+	at java.lang.Object.wait(Native Method)
+	- waiting on <0x9e2f1150> (a java.lang.ref.ReferenceQueue$Lock)
+	at java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:118)
+	- locked <0x9e2f1150> (a java.lang.ref.ReferenceQueue$Lock)
+	at java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:134)
+	at java.lang.ref.Finalizer$FinalizerThread.run(Finalizer.java:159)
+
+   Locked ownable synchronizers:
+	- None
+
+"Reference Handler" daemon prio=10 tid=0xb69a6c00 nid=0x342d in Object.wait() [0x6eaad000]
+   java.lang.Thread.State: WAITING (on object monitor)
+	at java.lang.Object.wait(Native Method)
+	- waiting on <0x9e2f1050> (a java.lang.ref.Reference$Lock)
+	at java.lang.Object.wait(Object.java:485)
+	at java.lang.ref.Reference$ReferenceHandler.run(Reference.java:116)
+	- locked <0x9e2f1050> (a java.lang.ref.Reference$Lock)
+
+   Locked ownable synchronizers:
+	- None
+
+"lab-threaddump-thread-infiniteloop-main" prio=10 tid=0xb6904800 nid=0x3427 runnable [0xb6ac7000]
+   java.lang.Thread.State: RUNNABLE
+	at com.kylin.lab.Runner.main(Runner.java:16)
+
+   Locked ownable synchronizers:
+	- None
+
+"VM Thread" prio=10 tid=0xb69a3000 nid=0x342c runnable 
+
+"GC task thread#0 (ParallelGC)" prio=10 tid=0xb690b800 nid=0x3428 runnable 
+
+"GC task thread#1 (ParallelGC)" prio=10 tid=0xb690d000 nid=0x3429 runnable 
+
+"GC task thread#2 (ParallelGC)" prio=10 tid=0xb690e400 nid=0x342a runnable 
+
+"GC task thread#3 (ParallelGC)" prio=10 tid=0xb690fc00 nid=0x342b runnable 
+
+"VM Periodic Task Thread" prio=10 tid=0xb69bdc00 nid=0x3433 waiting on condition 
+
+JNI global references: 887
+

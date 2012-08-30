@@ -1,0 +1,87 @@
+2012-08-30 15:00:34
+Full thread dump Java HotSpot(TM) Server VM (20.6-b01 mixed mode):
+
+"Attach Listener" daemon prio=10 tid=0x6e803c00 nid=0x35a1 waiting on condition [0x00000000]
+   java.lang.Thread.State: RUNNABLE
+
+   Locked ownable synchronizers:
+	- None
+
+"lab-threaddump-thread-sleeping" prio=10 tid=0xb6adfc00 nid=0x357b waiting on condition [0x6eb5c000]
+   java.lang.Thread.State: TIMED_WAITING (sleeping)
+	at java.lang.Thread.sleep(Native Method)
+	at com.kylin.lab.threaddump.sleeping.SleepingThread.run(SleepingThread.java:17)
+	at java.lang.Thread.run(Thread.java:662)
+
+   Locked ownable synchronizers:
+	- None
+
+"Low Memory Detector" daemon prio=10 tid=0xb6abbc00 nid=0x3579 runnable [0x00000000]
+   java.lang.Thread.State: RUNNABLE
+
+   Locked ownable synchronizers:
+	- None
+
+"C2 CompilerThread1" daemon prio=10 tid=0xb6aba000 nid=0x3578 waiting on condition [0x00000000]
+   java.lang.Thread.State: RUNNABLE
+
+   Locked ownable synchronizers:
+	- None
+
+"C2 CompilerThread0" daemon prio=10 tid=0xb6ab8000 nid=0x3577 waiting on condition [0x00000000]
+   java.lang.Thread.State: RUNNABLE
+
+   Locked ownable synchronizers:
+	- None
+
+"Signal Dispatcher" daemon prio=10 tid=0xb6ab6800 nid=0x3576 runnable [0x00000000]
+   java.lang.Thread.State: RUNNABLE
+
+   Locked ownable synchronizers:
+	- None
+
+"Finalizer" daemon prio=10 tid=0xb6aa8400 nid=0x3575 in Object.wait() [0x6f37d000]
+   java.lang.Thread.State: WAITING (on object monitor)
+	at java.lang.Object.wait(Native Method)
+	- waiting on <0x9e3d1150> (a java.lang.ref.ReferenceQueue$Lock)
+	at java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:118)
+	- locked <0x9e3d1150> (a java.lang.ref.ReferenceQueue$Lock)
+	at java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:134)
+	at java.lang.ref.Finalizer$FinalizerThread.run(Finalizer.java:159)
+
+   Locked ownable synchronizers:
+	- None
+
+"Reference Handler" daemon prio=10 tid=0xb6aa6c00 nid=0x3574 in Object.wait() [0x6ebad000]
+   java.lang.Thread.State: WAITING (on object monitor)
+	at java.lang.Object.wait(Native Method)
+	- waiting on <0x9e3d1050> (a java.lang.ref.Reference$Lock)
+	at java.lang.Object.wait(Object.java:485)
+	at java.lang.ref.Reference$ReferenceHandler.run(Reference.java:116)
+	- locked <0x9e3d1050> (a java.lang.ref.Reference$Lock)
+
+   Locked ownable synchronizers:
+	- None
+
+"lab-threaddump-thread-sleeping-main" prio=10 tid=0xb6a04800 nid=0x356e waiting on condition [0xb6b8d000]
+   java.lang.Thread.State: TIMED_WAITING (sleeping)
+	at java.lang.Thread.sleep(Native Method)
+	at com.kylin.lab.Runner.main(Runner.java:17)
+
+   Locked ownable synchronizers:
+	- None
+
+"VM Thread" prio=10 tid=0xb6aa3000 nid=0x3573 runnable 
+
+"GC task thread#0 (ParallelGC)" prio=10 tid=0xb6a0b800 nid=0x356f runnable 
+
+"GC task thread#1 (ParallelGC)" prio=10 tid=0xb6a0d000 nid=0x3570 runnable 
+
+"GC task thread#2 (ParallelGC)" prio=10 tid=0xb6a0e400 nid=0x3571 runnable 
+
+"GC task thread#3 (ParallelGC)" prio=10 tid=0xb6a0fc00 nid=0x3572 runnable 
+
+"VM Periodic Task Thread" prio=10 tid=0xb6abdc00 nid=0x357a waiting on condition 
+
+JNI global references: 891
+
