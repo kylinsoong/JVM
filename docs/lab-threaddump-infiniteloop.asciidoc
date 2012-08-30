@@ -1,0 +1,41 @@
+OBJECTIVE
+---------
+
+Primary purpose of this documents is analysing java thread dump while thread infinite loop occurring.
+
+
+PREREQUISITE
+-------------
+
+* Maven 3.0 or latter.
+* Eclipse
+* threadDump analysing tools
+
+DESCRIPTION
+-----------
+
+Run `com.kylin.lab.Runner` will start a thread named 'lab-threaddump-thread-infiniteloop' which will keep infinite loop.
+
+STEP
+----
+
+* Navigate to ../sandbox/lab-threaddump/infiniteloop execute:
+----
+mvn clean install
+----
+
+infiniteloop-1.0.jar will be generated
+
+
+* Run `com.kylin.lab.Runner
+----
+$JAVA_HOME/bin/java -cp infiniteloop-1.0.jar com.kylin.lab.Runner
+----
+
+* Generate thread dump
+----
+$JAVA_HOME/bin/jstack -l <PID> > infiniteloop.out
+----
+
+
+
