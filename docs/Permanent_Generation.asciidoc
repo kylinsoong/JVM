@@ -1,0 +1,12 @@
+Permanent Generation
+---------------------
+The Permanent Generation is where class files are kept. These are the result of compiled classes and jsp pages. If this space is full, it triggers a Full Garbage Collection. If the Full Garbage Collection cannot clean out old unreferenced classes and there is no room left to expand the Permanent Space, an Out‐of‐Memory error (OOME) is thrown and the JVM will crash.
+
+
+The Permanent Generation is sized with the ‐XX:PermSize and ‐XX:MaxPermSize parameters. For example, to specify a startup Permanent Generation of 128Mb and a maximum Permanent Generation of 256Mb, use the parameters: ‐XX:PermSize=128m ‐XX:MaxPermSize=256. It is exceedingly rare that more than 256Mb of memory is required for the Permanent Generation. 
+
+
+Note also that the Permanent Generation is tacked onto the end of the Old Generation. There is also a small code cache of 50Mb for internal JVM memory management. This means that the total initial heap size = ‐Xms + ‐XX:PermSize + ~50Mb and that the maximum total heap size = ‐Xmx + ‐XX:MaxPermSize + ~50Mb. For example, if –Xms/–Xmx are set to 512m and –XX:PermSize/MaxPermSize are set to 128m, the total VM will actually about 700 Mb in size.   
+
+
+

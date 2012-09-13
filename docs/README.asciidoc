@@ -10,4 +10,7 @@ link:lab-threaddump-sleeping.asciidoc[lab-threaddump-sleeping]
 link:lab-threaddump-threadpool.asciidoc[lab-threaddump-threadpool]
 
 
+Memory Type
+-----------
 
+link:Permanent_Generation.asciidoc[Permanent Generation]
