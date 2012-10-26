@@ -14,3 +14,10 @@ Memory Type
 -----------
 
 link:Permanent_Generation.asciidoc[Permanent Generation]
+
+
+
+JDK Reference
+-------------
+
+link:test-jdk.asciidoc[Entry]
