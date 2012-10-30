@@ -2,6 +2,7 @@ All Test
 --------
 
 |=====================================================================================
-|*Runner*                                       |*Objective*           |*Descpription*
+|*Runner*                                       |*Objective*                        |*Descpription*
 |com.kylin.test.lang.exception.Runner           |Test print Exception Trace         | 
+|com.kylin.test.lang.string.Runner              |java.lang.String referred Test     | 
 |=====================================================================================
