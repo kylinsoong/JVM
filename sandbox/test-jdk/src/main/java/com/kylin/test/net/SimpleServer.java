@@ -12,17 +12,21 @@ import java.net.Socket;
 
 public class SimpleServer {
 
+	private static final int SERVER_PORT = 10085;
+	
 	ServerSocket serverSocket = null;
 	
 	public void start() {
 		try {
-			serverSocket = new ServerSocket(9876);
+			serverSocket = new ServerSocket(SERVER_PORT);
 			System.out.println("Server Socket Start on " + serverSocket.getLocalPort() + ", Waiting for client to connect ...");
 			
 			while(true) {
 				Socket socket = serverSocket.accept();
-				BufferedInputStream bis = new BufferedInputStream(socket.getInputStream());
-				ObjectInputStream ois = new ObjectInputStream(bis);
+//				BufferedInputStream bis = new BufferedInputStream(socket.getInputStream());
+//				ObjectInputStream ois = new ObjectInputStream(bis);
+				
+				System.out.println(convertToString(socket.getInputStream()));
 			}
 			
 			

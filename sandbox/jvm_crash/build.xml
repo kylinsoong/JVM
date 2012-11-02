@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+
+<project name="jboss_cache" default="deploy" basedir="..">
+
+	<property name="app.dir" value="${basedir}/jboss_cache" />
+	<property name="src.dir" value="${app.dir}/src" />
+	<property name="conf.dir" value="${app.dir}/conf" />
+
+	<property file="${app.dir}/build.properties" />
+
+	<property name="build.dir" value="${build.home}/${build.dist}" />
+	<property name="build.classes.dir" value="${build.dir}/classes" />
+
+	<property name="jboss.client" value="${jboss.home}/client" />
+	<property name="jboss.server" value="${jboss.home}/server/${jboss.profile}/deploy" />
+
+	<path id="build.classpath">
+		<fileset dir="${jboss.client}">
+			<include name="*.jar" />
+		</fileset>
+		<fileset dir="${repo.dir}">
+			<include name="*.jar" />
+		</fileset>
+		<pathelement location="${build.classes.dir}" />
+	</path>
+
+	<target name="clean">
+		<delete dir="${build.dir}" />
+	</target>
+
+	<target name="prepare" depends="clean">
+		<mkdir dir="${build.dir}" />
+		<mkdir dir="${build.classes.dir}" />
+	</target>
+
+	<target name="compile" depends="prepare" description="compile">
+		<javac srcdir="${src.dir}" destdir="${build.classes.dir}" debug="on" deprecation="on" optimize="off" includes="**">
+			<classpath refid="build.classpath" />
+		</javac>
+	</target>
+
+	<target name="esb" depends="compile" description="generate all jars">
+
+		<mkdir dir="${build.classes.dir}/META-INF" />
+		<copy file="${conf.dir}/META-INF/jboss-esb.xml" todir="${build.classes.dir}/META-INF" />
+
+		<jar jarfile="${build.dir}/kylin_test.esb">
+			<fileset dir="${build.classes.dir}">
+				<include name="com/kylin/**/*.class" />
+				<include name="META-INF/*.xml" />
+			</fileset>
+		</jar>
+
+	</target>
+
+	<target name="deploy" depends="esb">
+		<copy file="${build.dir}/kylin_test.esb" todir="${jboss.server}" />
+	</target>
+
+	<target name="unDeploy">
+		<delete file="${jboss.server}/kylin_test.esb" />
+	</target>
+
+</project>

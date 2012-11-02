@@ -17,7 +17,7 @@ public class SimpleClient {
 	public void start() {
 
 		try {
-			socket = new Socket("127.0.0.1", 9876);
+			socket = new Socket("127.0.0.1", 10085);
 			
 //			DataOutputStream dos = new DataOutputStream(socket.getOutputStream());
 //		    byte[] data = sendArray[0].getBytes();

@@ -19,6 +19,7 @@
     <modules>
         <module>lab-threaddump</module>
         <module>test-jdk</module>
+        <module>jvm_crash</module>
     </modules>
 
 </project>
