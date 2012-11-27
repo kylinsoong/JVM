@@ -1,0 +1,125 @@
+Oracle JVM memory management
+----------------------------
+The Sun JVM is generational, meaning that objects are created in one space and given several chances to die before they are tenured into a long-term space. Specifically, the Sun JVM is broken into the following spaces: 
+* Young generation, including Eden and two survivor spaces (the From space and the To space)
+* Old generation
+* Permanent generation
+
+image::img/jvm-memory-management-1.png[Figure 1 illustrates the breakdown of the Sun heap's generations and spaces]
+
+Objects are created in Eden. When Eden is full, the garbage collector iterates over all objects in Eden, copies live objects to the first survivor space, and frees memory for any dead objects. When Eden again becomes full, it repeats the process by copying live objects from Eden to the second survivor space, and then copying live objects from the first survivor space to the second survivor space.If the second survivor space fills and live objects remain in Eden or in the first survivor space, then these objects are tenured (that is, they are copied to the old generation).
+
+image::img/jvm-memory-management-2.png[Figure 2. Objects are created in Eden until it is full]
+
+image::img/jvm-memory-management-3.png[Figure 3. The order of processing is important: The garbage collector first traverses Eden and then the survivor space; this ensures that objects are given ample opportunity to die before being tenured]
+
+When the garbage collector cannot reclaim enough memory by executing this type of minor collection, also known as a copy collection, then it performs a major collection, also known as a stop-the-world collection. During the stop-the-world collection, the garbage collector suspends all threads and performs a mark-and-sweep collection on the entire heap, leaving the entire young generation empty and ready to restart this process. 
+
+image::img/jvm-memory-management-4.png[Figure 4. When the garbage collector frees all dead objects and moves all live objects to a newly compacted tenured space, it leaves Eden and both survivor spaces empty]
+
+From Sun's implementation of garbage collection, you can see that objects in the old generation can be collected only by a major collection. Long-lived objects are expensive to clean up, so you want to ensure that short-lived objects die in a timely manner before they have a chance to be tenured, and hence require a major garbage collection to reclaim their memory. 
+
+All of this background prepares us to identify memory leaks. Memory is leaked in Java when an object maintains an unwanted reference to another object, hence stopping the garbage collector from reclaiming its memory. In light of the architecture of the Sun JVM, objects that are not dereferenced will make their way through Eden and the survivor spaces into the old generation. Furthermore, in a multiuser Web-based environment, if multiple requests are being made to leaky code, we will see a pattern of growth in the old generation. 
+
+Figure 5 highlights potential candidates for leaked objects: objects that survive multiple major collections in the tenured space. Not all objects in the tenured space represent memory leaks, but all leaked objects will eventually end up in the tenured space. If a true memory leak exists, the tenured space will begin filling up with leaked objects until it runs out of memory. 
+
+Therefore, we want to track the effectiveness of garbage collection in the old generation: each time that a major garbage collection runs, how much memory is it able to reclaim? Is the memory use in the old generation growing according to any discernable pattern? 
+
+image::img/jvm-memory-management-5.png[Figure 5. The shaded objects are those that have survived multiple major collections and are potential memory leaks]
+
+JVM OPTS
+--------
+http://www.oracle.com/technetwork/java/javase/tech/vmoptions-jsp-140102.html
+
+
+
+
+
+
+
+
+http://www.javaworld.com/javaworld/jw-06-2006/jw-0619-tuning.html?page=2
+http://www.oracle.com/technetwork/java/javase/tech/vmoptions-jsp-140102.html
+
+
+<kylin> Hi Erik
+<enagai> Hi 
+<kylin> a quick question about JVM heap
+<enagai> okay
+<kylin> I have know heap contain young generation, old generation
+<kylin> when i use jmap -heap <pid>
+<kylin> show the following result
+<kylin> [kylin@localhost dist]$ $JAVA_HOME/bin/jmap -heap 13226
+<kylin> Attaching to process ID 13226, please wait...
+<kylin> Debugger attached successfully.
+<kylin> Server compiler detected.
+<kylin> JVM version is 20.6-b01
+<kylin> using thread-local object allocation.
+<kylin> Parallel GC with 4 thread(s)
+<kylin> Heap Configuration:
+<kylin>    MinHeapFreeRatio = 40
+<kylin>    MaxHeapFreeRatio = 70
+<kylin>    MaxHeapSize      = 1073741824 (1024.0MB)
+<kylin>    NewSize          = 1048576 (1.0MB)
+<kylin>    MaxNewSize       = 4294901760 (4095.9375MB)
+<kylin>    OldSize          = 4194304 (4.0MB)
+<kylin>    NewRatio         = 2
+<kylin>    SurvivorRatio    = 8
+<kylin>    PermSize         = 268435456 (256.0MB)
+<kylin>    MaxPermSize      = 268435456 (256.0MB)
+<kylin> Heap Usage:
+<kylin> PS Young Generation
+<kylin> Eden Space:
+<kylin>    capacity = 197984256 (188.8125MB)
+<kylin>    used     = 47893616 (45.67491149902344MB)
+<kylin>    free     = 150090640 (143.13758850097656MB)
+<kylin>    24.19061847018785% used
+<kylin> From Space:
+<kylin>    capacity = 70582272 (67.3125MB)
+<kylin>    used     = 70552784 (67.28437805175781MB)
+<kylin>    free     = 29488 (0.0281219482421875MB)
+<kylin>    99.95822180391133% used
+<kylin> To Space:
+<kylin>    capacity = 88539136 (84.4375MB)
+<kylin>    used     = 0 (0.0MB)
+<kylin>    free     = 88539136 (84.4375MB)
+<kylin>    0.0% used
+<kylin> PS Old Generation
+<kylin>    capacity = 715849728 (682.6875MB)
+<kylin>    used     = 86429072 (82.42518615722656MB)
+<kylin>    free     = 629420656 (600.2623138427734MB)
+<kylin>    12.073633420448823% used
+<kylin> PS Perm Generation
+<kylin>    capacity = 268435456 (256.0MB)
+<kylin>    used     = 50499952 (48.16050720214844MB)
+<kylin>    free     = 217935504 (207.83949279785156MB)
+<kylin>    18.812698125839233% used
+<kylin> My Question is: what's about the 'From Space' and 'To Space'? what's the function of 'From Space' and 'To Space'? can this be configurable?
+<enagai> i am looking for whether there are some good documents. 
+<enagai> I think that it can set them up by -XX:SurvivorRatio=<n>.
+<enagai> http://www.javaworld.com/javaworld/jw-06-2006/jw-0619-tuning.html?page=2
+<enagai> i think its page is good
+<kylin> checking
+<enagai> JVM Options - http://www.oracle.com/technetwork/java/javase/tech/vmoptions-jsp-140102.html
+<enagai> -XX:SurvivorRatio configure the ratio of the Eden/survivor space size. if you set 10, Eden will become one 10 times the size of survivor(FROM + TO). the size of FROM and TO must be the same. 
+<kylin> thanks
+<kylin> I have a case regarding to this
+<kylin> they do not use JBoss, but have JBoss Subscription
+<kylin> https://c.na7.visual.force.com/apex/Case_View?id=500A000000Bea2j&sfdc.override=1
+<kylin> can you have a look at this case's attachments first
+<kylin> it's seems JVM had crashed(attachment hs_err_pid22926.log), but JVM still work(GC log)
+<kylin> I am a little confused. :)
+<enagai> It has crashed by libjvm.so of Sun JVM. 
+<enagai> this is Sun JVM issue
+<kylin> JVM bug cause this
+<enagai> It is a libelee of VM that crash has occurred. we do not understand a cause. 
+<enagai> It is Sun JVM, right? the customer needs to ask Oracle
+<kylin> yes
+<kylin> agree
+<kylin> but it should we can give them some useful advice
+<enagai> however, the cause of crash is not known by us. what does customer need?
+<kylin> they just asked some JVM referred question
+<kylin> they also attached some jconsole figure
+<enagai> oh... I did not see it. it is troublesome...
+<kylin> :)\
+<enagai> 7z file cannot be unzip in my environment:p
