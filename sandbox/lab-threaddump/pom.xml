@@ -21,6 +21,7 @@
         <module>infiniteloop</module>
         <module>sleeping</module>
 	<module>threadpool</module>
+        <module>applePassing</module>
     </modules>
 
 </project>
