@@ -1,0 +1,1769 @@
+2012-12-13 13:18:54
+Full thread dump Java HotSpot(TM) 64-Bit Server VM (20.6-b01 mixed mode):
+
+"Attach Listener" daemon prio=10 tid=0x000000005f42f800 nid=0x6c6f waiting on condition [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+   Locked ownable synchronizers:
+	- None
+
+"Scheduled-eviction-thread-0" daemon prio=10 tid=0x0000000061dff000 nid=0x6c64 waiting on condition [0x00000000445d1000]
+   java.lang.Thread.State: TIMED_WAITING (parking)
+	at sun.misc.Unsafe.park(Native Method)
+	- parking to wait for  <0x000000077724d3f0> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)
+	at java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:196)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2025)
+	at java.util.concurrent.DelayQueue.take(DelayQueue.java:164)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:609)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:602)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:947)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:907)
+	at java.lang.Thread.run(Thread.java:662)
+
+   Locked ownable synchronizers:
+	- None
+
+"Thread-58" prio=10 tid=0x000000005f50d800 nid=0x6c61 runnable [0x00000000458e4000]
+   java.lang.Thread.State: RUNNABLE
+	at sun.nio.ch.EPollArrayWrapper.epollWait(Native Method)
+	at sun.nio.ch.EPollArrayWrapper.poll(EPollArrayWrapper.java:210)
+	at sun.nio.ch.EPollSelectorImpl.doSelect(EPollSelectorImpl.java:65)
+	at sun.nio.ch.SelectorImpl.lockAndDoSelect(SelectorImpl.java:69)
+	- locked <0x0000000770b08e80> (a sun.nio.ch.Util$2)
+	- locked <0x0000000770b08e70> (a java.util.Collections$UnmodifiableSet)
+	- locked <0x0000000770b08c68> (a sun.nio.ch.EPollSelectorImpl)
+	at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:80)
+	at org.jboss.sun.net.httpserver.ServerImpl$Dispatcher.run(ServerImpl.java:382)
+	at java.lang.Thread.run(Thread.java:662)
+
+   Locked ownable synchronizers:
+	- None
+
+"server-timer" daemon prio=10 tid=0x000000005fd8a800 nid=0x6c60 in Object.wait() [0x00000000457e3000]
+   java.lang.Thread.State: TIMED_WAITING (on object monitor)
+	at java.lang.Object.wait(Native Method)
+	- waiting on <0x0000000770b093d0> (a java.util.TaskQueue)
+	at java.util.TimerThread.mainLoop(Timer.java:509)
+	- locked <0x0000000770b093d0> (a java.util.TaskQueue)
+	at java.util.TimerThread.run(Timer.java:462)
+
+   Locked ownable synchronizers:
+	- None
+
+"http-app21.dev1.whispir.net/10.1.161.50:8080-Acceptor-0" daemon prio=10 tid=0x0000000060615000 nid=0x6c5e runnable [0x00000000456e2000]
+   java.lang.Thread.State: RUNNABLE
+	at java.net.PlainSocketImpl.socketAccept(Native Method)
+	at java.net.PlainSocketImpl.accept(PlainSocketImpl.java:408)
+	- locked <0x00000007709d4e88> (a java.net.SocksSocketImpl)
+	at java.net.ServerSocket.implAccept(ServerSocket.java:462)
+	at java.net.ServerSocket.accept(ServerSocket.java:430)
+	at org.apache.tomcat.util.net.DefaultServerSocketFactory.acceptSocket(DefaultServerSocketFactory.java:61)
+	at org.apache.tomcat.util.net.JIoEndpoint$Acceptor.run(JIoEndpoint.java:322)
+	at java.lang.Thread.run(Thread.java:662)
+
+   Locked ownable synchronizers:
+	- None
+
+"http-app21.dev1.whispir.net/10.1.161.50:8080-Poller" daemon prio=10 tid=0x00000000609e2000 nid=0x6c5d in Object.wait() [0x00000000455e1000]
+   java.lang.Thread.State: TIMED_WAITING (on object monitor)
+	at java.lang.Object.wait(Native Method)
+	- waiting on <0x00000007709d5798> (a org.apache.tomcat.util.net.JIoEndpoint$Poller)
+	at org.apache.tomcat.util.net.JIoEndpoint$Poller.run(JIoEndpoint.java:743)
+	- locked <0x00000007709d5798> (a org.apache.tomcat.util.net.JIoEndpoint$Poller)
+	at java.lang.Thread.run(Thread.java:662)
+
+   Locked ownable synchronizers:
+	- None
+
+"ContainerBackgroundProcessor[StandardEngine[jboss.web]]" daemon prio=10 tid=0x0000000060a15000 nid=0x6c5c waiting on condition [0x00000000454e0000]
+   java.lang.Thread.State: TIMED_WAITING (sleeping)
+	at java.lang.Thread.sleep(Native Method)
+	at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.run(ContainerBase.java:1580)
+	at java.lang.Thread.run(Thread.java:662)
+
+   Locked ownable synchronizers:
+	- None
+
+"Transaction Reaper Worker 0" daemon prio=10 tid=0x00000000603f6800 nid=0x6c5b in Object.wait() [0x00000000453df000]
+   java.lang.Thread.State: WAITING (on object monitor)
+	at java.lang.Object.wait(Native Method)
+	- waiting on <0x000000077078ffc8> (a java.util.LinkedList)
+	at java.lang.Object.wait(Object.java:485)
+	at com.arjuna.ats.arjuna.coordinator.TransactionReaper.waitForCancellations(TransactionReaper.java:321)
+	- locked <0x000000077078ffc8> (a java.util.LinkedList)
+	at com.arjuna.ats.internal.arjuna.coordinator.ReaperWorkerThread.run(ReaperWorkerThread.java:65)
+
+   Locked ownable synchronizers:
+	- None
+
+"Transaction Reaper" daemon prio=10 tid=0x000000006063b000 nid=0x6c5a in Object.wait() [0x00000000452de000]
+   java.lang.Thread.State: TIMED_WAITING (on object monitor)
+	at java.lang.Object.wait(Native Method)
+	- waiting on <0x000000077078f220> (a com.arjuna.ats.arjuna.coordinator.TransactionReaper)
+	at com.arjuna.ats.internal.arjuna.coordinator.ReaperThread.run(ReaperThread.java:90)
+	- locked <0x000000077078f220> (a com.arjuna.ats.arjuna.coordinator.TransactionReaper)
+
+   Locked ownable synchronizers:
+	- None
+
+"Periodic Recovery" prio=10 tid=0x000000005facf800 nid=0x6c59 in Object.wait() [0x00000000451dd000]
+   java.lang.Thread.State: TIMED_WAITING (on object monitor)
+	at java.lang.Object.wait(Native Method)
+	- waiting on <0x00000007707801c8> (a java.lang.Object)
+	at com.arjuna.ats.internal.arjuna.recovery.PeriodicRecovery.doPeriodicWait(PeriodicRecovery.java:672)
+	at com.arjuna.ats.internal.arjuna.recovery.PeriodicRecovery.run(PeriodicRecovery.java:392)
+	- locked <0x00000007707801c8> (a java.lang.Object)
+
+   Locked ownable synchronizers:
+	- None
+
+"Transaction Expired Entry Monitor" daemon prio=10 tid=0x000000005f705800 nid=0x6c58 in Object.wait() [0x00000000413c5000]
+   java.lang.Thread.State: TIMED_WAITING (on object monitor)
+	at java.lang.Object.wait(Native Method)
+	- waiting on <0x000000077077ff08> (a com.arjuna.ats.internal.arjuna.recovery.ExpiredEntryMonitor)
+	at com.arjuna.ats.internal.arjuna.recovery.ExpiredEntryMonitor.run(ExpiredEntryMonitor.java:190)
+	- locked <0x000000077077ff08> (a com.arjuna.ats.internal.arjuna.recovery.ExpiredEntryMonitor)
+
+   Locked ownable synchronizers:
+	- None
+
+"Remoting "app21" write-1" prio=10 tid=0x0000000060126800 nid=0x6c57 runnable [0x00000000450dc000]
+   java.lang.Thread.State: RUNNABLE
+	at sun.nio.ch.EPollArrayWrapper.epollWait(Native Method)
+	at sun.nio.ch.EPollArrayWrapper.poll(EPollArrayWrapper.java:210)
+	at sun.nio.ch.EPollSelectorImpl.doSelect(EPollSelectorImpl.java:65)
+	at sun.nio.ch.SelectorImpl.lockAndDoSelect(SelectorImpl.java:69)
+	- locked <0x00000007707ca988> (a sun.nio.ch.Util$2)
+	- locked <0x00000007707ca978> (a java.util.Collections$UnmodifiableSet)
+	- locked <0x00000007707ca770> (a sun.nio.ch.EPollSelectorImpl)
+	at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:80)
+	at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:84)
+	at org.xnio.nio.WorkerThread.run(WorkerThread.java:153)
+
+   Locked ownable synchronizers:
+	- None
+
+"Remoting "app21" read-1" prio=10 tid=0x0000000060355000 nid=0x6c56 runnable [0x0000000040dbc000]
+   java.lang.Thread.State: RUNNABLE
+	at sun.nio.ch.EPollArrayWrapper.epollWait(Native Method)
+	at sun.nio.ch.EPollArrayWrapper.poll(EPollArrayWrapper.java:210)
+	at sun.nio.ch.EPollSelectorImpl.doSelect(EPollSelectorImpl.java:65)
+	at sun.nio.ch.SelectorImpl.lockAndDoSelect(SelectorImpl.java:69)
+	- locked <0x00000007707ca3e0> (a sun.nio.ch.Util$2)
+	- locked <0x00000007707ca3d0> (a java.util.Collections$UnmodifiableSet)
+	- locked <0x00000007707ca1c8> (a sun.nio.ch.EPollSelectorImpl)
+	at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:80)
+	at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:84)
+	at org.xnio.nio.WorkerThread.run(WorkerThread.java:153)
+
+   Locked ownable synchronizers:
+	- None
+
+"ServerService Thread Pool -- 49" prio=10 tid=0x0000000060685000 nid=0x6c55 waiting on condition [0x0000000044fdb000]
+   java.lang.Thread.State: WAITING (parking)
+	at sun.misc.Unsafe.park(Native Method)
+	- parking to wait for  <0x0000000770681be8> (a java.util.concurrent.CountDownLatch$Sync)
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:156)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer.parkAndCheckInterrupt(AbstractQueuedSynchronizer.java:811)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer.doAcquireSharedInterruptibly(AbstractQueuedSynchronizer.java:969)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer.acquireSharedInterruptibly(AbstractQueuedSynchronizer.java:1281)
+	at java.util.concurrent.CountDownLatch.await(CountDownLatch.java:207)
+	at org.jboss.as.controller.ParallelBootOperationStepHandler$ParallelBootTransactionControl.operationPrepared(ParallelBootOperationStepHandler.java:384)
+	at org.jboss.as.controller.AbstractOperationContext.doCompleteStep(AbstractOperationContext.java:337)
+	at org.jboss.as.controller.AbstractOperationContext.completeStep(AbstractOperationContext.java:211)
+	at org.jboss.as.server.AbstractDeploymentChainStep.execute(AbstractDeploymentChainStep.java:51)
+	at org.jboss.as.controller.AbstractOperationContext.executeStep(AbstractOperationContext.java:397)
+	at org.jboss.as.controller.AbstractOperationContext.doCompleteStep(AbstractOperationContext.java:284)
+	at org.jboss.as.controller.AbstractOperationContext.completeStep(AbstractOperationContext.java:211)
+	at org.jboss.as.controller.ParallelBootOperationStepHandler$ParallelBootTask.run(ParallelBootOperationStepHandler.java:312)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+	at java.lang.Thread.run(Thread.java:662)
+	at org.jboss.threads.JBossThread.run(JBossThread.java:122)
+
+   Locked ownable synchronizers:
+	- <0x00000007706b39e0> (a java.util.concurrent.locks.ReentrantLock$NonfairSync)
+
+"ServerService Thread Pool -- 48" prio=10 tid=0x0000000060683000 nid=0x6c54 waiting on condition [0x0000000044eda000]
+   java.lang.Thread.State: WAITING (parking)
+	at sun.misc.Unsafe.park(Native Method)
+	- parking to wait for  <0x0000000770681be8> (a java.util.concurrent.CountDownLatch$Sync)
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:156)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer.parkAndCheckInterrupt(AbstractQueuedSynchronizer.java:811)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer.doAcquireSharedInterruptibly(AbstractQueuedSynchronizer.java:969)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer.acquireSharedInterruptibly(AbstractQueuedSynchronizer.java:1281)
+	at java.util.concurrent.CountDownLatch.await(CountDownLatch.java:207)
+	at org.jboss.as.controller.ParallelBootOperationStepHandler$ParallelBootTransactionControl.operationPrepared(ParallelBootOperationStepHandler.java:384)
+	at org.jboss.as.controller.AbstractOperationContext.doCompleteStep(AbstractOperationContext.java:337)
+	at org.jboss.as.controller.AbstractOperationContext.completeStep(AbstractOperationContext.java:211)
+	at org.jboss.as.server.AbstractDeploymentChainStep.execute(AbstractDeploymentChainStep.java:51)
+	at org.jboss.as.controller.AbstractOperationContext.executeStep(AbstractOperationContext.java:397)
+	at org.jboss.as.controller.AbstractOperationContext.doCompleteStep(AbstractOperationContext.java:284)
+	at org.jboss.as.controller.AbstractOperationContext.completeStep(AbstractOperationContext.java:211)
+	at org.jboss.as.controller.ParallelBootOperationStepHandler$ParallelBootTask.run(ParallelBootOperationStepHandler.java:312)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+	at java.lang.Thread.run(Thread.java:662)
+	at org.jboss.threads.JBossThread.run(JBossThread.java:122)
+
+   Locked ownable synchronizers:
+	- <0x00000007706b3b20> (a java.util.concurrent.locks.ReentrantLock$NonfairSync)
+
+"ServerService Thread Pool -- 47" prio=10 tid=0x000000005f64f800 nid=0x6c53 waiting on condition [0x0000000044dd9000]
+   java.lang.Thread.State: WAITING (parking)
+	at sun.misc.Unsafe.park(Native Method)
+	- parking to wait for  <0x0000000770681be8> (a java.util.concurrent.CountDownLatch$Sync)
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:156)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer.parkAndCheckInterrupt(AbstractQueuedSynchronizer.java:811)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer.doAcquireSharedInterruptibly(AbstractQueuedSynchronizer.java:969)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer.acquireSharedInterruptibly(AbstractQueuedSynchronizer.java:1281)
+	at java.util.concurrent.CountDownLatch.await(CountDownLatch.java:207)
+	at org.jboss.as.controller.ParallelBootOperationStepHandler$ParallelBootTransactionControl.operationPrepared(ParallelBootOperationStepHandler.java:384)
+	at org.jboss.as.controller.AbstractOperationContext.doCompleteStep(AbstractOperationContext.java:337)
+	at org.jboss.as.controller.AbstractOperationContext.completeStep(AbstractOperationContext.java:211)
+	at org.jboss.as.server.AbstractDeploymentChainStep.execute(AbstractDeploymentChainStep.java:51)
+	at org.jboss.as.controller.AbstractOperationContext.executeStep(AbstractOperationContext.java:397)
+	at org.jboss.as.controller.AbstractOperationContext.doCompleteStep(AbstractOperationContext.java:284)
+	at org.jboss.as.controller.AbstractOperationContext.completeStep(AbstractOperationContext.java:211)
+	at org.jboss.as.controller.ParallelBootOperationStepHandler$ParallelBootTask.run(ParallelBootOperationStepHandler.java:312)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+	at java.lang.Thread.run(Thread.java:662)
+	at org.jboss.threads.JBossThread.run(JBossThread.java:122)
+
+   Locked ownable synchronizers:
+	- <0x00000007706b3bf0> (a java.util.concurrent.locks.ReentrantLock$NonfairSync)
+
+"ServerService Thread Pool -- 46" prio=10 tid=0x000000005f64e000 nid=0x6c52 waiting on condition [0x0000000044cd8000]
+   java.lang.Thread.State: WAITING (parking)
+	at sun.misc.Unsafe.park(Native Method)
+	- parking to wait for  <0x0000000770681be8> (a java.util.concurrent.CountDownLatch$Sync)
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:156)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer.parkAndCheckInterrupt(AbstractQueuedSynchronizer.java:811)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer.doAcquireSharedInterruptibly(AbstractQueuedSynchronizer.java:969)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer.acquireSharedInterruptibly(AbstractQueuedSynchronizer.java:1281)
+	at java.util.concurrent.CountDownLatch.await(CountDownLatch.java:207)
+	at org.jboss.as.controller.ParallelBootOperationStepHandler$ParallelBootTransactionControl.operationPrepared(ParallelBootOperationStepHandler.java:384)
+	at org.jboss.as.controller.AbstractOperationContext.doCompleteStep(AbstractOperationContext.java:337)
+	at org.jboss.as.controller.AbstractOperationContext.completeStep(AbstractOperationContext.java:211)
+	at org.jboss.as.server.AbstractDeploymentChainStep.execute(AbstractDeploymentChainStep.java:51)
+	at org.jboss.as.controller.AbstractOperationContext.executeStep(AbstractOperationContext.java:397)
+	at org.jboss.as.controller.AbstractOperationContext.doCompleteStep(AbstractOperationContext.java:284)
+	at org.jboss.as.controller.AbstractOperationContext.completeStep(AbstractOperationContext.java:211)
+	at org.jboss.as.controller.ParallelBootOperationStepHandler$ParallelBootTask.run(ParallelBootOperationStepHandler.java:312)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+	at java.lang.Thread.run(Thread.java:662)
+	at org.jboss.threads.JBossThread.run(JBossThread.java:122)
+
+   Locked ownable synchronizers:
+	- <0x00000007706b3ca0> (a java.util.concurrent.locks.ReentrantLock$NonfairSync)
+
+"ServerService Thread Pool -- 45" prio=10 tid=0x0000000060127800 nid=0x6c51 waiting on condition [0x0000000044bd7000]
+   java.lang.Thread.State: WAITING (parking)
+	at sun.misc.Unsafe.park(Native Method)
+	- parking to wait for  <0x0000000770681be8> (a java.util.concurrent.CountDownLatch$Sync)
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:156)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer.parkAndCheckInterrupt(AbstractQueuedSynchronizer.java:811)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer.doAcquireSharedInterruptibly(AbstractQueuedSynchronizer.java:969)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer.acquireSharedInterruptibly(AbstractQueuedSynchronizer.java:1281)
+	at java.util.concurrent.CountDownLatch.await(CountDownLatch.java:207)
+	at org.jboss.as.controller.ParallelBootOperationStepHandler$ParallelBootTransactionControl.operationPrepared(ParallelBootOperationStepHandler.java:384)
+	at org.jboss.as.controller.AbstractOperationContext.doCompleteStep(AbstractOperationContext.java:337)
+	at org.jboss.as.controller.AbstractOperationContext.completeStep(AbstractOperationContext.java:211)
+	at org.jboss.as.controller.ParallelBootOperationStepHandler$ParallelBootTask.run(ParallelBootOperationStepHandler.java:312)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+	at java.lang.Thread.run(Thread.java:662)
+	at org.jboss.threads.JBossThread.run(JBossThread.java:122)
+
+   Locked ownable synchronizers:
+	- <0x00000007706b3ce8> (a java.util.concurrent.locks.ReentrantLock$NonfairSync)
+
+"ServerService Thread Pool -- 44" prio=10 tid=0x000000006071c800 nid=0x6c50 waiting on condition [0x0000000044ad5000]
+   java.lang.Thread.State: WAITING (parking)
+	at sun.misc.Unsafe.park(Native Method)
+	- parking to wait for  <0x0000000770681be8> (a java.util.concurrent.CountDownLatch$Sync)
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:156)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer.parkAndCheckInterrupt(AbstractQueuedSynchronizer.java:811)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer.doAcquireSharedInterruptibly(AbstractQueuedSynchronizer.java:969)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer.acquireSharedInterruptibly(AbstractQueuedSynchronizer.java:1281)
+	at java.util.concurrent.CountDownLatch.await(CountDownLatch.java:207)
+	at org.jboss.as.controller.ParallelBootOperationStepHandler$ParallelBootTransactionControl.operationPrepared(ParallelBootOperationStepHandler.java:384)
+	at org.jboss.as.controller.AbstractOperationContext.doCompleteStep(AbstractOperationContext.java:337)
+	at org.jboss.as.controller.AbstractOperationContext.completeStep(AbstractOperationContext.java:211)
+	at org.jboss.as.security.SecurityDomainAdd$1.execute(SecurityDomainAdd.java:161)
+	at org.jboss.as.controller.AbstractOperationContext.executeStep(AbstractOperationContext.java:397)
+	at org.jboss.as.controller.AbstractOperationContext.doCompleteStep(AbstractOperationContext.java:284)
+	at org.jboss.as.controller.AbstractOperationContext.completeStep(AbstractOperationContext.java:211)
+	at org.jboss.as.security.SecurityDomainAdd$1.execute(SecurityDomainAdd.java:161)
+	at org.jboss.as.controller.AbstractOperationContext.executeStep(AbstractOperationContext.java:397)
+	at org.jboss.as.controller.AbstractOperationContext.doCompleteStep(AbstractOperationContext.java:284)
+	at org.jboss.as.controller.AbstractOperationContext.completeStep(AbstractOperationContext.java:211)
+	at org.jboss.as.security.SecurityDomainAdd$1.execute(SecurityDomainAdd.java:161)
+	at org.jboss.as.controller.AbstractOperationContext.executeStep(AbstractOperationContext.java:397)
+	at org.jboss.as.controller.AbstractOperationContext.doCompleteStep(AbstractOperationContext.java:284)
+	at org.jboss.as.controller.AbstractOperationContext.completeStep(AbstractOperationContext.java:211)
+	at org.jboss.as.server.AbstractDeploymentChainStep.execute(AbstractDeploymentChainStep.java:51)
+	at org.jboss.as.controller.AbstractOperationContext.executeStep(AbstractOperationContext.java:397)
+	at org.jboss.as.controller.AbstractOperationContext.doCompleteStep(AbstractOperationContext.java:284)
+	at org.jboss.as.controller.AbstractOperationContext.completeStep(AbstractOperationContext.java:211)
+	at org.jboss.as.server.AbstractDeploymentChainStep.execute(AbstractDeploymentChainStep.java:51)
+	at org.jboss.as.controller.AbstractOperationContext.executeStep(AbstractOperationContext.java:397)
+	at org.jboss.as.controller.AbstractOperationContext.doCompleteStep(AbstractOperationContext.java:284)
+	at org.jboss.as.controller.AbstractOperationContext.completeStep(AbstractOperationContext.java:211)
+	at org.jboss.as.controller.ParallelBootOperationStepHandler$ParallelBootTask.run(ParallelBootOperationStepHandler.java:312)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+	at java.lang.Thread.run(Thread.java:662)
+	at org.jboss.threads.JBossThread.run(JBossThread.java:122)
+
+   Locked ownable synchronizers:
+	- <0x00000007706b3ed0> (a java.util.concurrent.locks.ReentrantLock$NonfairSync)
+
+"ServerService Thread Pool -- 43" prio=10 tid=0x000000006071b000 nid=0x6c4f waiting on condition [0x00000000449d5000]
+   java.lang.Thread.State: WAITING (parking)
+	at sun.misc.Unsafe.park(Native Method)
+	- parking to wait for  <0x0000000770681be8> (a java.util.concurrent.CountDownLatch$Sync)
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:156)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer.parkAndCheckInterrupt(AbstractQueuedSynchronizer.java:811)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer.doAcquireSharedInterruptibly(AbstractQueuedSynchronizer.java:969)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer.acquireSharedInterruptibly(AbstractQueuedSynchronizer.java:1281)
+	at java.util.concurrent.CountDownLatch.await(CountDownLatch.java:207)
+	at org.jboss.as.controller.ParallelBootOperationStepHandler$ParallelBootTransactionControl.operationPrepared(ParallelBootOperationStepHandler.java:384)
+	at org.jboss.as.controller.AbstractOperationContext.doCompleteStep(AbstractOperationContext.java:337)
+	at org.jboss.as.controller.AbstractOperationContext.completeStep(AbstractOperationContext.java:211)
+	at org.jboss.as.server.AbstractDeploymentChainStep.execute(AbstractDeploymentChainStep.java:51)
+	at org.jboss.as.controller.AbstractOperationContext.executeStep(AbstractOperationContext.java:397)
+	at org.jboss.as.controller.AbstractOperationContext.doCompleteStep(AbstractOperationContext.java:284)
+	at org.jboss.as.controller.AbstractOperationContext.completeStep(AbstractOperationContext.java:211)
+	at org.jboss.as.controller.ParallelBootOperationStepHandler$ParallelBootTask.run(ParallelBootOperationStepHandler.java:312)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+	at java.lang.Thread.run(Thread.java:662)
+	at org.jboss.threads.JBossThread.run(JBossThread.java:122)
+
+   Locked ownable synchronizers:
+	- <0x00000007706b3f80> (a java.util.concurrent.locks.ReentrantLock$NonfairSync)
+
+"ServerService Thread Pool -- 42" prio=10 tid=0x00000000606dc800 nid=0x6c4e waiting on condition [0x00000000448d4000]
+   java.lang.Thread.State: WAITING (parking)
+	at sun.misc.Unsafe.park(Native Method)
+	- parking to wait for  <0x0000000770681be8> (a java.util.concurrent.CountDownLatch$Sync)
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:156)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer.parkAndCheckInterrupt(AbstractQueuedSynchronizer.java:811)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer.doAcquireSharedInterruptibly(AbstractQueuedSynchronizer.java:969)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer.acquireSharedInterruptibly(AbstractQueuedSynchronizer.java:1281)
+	at java.util.concurrent.CountDownLatch.await(CountDownLatch.java:207)
+	at org.jboss.as.controller.ParallelBootOperationStepHandler$ParallelBootTransactionControl.operationPrepared(ParallelBootOperationStepHandler.java:384)
+	at org.jboss.as.controller.AbstractOperationContext.doCompleteStep(AbstractOperationContext.java:337)
+	at org.jboss.as.controller.AbstractOperationContext.completeStep(AbstractOperationContext.java:211)
+	at org.jboss.as.controller.ParallelBootOperationStepHandler$ParallelBootTask.run(ParallelBootOperationStepHandler.java:312)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+	at java.lang.Thread.run(Thread.java:662)
+	at org.jboss.threads.JBossThread.run(JBossThread.java:122)
+
+   Locked ownable synchronizers:
+	- <0x00000007706b3fc8> (a java.util.concurrent.locks.ReentrantLock$NonfairSync)
+
+"ServerService Thread Pool -- 41" prio=10 tid=0x0000000060030000 nid=0x6c4d waiting on condition [0x00000000447d3000]
+   java.lang.Thread.State: WAITING (parking)
+	at sun.misc.Unsafe.park(Native Method)
+	- parking to wait for  <0x0000000770681be8> (a java.util.concurrent.CountDownLatch$Sync)
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:156)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer.parkAndCheckInterrupt(AbstractQueuedSynchronizer.java:811)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer.doAcquireSharedInterruptibly(AbstractQueuedSynchronizer.java:969)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer.acquireSharedInterruptibly(AbstractQueuedSynchronizer.java:1281)
+	at java.util.concurrent.CountDownLatch.await(CountDownLatch.java:207)
+	at org.jboss.as.controller.ParallelBootOperationStepHandler$ParallelBootTransactionControl.operationPrepared(ParallelBootOperationStepHandler.java:384)
+	at org.jboss.as.controller.AbstractOperationContext.doCompleteStep(AbstractOperationContext.java:337)
+	at org.jboss.as.controller.AbstractOperationContext.completeStep(AbstractOperationContext.java:211)
+	at org.jboss.as.controller.AbstractOperationContext.finishStep(AbstractOperationContext.java:463)
+	at org.jboss.as.controller.AbstractOperationContext.executeStep(AbstractOperationContext.java:450)
+	at org.jboss.as.controller.AbstractOperationContext.doCompleteStep(AbstractOperationContext.java:284)
+	at org.jboss.as.controller.AbstractOperationContext.completeStep(AbstractOperationContext.java:211)
+	at org.jboss.as.controller.ParallelBootOperationStepHandler$ParallelBootTask.run(ParallelBootOperationStepHandler.java:312)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+	at java.lang.Thread.run(Thread.java:662)
+	at org.jboss.threads.JBossThread.run(JBossThread.java:122)
+
+   Locked ownable synchronizers:
+	- <0x00000007706b4068> (a java.util.concurrent.locks.ReentrantLock$NonfairSync)
+
+"ServerService Thread Pool -- 40" prio=10 tid=0x0000000060026800 nid=0x6c4c waiting on condition [0x00000000446d2000]
+   java.lang.Thread.State: WAITING (parking)
+	at sun.misc.Unsafe.park(Native Method)
+	- parking to wait for  <0x0000000770681be8> (a java.util.concurrent.CountDownLatch$Sync)
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:156)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer.parkAndCheckInterrupt(AbstractQueuedSynchronizer.java:811)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer.doAcquireSharedInterruptibly(AbstractQueuedSynchronizer.java:969)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer.acquireSharedInterruptibly(AbstractQueuedSynchronizer.java:1281)
+	at java.util.concurrent.CountDownLatch.await(CountDownLatch.java:207)
+	at org.jboss.as.controller.ParallelBootOperationStepHandler$ParallelBootTransactionControl.operationPrepared(ParallelBootOperationStepHandler.java:384)
+	at org.jboss.as.controller.AbstractOperationContext.doCompleteStep(AbstractOperationContext.java:337)
+	at org.jboss.as.controller.AbstractOperationContext.completeStep(AbstractOperationContext.java:211)
+	at org.jboss.as.server.AbstractDeploymentChainStep.execute(AbstractDeploymentChainStep.java:51)
+	at org.jboss.as.controller.AbstractOperationContext.executeStep(AbstractOperationContext.java:397)
+	at org.jboss.as.controller.AbstractOperationContext.doCompleteStep(AbstractOperationContext.java:284)
+	at org.jboss.as.controller.AbstractOperationContext.completeStep(AbstractOperationContext.java:211)
+	at org.jboss.as.controller.ParallelBootOperationStepHandler$ParallelBootTask.run(ParallelBootOperationStepHandler.java:312)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+	at java.lang.Thread.run(Thread.java:662)
+	at org.jboss.threads.JBossThread.run(JBossThread.java:122)
+
+   Locked ownable synchronizers:
+	- <0x00000007706b40f0> (a java.util.concurrent.locks.ReentrantLock$NonfairSync)
+
+"ServerService Thread Pool -- 38" prio=10 tid=0x0000000060071800 nid=0x6c4a waiting on condition [0x00000000444d0000]
+   java.lang.Thread.State: WAITING (parking)
+	at sun.misc.Unsafe.park(Native Method)
+	- parking to wait for  <0x0000000770681be8> (a java.util.concurrent.CountDownLatch$Sync)
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:156)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer.parkAndCheckInterrupt(AbstractQueuedSynchronizer.java:811)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer.doAcquireSharedInterruptibly(AbstractQueuedSynchronizer.java:969)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer.acquireSharedInterruptibly(AbstractQueuedSynchronizer.java:1281)
+	at java.util.concurrent.CountDownLatch.await(CountDownLatch.java:207)
+	at org.jboss.as.controller.ParallelBootOperationStepHandler$ParallelBootTransactionControl.operationPrepared(ParallelBootOperationStepHandler.java:384)
+	at org.jboss.as.controller.AbstractOperationContext.doCompleteStep(AbstractOperationContext.java:337)
+	at org.jboss.as.controller.AbstractOperationContext.completeStep(AbstractOperationContext.java:211)
+	at org.jboss.as.server.AbstractDeploymentChainStep.execute(AbstractDeploymentChainStep.java:51)
+	at org.jboss.as.controller.AbstractOperationContext.executeStep(AbstractOperationContext.java:397)
+	at org.jboss.as.controller.AbstractOperationContext.doCompleteStep(AbstractOperationContext.java:284)
+	at org.jboss.as.controller.AbstractOperationContext.completeStep(AbstractOperationContext.java:211)
+	at org.jboss.as.controller.ParallelBootOperationStepHandler$ParallelBootTask.run(ParallelBootOperationStepHandler.java:312)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+	at java.lang.Thread.run(Thread.java:662)
+	at org.jboss.threads.JBossThread.run(JBossThread.java:122)
+
+   Locked ownable synchronizers:
+	- <0x00000007706b4298> (a java.util.concurrent.locks.ReentrantLock$NonfairSync)
+
+"ServerService Thread Pool -- 37" prio=10 tid=0x0000000060565800 nid=0x6c49 waiting on condition [0x00000000443cf000]
+   java.lang.Thread.State: WAITING (parking)
+	at sun.misc.Unsafe.park(Native Method)
+	- parking to wait for  <0x0000000770681be8> (a java.util.concurrent.CountDownLatch$Sync)
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:156)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer.parkAndCheckInterrupt(AbstractQueuedSynchronizer.java:811)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer.doAcquireSharedInterruptibly(AbstractQueuedSynchronizer.java:969)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer.acquireSharedInterruptibly(AbstractQueuedSynchronizer.java:1281)
+	at java.util.concurrent.CountDownLatch.await(CountDownLatch.java:207)
+	at org.jboss.as.controller.ParallelBootOperationStepHandler$ParallelBootTransactionControl.operationPrepared(ParallelBootOperationStepHandler.java:384)
+	at org.jboss.as.controller.AbstractOperationContext.doCompleteStep(AbstractOperationContext.java:337)
+	at org.jboss.as.controller.AbstractOperationContext.completeStep(AbstractOperationContext.java:211)
+	at org.jboss.as.controller.AbstractOperationContext.finishStep(AbstractOperationContext.java:463)
+	at org.jboss.as.controller.AbstractOperationContext.executeStep(AbstractOperationContext.java:450)
+	at org.jboss.as.controller.AbstractOperationContext.doCompleteStep(AbstractOperationContext.java:284)
+	at org.jboss.as.controller.AbstractOperationContext.completeStep(AbstractOperationContext.java:211)
+	at org.jboss.as.controller.ParallelBootOperationStepHandler$ParallelBootTask.run(ParallelBootOperationStepHandler.java:312)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+	at java.lang.Thread.run(Thread.java:662)
+	at org.jboss.threads.JBossThread.run(JBossThread.java:122)
+
+   Locked ownable synchronizers:
+	- <0x00000007706b4450> (a java.util.concurrent.locks.ReentrantLock$NonfairSync)
+
+"ServerService Thread Pool -- 36" prio=10 tid=0x0000000060658800 nid=0x6c48 waiting on condition [0x00000000442ce000]
+   java.lang.Thread.State: WAITING (parking)
+	at sun.misc.Unsafe.park(Native Method)
+	- parking to wait for  <0x0000000770681be8> (a java.util.concurrent.CountDownLatch$Sync)
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:156)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer.parkAndCheckInterrupt(AbstractQueuedSynchronizer.java:811)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer.doAcquireSharedInterruptibly(AbstractQueuedSynchronizer.java:969)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer.acquireSharedInterruptibly(AbstractQueuedSynchronizer.java:1281)
+	at java.util.concurrent.CountDownLatch.await(CountDownLatch.java:207)
+	at org.jboss.as.controller.ParallelBootOperationStepHandler$ParallelBootTransactionControl.operationPrepared(ParallelBootOperationStepHandler.java:384)
+	at org.jboss.as.controller.AbstractOperationContext.doCompleteStep(AbstractOperationContext.java:337)
+	at org.jboss.as.controller.AbstractOperationContext.completeStep(AbstractOperationContext.java:211)
+	at org.jboss.as.server.AbstractDeploymentChainStep.execute(AbstractDeploymentChainStep.java:51)
+	at org.jboss.as.controller.AbstractOperationContext.executeStep(AbstractOperationContext.java:397)
+	at org.jboss.as.controller.AbstractOperationContext.doCompleteStep(AbstractOperationContext.java:284)
+	at org.jboss.as.controller.AbstractOperationContext.completeStep(AbstractOperationContext.java:211)
+	at org.jboss.as.controller.ParallelBootOperationStepHandler$ParallelBootTask.run(ParallelBootOperationStepHandler.java:312)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+	at java.lang.Thread.run(Thread.java:662)
+	at org.jboss.threads.JBossThread.run(JBossThread.java:122)
+
+   Locked ownable synchronizers:
+	- <0x00000007706b4538> (a java.util.concurrent.locks.ReentrantLock$NonfairSync)
+
+"ServerService Thread Pool -- 35" prio=10 tid=0x0000000060656000 nid=0x6c47 waiting on condition [0x00000000441cd000]
+   java.lang.Thread.State: WAITING (parking)
+	at sun.misc.Unsafe.park(Native Method)
+	- parking to wait for  <0x0000000770681be8> (a java.util.concurrent.CountDownLatch$Sync)
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:156)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer.parkAndCheckInterrupt(AbstractQueuedSynchronizer.java:811)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer.doAcquireSharedInterruptibly(AbstractQueuedSynchronizer.java:969)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer.acquireSharedInterruptibly(AbstractQueuedSynchronizer.java:1281)
+	at java.util.concurrent.CountDownLatch.await(CountDownLatch.java:207)
+	at org.jboss.as.controller.ParallelBootOperationStepHandler$ParallelBootTransactionControl.operationPrepared(ParallelBootOperationStepHandler.java:384)
+	at org.jboss.as.controller.AbstractOperationContext.doCompleteStep(AbstractOperationContext.java:337)
+	at org.jboss.as.controller.AbstractOperationContext.completeStep(AbstractOperationContext.java:211)
+	at org.jboss.as.controller.AbstractOperationContext.finishStep(AbstractOperationContext.java:463)
+	at org.jboss.as.controller.AbstractOperationContext.executeStep(AbstractOperationContext.java:450)
+	at org.jboss.as.controller.AbstractOperationContext.doCompleteStep(AbstractOperationContext.java:284)
+	at org.jboss.as.controller.AbstractOperationContext.completeStep(AbstractOperationContext.java:211)
+	at org.jboss.as.controller.ParallelBootOperationStepHandler$ParallelBootTask.run(ParallelBootOperationStepHandler.java:312)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+	at java.lang.Thread.run(Thread.java:662)
+	at org.jboss.threads.JBossThread.run(JBossThread.java:122)
+
+   Locked ownable synchronizers:
+	- <0x00000007706b45d8> (a java.util.concurrent.locks.ReentrantLock$NonfairSync)
+
+"ConnectionValidator" daemon prio=10 tid=0x0000000060640000 nid=0x6c46 waiting on condition [0x00000000440cc000]
+   java.lang.Thread.State: TIMED_WAITING (parking)
+	at sun.misc.Unsafe.park(Native Method)
+	- parking to wait for  <0x00000007706a70c8> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)
+	at java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:196)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2116)
+	at org.jboss.jca.core.connectionmanager.pool.validator.ConnectionValidator$ConnectionValidatorRunner.run(ConnectionValidator.java:263)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+	at java.lang.Thread.run(Thread.java:662)
+
+   Locked ownable synchronizers:
+	- <0x00000007706b4668> (a java.util.concurrent.locks.ReentrantLock$NonfairSync)
+
+"IdleRemover" daemon prio=10 tid=0x000000005fe5a800 nid=0x6c45 waiting on condition [0x0000000043fcb000]
+   java.lang.Thread.State: TIMED_WAITING (parking)
+	at sun.misc.Unsafe.park(Native Method)
+	- parking to wait for  <0x00000007706a7148> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)
+	at java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:196)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2116)
+	at org.jboss.jca.core.connectionmanager.pool.idle.IdleRemover$IdleRemoverRunner.run(IdleRemover.java:261)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+	at java.lang.Thread.run(Thread.java:662)
+
+   Locked ownable synchronizers:
+	- <0x00000007706b46f8> (a java.util.concurrent.locks.ReentrantLock$NonfairSync)
+
+"ServerService Thread Pool -- 34" prio=10 tid=0x00000000600b1000 nid=0x6c44 waiting on condition [0x0000000043eca000]
+   java.lang.Thread.State: WAITING (parking)
+	at sun.misc.Unsafe.park(Native Method)
+	- parking to wait for  <0x0000000770681be8> (a java.util.concurrent.CountDownLatch$Sync)
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:156)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer.parkAndCheckInterrupt(AbstractQueuedSynchronizer.java:811)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer.doAcquireSharedInterruptibly(AbstractQueuedSynchronizer.java:969)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer.acquireSharedInterruptibly(AbstractQueuedSynchronizer.java:1281)
+	at java.util.concurrent.CountDownLatch.await(CountDownLatch.java:207)
+	at org.jboss.as.controller.ParallelBootOperationStepHandler$ParallelBootTransactionControl.operationPrepared(ParallelBootOperationStepHandler.java:384)
+	at org.jboss.as.controller.AbstractOperationContext.doCompleteStep(AbstractOperationContext.java:337)
+	at org.jboss.as.controller.AbstractOperationContext.completeStep(AbstractOperationContext.java:211)
+	at org.jboss.as.controller.AbstractOperationContext.finishStep(AbstractOperationContext.java:463)
+	at org.jboss.as.controller.AbstractOperationContext.executeStep(AbstractOperationContext.java:450)
+	at org.jboss.as.controller.AbstractOperationContext.doCompleteStep(AbstractOperationContext.java:284)
+	at org.jboss.as.controller.AbstractOperationContext.completeStep(AbstractOperationContext.java:211)
+	at org.jboss.as.controller.ParallelBootOperationStepHandler$ParallelBootTask.run(ParallelBootOperationStepHandler.java:312)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+	at java.lang.Thread.run(Thread.java:662)
+	at org.jboss.threads.JBossThread.run(JBossThread.java:122)
+
+   Locked ownable synchronizers:
+	- <0x00000007706b4768> (a java.util.concurrent.locks.ReentrantLock$NonfairSync)
+
+"ServerService Thread Pool -- 33" prio=10 tid=0x0000000060766800 nid=0x6c43 waiting on condition [0x0000000043dc9000]
+   java.lang.Thread.State: WAITING (parking)
+	at sun.misc.Unsafe.park(Native Method)
+	- parking to wait for  <0x0000000770681be8> (a java.util.concurrent.CountDownLatch$Sync)
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:156)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer.parkAndCheckInterrupt(AbstractQueuedSynchronizer.java:811)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer.doAcquireSharedInterruptibly(AbstractQueuedSynchronizer.java:969)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer.acquireSharedInterruptibly(AbstractQueuedSynchronizer.java:1281)
+	at java.util.concurrent.CountDownLatch.await(CountDownLatch.java:207)
+	at org.jboss.as.controller.ParallelBootOperationStepHandler$ParallelBootTransactionControl.operationPrepared(ParallelBootOperationStepHandler.java:384)
+	at org.jboss.as.controller.AbstractOperationContext.doCompleteStep(AbstractOperationContext.java:337)
+	at org.jboss.as.controller.AbstractOperationContext.completeStep(AbstractOperationContext.java:211)
+	at org.jboss.as.server.AbstractDeploymentChainStep.execute(AbstractDeploymentChainStep.java:51)
+	at org.jboss.as.controller.AbstractOperationContext.executeStep(AbstractOperationContext.java:397)
+	at org.jboss.as.controller.AbstractOperationContext.doCompleteStep(AbstractOperationContext.java:284)
+	at org.jboss.as.controller.AbstractOperationContext.completeStep(AbstractOperationContext.java:211)
+	at org.jboss.as.server.AbstractDeploymentChainStep.execute(AbstractDeploymentChainStep.java:51)
+	at org.jboss.as.controller.AbstractOperationContext.executeStep(AbstractOperationContext.java:397)
+	at org.jboss.as.controller.AbstractOperationContext.doCompleteStep(AbstractOperationContext.java:284)
+	at org.jboss.as.controller.AbstractOperationContext.completeStep(AbstractOperationContext.java:211)
+	at org.jboss.as.controller.ParallelBootOperationStepHandler$ParallelBootTask.run(ParallelBootOperationStepHandler.java:312)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+	at java.lang.Thread.run(Thread.java:662)
+	at org.jboss.threads.JBossThread.run(JBossThread.java:122)
+
+   Locked ownable synchronizers:
+	- <0x00000007706b48e8> (a java.util.concurrent.locks.ReentrantLock$NonfairSync)
+
+"Timer-0" prio=10 tid=0x000000005ff06800 nid=0x6c42 in Object.wait() [0x0000000043cc8000]
+   java.lang.Thread.State: WAITING (on object monitor)
+	at java.lang.Object.wait(Native Method)
+	- waiting on <0x00000007706a74a8> (a java.util.TaskQueue)
+	at java.lang.Object.wait(Object.java:485)
+	at java.util.TimerThread.mainLoop(Timer.java:483)
+	- locked <0x00000007706a74a8> (a java.util.TaskQueue)
+	at java.util.TimerThread.run(Timer.java:462)
+
+   Locked ownable synchronizers:
+	- None
+
+"ServerService Thread Pool -- 32" prio=10 tid=0x00000000608d6000 nid=0x6c41 waiting on condition [0x0000000043bc7000]
+   java.lang.Thread.State: WAITING (parking)
+	at sun.misc.Unsafe.park(Native Method)
+	- parking to wait for  <0x0000000770681be8> (a java.util.concurrent.CountDownLatch$Sync)
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:156)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer.parkAndCheckInterrupt(AbstractQueuedSynchronizer.java:811)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer.doAcquireSharedInterruptibly(AbstractQueuedSynchronizer.java:969)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer.acquireSharedInterruptibly(AbstractQueuedSynchronizer.java:1281)
+	at java.util.concurrent.CountDownLatch.await(CountDownLatch.java:207)
+	at org.jboss.as.controller.ParallelBootOperationStepHandler$ParallelBootTransactionControl.operationPrepared(ParallelBootOperationStepHandler.java:384)
+	at org.jboss.as.controller.AbstractOperationContext.doCompleteStep(AbstractOperationContext.java:337)
+	at org.jboss.as.controller.AbstractOperationContext.completeStep(AbstractOperationContext.java:211)
+	at org.jboss.as.server.AbstractDeploymentChainStep.execute(AbstractDeploymentChainStep.java:51)
+	at org.jboss.as.controller.AbstractOperationContext.executeStep(AbstractOperationContext.java:397)
+	at org.jboss.as.controller.AbstractOperationContext.doCompleteStep(AbstractOperationContext.java:284)
+	at org.jboss.as.controller.AbstractOperationContext.completeStep(AbstractOperationContext.java:211)
+	at org.jboss.as.controller.ParallelBootOperationStepHandler$ParallelBootTask.run(ParallelBootOperationStepHandler.java:312)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+	at java.lang.Thread.run(Thread.java:662)
+	at org.jboss.threads.JBossThread.run(JBossThread.java:122)
+
+   Locked ownable synchronizers:
+	- <0x0000000770682a80> (a java.util.concurrent.locks.ReentrantLock$NonfairSync)
+
+"ServerService Thread Pool -- 31" prio=10 tid=0x00000000608c9800 nid=0x6c40 waiting on condition [0x0000000043ac6000]
+   java.lang.Thread.State: WAITING (parking)
+	at sun.misc.Unsafe.park(Native Method)
+	- parking to wait for  <0x0000000770681be8> (a java.util.concurrent.CountDownLatch$Sync)
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:156)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer.parkAndCheckInterrupt(AbstractQueuedSynchronizer.java:811)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer.doAcquireSharedInterruptibly(AbstractQueuedSynchronizer.java:969)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer.acquireSharedInterruptibly(AbstractQueuedSynchronizer.java:1281)
+	at java.util.concurrent.CountDownLatch.await(CountDownLatch.java:207)
+	at org.jboss.as.controller.ParallelBootOperationStepHandler$ParallelBootTransactionControl.operationPrepared(ParallelBootOperationStepHandler.java:384)
+	at org.jboss.as.controller.AbstractOperationContext.doCompleteStep(AbstractOperationContext.java:337)
+	at org.jboss.as.controller.AbstractOperationContext.completeStep(AbstractOperationContext.java:211)
+	at org.jboss.as.controller.AbstractOperationContext.finishStep(AbstractOperationContext.java:463)
+	at org.jboss.as.controller.AbstractOperationContext.executeStep(AbstractOperationContext.java:450)
+	at org.jboss.as.controller.AbstractOperationContext.doCompleteStep(AbstractOperationContext.java:284)
+	at org.jboss.as.controller.AbstractOperationContext.completeStep(AbstractOperationContext.java:211)
+	at org.jboss.as.controller.ParallelBootOperationStepHandler$ParallelBootTask.run(ParallelBootOperationStepHandler.java:312)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+	at java.lang.Thread.run(Thread.java:662)
+	at org.jboss.threads.JBossThread.run(JBossThread.java:122)
+
+   Locked ownable synchronizers:
+	- <0x0000000770682840> (a java.util.concurrent.locks.ReentrantLock$NonfairSync)
+
+"ServerService Thread Pool -- 30" prio=10 tid=0x00000000608b7000 nid=0x6c3f waiting on condition [0x00000000439c5000]
+   java.lang.Thread.State: WAITING (parking)
+	at sun.misc.Unsafe.park(Native Method)
+	- parking to wait for  <0x0000000770681be8> (a java.util.concurrent.CountDownLatch$Sync)
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:156)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer.parkAndCheckInterrupt(AbstractQueuedSynchronizer.java:811)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer.doAcquireSharedInterruptibly(AbstractQueuedSynchronizer.java:969)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer.acquireSharedInterruptibly(AbstractQueuedSynchronizer.java:1281)
+	at java.util.concurrent.CountDownLatch.await(CountDownLatch.java:207)
+	at org.jboss.as.controller.ParallelBootOperationStepHandler$ParallelBootTransactionControl.operationPrepared(ParallelBootOperationStepHandler.java:384)
+	at org.jboss.as.controller.AbstractOperationContext.doCompleteStep(AbstractOperationContext.java:337)
+	at org.jboss.as.controller.AbstractOperationContext.completeStep(AbstractOperationContext.java:211)
+	at org.jboss.as.server.AbstractDeploymentChainStep.execute(AbstractDeploymentChainStep.java:51)
+	at org.jboss.as.controller.AbstractOperationContext.executeStep(AbstractOperationContext.java:397)
+	at org.jboss.as.controller.AbstractOperationContext.doCompleteStep(AbstractOperationContext.java:284)
+	at org.jboss.as.controller.AbstractOperationContext.completeStep(AbstractOperationContext.java:211)
+	at org.jboss.as.server.AbstractDeploymentChainStep.execute(AbstractDeploymentChainStep.java:51)
+	at org.jboss.as.controller.AbstractOperationContext.executeStep(AbstractOperationContext.java:397)
+	at org.jboss.as.controller.AbstractOperationContext.doCompleteStep(AbstractOperationContext.java:284)
+	at org.jboss.as.controller.AbstractOperationContext.completeStep(AbstractOperationContext.java:211)
+	at org.jboss.as.server.AbstractDeploymentChainStep.execute(AbstractDeploymentChainStep.java:51)
+	at org.jboss.as.controller.AbstractOperationContext.executeStep(AbstractOperationContext.java:397)
+	at org.jboss.as.controller.AbstractOperationContext.doCompleteStep(AbstractOperationContext.java:284)
+	at org.jboss.as.controller.AbstractOperationContext.completeStep(AbstractOperationContext.java:211)
+	at org.jboss.as.controller.ParallelBootOperationStepHandler$ParallelBootTask.run(ParallelBootOperationStepHandler.java:312)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+	at java.lang.Thread.run(Thread.java:662)
+	at org.jboss.threads.JBossThread.run(JBossThread.java:122)
+
+   Locked ownable synchronizers:
+	- <0x0000000770682600> (a java.util.concurrent.locks.ReentrantLock$NonfairSync)
+
+"ServerService Thread Pool -- 29" prio=10 tid=0x00000000608b5800 nid=0x6c3e waiting on condition [0x00000000438c4000]
+   java.lang.Thread.State: WAITING (parking)
+	at sun.misc.Unsafe.park(Native Method)
+	- parking to wait for  <0x0000000770681be8> (a java.util.concurrent.CountDownLatch$Sync)
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:156)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer.parkAndCheckInterrupt(AbstractQueuedSynchronizer.java:811)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer.doAcquireSharedInterruptibly(AbstractQueuedSynchronizer.java:969)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer.acquireSharedInterruptibly(AbstractQueuedSynchronizer.java:1281)
+	at java.util.concurrent.CountDownLatch.await(CountDownLatch.java:207)
+	at org.jboss.as.controller.ParallelBootOperationStepHandler$ParallelBootTransactionControl.operationPrepared(ParallelBootOperationStepHandler.java:384)
+	at org.jboss.as.controller.AbstractOperationContext.doCompleteStep(AbstractOperationContext.java:337)
+	at org.jboss.as.controller.AbstractOperationContext.completeStep(AbstractOperationContext.java:211)
+	at org.jboss.as.server.AbstractDeploymentChainStep.execute(AbstractDeploymentChainStep.java:51)
+	at org.jboss.as.controller.AbstractOperationContext.executeStep(AbstractOperationContext.java:397)
+	at org.jboss.as.controller.AbstractOperationContext.doCompleteStep(AbstractOperationContext.java:284)
+	at org.jboss.as.controller.AbstractOperationContext.completeStep(AbstractOperationContext.java:211)
+	at org.jboss.as.controller.ParallelBootOperationStepHandler$ParallelBootTask.run(ParallelBootOperationStepHandler.java:312)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+	at java.lang.Thread.run(Thread.java:662)
+	at org.jboss.threads.JBossThread.run(JBossThread.java:122)
+
+   Locked ownable synchronizers:
+	- <0x00000007706823c0> (a java.util.concurrent.locks.ReentrantLock$NonfairSync)
+
+"ServerService Thread Pool -- 28" prio=10 tid=0x00000000608a6800 nid=0x6c3d waiting on condition [0x00000000437c3000]
+   java.lang.Thread.State: WAITING (parking)
+	at sun.misc.Unsafe.park(Native Method)
+	- parking to wait for  <0x0000000770681be8> (a java.util.concurrent.CountDownLatch$Sync)
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:156)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer.parkAndCheckInterrupt(AbstractQueuedSynchronizer.java:811)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer.doAcquireSharedInterruptibly(AbstractQueuedSynchronizer.java:969)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer.acquireSharedInterruptibly(AbstractQueuedSynchronizer.java:1281)
+	at java.util.concurrent.CountDownLatch.await(CountDownLatch.java:207)
+	at org.jboss.as.controller.ParallelBootOperationStepHandler$ParallelBootTransactionControl.operationPrepared(ParallelBootOperationStepHandler.java:384)
+	at org.jboss.as.controller.AbstractOperationContext.doCompleteStep(AbstractOperationContext.java:337)
+	at org.jboss.as.controller.AbstractOperationContext.completeStep(AbstractOperationContext.java:211)
+	at org.jboss.as.server.deployment.DeploymentHandlerUtil$1.execute(DeploymentHandlerUtil.java:123)
+	at org.jboss.as.controller.AbstractOperationContext.executeStep(AbstractOperationContext.java:397)
+	at org.jboss.as.controller.AbstractOperationContext.doCompleteStep(AbstractOperationContext.java:284)
+	at org.jboss.as.controller.AbstractOperationContext.completeStep(AbstractOperationContext.java:211)
+	at org.jboss.as.server.deployment.DeploymentHandlerUtil$1.execute(DeploymentHandlerUtil.java:123)
+	at org.jboss.as.controller.AbstractOperationContext.executeStep(AbstractOperationContext.java:397)
+	at org.jboss.as.controller.AbstractOperationContext.doCompleteStep(AbstractOperationContext.java:284)
+	at org.jboss.as.controller.AbstractOperationContext.completeStep(AbstractOperationContext.java:211)
+	at org.jboss.as.controller.ParallelBootOperationStepHandler$ParallelBootTask.run(ParallelBootOperationStepHandler.java:312)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+	at java.lang.Thread.run(Thread.java:662)
+	at org.jboss.threads.JBossThread.run(JBossThread.java:122)
+
+   Locked ownable synchronizers:
+	- <0x0000000770682180> (a java.util.concurrent.locks.ReentrantLock$NonfairSync)
+
+"ServerService Thread Pool -- 27" prio=10 tid=0x00000000608a3000 nid=0x6c3c waiting on condition [0x00000000436c2000]
+   java.lang.Thread.State: WAITING (parking)
+	at sun.misc.Unsafe.park(Native Method)
+	- parking to wait for  <0x0000000770681be8> (a java.util.concurrent.CountDownLatch$Sync)
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:156)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer.parkAndCheckInterrupt(AbstractQueuedSynchronizer.java:811)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer.doAcquireSharedInterruptibly(AbstractQueuedSynchronizer.java:969)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer.acquireSharedInterruptibly(AbstractQueuedSynchronizer.java:1281)
+	at java.util.concurrent.CountDownLatch.await(CountDownLatch.java:207)
+	at org.jboss.as.controller.ParallelBootOperationStepHandler$ParallelBootTransactionControl.operationPrepared(ParallelBootOperationStepHandler.java:384)
+	at org.jboss.as.controller.AbstractOperationContext.doCompleteStep(AbstractOperationContext.java:337)
+	at org.jboss.as.controller.AbstractOperationContext.completeStep(AbstractOperationContext.java:211)
+	at org.jboss.as.server.AbstractDeploymentChainStep.execute(AbstractDeploymentChainStep.java:51)
+	at org.jboss.as.controller.AbstractOperationContext.executeStep(AbstractOperationContext.java:397)
+	at org.jboss.as.controller.AbstractOperationContext.doCompleteStep(AbstractOperationContext.java:284)
+	at org.jboss.as.controller.AbstractOperationContext.completeStep(AbstractOperationContext.java:211)
+	at org.jboss.as.connector.subsystems.datasources.DataSourceEnable$1.execute(DataSourceEnable.java:91)
+	at org.jboss.as.controller.AbstractOperationContext.executeStep(AbstractOperationContext.java:397)
+	at org.jboss.as.controller.AbstractOperationContext.doCompleteStep(AbstractOperationContext.java:284)
+	at org.jboss.as.controller.AbstractOperationContext.completeStep(AbstractOperationContext.java:211)
+	at org.jboss.as.connector.subsystems.datasources.DataSourceEnable$1.execute(DataSourceEnable.java:91)
+	at org.jboss.as.controller.AbstractOperationContext.executeStep(AbstractOperationContext.java:397)
+	at org.jboss.as.controller.AbstractOperationContext.doCompleteStep(AbstractOperationContext.java:284)
+	at org.jboss.as.controller.AbstractOperationContext.completeStep(AbstractOperationContext.java:211)
+	at org.jboss.as.controller.ParallelBootOperationStepHandler$ParallelBootTask.run(ParallelBootOperationStepHandler.java:312)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+	at java.lang.Thread.run(Thread.java:662)
+	at org.jboss.threads.JBossThread.run(JBossThread.java:122)
+
+   Locked ownable synchronizers:
+	- <0x0000000770681f40> (a java.util.concurrent.locks.ReentrantLock$NonfairSync)
+
+"ServerService Thread Pool -- 26" prio=10 tid=0x00000000608a2800 nid=0x6c3b waiting on condition [0x00000000435c1000]
+   java.lang.Thread.State: WAITING (parking)
+	at sun.misc.Unsafe.park(Native Method)
+	- parking to wait for  <0x0000000770681be8> (a java.util.concurrent.CountDownLatch$Sync)
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:156)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer.parkAndCheckInterrupt(AbstractQueuedSynchronizer.java:811)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer.doAcquireSharedInterruptibly(AbstractQueuedSynchronizer.java:969)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer.acquireSharedInterruptibly(AbstractQueuedSynchronizer.java:1281)
+	at java.util.concurrent.CountDownLatch.await(CountDownLatch.java:207)
+	at org.jboss.as.controller.ParallelBootOperationStepHandler$ParallelBootTransactionControl.operationPrepared(ParallelBootOperationStepHandler.java:384)
+	at org.jboss.as.controller.AbstractOperationContext.doCompleteStep(AbstractOperationContext.java:337)
+	at org.jboss.as.controller.AbstractOperationContext.completeStep(AbstractOperationContext.java:211)
+	at org.jboss.as.configadmin.parser.ConfigAdminAdd$1.execute(ConfigAdminAdd.java:79)
+	at org.jboss.as.controller.AbstractOperationContext.executeStep(AbstractOperationContext.java:397)
+	at org.jboss.as.controller.AbstractOperationContext.doCompleteStep(AbstractOperationContext.java:284)
+	at org.jboss.as.controller.AbstractOperationContext.completeStep(AbstractOperationContext.java:211)
+	at org.jboss.as.controller.ParallelBootOperationStepHandler$ParallelBootTask.run(ParallelBootOperationStepHandler.java:312)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+	at java.lang.Thread.run(Thread.java:662)
+	at org.jboss.threads.JBossThread.run(JBossThread.java:122)
+
+   Locked ownable synchronizers:
+	- <0x0000000770681d00> (a java.util.concurrent.locks.ReentrantLock$NonfairSync)
+
+"Remoting "app21:MANAGEMENT" write-1" prio=10 tid=0x0000000060855000 nid=0x6c3a runnable [0x00000000434c0000]
+   java.lang.Thread.State: RUNNABLE
+	at sun.nio.ch.EPollArrayWrapper.epollWait(Native Method)
+	at sun.nio.ch.EPollArrayWrapper.poll(EPollArrayWrapper.java:210)
+	at sun.nio.ch.EPollSelectorImpl.doSelect(EPollSelectorImpl.java:65)
+	at sun.nio.ch.SelectorImpl.lockAndDoSelect(SelectorImpl.java:69)
+	- locked <0x0000000770175590> (a sun.nio.ch.Util$2)
+	- locked <0x0000000770175580> (a java.util.Collections$UnmodifiableSet)
+	- locked <0x0000000770175378> (a sun.nio.ch.EPollSelectorImpl)
+	at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:80)
+	at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:84)
+	at org.xnio.nio.WorkerThread.run(WorkerThread.java:153)
+
+   Locked ownable synchronizers:
+	- None
+
+"Remoting "app21:MANAGEMENT" read-1" prio=10 tid=0x0000000060853800 nid=0x6c39 runnable [0x00000000433bf000]
+   java.lang.Thread.State: RUNNABLE
+	at sun.nio.ch.EPollArrayWrapper.epollWait(Native Method)
+	at sun.nio.ch.EPollArrayWrapper.poll(EPollArrayWrapper.java:210)
+	at sun.nio.ch.EPollSelectorImpl.doSelect(EPollSelectorImpl.java:65)
+	at sun.nio.ch.SelectorImpl.lockAndDoSelect(SelectorImpl.java:69)
+	- locked <0x0000000770174fc8> (a sun.nio.ch.Util$2)
+	- locked <0x0000000770174fb8> (a java.util.Collections$UnmodifiableSet)
+	- locked <0x0000000770174db0> (a sun.nio.ch.EPollSelectorImpl)
+	at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:80)
+	at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:84)
+	at org.xnio.nio.WorkerThread.run(WorkerThread.java:153)
+
+   Locked ownable synchronizers:
+	- None
+
+"ServerService Thread Pool -- 25" prio=10 tid=0x00000000607f5800 nid=0x6c38 waiting on condition [0x00000000432be000]
+   java.lang.Thread.State: WAITING (parking)
+	at sun.misc.Unsafe.park(Native Method)
+	- parking to wait for  <0x00000007702c0f90> (a java.util.concurrent.CountDownLatch$Sync)
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:156)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer.parkAndCheckInterrupt(AbstractQueuedSynchronizer.java:811)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer.doAcquireSharedInterruptibly(AbstractQueuedSynchronizer.java:969)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer.acquireSharedInterruptibly(AbstractQueuedSynchronizer.java:1281)
+	at java.util.concurrent.CountDownLatch.await(CountDownLatch.java:207)
+	at org.jboss.as.controller.ParallelBootOperationStepHandler$ParallelBootTransactionControl.operationPrepared(ParallelBootOperationStepHandler.java:384)
+	at org.jboss.as.controller.AbstractOperationContext.doCompleteStep(AbstractOperationContext.java:337)
+	at org.jboss.as.controller.AbstractOperationContext.completeStep(AbstractOperationContext.java:211)
+	at org.jboss.as.controller.AbstractOperationContext.finishStep(AbstractOperationContext.java:463)
+	at org.jboss.as.controller.AbstractOperationContext.executeStep(AbstractOperationContext.java:450)
+	at org.jboss.as.controller.AbstractOperationContext.doCompleteStep(AbstractOperationContext.java:284)
+	at org.jboss.as.controller.AbstractOperationContext.completeStep(AbstractOperationContext.java:211)
+	at org.jboss.as.controller.ParallelBootOperationStepHandler$ParallelBootTask.run(ParallelBootOperationStepHandler.java:312)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+	at java.lang.Thread.run(Thread.java:662)
+	at org.jboss.threads.JBossThread.run(JBossThread.java:122)
+
+   Locked ownable synchronizers:
+	- <0x00000007702c4498> (a java.util.concurrent.locks.ReentrantLock$NonfairSync)
+
+"ServerService Thread Pool -- 24" prio=10 tid=0x00000000607f3800 nid=0x6c37 waiting on condition [0x00000000431bd000]
+   java.lang.Thread.State: WAITING (parking)
+	at sun.misc.Unsafe.park(Native Method)
+	- parking to wait for  <0x00000007702c0f90> (a java.util.concurrent.CountDownLatch$Sync)
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:156)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer.parkAndCheckInterrupt(AbstractQueuedSynchronizer.java:811)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer.doAcquireSharedInterruptibly(AbstractQueuedSynchronizer.java:969)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer.acquireSharedInterruptibly(AbstractQueuedSynchronizer.java:1281)
+	at java.util.concurrent.CountDownLatch.await(CountDownLatch.java:207)
+	at org.jboss.as.controller.ParallelBootOperationStepHandler$ParallelBootTransactionControl.operationPrepared(ParallelBootOperationStepHandler.java:384)
+	at org.jboss.as.controller.AbstractOperationContext.doCompleteStep(AbstractOperationContext.java:337)
+	at org.jboss.as.controller.AbstractOperationContext.completeStep(AbstractOperationContext.java:211)
+	at org.jboss.as.controller.AbstractOperationContext.finishStep(AbstractOperationContext.java:463)
+	at org.jboss.as.controller.AbstractOperationContext.executeStep(AbstractOperationContext.java:450)
+	at org.jboss.as.controller.AbstractOperationContext.doCompleteStep(AbstractOperationContext.java:284)
+	at org.jboss.as.controller.AbstractOperationContext.completeStep(AbstractOperationContext.java:211)
+	at org.jboss.as.controller.ParallelBootOperationStepHandler$ParallelBootTask.run(ParallelBootOperationStepHandler.java:312)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+	at java.lang.Thread.run(Thread.java:662)
+	at org.jboss.threads.JBossThread.run(JBossThread.java:122)
+
+   Locked ownable synchronizers:
+	- <0x00000007702c41e0> (a java.util.concurrent.locks.ReentrantLock$NonfairSync)
+
+"ServerService Thread Pool -- 23" prio=10 tid=0x00000000607f0800 nid=0x6c36 waiting on condition [0x00000000430bc000]
+   java.lang.Thread.State: WAITING (parking)
+	at sun.misc.Unsafe.park(Native Method)
+	- parking to wait for  <0x00000007702c0f90> (a java.util.concurrent.CountDownLatch$Sync)
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:156)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer.parkAndCheckInterrupt(AbstractQueuedSynchronizer.java:811)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer.doAcquireSharedInterruptibly(AbstractQueuedSynchronizer.java:969)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer.acquireSharedInterruptibly(AbstractQueuedSynchronizer.java:1281)
+	at java.util.concurrent.CountDownLatch.await(CountDownLatch.java:207)
+	at org.jboss.as.controller.ParallelBootOperationStepHandler$ParallelBootTransactionControl.operationPrepared(ParallelBootOperationStepHandler.java:384)
+	at org.jboss.as.controller.AbstractOperationContext.doCompleteStep(AbstractOperationContext.java:337)
+	at org.jboss.as.controller.AbstractOperationContext.completeStep(AbstractOperationContext.java:211)
+	at org.jboss.as.controller.AbstractOperationContext.finishStep(AbstractOperationContext.java:463)
+	at org.jboss.as.controller.AbstractOperationContext.executeStep(AbstractOperationContext.java:450)
+	at org.jboss.as.controller.AbstractOperationContext.doCompleteStep(AbstractOperationContext.java:284)
+	at org.jboss.as.controller.AbstractOperationContext.completeStep(AbstractOperationContext.java:211)
+	at org.jboss.as.controller.ParallelBootOperationStepHandler$ParallelBootTask.run(ParallelBootOperationStepHandler.java:312)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+	at java.lang.Thread.run(Thread.java:662)
+	at org.jboss.threads.JBossThread.run(JBossThread.java:122)
+
+   Locked ownable synchronizers:
+	- <0x00000007702c3d08> (a java.util.concurrent.locks.ReentrantLock$NonfairSync)
+
+"ServerService Thread Pool -- 22" prio=10 tid=0x00000000607ee800 nid=0x6c35 waiting on condition [0x0000000042fbb000]
+   java.lang.Thread.State: WAITING (parking)
+	at sun.misc.Unsafe.park(Native Method)
+	- parking to wait for  <0x00000007702c0f90> (a java.util.concurrent.CountDownLatch$Sync)
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:156)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer.parkAndCheckInterrupt(AbstractQueuedSynchronizer.java:811)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer.doAcquireSharedInterruptibly(AbstractQueuedSynchronizer.java:969)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer.acquireSharedInterruptibly(AbstractQueuedSynchronizer.java:1281)
+	at java.util.concurrent.CountDownLatch.await(CountDownLatch.java:207)
+	at org.jboss.as.controller.ParallelBootOperationStepHandler$ParallelBootTransactionControl.operationPrepared(ParallelBootOperationStepHandler.java:384)
+	at org.jboss.as.controller.AbstractOperationContext.doCompleteStep(AbstractOperationContext.java:337)
+	at org.jboss.as.controller.AbstractOperationContext.completeStep(AbstractOperationContext.java:211)
+	at org.jboss.as.txn.subsystem.LogStoreAddHandler.execute(LogStoreAddHandler.java:57)
+	at org.jboss.as.controller.AbstractOperationContext.executeStep(AbstractOperationContext.java:397)
+	at org.jboss.as.controller.AbstractOperationContext.doCompleteStep(AbstractOperationContext.java:284)
+	at org.jboss.as.controller.AbstractOperationContext.completeStep(AbstractOperationContext.java:211)
+	at org.jboss.as.controller.ParallelBootOperationStepHandler$ParallelBootTask.run(ParallelBootOperationStepHandler.java:312)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+	at java.lang.Thread.run(Thread.java:662)
+	at org.jboss.threads.JBossThread.run(JBossThread.java:122)
+
+   Locked ownable synchronizers:
+	- <0x00000007702c3a50> (a java.util.concurrent.locks.ReentrantLock$NonfairSync)
+
+"ServerService Thread Pool -- 21" prio=10 tid=0x00000000607ec000 nid=0x6c34 waiting on condition [0x0000000042eba000]
+   java.lang.Thread.State: WAITING (parking)
+	at sun.misc.Unsafe.park(Native Method)
+	- parking to wait for  <0x00000007702c0f90> (a java.util.concurrent.CountDownLatch$Sync)
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:156)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer.parkAndCheckInterrupt(AbstractQueuedSynchronizer.java:811)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer.doAcquireSharedInterruptibly(AbstractQueuedSynchronizer.java:969)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer.acquireSharedInterruptibly(AbstractQueuedSynchronizer.java:1281)
+	at java.util.concurrent.CountDownLatch.await(CountDownLatch.java:207)
+	at org.jboss.as.controller.ParallelBootOperationStepHandler$ParallelBootTransactionControl.operationPrepared(ParallelBootOperationStepHandler.java:384)
+	at org.jboss.as.controller.AbstractOperationContext.doCompleteStep(AbstractOperationContext.java:337)
+	at org.jboss.as.controller.AbstractOperationContext.completeStep(AbstractOperationContext.java:211)
+	at org.jboss.as.controller.AbstractOperationContext.finishStep(AbstractOperationContext.java:463)
+	at org.jboss.as.controller.AbstractOperationContext.executeStep(AbstractOperationContext.java:450)
+	at org.jboss.as.controller.AbstractOperationContext.doCompleteStep(AbstractOperationContext.java:284)
+	at org.jboss.as.controller.AbstractOperationContext.completeStep(AbstractOperationContext.java:211)
+	at org.jboss.as.controller.ParallelBootOperationStepHandler$ParallelBootTask.run(ParallelBootOperationStepHandler.java:312)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+	at java.lang.Thread.run(Thread.java:662)
+	at org.jboss.threads.JBossThread.run(JBossThread.java:122)
+
+   Locked ownable synchronizers:
+	- <0x00000007702c3798> (a java.util.concurrent.locks.ReentrantLock$NonfairSync)
+
+"ServerService Thread Pool -- 20" prio=10 tid=0x00000000607e9800 nid=0x6c33 waiting on condition [0x0000000042db9000]
+   java.lang.Thread.State: WAITING (parking)
+	at sun.misc.Unsafe.park(Native Method)
+	- parking to wait for  <0x00000007702c0f90> (a java.util.concurrent.CountDownLatch$Sync)
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:156)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer.parkAndCheckInterrupt(AbstractQueuedSynchronizer.java:811)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer.doAcquireSharedInterruptibly(AbstractQueuedSynchronizer.java:969)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer.acquireSharedInterruptibly(AbstractQueuedSynchronizer.java:1281)
+	at java.util.concurrent.CountDownLatch.await(CountDownLatch.java:207)
+	at org.jboss.as.controller.ParallelBootOperationStepHandler$ParallelBootTransactionControl.operationPrepared(ParallelBootOperationStepHandler.java:384)
+	at org.jboss.as.controller.AbstractOperationContext.doCompleteStep(AbstractOperationContext.java:337)
+	at org.jboss.as.controller.AbstractOperationContext.completeStep(AbstractOperationContext.java:211)
+	at org.jboss.as.controller.AbstractOperationContext.finishStep(AbstractOperationContext.java:463)
+	at org.jboss.as.controller.AbstractOperationContext.executeStep(AbstractOperationContext.java:450)
+	at org.jboss.as.controller.AbstractOperationContext.doCompleteStep(AbstractOperationContext.java:284)
+	at org.jboss.as.controller.AbstractOperationContext.completeStep(AbstractOperationContext.java:211)
+	at org.jboss.as.controller.ParallelBootOperationStepHandler$ParallelBootTask.run(ParallelBootOperationStepHandler.java:312)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+	at java.lang.Thread.run(Thread.java:662)
+	at org.jboss.threads.JBossThread.run(JBossThread.java:122)
+
+   Locked ownable synchronizers:
+	- <0x00000007702c34e0> (a java.util.concurrent.locks.ReentrantLock$NonfairSync)
+
+"ServerService Thread Pool -- 19" prio=10 tid=0x00000000607e7000 nid=0x6c32 waiting on condition [0x0000000042cb8000]
+   java.lang.Thread.State: WAITING (parking)
+	at sun.misc.Unsafe.park(Native Method)
+	- parking to wait for  <0x00000007702c0f90> (a java.util.concurrent.CountDownLatch$Sync)
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:156)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer.parkAndCheckInterrupt(AbstractQueuedSynchronizer.java:811)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer.doAcquireSharedInterruptibly(AbstractQueuedSynchronizer.java:969)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer.acquireSharedInterruptibly(AbstractQueuedSynchronizer.java:1281)
+	at java.util.concurrent.CountDownLatch.await(CountDownLatch.java:207)
+	at org.jboss.as.controller.ParallelBootOperationStepHandler$ParallelBootTransactionControl.operationPrepared(ParallelBootOperationStepHandler.java:384)
+	at org.jboss.as.controller.AbstractOperationContext.doCompleteStep(AbstractOperationContext.java:337)
+	at org.jboss.as.controller.AbstractOperationContext.completeStep(AbstractOperationContext.java:211)
+	at org.jboss.as.controller.AbstractOperationContext.finishStep(AbstractOperationContext.java:463)
+	at org.jboss.as.controller.AbstractOperationContext.executeStep(AbstractOperationContext.java:450)
+	at org.jboss.as.controller.AbstractOperationContext.doCompleteStep(AbstractOperationContext.java:284)
+	at org.jboss.as.controller.AbstractOperationContext.completeStep(AbstractOperationContext.java:211)
+	at org.jboss.as.controller.ParallelBootOperationStepHandler$ParallelBootTask.run(ParallelBootOperationStepHandler.java:312)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+	at java.lang.Thread.run(Thread.java:662)
+	at org.jboss.threads.JBossThread.run(JBossThread.java:122)
+
+   Locked ownable synchronizers:
+	- <0x00000007702c3228> (a java.util.concurrent.locks.ReentrantLock$NonfairSync)
+
+"ServerService Thread Pool -- 18" prio=10 tid=0x00000000607e4800 nid=0x6c31 waiting on condition [0x0000000042bb7000]
+   java.lang.Thread.State: WAITING (parking)
+	at sun.misc.Unsafe.park(Native Method)
+	- parking to wait for  <0x00000007702c0f90> (a java.util.concurrent.CountDownLatch$Sync)
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:156)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer.parkAndCheckInterrupt(AbstractQueuedSynchronizer.java:811)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer.doAcquireSharedInterruptibly(AbstractQueuedSynchronizer.java:969)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer.acquireSharedInterruptibly(AbstractQueuedSynchronizer.java:1281)
+	at java.util.concurrent.CountDownLatch.await(CountDownLatch.java:207)
+	at org.jboss.as.controller.ParallelBootOperationStepHandler$ParallelBootTransactionControl.operationPrepared(ParallelBootOperationStepHandler.java:384)
+	at org.jboss.as.controller.AbstractOperationContext.doCompleteStep(AbstractOperationContext.java:337)
+	at org.jboss.as.controller.AbstractOperationContext.completeStep(AbstractOperationContext.java:211)
+	at org.jboss.as.controller.AbstractOperationContext.finishStep(AbstractOperationContext.java:463)
+	at org.jboss.as.controller.AbstractOperationContext.executeStep(AbstractOperationContext.java:450)
+	at org.jboss.as.controller.AbstractOperationContext.doCompleteStep(AbstractOperationContext.java:284)
+	at org.jboss.as.controller.AbstractOperationContext.completeStep(AbstractOperationContext.java:211)
+	at org.jboss.as.controller.ParallelBootOperationStepHandler$ParallelBootTask.run(ParallelBootOperationStepHandler.java:312)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+	at java.lang.Thread.run(Thread.java:662)
+	at org.jboss.threads.JBossThread.run(JBossThread.java:122)
+
+   Locked ownable synchronizers:
+	- <0x00000007702c2f70> (a java.util.concurrent.locks.ReentrantLock$NonfairSync)
+
+"ServerService Thread Pool -- 17" prio=10 tid=0x00000000607e2000 nid=0x6c30 waiting on condition [0x0000000042ab6000]
+   java.lang.Thread.State: WAITING (parking)
+	at sun.misc.Unsafe.park(Native Method)
+	- parking to wait for  <0x00000007702c0f90> (a java.util.concurrent.CountDownLatch$Sync)
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:156)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer.parkAndCheckInterrupt(AbstractQueuedSynchronizer.java:811)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer.doAcquireSharedInterruptibly(AbstractQueuedSynchronizer.java:969)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer.acquireSharedInterruptibly(AbstractQueuedSynchronizer.java:1281)
+	at java.util.concurrent.CountDownLatch.await(CountDownLatch.java:207)
+	at org.jboss.as.controller.ParallelBootOperationStepHandler$ParallelBootTransactionControl.operationPrepared(ParallelBootOperationStepHandler.java:384)
+	at org.jboss.as.controller.AbstractOperationContext.doCompleteStep(AbstractOperationContext.java:337)
+	at org.jboss.as.controller.AbstractOperationContext.completeStep(AbstractOperationContext.java:211)
+	at org.jboss.as.controller.AbstractOperationContext.finishStep(AbstractOperationContext.java:463)
+	at org.jboss.as.controller.AbstractOperationContext.executeStep(AbstractOperationContext.java:450)
+	at org.jboss.as.controller.AbstractOperationContext.doCompleteStep(AbstractOperationContext.java:284)
+	at org.jboss.as.controller.AbstractOperationContext.completeStep(AbstractOperationContext.java:211)
+	at org.jboss.as.controller.ParallelBootOperationStepHandler$ParallelBootTask.run(ParallelBootOperationStepHandler.java:312)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+	at java.lang.Thread.run(Thread.java:662)
+	at org.jboss.threads.JBossThread.run(JBossThread.java:122)
+
+   Locked ownable synchronizers:
+	- <0x00000007702c2cb8> (a java.util.concurrent.locks.ReentrantLock$NonfairSync)
+
+"ServerService Thread Pool -- 16" prio=10 tid=0x00000000607df800 nid=0x6c2f waiting on condition [0x00000000429b5000]
+   java.lang.Thread.State: WAITING (parking)
+	at sun.misc.Unsafe.park(Native Method)
+	- parking to wait for  <0x00000007702c0f90> (a java.util.concurrent.CountDownLatch$Sync)
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:156)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer.parkAndCheckInterrupt(AbstractQueuedSynchronizer.java:811)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer.doAcquireSharedInterruptibly(AbstractQueuedSynchronizer.java:969)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer.acquireSharedInterruptibly(AbstractQueuedSynchronizer.java:1281)
+	at java.util.concurrent.CountDownLatch.await(CountDownLatch.java:207)
+	at org.jboss.as.controller.ParallelBootOperationStepHandler$ParallelBootTransactionControl.operationPrepared(ParallelBootOperationStepHandler.java:384)
+	at org.jboss.as.controller.AbstractOperationContext.doCompleteStep(AbstractOperationContext.java:337)
+	at org.jboss.as.controller.AbstractOperationContext.completeStep(AbstractOperationContext.java:211)
+	at org.jboss.as.controller.AbstractOperationContext.finishStep(AbstractOperationContext.java:463)
+	at org.jboss.as.controller.AbstractOperationContext.executeStep(AbstractOperationContext.java:450)
+	at org.jboss.as.controller.AbstractOperationContext.doCompleteStep(AbstractOperationContext.java:284)
+	at org.jboss.as.controller.AbstractOperationContext.completeStep(AbstractOperationContext.java:211)
+	at org.jboss.as.controller.ParallelBootOperationStepHandler$ParallelBootTask.run(ParallelBootOperationStepHandler.java:312)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+	at java.lang.Thread.run(Thread.java:662)
+	at org.jboss.threads.JBossThread.run(JBossThread.java:122)
+
+   Locked ownable synchronizers:
+	- <0x00000007702c2a00> (a java.util.concurrent.locks.ReentrantLock$NonfairSync)
+
+"ServerService Thread Pool -- 15" prio=10 tid=0x00000000607dd000 nid=0x6c2e waiting on condition [0x00000000428b4000]
+   java.lang.Thread.State: WAITING (parking)
+	at sun.misc.Unsafe.park(Native Method)
+	- parking to wait for  <0x00000007702c0f90> (a java.util.concurrent.CountDownLatch$Sync)
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:156)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer.parkAndCheckInterrupt(AbstractQueuedSynchronizer.java:811)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer.doAcquireSharedInterruptibly(AbstractQueuedSynchronizer.java:969)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer.acquireSharedInterruptibly(AbstractQueuedSynchronizer.java:1281)
+	at java.util.concurrent.CountDownLatch.await(CountDownLatch.java:207)
+	at org.jboss.as.controller.ParallelBootOperationStepHandler$ParallelBootTransactionControl.operationPrepared(ParallelBootOperationStepHandler.java:384)
+	at org.jboss.as.controller.AbstractOperationContext.doCompleteStep(AbstractOperationContext.java:337)
+	at org.jboss.as.controller.AbstractOperationContext.completeStep(AbstractOperationContext.java:211)
+	at org.jboss.as.controller.AbstractOperationContext.finishStep(AbstractOperationContext.java:463)
+	at org.jboss.as.controller.AbstractOperationContext.executeStep(AbstractOperationContext.java:450)
+	at org.jboss.as.controller.AbstractOperationContext.doCompleteStep(AbstractOperationContext.java:284)
+	at org.jboss.as.controller.AbstractOperationContext.completeStep(AbstractOperationContext.java:211)
+	at org.jboss.as.controller.ParallelBootOperationStepHandler$ParallelBootTask.run(ParallelBootOperationStepHandler.java:312)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+	at java.lang.Thread.run(Thread.java:662)
+	at org.jboss.threads.JBossThread.run(JBossThread.java:122)
+
+   Locked ownable synchronizers:
+	- <0x00000007702c2748> (a java.util.concurrent.locks.ReentrantLock$NonfairSync)
+
+"ServerService Thread Pool -- 14" prio=10 tid=0x00000000607db800 nid=0x6c2d waiting on condition [0x00000000427b3000]
+   java.lang.Thread.State: WAITING (parking)
+	at sun.misc.Unsafe.park(Native Method)
+	- parking to wait for  <0x00000007702c0f90> (a java.util.concurrent.CountDownLatch$Sync)
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:156)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer.parkAndCheckInterrupt(AbstractQueuedSynchronizer.java:811)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer.doAcquireSharedInterruptibly(AbstractQueuedSynchronizer.java:969)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer.acquireSharedInterruptibly(AbstractQueuedSynchronizer.java:1281)
+	at java.util.concurrent.CountDownLatch.await(CountDownLatch.java:207)
+	at org.jboss.as.controller.ParallelBootOperationStepHandler$ParallelBootTransactionControl.operationPrepared(ParallelBootOperationStepHandler.java:384)
+	at org.jboss.as.controller.AbstractOperationContext.doCompleteStep(AbstractOperationContext.java:337)
+	at org.jboss.as.controller.AbstractOperationContext.completeStep(AbstractOperationContext.java:211)
+	at org.jboss.as.controller.AbstractOperationContext.finishStep(AbstractOperationContext.java:463)
+	at org.jboss.as.controller.AbstractOperationContext.executeStep(AbstractOperationContext.java:450)
+	at org.jboss.as.controller.AbstractOperationContext.doCompleteStep(AbstractOperationContext.java:284)
+	at org.jboss.as.controller.AbstractOperationContext.completeStep(AbstractOperationContext.java:211)
+	at org.jboss.as.controller.ParallelBootOperationStepHandler$ParallelBootTask.run(ParallelBootOperationStepHandler.java:312)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+	at java.lang.Thread.run(Thread.java:662)
+	at org.jboss.threads.JBossThread.run(JBossThread.java:122)
+
+   Locked ownable synchronizers:
+	- <0x00000007702c2490> (a java.util.concurrent.locks.ReentrantLock$NonfairSync)
+
+"DeploymentScanner-threads - 2" prio=10 tid=0x00000000607d9000 nid=0x6c2c waiting on condition [0x0000000041bd0000]
+   java.lang.Thread.State: WAITING (parking)
+	at sun.misc.Unsafe.park(Native Method)
+	- parking to wait for  <0x00000007704af690> (a java.util.concurrent.CountDownLatch$Sync)
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:156)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer.parkAndCheckInterrupt(AbstractQueuedSynchronizer.java:811)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer.doAcquireSharedInterruptibly(AbstractQueuedSynchronizer.java:969)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer.acquireSharedInterruptibly(AbstractQueuedSynchronizer.java:1281)
+	at java.util.concurrent.CountDownLatch.await(CountDownLatch.java:207)
+	at org.jboss.as.server.deployment.scanner.DeploymentScannerAdd$BootTimeScannerDeployment$1.call(DeploymentScannerAdd.java:270)
+	at org.jboss.as.server.deployment.scanner.DeploymentScannerAdd$BootTimeScannerDeployment$1.call(DeploymentScannerAdd.java:267)
+	at java.util.concurrent.FutureTask$Sync.innerRun(FutureTask.java:303)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:138)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:441)
+	at java.util.concurrent.FutureTask$Sync.innerRun(FutureTask.java:303)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:138)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:98)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:206)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+	at java.lang.Thread.run(Thread.java:662)
+	at org.jboss.threads.JBossThread.run(JBossThread.java:122)
+
+   Locked ownable synchronizers:
+	- <0x0000000770662578> (a java.util.concurrent.locks.ReentrantLock$NonfairSync)
+
+"ServerService Thread Pool -- 13" prio=10 tid=0x00000000607cf000 nid=0x6c2b waiting on condition [0x00000000426b2000]
+   java.lang.Thread.State: WAITING (parking)
+	at sun.misc.Unsafe.park(Native Method)
+	- parking to wait for  <0x00000007702c0f90> (a java.util.concurrent.CountDownLatch$Sync)
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:156)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer.parkAndCheckInterrupt(AbstractQueuedSynchronizer.java:811)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer.doAcquireSharedInterruptibly(AbstractQueuedSynchronizer.java:969)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer.acquireSharedInterruptibly(AbstractQueuedSynchronizer.java:1281)
+	at java.util.concurrent.CountDownLatch.await(CountDownLatch.java:207)
+	at org.jboss.as.controller.ParallelBootOperationStepHandler$ParallelBootTransactionControl.operationPrepared(ParallelBootOperationStepHandler.java:384)
+	at org.jboss.as.controller.AbstractOperationContext.doCompleteStep(AbstractOperationContext.java:337)
+	at org.jboss.as.controller.AbstractOperationContext.completeStep(AbstractOperationContext.java:211)
+	at org.jboss.as.controller.AbstractOperationContext.finishStep(AbstractOperationContext.java:463)
+	at org.jboss.as.controller.AbstractOperationContext.executeStep(AbstractOperationContext.java:450)
+	at org.jboss.as.controller.AbstractOperationContext.doCompleteStep(AbstractOperationContext.java:284)
+	at org.jboss.as.controller.AbstractOperationContext.completeStep(AbstractOperationContext.java:211)
+	at org.jboss.as.controller.ParallelBootOperationStepHandler$ParallelBootTask.run(ParallelBootOperationStepHandler.java:312)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+	at java.lang.Thread.run(Thread.java:662)
+	at org.jboss.threads.JBossThread.run(JBossThread.java:122)
+
+   Locked ownable synchronizers:
+	- <0x00000007702c21d8> (a java.util.concurrent.locks.ReentrantLock$NonfairSync)
+
+"ServerService Thread Pool -- 12" prio=10 tid=0x00000000607cd000 nid=0x6c2a waiting on condition [0x00000000425b1000]
+   java.lang.Thread.State: WAITING (parking)
+	at sun.misc.Unsafe.park(Native Method)
+	- parking to wait for  <0x00000007702c0f90> (a java.util.concurrent.CountDownLatch$Sync)
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:156)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer.parkAndCheckInterrupt(AbstractQueuedSynchronizer.java:811)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer.doAcquireSharedInterruptibly(AbstractQueuedSynchronizer.java:969)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer.acquireSharedInterruptibly(AbstractQueuedSynchronizer.java:1281)
+	at java.util.concurrent.CountDownLatch.await(CountDownLatch.java:207)
+	at org.jboss.as.controller.ParallelBootOperationStepHandler$ParallelBootTransactionControl.operationPrepared(ParallelBootOperationStepHandler.java:384)
+	at org.jboss.as.controller.AbstractOperationContext.doCompleteStep(AbstractOperationContext.java:337)
+	at org.jboss.as.controller.AbstractOperationContext.completeStep(AbstractOperationContext.java:211)
+	at org.jboss.as.controller.AbstractOperationContext.finishStep(AbstractOperationContext.java:463)
+	at org.jboss.as.controller.AbstractOperationContext.executeStep(AbstractOperationContext.java:450)
+	at org.jboss.as.controller.AbstractOperationContext.doCompleteStep(AbstractOperationContext.java:284)
+	at org.jboss.as.controller.AbstractOperationContext.completeStep(AbstractOperationContext.java:211)
+	at org.jboss.as.controller.ParallelBootOperationStepHandler$ParallelBootTask.run(ParallelBootOperationStepHandler.java:312)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+	at java.lang.Thread.run(Thread.java:662)
+	at org.jboss.threads.JBossThread.run(JBossThread.java:122)
+
+   Locked ownable synchronizers:
+	- <0x00000007702c1f20> (a java.util.concurrent.locks.ReentrantLock$NonfairSync)
+
+"ServerService Thread Pool -- 11" prio=10 tid=0x00000000607cb800 nid=0x6c29 waiting on condition [0x00000000424b0000]
+   java.lang.Thread.State: WAITING (parking)
+	at sun.misc.Unsafe.park(Native Method)
+	- parking to wait for  <0x00000007702c0f90> (a java.util.concurrent.CountDownLatch$Sync)
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:156)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer.parkAndCheckInterrupt(AbstractQueuedSynchronizer.java:811)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer.doAcquireSharedInterruptibly(AbstractQueuedSynchronizer.java:969)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer.acquireSharedInterruptibly(AbstractQueuedSynchronizer.java:1281)
+	at java.util.concurrent.CountDownLatch.await(CountDownLatch.java:207)
+	at org.jboss.as.controller.ParallelBootOperationStepHandler$ParallelBootTransactionControl.operationPrepared(ParallelBootOperationStepHandler.java:384)
+	at org.jboss.as.controller.AbstractOperationContext.doCompleteStep(AbstractOperationContext.java:337)
+	at org.jboss.as.controller.AbstractOperationContext.completeStep(AbstractOperationContext.java:211)
+	at org.jboss.as.controller.AbstractOperationContext.finishStep(AbstractOperationContext.java:463)
+	at org.jboss.as.controller.AbstractOperationContext.executeStep(AbstractOperationContext.java:450)
+	at org.jboss.as.controller.AbstractOperationContext.doCompleteStep(AbstractOperationContext.java:284)
+	at org.jboss.as.controller.AbstractOperationContext.completeStep(AbstractOperationContext.java:211)
+	at org.jboss.as.controller.ParallelBootOperationStepHandler$ParallelBootTask.run(ParallelBootOperationStepHandler.java:312)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+	at java.lang.Thread.run(Thread.java:662)
+	at org.jboss.threads.JBossThread.run(JBossThread.java:122)
+
+   Locked ownable synchronizers:
+	- <0x00000007702c1c68> (a java.util.concurrent.locks.ReentrantLock$NonfairSync)
+
+"ServerService Thread Pool -- 10" prio=10 tid=0x00000000607a3800 nid=0x6c28 waiting on condition [0x0000000041d17000]
+   java.lang.Thread.State: WAITING (parking)
+	at sun.misc.Unsafe.park(Native Method)
+	- parking to wait for  <0x00000007702c0f90> (a java.util.concurrent.CountDownLatch$Sync)
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:156)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer.parkAndCheckInterrupt(AbstractQueuedSynchronizer.java:811)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer.doAcquireSharedInterruptibly(AbstractQueuedSynchronizer.java:969)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer.acquireSharedInterruptibly(AbstractQueuedSynchronizer.java:1281)
+	at java.util.concurrent.CountDownLatch.await(CountDownLatch.java:207)
+	at org.jboss.as.controller.ParallelBootOperationStepHandler$ParallelBootTransactionControl.operationPrepared(ParallelBootOperationStepHandler.java:384)
+	at org.jboss.as.controller.AbstractOperationContext.doCompleteStep(AbstractOperationContext.java:337)
+	at org.jboss.as.controller.AbstractOperationContext.completeStep(AbstractOperationContext.java:211)
+	at org.jboss.as.controller.AbstractOperationContext.finishStep(AbstractOperationContext.java:463)
+	at org.jboss.as.controller.AbstractOperationContext.executeStep(AbstractOperationContext.java:450)
+	at org.jboss.as.controller.AbstractOperationContext.doCompleteStep(AbstractOperationContext.java:284)
+	at org.jboss.as.controller.AbstractOperationContext.completeStep(AbstractOperationContext.java:211)
+	at org.jboss.as.controller.ParallelBootOperationStepHandler$ParallelBootTask.run(ParallelBootOperationStepHandler.java:312)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+	at java.lang.Thread.run(Thread.java:662)
+	at org.jboss.threads.JBossThread.run(JBossThread.java:122)
+
+   Locked ownable synchronizers:
+	- <0x00000007702c19b0> (a java.util.concurrent.locks.ReentrantLock$NonfairSync)
+
+"DeploymentScanner-threads - 1" prio=10 tid=0x00000000607c8800 nid=0x6c27 waiting on condition [0x0000000041540000]
+   java.lang.Thread.State: TIMED_WAITING (parking)
+	at sun.misc.Unsafe.park(Native Method)
+	- parking to wait for  <0x0000000770662498> (a java.util.concurrent.FutureTask$Sync)
+	at java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:196)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer.doAcquireSharedNanos(AbstractQueuedSynchronizer.java:1011)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer.tryAcquireSharedNanos(AbstractQueuedSynchronizer.java:1303)
+	at java.util.concurrent.FutureTask$Sync.innerGet(FutureTask.java:227)
+	at java.util.concurrent.FutureTask.get(FutureTask.java:91)
+	at org.jboss.as.server.deployment.scanner.FileSystemDeploymentService.scan(FileSystemDeploymentService.java:433)
+	at org.jboss.as.server.deployment.scanner.FileSystemDeploymentService.oneOffScan(FileSystemDeploymentService.java:333)
+	at org.jboss.as.server.deployment.scanner.DeploymentScannerAdd$2.run(DeploymentScannerAdd.java:160)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:441)
+	at java.util.concurrent.FutureTask$Sync.innerRun(FutureTask.java:303)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:138)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:98)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:206)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+	at java.lang.Thread.run(Thread.java:662)
+	at org.jboss.threads.JBossThread.run(JBossThread.java:122)
+
+   Locked ownable synchronizers:
+	- <0x00000007704aef30> (a java.util.concurrent.locks.ReentrantLock$NonfairSync)
+	- <0x00000007704af7a0> (a java.util.concurrent.locks.ReentrantLock$NonfairSync)
+
+"ServerService Thread Pool -- 9" prio=10 tid=0x000000006046e000 nid=0x6c26 waiting on condition [0x0000000040a81000]
+   java.lang.Thread.State: WAITING (parking)
+	at sun.misc.Unsafe.park(Native Method)
+	- parking to wait for  <0x00000007702c0f90> (a java.util.concurrent.CountDownLatch$Sync)
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:156)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer.parkAndCheckInterrupt(AbstractQueuedSynchronizer.java:811)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer.doAcquireSharedInterruptibly(AbstractQueuedSynchronizer.java:969)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer.acquireSharedInterruptibly(AbstractQueuedSynchronizer.java:1281)
+	at java.util.concurrent.CountDownLatch.await(CountDownLatch.java:207)
+	at org.jboss.as.controller.ParallelBootOperationStepHandler$ParallelBootTransactionControl.operationPrepared(ParallelBootOperationStepHandler.java:384)
+	at org.jboss.as.controller.AbstractOperationContext.doCompleteStep(AbstractOperationContext.java:337)
+	at org.jboss.as.controller.AbstractOperationContext.completeStep(AbstractOperationContext.java:211)
+	at org.jboss.as.controller.AbstractOperationContext.finishStep(AbstractOperationContext.java:463)
+	at org.jboss.as.controller.AbstractOperationContext.executeStep(AbstractOperationContext.java:450)
+	at org.jboss.as.controller.AbstractOperationContext.doCompleteStep(AbstractOperationContext.java:284)
+	at org.jboss.as.controller.AbstractOperationContext.completeStep(AbstractOperationContext.java:211)
+	at org.jboss.as.controller.ParallelBootOperationStepHandler$ParallelBootTask.run(ParallelBootOperationStepHandler.java:312)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+	at java.lang.Thread.run(Thread.java:662)
+	at org.jboss.threads.JBossThread.run(JBossThread.java:122)
+
+   Locked ownable synchronizers:
+	- <0x00000007702199d0> (a java.util.concurrent.locks.ReentrantLock$NonfairSync)
+
+"ServerService Thread Pool -- 8" prio=10 tid=0x000000006017f000 nid=0x6c25 waiting on condition [0x000000004040b000]
+   java.lang.Thread.State: WAITING (parking)
+	at sun.misc.Unsafe.park(Native Method)
+	- parking to wait for  <0x00000007702c0f90> (a java.util.concurrent.CountDownLatch$Sync)
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:156)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer.parkAndCheckInterrupt(AbstractQueuedSynchronizer.java:811)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer.doAcquireSharedInterruptibly(AbstractQueuedSynchronizer.java:969)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer.acquireSharedInterruptibly(AbstractQueuedSynchronizer.java:1281)
+	at java.util.concurrent.CountDownLatch.await(CountDownLatch.java:207)
+	at org.jboss.as.controller.ParallelBootOperationStepHandler$ParallelBootTransactionControl.operationPrepared(ParallelBootOperationStepHandler.java:384)
+	at org.jboss.as.controller.AbstractOperationContext.doCompleteStep(AbstractOperationContext.java:337)
+	at org.jboss.as.controller.AbstractOperationContext.completeStep(AbstractOperationContext.java:211)
+	at org.jboss.as.controller.AbstractOperationContext.finishStep(AbstractOperationContext.java:463)
+	at org.jboss.as.controller.AbstractOperationContext.executeStep(AbstractOperationContext.java:450)
+	at org.jboss.as.controller.AbstractOperationContext.doCompleteStep(AbstractOperationContext.java:284)
+	at org.jboss.as.controller.AbstractOperationContext.completeStep(AbstractOperationContext.java:211)
+	at org.jboss.as.controller.ParallelBootOperationStepHandler$ParallelBootTask.run(ParallelBootOperationStepHandler.java:312)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+	at java.lang.Thread.run(Thread.java:662)
+	at org.jboss.threads.JBossThread.run(JBossThread.java:122)
+
+   Locked ownable synchronizers:
+	- <0x00000007702196a0> (a java.util.concurrent.locks.ReentrantLock$NonfairSync)
+
+"ServerService Thread Pool -- 7" prio=10 tid=0x000000005f65c000 nid=0x6c24 waiting on condition [0x00000000412c4000]
+   java.lang.Thread.State: WAITING (parking)
+	at sun.misc.Unsafe.park(Native Method)
+	- parking to wait for  <0x00000007702c0f90> (a java.util.concurrent.CountDownLatch$Sync)
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:156)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer.parkAndCheckInterrupt(AbstractQueuedSynchronizer.java:811)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer.doAcquireSharedInterruptibly(AbstractQueuedSynchronizer.java:969)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer.acquireSharedInterruptibly(AbstractQueuedSynchronizer.java:1281)
+	at java.util.concurrent.CountDownLatch.await(CountDownLatch.java:207)
+	at org.jboss.as.controller.ParallelBootOperationStepHandler$ParallelBootTransactionControl.operationPrepared(ParallelBootOperationStepHandler.java:384)
+	at org.jboss.as.controller.AbstractOperationContext.doCompleteStep(AbstractOperationContext.java:337)
+	at org.jboss.as.controller.AbstractOperationContext.completeStep(AbstractOperationContext.java:211)
+	at org.jboss.as.controller.AbstractOperationContext.finishStep(AbstractOperationContext.java:463)
+	at org.jboss.as.controller.AbstractOperationContext.executeStep(AbstractOperationContext.java:450)
+	at org.jboss.as.controller.AbstractOperationContext.doCompleteStep(AbstractOperationContext.java:284)
+	at org.jboss.as.controller.AbstractOperationContext.completeStep(AbstractOperationContext.java:211)
+	at org.jboss.as.connector.subsystems.datasources.DataSourceEnable.execute(DataSourceEnable.java:95)
+	at org.jboss.as.controller.AbstractOperationContext.executeStep(AbstractOperationContext.java:397)
+	at org.jboss.as.controller.AbstractOperationContext.doCompleteStep(AbstractOperationContext.java:284)
+	at org.jboss.as.controller.AbstractOperationContext.completeStep(AbstractOperationContext.java:211)
+	at org.jboss.as.connector.subsystems.datasources.DataSourceEnable.execute(DataSourceEnable.java:95)
+	at org.jboss.as.controller.AbstractOperationContext.executeStep(AbstractOperationContext.java:397)
+	at org.jboss.as.controller.AbstractOperationContext.doCompleteStep(AbstractOperationContext.java:284)
+	at org.jboss.as.controller.AbstractOperationContext.completeStep(AbstractOperationContext.java:211)
+	at org.jboss.as.controller.ParallelBootOperationStepHandler$ParallelBootTask.run(ParallelBootOperationStepHandler.java:312)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+	at java.lang.Thread.run(Thread.java:662)
+	at org.jboss.threads.JBossThread.run(JBossThread.java:122)
+
+   Locked ownable synchronizers:
+	- <0x00000007702192c8> (a java.util.concurrent.locks.ReentrantLock$NonfairSync)
+
+"ServerService Thread Pool -- 6" prio=10 tid=0x000000005fe7a000 nid=0x6c23 waiting on condition [0x0000000041acf000]
+   java.lang.Thread.State: WAITING (parking)
+	at sun.misc.Unsafe.park(Native Method)
+	- parking to wait for  <0x00000007702c0f90> (a java.util.concurrent.CountDownLatch$Sync)
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:156)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer.parkAndCheckInterrupt(AbstractQueuedSynchronizer.java:811)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer.doAcquireSharedInterruptibly(AbstractQueuedSynchronizer.java:969)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer.acquireSharedInterruptibly(AbstractQueuedSynchronizer.java:1281)
+	at java.util.concurrent.CountDownLatch.await(CountDownLatch.java:207)
+	at org.jboss.as.controller.ParallelBootOperationStepHandler$ParallelBootTransactionControl.operationPrepared(ParallelBootOperationStepHandler.java:384)
+	at org.jboss.as.controller.AbstractOperationContext.doCompleteStep(AbstractOperationContext.java:337)
+	at org.jboss.as.controller.AbstractOperationContext.completeStep(AbstractOperationContext.java:211)
+	at org.jboss.as.controller.AbstractOperationContext.finishStep(AbstractOperationContext.java:463)
+	at org.jboss.as.controller.AbstractOperationContext.executeStep(AbstractOperationContext.java:450)
+	at org.jboss.as.controller.AbstractOperationContext.doCompleteStep(AbstractOperationContext.java:284)
+	at org.jboss.as.controller.AbstractOperationContext.completeStep(AbstractOperationContext.java:211)
+	at org.jboss.as.controller.ParallelBootOperationStepHandler$ParallelBootTask.run(ParallelBootOperationStepHandler.java:312)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+	at java.lang.Thread.run(Thread.java:662)
+	at org.jboss.threads.JBossThread.run(JBossThread.java:122)
+
+   Locked ownable synchronizers:
+	- <0x0000000770218fc0> (a java.util.concurrent.locks.ReentrantLock$NonfairSync)
+
+"ServerService Thread Pool -- 5" prio=10 tid=0x000000005fe71800 nid=0x6c22 waiting on condition [0x0000000040cbb000]
+   java.lang.Thread.State: WAITING (parking)
+	at sun.misc.Unsafe.park(Native Method)
+	- parking to wait for  <0x00000007702c0f90> (a java.util.concurrent.CountDownLatch$Sync)
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:156)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer.parkAndCheckInterrupt(AbstractQueuedSynchronizer.java:811)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer.doAcquireSharedInterruptibly(AbstractQueuedSynchronizer.java:969)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer.acquireSharedInterruptibly(AbstractQueuedSynchronizer.java:1281)
+	at java.util.concurrent.CountDownLatch.await(CountDownLatch.java:207)
+	at org.jboss.as.controller.ParallelBootOperationStepHandler$ParallelBootTransactionControl.operationPrepared(ParallelBootOperationStepHandler.java:384)
+	at org.jboss.as.controller.AbstractOperationContext.doCompleteStep(AbstractOperationContext.java:337)
+	at org.jboss.as.controller.AbstractOperationContext.completeStep(AbstractOperationContext.java:211)
+	at org.jboss.as.controller.AbstractOperationContext.finishStep(AbstractOperationContext.java:463)
+	at org.jboss.as.controller.AbstractOperationContext.executeStep(AbstractOperationContext.java:450)
+	at org.jboss.as.controller.AbstractOperationContext.doCompleteStep(AbstractOperationContext.java:284)
+	at org.jboss.as.controller.AbstractOperationContext.completeStep(AbstractOperationContext.java:211)
+	at org.jboss.as.controller.ParallelBootOperationStepHandler$ParallelBootTask.run(ParallelBootOperationStepHandler.java:312)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+	at java.lang.Thread.run(Thread.java:662)
+	at org.jboss.threads.JBossThread.run(JBossThread.java:122)
+
+   Locked ownable synchronizers:
+	- <0x0000000770218da8> (a java.util.concurrent.locks.ReentrantLock$NonfairSync)
+
+"ServerService Thread Pool -- 4" prio=10 tid=0x000000005f877800 nid=0x6c21 waiting on condition [0x000000004097f000]
+   java.lang.Thread.State: WAITING (parking)
+	at sun.misc.Unsafe.park(Native Method)
+	- parking to wait for  <0x00000007702c0f90> (a java.util.concurrent.CountDownLatch$Sync)
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:156)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer.parkAndCheckInterrupt(AbstractQueuedSynchronizer.java:811)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer.doAcquireSharedInterruptibly(AbstractQueuedSynchronizer.java:969)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer.acquireSharedInterruptibly(AbstractQueuedSynchronizer.java:1281)
+	at java.util.concurrent.CountDownLatch.await(CountDownLatch.java:207)
+	at org.jboss.as.controller.ParallelBootOperationStepHandler$ParallelBootTransactionControl.operationPrepared(ParallelBootOperationStepHandler.java:384)
+	at org.jboss.as.controller.AbstractOperationContext.doCompleteStep(AbstractOperationContext.java:337)
+	at org.jboss.as.controller.AbstractOperationContext.completeStep(AbstractOperationContext.java:211)
+	at org.jboss.as.server.deployment.DeploymentDeployHandler.execute(DeploymentDeployHandler.java:75)
+	at org.jboss.as.controller.AbstractOperationContext.executeStep(AbstractOperationContext.java:397)
+	at org.jboss.as.controller.AbstractOperationContext.doCompleteStep(AbstractOperationContext.java:284)
+	at org.jboss.as.controller.AbstractOperationContext.completeStep(AbstractOperationContext.java:211)
+	at org.jboss.as.server.deployment.DeploymentAddHandler.execute(DeploymentAddHandler.java:168)
+	at org.jboss.as.controller.AbstractOperationContext.executeStep(AbstractOperationContext.java:397)
+	at org.jboss.as.controller.AbstractOperationContext.doCompleteStep(AbstractOperationContext.java:284)
+	at org.jboss.as.controller.AbstractOperationContext.completeStep(AbstractOperationContext.java:211)
+	at org.jboss.as.controller.CompositeOperationHandler.execute(CompositeOperationHandler.java:85)
+	at org.jboss.as.controller.AbstractOperationContext.executeStep(AbstractOperationContext.java:397)
+	at org.jboss.as.controller.AbstractOperationContext.doCompleteStep(AbstractOperationContext.java:284)
+	at org.jboss.as.controller.AbstractOperationContext.completeStep(AbstractOperationContext.java:211)
+	at org.jboss.as.server.deployment.DeploymentDeployHandler.execute(DeploymentDeployHandler.java:75)
+	at org.jboss.as.controller.AbstractOperationContext.executeStep(AbstractOperationContext.java:397)
+	at org.jboss.as.controller.AbstractOperationContext.doCompleteStep(AbstractOperationContext.java:284)
+	at org.jboss.as.controller.AbstractOperationContext.completeStep(AbstractOperationContext.java:211)
+	at org.jboss.as.server.deployment.DeploymentAddHandler.execute(DeploymentAddHandler.java:168)
+	at org.jboss.as.controller.AbstractOperationContext.executeStep(AbstractOperationContext.java:397)
+	at org.jboss.as.controller.AbstractOperationContext.doCompleteStep(AbstractOperationContext.java:284)
+	at org.jboss.as.controller.AbstractOperationContext.completeStep(AbstractOperationContext.java:211)
+	at org.jboss.as.controller.CompositeOperationHandler.execute(CompositeOperationHandler.java:85)
+	at org.jboss.as.controller.AbstractOperationContext.executeStep(AbstractOperationContext.java:397)
+	at org.jboss.as.controller.AbstractOperationContext.doCompleteStep(AbstractOperationContext.java:284)
+	at org.jboss.as.controller.AbstractOperationContext.completeStep(AbstractOperationContext.java:211)
+	at org.jboss.as.controller.CompositeOperationHandler.execute(CompositeOperationHandler.java:85)
+	at org.jboss.as.controller.AbstractOperationContext.executeStep(AbstractOperationContext.java:397)
+	at org.jboss.as.controller.AbstractOperationContext.doCompleteStep(AbstractOperationContext.java:284)
+	at org.jboss.as.controller.AbstractOperationContext.completeStep(AbstractOperationContext.java:211)
+	at org.jboss.as.server.deployment.scanner.DeploymentScannerAdd.execute(DeploymentScannerAdd.java:178)
+	at org.jboss.as.controller.AbstractOperationContext.executeStep(AbstractOperationContext.java:397)
+	at org.jboss.as.controller.AbstractOperationContext.doCompleteStep(AbstractOperationContext.java:284)
+	at org.jboss.as.controller.AbstractOperationContext.completeStep(AbstractOperationContext.java:211)
+	at org.jboss.as.controller.ParallelBootOperationStepHandler$ParallelBootTask.run(ParallelBootOperationStepHandler.java:312)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+	at java.lang.Thread.run(Thread.java:662)
+	at org.jboss.threads.JBossThread.run(JBossThread.java:122)
+
+   Locked ownable synchronizers:
+	- <0x0000000770218b98> (a java.util.concurrent.locks.ReentrantLock$NonfairSync)
+
+"ServerService Thread Pool -- 3" prio=10 tid=0x000000005ff02800 nid=0x6c20 waiting on condition [0x000000004087f000]
+   java.lang.Thread.State: WAITING (parking)
+	at sun.misc.Unsafe.park(Native Method)
+	- parking to wait for  <0x00000007702c0f90> (a java.util.concurrent.CountDownLatch$Sync)
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:156)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer.parkAndCheckInterrupt(AbstractQueuedSynchronizer.java:811)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer.doAcquireSharedInterruptibly(AbstractQueuedSynchronizer.java:969)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer.acquireSharedInterruptibly(AbstractQueuedSynchronizer.java:1281)
+	at java.util.concurrent.CountDownLatch.await(CountDownLatch.java:207)
+	at org.jboss.as.controller.ParallelBootOperationStepHandler$ParallelBootTransactionControl.operationPrepared(ParallelBootOperationStepHandler.java:384)
+	at org.jboss.as.controller.AbstractOperationContext.doCompleteStep(AbstractOperationContext.java:337)
+	at org.jboss.as.controller.AbstractOperationContext.completeStep(AbstractOperationContext.java:211)
+	at org.jboss.as.controller.AbstractOperationContext.finishStep(AbstractOperationContext.java:463)
+	at org.jboss.as.controller.AbstractOperationContext.executeStep(AbstractOperationContext.java:450)
+	at org.jboss.as.controller.AbstractOperationContext.doCompleteStep(AbstractOperationContext.java:284)
+	at org.jboss.as.controller.AbstractOperationContext.completeStep(AbstractOperationContext.java:211)
+	at org.jboss.as.controller.ParallelBootOperationStepHandler$ParallelBootTask.run(ParallelBootOperationStepHandler.java:312)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+	at java.lang.Thread.run(Thread.java:662)
+	at org.jboss.threads.JBossThread.run(JBossThread.java:122)
+
+   Locked ownable synchronizers:
+	- <0x0000000770218968> (a java.util.concurrent.locks.ReentrantLock$NonfairSync)
+
+"ServerService Thread Pool -- 2" prio=10 tid=0x000000005fe48000 nid=0x6c1f waiting on condition [0x00000000411c3000]
+   java.lang.Thread.State: WAITING (parking)
+	at sun.misc.Unsafe.park(Native Method)
+	- parking to wait for  <0x00000007702c0f90> (a java.util.concurrent.CountDownLatch$Sync)
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:156)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer.parkAndCheckInterrupt(AbstractQueuedSynchronizer.java:811)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer.doAcquireSharedInterruptibly(AbstractQueuedSynchronizer.java:969)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer.acquireSharedInterruptibly(AbstractQueuedSynchronizer.java:1281)
+	at java.util.concurrent.CountDownLatch.await(CountDownLatch.java:207)
+	at org.jboss.as.controller.ParallelBootOperationStepHandler$ParallelBootTransactionControl.operationPrepared(ParallelBootOperationStepHandler.java:384)
+	at org.jboss.as.controller.AbstractOperationContext.doCompleteStep(AbstractOperationContext.java:337)
+	at org.jboss.as.controller.AbstractOperationContext.completeStep(AbstractOperationContext.java:211)
+	at org.jboss.as.controller.AbstractOperationContext.finishStep(AbstractOperationContext.java:463)
+	at org.jboss.as.controller.AbstractOperationContext.executeStep(AbstractOperationContext.java:450)
+	at org.jboss.as.controller.AbstractOperationContext.doCompleteStep(AbstractOperationContext.java:284)
+	at org.jboss.as.controller.AbstractOperationContext.completeStep(AbstractOperationContext.java:211)
+	at org.jboss.as.controller.ParallelBootOperationStepHandler$ParallelBootTask.run(ParallelBootOperationStepHandler.java:312)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+	at java.lang.Thread.run(Thread.java:662)
+	at org.jboss.threads.JBossThread.run(JBossThread.java:122)
+
+   Locked ownable synchronizers:
+	- <0x0000000770218748> (a java.util.concurrent.locks.ReentrantLock$NonfairSync)
+
+"ServerService Thread Pool -- 1" prio=10 tid=0x000000005fe3b000 nid=0x6c1e waiting on condition [0x0000000040bb9000]
+   java.lang.Thread.State: WAITING (parking)
+	at sun.misc.Unsafe.park(Native Method)
+	- parking to wait for  <0x00000007702c0f90> (a java.util.concurrent.CountDownLatch$Sync)
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:156)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer.parkAndCheckInterrupt(AbstractQueuedSynchronizer.java:811)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer.doAcquireSharedInterruptibly(AbstractQueuedSynchronizer.java:969)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer.acquireSharedInterruptibly(AbstractQueuedSynchronizer.java:1281)
+	at java.util.concurrent.CountDownLatch.await(CountDownLatch.java:207)
+	at org.jboss.as.controller.ParallelBootOperationStepHandler$ParallelBootTransactionControl.operationPrepared(ParallelBootOperationStepHandler.java:384)
+	at org.jboss.as.controller.AbstractOperationContext.doCompleteStep(AbstractOperationContext.java:337)
+	at org.jboss.as.controller.AbstractOperationContext.completeStep(AbstractOperationContext.java:211)
+	at org.jboss.as.clustering.infinispan.subsystem.CacheConfigOperationHandlers$BasicCacheConfigAdd.execute(CacheConfigOperationHandlers.java:158)
+	at org.jboss.as.controller.AbstractOperationContext.executeStep(AbstractOperationContext.java:397)
+	at org.jboss.as.controller.AbstractOperationContext.doCompleteStep(AbstractOperationContext.java:284)
+	at org.jboss.as.controller.AbstractOperationContext.completeStep(AbstractOperationContext.java:211)
+	at org.jboss.as.clustering.infinispan.subsystem.CacheConfigOperationHandlers$BasicCacheConfigAdd.execute(CacheConfigOperationHandlers.java:158)
+	at org.jboss.as.controller.AbstractOperationContext.executeStep(AbstractOperationContext.java:397)
+	at org.jboss.as.controller.AbstractOperationContext.doCompleteStep(AbstractOperationContext.java:284)
+	at org.jboss.as.controller.AbstractOperationContext.completeStep(AbstractOperationContext.java:211)
+	at org.jboss.as.clustering.infinispan.subsystem.CacheConfigOperationHandlers$BasicCacheConfigAdd.execute(CacheConfigOperationHandlers.java:158)
+	at org.jboss.as.controller.AbstractOperationContext.executeStep(AbstractOperationContext.java:397)
+	at org.jboss.as.controller.AbstractOperationContext.doCompleteStep(AbstractOperationContext.java:284)
+	at org.jboss.as.controller.AbstractOperationContext.completeStep(AbstractOperationContext.java:211)
+	at org.jboss.as.clustering.infinispan.subsystem.CacheConfigOperationHandlers$BasicCacheConfigAdd.execute(CacheConfigOperationHandlers.java:158)
+	at org.jboss.as.controller.AbstractOperationContext.executeStep(AbstractOperationContext.java:397)
+	at org.jboss.as.controller.AbstractOperationContext.doCompleteStep(AbstractOperationContext.java:284)
+	at org.jboss.as.controller.AbstractOperationContext.completeStep(AbstractOperationContext.java:211)
+	at org.jboss.as.clustering.infinispan.subsystem.CacheConfigOperationHandlers$BasicCacheConfigAdd.execute(CacheConfigOperationHandlers.java:158)
+	at org.jboss.as.controller.AbstractOperationContext.executeStep(AbstractOperationContext.java:397)
+	at org.jboss.as.controller.AbstractOperationContext.doCompleteStep(AbstractOperationContext.java:284)
+	at org.jboss.as.controller.AbstractOperationContext.completeStep(AbstractOperationContext.java:211)
+	at org.jboss.as.clustering.infinispan.subsystem.CacheConfigOperationHandlers$BasicCacheConfigAdd.execute(CacheConfigOperationHandlers.java:158)
+	at org.jboss.as.controller.AbstractOperationContext.executeStep(AbstractOperationContext.java:397)
+	at org.jboss.as.controller.AbstractOperationContext.doCompleteStep(AbstractOperationContext.java:284)
+	at org.jboss.as.controller.AbstractOperationContext.completeStep(AbstractOperationContext.java:211)
+	at org.jboss.as.clustering.infinispan.subsystem.CacheConfigOperationHandlers$BasicCacheConfigAdd.execute(CacheConfigOperationHandlers.java:158)
+	at org.jboss.as.controller.AbstractOperationContext.executeStep(AbstractOperationContext.java:397)
+	at org.jboss.as.controller.AbstractOperationContext.doCompleteStep(AbstractOperationContext.java:284)
+	at org.jboss.as.controller.AbstractOperationContext.completeStep(AbstractOperationContext.java:211)
+	at org.jboss.as.clustering.infinispan.subsystem.CacheConfigOperationHandlers$BasicCacheConfigAdd.execute(CacheConfigOperationHandlers.java:158)
+	at org.jboss.as.controller.AbstractOperationContext.executeStep(AbstractOperationContext.java:397)
+	at org.jboss.as.controller.AbstractOperationContext.doCompleteStep(AbstractOperationContext.java:284)
+	at org.jboss.as.controller.AbstractOperationContext.completeStep(AbstractOperationContext.java:211)
+	at org.jboss.as.controller.ParallelBootOperationStepHandler$ParallelBootTask.run(ParallelBootOperationStepHandler.java:312)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+	at java.lang.Thread.run(Thread.java:662)
+	at org.jboss.threads.JBossThread.run(JBossThread.java:122)
+
+   Locked ownable synchronizers:
+	- <0x0000000770218040> (a java.util.concurrent.locks.ReentrantLock$NonfairSync)
+
+"DestroyJavaVM" prio=10 tid=0x000000005f04d000 nid=0x6c0f waiting on condition [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+   Locked ownable synchronizers:
+	- None
+
+"Controller Boot Thread" prio=10 tid=0x000000006050b800 nid=0x6c1d in Object.wait() [0x0000000040668000]
+   java.lang.Thread.State: WAITING (on object monitor)
+	at java.lang.Object.wait(Native Method)
+	- waiting on <0x00000007701c3f20> (a org.jboss.as.controller.ContainerStateMonitor)
+	at java.lang.Object.wait(Object.java:485)
+	at org.jboss.as.controller.ContainerStateMonitor.awaitContainerStateChangeReport(ContainerStateMonitor.java:159)
+	- locked <0x00000007701c3f20> (a org.jboss.as.controller.ContainerStateMonitor)
+	at org.jboss.as.controller.ModelControllerImpl.awaitContainerStateChangeReport(ModelControllerImpl.java:442)
+	at org.jboss.as.controller.OperationContextImpl.awaitModelControllerContainerMonitor(OperationContextImpl.java:152)
+	at org.jboss.as.controller.AbstractOperationContext.doCompleteStep(AbstractOperationContext.java:261)
+	at org.jboss.as.controller.AbstractOperationContext.completeStep(AbstractOperationContext.java:211)
+	at org.jboss.as.server.AbstractDeploymentChainStep.execute(AbstractDeploymentChainStep.java:51)
+	at org.jboss.as.controller.AbstractOperationContext.executeStep(AbstractOperationContext.java:397)
+	at org.jboss.as.controller.AbstractOperationContext.doCompleteStep(AbstractOperationContext.java:284)
+	at org.jboss.as.controller.AbstractOperationContext.completeStep(AbstractOperationContext.java:211)
+	at org.jboss.as.controller.ParallelBootOperationStepHandler$1.execute(ParallelBootOperationStepHandler.java:262)
+	at org.jboss.as.controller.AbstractOperationContext.executeStep(AbstractOperationContext.java:397)
+	at org.jboss.as.controller.AbstractOperationContext.doCompleteStep(AbstractOperationContext.java:284)
+	at org.jboss.as.controller.AbstractOperationContext.completeStep(AbstractOperationContext.java:211)
+	at org.jboss.as.controller.ParallelBootOperationStepHandler.execute(ParallelBootOperationStepHandler.java:161)
+	at org.jboss.as.controller.AbstractOperationContext.executeStep(AbstractOperationContext.java:397)
+	at org.jboss.as.controller.AbstractOperationContext.doCompleteStep(AbstractOperationContext.java:284)
+	at org.jboss.as.controller.AbstractOperationContext.completeStep(AbstractOperationContext.java:211)
+	at org.jboss.as.controller.ModelControllerImpl.boot(ModelControllerImpl.java:175)
+	at org.jboss.as.controller.AbstractControllerService.boot(AbstractControllerService.java:191)
+	at org.jboss.as.server.ServerService.boot(ServerService.java:295)
+	at org.jboss.as.server.ServerService.boot(ServerService.java:270)
+	at org.jboss.as.controller.AbstractControllerService$1.run(AbstractControllerService.java:156)
+	at java.lang.Thread.run(Thread.java:662)
+
+   Locked ownable synchronizers:
+	- <0x00000007701c40f0> (a java.util.concurrent.locks.ReentrantLock$NonfairSync)
+
+"MSC service thread 1-2" prio=10 tid=0x000000006025d800 nid=0x6c1c in Object.wait() [0x0000000040ed8000]
+   java.lang.Thread.State: WAITING (on object monitor)
+	at java.lang.Object.wait(Native Method)
+	- waiting on <0x000000073359ea78> (a org.jboss.as.ejb3.component.stateless.StatelessSessionComponent)
+	at java.lang.Object.wait(Object.java:485)
+	at org.jboss.as.ee.component.BasicComponent.waitForComponentStart(BasicComponent.java:109)
+	- locked <0x000000073359ea78> (a org.jboss.as.ejb3.component.stateless.StatelessSessionComponent)
+	at org.jboss.as.ee.component.BasicComponent.constructComponentInstance(BasicComponent.java:127)
+	at org.jboss.as.ee.component.BasicComponent.createInstance(BasicComponent.java:85)
+	at org.jboss.as.ejb3.component.stateless.StatelessSessionComponent$1.create(StatelessSessionComponent.java:68)
+	at org.jboss.as.ejb3.component.stateless.StatelessSessionComponent$1.create(StatelessSessionComponent.java:65)
+	at org.jboss.as.ejb3.pool.AbstractPool.create(AbstractPool.java:60)
+	at org.jboss.as.ejb3.pool.strictmax.StrictMaxPool.get(StrictMaxPool.java:123)
+	at org.jboss.as.ejb3.component.pool.PooledInstanceInterceptor.processInvocation(PooledInstanceInterceptor.java:47)
+	at org.jboss.invocation.InterceptorContext.proceed(InterceptorContext.java:288)
+	at org.jboss.as.ejb3.tx.CMTTxInterceptor.invokeInOurTx(CMTTxInterceptor.java:227)
+	at org.jboss.as.ejb3.tx.CMTTxInterceptor.required(CMTTxInterceptor.java:303)
+	at org.jboss.as.ejb3.tx.CMTTxInterceptor.processInvocation(CMTTxInterceptor.java:189)
+	at org.jboss.invocation.InterceptorContext.proceed(InterceptorContext.java:288)
+	at org.jboss.as.ejb3.component.interceptors.CurrentInvocationContextInterceptor.processInvocation(CurrentInvocationContextInterceptor.java:41)
+	at org.jboss.invocation.InterceptorContext.proceed(InterceptorContext.java:288)
+	at org.jboss.as.ejb3.component.interceptors.ShutDownInterceptorFactory$1.processInvocation(ShutDownInterceptorFactory.java:42)
+	at org.jboss.invocation.InterceptorContext.proceed(InterceptorContext.java:288)
+	at org.jboss.as.ejb3.component.interceptors.LoggingInterceptor.processInvocation(LoggingInterceptor.java:59)
+	at org.jboss.invocation.InterceptorContext.proceed(InterceptorContext.java:288)
+	at org.jboss.as.ee.component.NamespaceContextInterceptor.processInvocation(NamespaceContextInterceptor.java:50)
+	at org.jboss.invocation.InterceptorContext.proceed(InterceptorContext.java:288)
+	at org.jboss.as.ejb3.component.interceptors.AdditionalSetupInterceptor.processInvocation(AdditionalSetupInterceptor.java:32)
+	at org.jboss.invocation.InterceptorContext.proceed(InterceptorContext.java:288)
+	at org.jboss.as.ee.component.TCCLInterceptor.processInvocation(TCCLInterceptor.java:45)
+	at org.jboss.invocation.InterceptorContext.proceed(InterceptorContext.java:288)
+	at org.jboss.invocation.ChainedInterceptor.processInvocation(ChainedInterceptor.java:61)
+	at org.jboss.as.ee.component.ViewService$View.invoke(ViewService.java:165)
+	at org.jboss.as.ee.component.ViewDescription$1.processInvocation(ViewDescription.java:176)
+	at org.jboss.invocation.InterceptorContext.proceed(InterceptorContext.java:288)
+	at org.jboss.invocation.ChainedInterceptor.processInvocation(ChainedInterceptor.java:61)
+	at org.jboss.as.ee.component.ProxyInvocationHandler.invoke(ProxyInvocationHandler.java:72)
+	at biz.core.ejb3.session.CompanyManagerLocal$$$view125.getAllCompanysDTO(Unknown Source)
+	at biz.bsite.direct.services.cache.CoreSystemCache.loadCompanyAndSmscCache(CoreSystemCache.java:306)
+	at biz.bsite.direct.services.cache.CoreSystemCache.loadSystemCache(CoreSystemCache.java:103)
+	at biz.bsite.direct.services.cache.CoreSystemCache.<init>(CoreSystemCache.java:92)
+	at biz.bsite.direct.services.cache.CoreSystemCache.getInstance(CoreSystemCache.java:79)
+	- locked <0x00000007f429a1a0> (a java.lang.Class for biz.bsite.direct.services.cache.CoreSystemCache)
+	at biz.bsite.direct.servlet.ContextListener.contextInitialized(ContextListener.java:33)
+	at org.apache.catalina.core.StandardContext.contextListenerStart(StandardContext.java:3392)
+	at org.apache.catalina.core.StandardContext.start(StandardContext.java:3850)
+	- locked <0x0000000771f67d08> (a org.apache.catalina.core.StandardContext)
+	at org.jboss.as.web.deployment.WebDeploymentService.start(WebDeploymentService.java:90)
+	- locked <0x0000000771f76460> (a org.jboss.as.web.deployment.WebDeploymentService)
+	at org.jboss.msc.service.ServiceControllerImpl$StartTask.startService(ServiceControllerImpl.java:1811)
+	at org.jboss.msc.service.ServiceControllerImpl$StartTask.run(ServiceControllerImpl.java:1746)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+	at java.lang.Thread.run(Thread.java:662)
+
+   Locked ownable synchronizers:
+	- <0x000000077015dfc0> (a java.util.concurrent.locks.ReentrantLock$NonfairSync)
+
+"MSC service thread 1-1" prio=10 tid=0x0000000060525800 nid=0x6c1b waiting on condition [0x000000004030a000]
+   java.lang.Thread.State: WAITING (parking)
+	at sun.misc.Unsafe.park(Native Method)
+	- parking to wait for  <0x0000000770153198> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:156)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1987)
+	at java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:399)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:947)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:907)
+	at java.lang.Thread.run(Thread.java:662)
+
+   Locked ownable synchronizers:
+	- None
+
+"Reference Reaper" daemon prio=10 tid=0x000000005f17d800 nid=0x6c1a in Object.wait() [0x00000000410c2000]
+   java.lang.Thread.State: WAITING (on object monitor)
+	at java.lang.Object.wait(Native Method)
+	- waiting on <0x0000000770028150> (a java.lang.ref.ReferenceQueue$Lock)
+	at java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:118)
+	- locked <0x0000000770028150> (a java.lang.ref.ReferenceQueue$Lock)
+	at java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:134)
+	at org.jboss.modules.ref.References$ReaperThread.run(References.java:68)
+
+   Locked ownable synchronizers:
+	- None
+
+"Low Memory Detector" daemon prio=10 tid=0x000000005f116800 nid=0x6c18 runnable [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+   Locked ownable synchronizers:
+	- None
+
+"C2 CompilerThread1" daemon prio=10 tid=0x000000005f114000 nid=0x6c17 waiting on condition [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+   Locked ownable synchronizers:
+	- None
+
+"C2 CompilerThread0" daemon prio=10 tid=0x000000005f10f000 nid=0x6c16 waiting on condition [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+   Locked ownable synchronizers:
+	- None
+
+"JDWP Event Helper Thread" daemon prio=10 tid=0x000000005f103000 nid=0x6c15 runnable [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+   Locked ownable synchronizers:
+	- None
+
+"JDWP Transport Listener: dt_socket" daemon prio=10 tid=0x000000005f0ff800 nid=0x6c14 runnable [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+   Locked ownable synchronizers:
+	- None
+
+"Signal Dispatcher" daemon prio=10 tid=0x000000005f0f3000 nid=0x6c13 runnable [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+   Locked ownable synchronizers:
+	- None
+
+"Finalizer" daemon prio=10 tid=0x000000005f0d2000 nid=0x6c12 in Object.wait() [0x00000000420ac000]
+   java.lang.Thread.State: WAITING (on object monitor)
+	at java.lang.Object.wait(Native Method)
+	- waiting on <0x0000000770000c50> (a java.lang.ref.ReferenceQueue$Lock)
+	at java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:118)
+	- locked <0x0000000770000c50> (a java.lang.ref.ReferenceQueue$Lock)
+	at java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:134)
+	at java.lang.ref.Finalizer$FinalizerThread.run(Finalizer.java:159)
+
+   Locked ownable synchronizers:
+	- None
+
+"Reference Handler" daemon prio=10 tid=0x000000005f0d0000 nid=0x6c11 in Object.wait() [0x0000000041fab000]
+   java.lang.Thread.State: WAITING (on object monitor)
+	at java.lang.Object.wait(Native Method)
+	- waiting on <0x0000000770000b28> (a java.lang.ref.Reference$Lock)
+	at java.lang.Object.wait(Object.java:485)
+	at java.lang.ref.Reference$ReferenceHandler.run(Reference.java:116)
+	- locked <0x0000000770000b28> (a java.lang.ref.Reference$Lock)
+
+   Locked ownable synchronizers:
+	- None
+
+"VM Thread" prio=10 tid=0x000000005f0c9000 nid=0x6c10 runnable 
+
+"VM Periodic Task Thread" prio=10 tid=0x000000005f11a000 nid=0x6c19 waiting on condition 
+
+JNI global references: 11387
+

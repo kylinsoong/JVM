@@ -1,0 +1,27 @@
+<jlivings> kylin: I'm not completely sure why it got stuck, usually the EJB would have continued to deploy and they it would be resumed the web app
+
+<jlivings> kylin: maybe there was a circular dependency somewhere, or too many things blocked in deployment and it ran out of threads :-\
+
+<kylin> jlivings, yeah, I write simple ear contain war and ejb jar can not reproduce  the issue, they said <initialize-in-order>true</initialize-in-order> resolved their question
+
+<jlivings> kylin: you'll need at least a servlet filter or load-on-startup servlet which does a JNDI lookup of the EJB to reproduce it
+
+<jlivings> kylin: but I imagine that something else needed to happen to cause it to get stuck
+
+<kylin> jlivings, yeah, for the #30 your comments "their WAR is trying to call an EJB on startup", how did you point to that thread, I means there are many thread list in dump file? 
+
+<jlivings> kylin: in the thread dump there are 10 or so threads which are the MSC deployment threads
+
+<jlivings> kylin: most of them are waiting on another deployment step to complete, but one is "interesting" and it's running their servlet listener code, which is calling an EJB
+
+<jlivings> kylin: e.g. in jstack1.out, "ServerService Thread Pool -- 36" is one of the boring ones
+
+<jlivings> kylin: look at "MSC service thread 1-2", it's in WebDeploymentService.start (so deploying a web app), and calls their code ContextListener.contextInitialized
+
+<jlivings> kylin: CoreSystemCache.loadCompanyAndSmscCache calls CompanyManagerLocal$$$view125.getAllCompanysDTO() and then jumps into EJB interceptor code
+
+<jlivings> kylin: at the top of the stack trace, it has BasicComponent.waitForComponentStart(), which means it's waiting for the EJB that it wants to call to finish deployment
+
+<jlivings> kylin: the important thing to remember is that they are a snapshot of what it was doing a single point in time
+
+<jlivings> kylin: and for the thread you want to look at, it means method X is calling method Y and so on, and try to think about what it must be doing to have called the methods like that
