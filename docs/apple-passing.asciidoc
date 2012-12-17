@@ -1,6 +1,10 @@
 What's this?
 ------------
-Trditional Producer-Consumer question, we have 3 kinds thread and 2 kinds threshold, `Producer Thread` add Apple entity to `appleQueue`, `Marker Thread` get Apple from `appleQueue` and add a unique mark reconstruct a new Entity `MarkedApple` then add new Entity to `markedAppleQueue`, `Consumer Thread` consume MarkedApple from `markedAppleQueue`, note that `appleQueue` and `markedAppleQueu` treated as threshold.
+As depicted in
+
+image::img/producer-marker-consumer.png[Apple Passing Architecture]
+
+`Apple Passing` is the trditional Producer-Consumer question, we have 3 kinds thread group and 2 kinds threshold, `Producer Threads` add Apple entity to `appleQueue`, `Marker Threads` get Apple from `appleQueue` and add a unique mark reconstruct a new Entity `MarkedApple` then add new Entity to `markedAppleQueue`, `Consumer Threads` consume MarkedApple from `markedAppleQueue`, note that `appleQueue` and `markedAppleQueu` treated as threshold.
 
 How to run?
 -----------
