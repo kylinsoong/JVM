@@ -1,5 +1,6 @@
 package com.kylin.applepassing.threads;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import org.apache.log4j.Logger;
@@ -22,15 +23,15 @@ public class MonitorThread extends ThreadBase implements Runnable {
 		logger.info("Apple Passing MonitorThread Start");
 		
 		while(status()) {
-			
-			System.out.println("[" + new Date() + "] appleQueueSize: " + threshold.appleQueueSize() + ", markedAppleQueueSize: " + threshold.markedAppleQueueSize());
+			System.out.println("[" + new SimpleDateFormat("yyyy MM.dd HH:mm:ss").format(new Date()) + "] appleQueueSize: " + threshold.appleQueueSize() + ", markedAppleQueueSize: " + threshold.markedAppleQueueSize());
+			sleep(1000 * 30);
 		}
 		
 		logger.info(getName() + " Stop");
 	}
 
 	public String getName() {
-		return "applePassing-Monitor";
+		return "ApplePassing-Monitor";
 	}
 
 }

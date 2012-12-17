@@ -1,5 +1,7 @@
 package com.kylin.applepassing;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
@@ -10,6 +12,7 @@ import com.kylin.applepassing.consumer.AppleConsumer;
 import com.kylin.applepassing.marker.AppleMarker;
 import com.kylin.applepassing.producer.AppleProducer;
 import com.kylin.applepassing.threads.MonitorThread;
+import com.kylin.applepassing.threads.StopThread;
 
 public class Main {
 	
@@ -36,6 +39,8 @@ public class Main {
 	
 	public void start() {
 		
+		Thread.currentThread().setName("ApplePassing-Main");
+		
 		logger.info("Start Apple Passing");
 		
 		threshold = new Threshold(capacity);
@@ -48,26 +53,35 @@ public class Main {
 	
 		consumerExecutor = Executors.newFixedThreadPool(threadCount);
 		logger.info("Initialize a FixedThreadPool(Consume Thread Pool), fixed Thread number is " + threadCount);
-	
+		
 		for(int i = 0 ; i < threadCount ; i ++) {
 			
 			AppleProducer producer = new AppleProducer(threshold, i, sleep);
+			producerList.add(producer);
 			producedExecutor.execute(producer);
 			logger.info("Initialise a AppleProducer, add to thread pool");
 			
 			AppleMarker marker = new AppleMarker(threshold, i);
+			markerList.add(marker);
 			markerExecutor.execute(marker);
 			logger.info("Initialise a AppleMarker, add to thread pool");
 			
 			AppleConsumer consumer = new AppleConsumer(threshold, i);
+			consumerList.add(consumer);
 			consumerExecutor.execute(consumer);
 			logger.info("Initialise a AppleMarker, add to thread pool");
 		}
 		
 		monitorThread = new MonitorThread(threshold, 0);
 		new Thread(monitorThread).start();
+		
+		new Thread(new StopThread(threshold, 0, producerList, markerList, consumerList, monitorThread)).start();
 	}
 
+	List<AppleProducer> producerList = new ArrayList<AppleProducer>();
+	List<AppleMarker> markerList = new ArrayList<AppleMarker>();
+	List<AppleConsumer> consumerList = new ArrayList<AppleConsumer>();
+	
 	public static void main(String[] args) {
 		
 		int capacity = 0, threadCount = 0, sleep = 0;

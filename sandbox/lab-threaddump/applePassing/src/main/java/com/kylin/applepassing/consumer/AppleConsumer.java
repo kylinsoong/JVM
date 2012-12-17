@@ -34,7 +34,7 @@ public class AppleConsumer extends ThreadBase implements Runnable {
 	}
 
 	public String getName() {
-		return "applePassing-consumer-" + threadId;
+		return "ApplePassing-Consumer-" + threadId;
 	}
 
 }

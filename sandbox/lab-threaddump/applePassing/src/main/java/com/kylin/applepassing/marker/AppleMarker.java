@@ -36,7 +36,7 @@ public class AppleMarker extends ThreadBase implements Runnable {
 	}
 
 	public String getName() {
-		return "applePassing-marker-" + threadId;
+		return "ApplePassing-Marker-" + threadId;
 	}
 
 }

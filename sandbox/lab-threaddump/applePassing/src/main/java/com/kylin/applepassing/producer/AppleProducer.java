@@ -42,7 +42,7 @@ public class AppleProducer extends ThreadBase implements Runnable {
 	}
 
 	public String getName() {
-		return "applePassing-producer-" + threadId;
+		return "ApplePassing-Producer-" + threadId;
 	}
 
 	

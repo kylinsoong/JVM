@@ -1,0 +1,22 @@
+What's this?
+------------
+Trditional Producer-Consumer question, we have 3 kinds thread and 2 kinds threshold, `Producer Thread` add Apple entity to `appleQueue`, `Marker Thread` get Apple from `appleQueue` and add a unique mark reconstruct a new Entity `MarkedApple` then add new Entity to `markedAppleQueue`, `Consumer Thread` consume MarkedApple from `markedAppleQueue`, note that `appleQueue` and `markedAppleQueu` treated as threshold.
+
+How to run?
+-----------
+
+We can run `ApplePassing` from source code via following steps:
+
+* build and copy dependency jar
+----
+mvn clean dependency:copy-dependencies install
+----
+
+* Start `ApplePassing`
+----
+java -cp applePassing-1.0.jar:log4j-1.2.16.jar com.kylin.applepassing.Main -h
+----
+
+* Stop `ApplePassing`
+
+Any time, entry `exit`,`quit`,`q!` will stop `ApplePassing`
