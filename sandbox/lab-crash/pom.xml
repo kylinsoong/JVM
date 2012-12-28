@@ -4,7 +4,7 @@
    <modelVersion>4.0.0</modelVersion>
 
    <groupId>com.kylin.lab</groupId>
-   <artifactId>jvm_crash</artifactId>
+   <artifactId>jvm-lab-crash</artifactId>
    <version>1.0</version>
    <packaging>war</packaging>
    <name>JVM Crash</name>
@@ -40,6 +40,7 @@
        <groupId>log4j</groupId>
        <artifactId>log4j</artifactId>
        <version>1.2.16</version>
+       <scope>provided</scope>
     </dependency>
       <dependency>
          <groupId>junit</groupId>
@@ -49,20 +50,14 @@
    </dependencies>
 
    <build>
-      <!-- Set the name of the war, used as the context root when the app
-           is deployed -->
       <plugins>
          <plugin>
             <artifactId>maven-war-plugin</artifactId>
             <version>2.1.1</version>
             <configuration>
-               <!-- Java EE 6 doesn't require web.xml, Maven needs to catch
-                    up! -->
                <failOnMissingWebXml>false</failOnMissingWebXml>
             </configuration>
          </plugin>
-         <!-- Compiler plugin enforces Java 1.6 compatibility and activates
-              annotation processors -->
          <plugin>
             <artifactId>maven-compiler-plugin</artifactId>
             <version>2.3.1</version>
@@ -75,10 +70,6 @@
    </build>
    <profiles>
       <profile>
-         <!-- The default profile skips all tests, though you can tune
-              it to run just unit tests based on a custom pattern -->
-         <!-- Seperate profiles are provided for running all tests, including
-              Arquillian tests that execute in the specified container -->
          <id>default</id>
          <activation>
             <activeByDefault>true</activeByDefault>
