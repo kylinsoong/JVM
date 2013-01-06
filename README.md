@@ -3,7 +3,8 @@ How to use CustomizedTools analysing Java thread dump?
 
 * clone CustomizedTools from https://github.com/kylinsoong/CustomizedTools
 * build CustomizedTools according to CustomizedTools root `How to Build` docs
-* navigate to `dist` (build generated), execute:
+* navigate to `dist` (build generated), 
+execute:
 
 	./cts.sh
 
