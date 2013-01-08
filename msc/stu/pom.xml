@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+   <modelVersion>4.0.0</modelVersion>
+
+   <groupId>com.kylin.msc</groupId>
+   <artifactId>msc-stu</artifactId>
+   <version>1.0</version>
+   <packaging>jar</packaging>
+   <name>Modular Classloading System</name>
+   <description>Modular Classloading System</description>
+
+   <url>http://jboss.org/jbossas</url>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		
+		<version.jboss-modules>1.2.0.Beta1-SNAPSHOT</version.jboss-modules>
+
+		<compiler.plugin.version>2.3.1</compiler.plugin.version>
+		<exec.plugin.version>1.2.1</exec.plugin.version>
+		<war.plugin.version>2.1.1</war.plugin.version>
+
+		<maven.compiler.target>1.6</maven.compiler.target>
+		<maven.compiler.source>1.6</maven.compiler.source>
+	</properties>
+
+	<dependencies>
+		<dependency>
+            <groupId>org.jboss.modules</groupId>
+            <artifactId>jboss-modules</artifactId>
+            <version>${version.jboss-modules}</version>
+            <scope>provided</scope>
+        </dependency>
+	</dependencies>
+
+
+	<build>
+		<finalName>msc-stu</finalName>
+		<plugins>
+			<!-- Enforce Java 1.6  -->
+			<plugin>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>${compiler.plugin.version}</version>
+				<configuration>
+					<source>${maven.compiler.source}</source>
+					<target>${maven.compiler.target}</target>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+</project>

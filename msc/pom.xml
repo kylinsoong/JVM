@@ -19,6 +19,7 @@
     <modules>
         <module>executable-jar</module>
 	<module>helloworld</module>
+        <module>stu</module>
     </modules>
 
 </project>
