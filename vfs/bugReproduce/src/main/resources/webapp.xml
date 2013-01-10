@@ -1,0 +1,428 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<webapps>
+<webapp name="CookieServlet" type="Servlet">
+package com.kylin.webapp.servlet;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.inject.Inject;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.kylin.webapp.WebAppService;
+
+@WebServlet("/Cookie")
+public class CookieServlet extends HttpServlet {
+
+	private static final long serialVersionUID = 3296141808820380126L;
+
+	@Inject
+	private WebAppService service;
+	
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		
+		resp.setContentType(service.contentType());
+		
+		PrintWriter out = resp.getWriter();
+		
+		out.println(service.pageHeader("Cookie Test Example"));
+		out.println("&lt;h3&gt;Cookie Test Example&lt;/h3&gt;");
+		
+		Cookie[] cookies = req.getCookies();
+        if ((cookies != null) &amp;&amp; (cookies.length &gt; 0)) {
+            out.println("Your browser is sending the following cookies: " + "&lt;br&gt;");
+            for (int i = 0; i &lt; cookies.length; i++) {
+                Cookie cookie = cookies[i];
+                out.print("Cookie Name: " + cookie.getName() + "&lt;br&gt;");
+                out.println("Cookie Value: " + cookie.getValue() + "&lt;br&gt;&lt;br&gt;");
+            }
+        } else {
+            out.println("Your browser isn't sending any cookies");
+        }
+
+        String cookieName = req.getParameter("cookiename");
+        String cookieValue = req.getParameter("cookievalue");
+        if (cookieName != null &amp;&amp; cookieValue != null) {
+            Cookie cookie = new Cookie(cookieName, cookieValue);
+            resp.addCookie(cookie);
+            out.println("&lt;P&gt;");
+            out.println("You just sent the following cookie to your browser: " + "&lt;br&gt;");
+            out.print("Name: " + cookieName + "&lt;br&gt;");
+            out.print("Value: " + cookieValue);
+        }
+
+        out.println("&lt;P&gt;");
+        
+        out.println("Create a cookie to send to your browser" + "&lt;br&gt;");
+        out.print("&lt;form action=\"");
+        out.println("Cookie\" method=POST&gt;");
+        out.print("Name: " + "  ");
+        out.println("&lt;input type=text length=20 name=cookiename&gt;&lt;br&gt;");
+        out.print("Value: " + "  ");
+        out.println("&lt;input type=text length=20 name=cookievalue&gt;&lt;br&gt;");
+        out.println("&lt;input type=submit&gt;&lt;/form&gt;");
+
+
+		
+		out.println(service.pageFooter());
+		
+		out.close();
+	}
+
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		doGet(req, resp);
+	}
+}
+</webapp>
+<webapp name="HelloWorldServlet" type="Servlet">
+package com.kylin.webapp.servlet;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.inject.Inject;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.kylin.webapp.WebAppService;
+
+@WebServlet("/HelloWorld")
+public class HelloWorldServlet extends HttpServlet {
+
+  
+	private static final long serialVersionUID = 1770304184548479022L;
+
+	@Inject
+	private WebAppService service;
+
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		
+		resp.setContentType(service.contentType());
+		
+		PrintWriter out = resp.getWriter();
+		
+		out.println(service.pageHeader("HelloWorld"));
+		out.println("&lt;h1&gt;" + service.createHelloMessage("World") + "&lt;/h1&gt;");
+		out.println(service.pageFooter());
+		
+		out.close();
+	}
+
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		doGet(req, resp);
+	}
+
+}
+</webapp>
+<webapp name="RequestHeaderServlet" type="Servlet">
+package com.kylin.webapp.servlet;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.Enumeration;
+
+import javax.inject.Inject;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.kylin.webapp.WebAppService;
+
+@WebServlet("/RequestHeader")
+public class RequestHeaderServlet extends HttpServlet{
+
+	private static final long serialVersionUID = 649387125992625387L;
+
+	@Inject
+	private WebAppService service;
+	
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		
+		resp.setContentType(service.contentType());
+
+		PrintWriter out = resp.getWriter();
+		
+		out.println(service.pageHeader("Request Header Example"));
+		
+		out.println("&lt;h3&gt;Request Header Example&lt;/h3&gt;");
+		
+		Enumeration e = req.getHeaderNames();
+        while (e.hasMoreElements()) {
+            String name = (String)e.nextElement();
+            String value = req.getHeader(name);
+            out.println(name + ": " + value + "&lt;br&gt;");
+        }
+		
+		out.println(service.pageFooter());
+		
+		out.close();
+	}
+
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		doGet(req, resp);
+	}
+	
+	
+}
+</webapp>
+<webapp name="RequestInfoServlet" type="Servlet">
+package com.kylin.webapp.servlet;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+import javax.inject.Inject;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.kylin.webapp.WebAppService;
+
+@WebServlet("/RequestInfo")
+public class RequestInfoServlet extends HttpServlet{
+
+	private static final long serialVersionUID = 2676816011506444992L;
+
+	@Inject
+	private WebAppService service;
+	
+	protected void doGet(HttpServletRequest request, HttpServletResponse resp) throws ServletException, IOException {
+
+		resp.setContentType(service.contentType());
+
+		PrintWriter out = resp.getWriter();
+		
+		out.println(service.pageHeader("Request Information Example"));
+		out.println("&lt;h3&gt;Request Information Example&lt;/h3&gt;");
+		
+        out.println("Method: " + request.getMethod() + "&lt;br&gt;");
+        out.println("Protocol: " + request.getProtocol() + "&lt;br&gt;");
+        out.println("&lt;br&gt;");
+        
+        out.println("Request URI: " + request.getRequestURI() + "&lt;br&gt;");
+        out.println("PathInfo: " + request.getPathInfo() + "&lt;br&gt;");
+        out.println("Path: " + request.getContextPath() + "&lt;br&gt;");
+        out.println("Base Path: " + request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort() + request.getContextPath() + "/" + "&lt;br&gt;");
+        out.println("Servlet Path: " + request.getServletPath() + "&lt;br&gt;");
+        out.println("&lt;br&gt;");
+       
+        out.println("Remote Address: " + request.getRemoteAddr() + "&lt;br&gt;");
+        out.println("Remote Host: " + request.getRemoteHost() + "&lt;br&gt;");
+        out.println("Remote User: " + request.getRemoteUser() + "&lt;br&gt;");
+        out.println("Remote Port: " + request.getRemotePort() + "&lt;br&gt;");
+        out.println("&lt;br&gt;");
+        
+        out.println("Local Address: " + request.getLocalAddr() + "&lt;br&gt;");
+        out.println("Local Name: " + request.getLocalName() + "&lt;br&gt;");
+        out.println("Local Port: " + request.getLocalPort() + "&lt;br&gt;");
+        out.println("&lt;br&gt;");
+        
+        String requestSessionId = null;
+        if(request.getRequestedSessionId() != null) {
+        	requestSessionId = request.getRequestedSessionId().toString();
+        }
+        out.println("Request Session ID: " + requestSessionId + "&lt;br&gt;");
+        out.println("&lt;br&gt;");
+        
+        out.println("Session ID: " + request.getSession().getId() + "&lt;br&gt;");
+        out.println("Session Creation Time: " + new SimpleDateFormat("yyyy-MM-dd HH:mm:ss(S)").format(new Date(request.getSession().getCreationTime())) + "&lt;br&gt;");
+        out.println("Session Last Access Time: " + new SimpleDateFormat("yyyy-MM-dd HH:mm:ss(S)").format(new Date(request.getSession().getLastAccessedTime())) + "&lt;br&gt;");
+        
+		out.println(service.pageFooter());
+		
+		out.close();
+	}
+
+
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		doGet(req, resp);
+	}
+
+	
+}
+</webapp>
+<webapp name="RequestParamServlet" type="Servlet">
+package com.kylin.webapp.servlet;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.inject.Inject;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.kylin.webapp.WebAppService;
+
+@WebServlet("/RequestParam")
+public class RequestParamServlet extends HttpServlet {
+
+	private static final long serialVersionUID = 7345596678719362119L;
+
+	@Inject
+	private WebAppService service;
+	
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		
+		resp.setContentType(service.contentType());
+		
+		PrintWriter out = resp.getWriter();
+		
+		out.println(service.pageHeader("Request Parameters Example"));
+		
+		out.println("&lt;h3&gt;Request Parameters Example&lt;/h3&gt;");
+        out.println("Parameters in this request:&lt;br&gt;");
+        
+        String firstName = req.getParameter("firstname");
+        String lastName = req.getParameter("lastname");
+        
+        if (firstName != null || lastName != null) {
+            out.println("First Name: " + firstName + "&lt;br&gt;");
+            out.println("Last Name: " + lastName + "&lt;br&gt;");
+        } else {
+            out.println("No Parameters, Please enter some");
+        }
+        out.println("&lt;P&gt;");
+        out.print("&lt;form action=\"");
+        out.print("RequestParam\" ");
+        out.println("method=POST&gt;");
+        out.println("First Name:");
+        out.println("&lt;input type=text size=20 name=firstname&gt;");
+        out.println("&lt;br&gt;");
+        out.println("Last Name:");
+        out.println("&lt;input type=text size=20 name=lastname&gt;");
+        out.println("&lt;br&gt;");
+        out.println("&lt;input type=submit&gt;");
+        out.println("&lt;/form&gt;");
+		
+		out.println(service.pageFooter());
+		
+		out.close();
+	}
+
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		doGet(req, resp);
+	}
+}
+</webapp>
+<webapp name="SessionServlet" type="Servlet">
+package com.kylin.webapp.servlet;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.Date;
+import java.util.Enumeration;
+
+import javax.inject.Inject;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+import com.kylin.webapp.WebAppService;
+
+@WebServlet("/Session")
+public class SessionServlet extends HttpServlet {
+
+	private static final long serialVersionUID = -8407250690241513430L;
+
+	@Inject
+	private WebAppService service;
+	
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		
+		resp.setContentType(service.contentType());
+		
+		PrintWriter out = resp.getWriter();
+		
+		out.println(service.pageHeader("Session Test Example"));
+		out.println("&lt;h3&gt;Session Test Example&lt;/h3&gt;");
+		
+		HttpSession session = req.getSession(true);
+        out.println("Session ID: " + session.getId());
+        out.println("&lt;br&gt;");
+        out.println("Created: ");
+        out.println(new Date(session.getCreationTime()) + "&lt;br&gt;");
+        out.println("Last Accessed: ");
+        out.println(new Date(session.getLastAccessedTime()));
+
+        String dataName = req.getParameter("dataname");
+        String dataValue = req.getParameter("datavalue");
+        if (dataName != null &amp;&amp; dataValue != null) {
+            session.setAttribute(dataName, dataValue);
+        }
+
+        out.println("&lt;P&gt;");
+        out.println("The following data is in your session: " + "&lt;br&gt;&lt;br&gt;");
+        Enumeration names = session.getAttributeNames();
+        while (names.hasMoreElements()) {
+            String name = (String) names.nextElement();
+            String value = session.getAttribute(name).toString();
+            out.println(name + " = " + value + "&lt;br&gt;");
+        }
+
+        out.println("&lt;P&gt;");
+
+        out.print("&lt;form action=\"");
+        out.print(resp.encodeURL("Session"));
+        out.print("\" ");
+        out.println("method=POST&gt;");
+        out.println("Name of Session Attribute: ");
+        out.println("&lt;input type=text size=20 name=dataname&gt;");
+        out.println("&lt;br&gt;");
+        out.println("Value of Session Attribute: ");
+        out.println("&lt;input type=text size=20 name=datavalue&gt;");
+        out.println("&lt;br&gt;");
+        out.println("&lt;input type=submit&gt;");
+        out.println("&lt;/form&gt;");
+
+        out.println("&lt;P&gt;GET based form:&lt;br&gt;");
+        out.print("&lt;form action=\"");
+        out.print(resp.encodeURL("Session"));
+        out.print("\" ");
+        out.println("method=GET&gt;");
+        out.println("Name of Session Attribute: ");
+        out.println("&lt;input type=text size=20 name=dataname&gt;");
+        out.println("&lt;br&gt;");
+        out.println("Value of Session Attribute: ");
+        out.println("&lt;input type=text size=20 name=datavalue&gt;");
+        out.println("&lt;br&gt;");
+        out.println("&lt;input type=submit&gt;");
+        out.println("&lt;/form&gt;");
+
+        out.print("&lt;p&gt;&lt;a href=\"");
+        out.print(resp.encodeURL("Session?dataname=foo&amp;datavalue=bar"));
+        out.println("\" &gt;URL encoded &lt;/a&gt;");
+
+		
+		out.println(service.pageFooter());
+		
+		out.close();
+	}
+
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		doGet(req, resp);
+	}
+
+	
+}
+</webapp>
+</webapps>
