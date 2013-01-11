@@ -3,11 +3,11 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.kylin.jvm</groupId>
-    <artifactId>JVM</artifactId>
+    <groupId>com.kylin.jmx</groupId>
+    <artifactId>JMX</artifactId>
     <version>1.0</version>
     <name>Parent</name>
-    <description>Parent of JVM</description>
+    <description>Parent of JMX</description>
     <packaging>pom</packaging>
 
     <url>https://github.com/kylinsoong</url>
@@ -17,10 +17,7 @@
     </properties>
 
     <modules>
-        <module>sandbox</module>
-        <module>msc</module>
-	<module>vfs</module>
-	<module>jmx</module>
+        <module>jmx-jboss</module>
     </modules>
 
 </project>
