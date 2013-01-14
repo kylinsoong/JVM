@@ -17,7 +17,7 @@ public class JMXJNDIClient {
         env.setProperty(Context.SECURITY_CREDENTIALS, "admin");
 
         env.setProperty("java.naming.factory.initial", "org.jboss.security.jndi.JndiLoginInitialContextFactory");
-        env.setProperty("java.naming.provider.url", "jnp://10.66.192.48:1100");
+        env.setProperty("java.naming.provider.url", "jnp://10.208.8.62:1049");
         env.setProperty("java.naming.factory.url.pkgs", "org.jboss.naming:org.jnp.interfaces");
         
         Context ctx;

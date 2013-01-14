@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>com.kylin.jdk</groupId>
+	<artifactId>jdk-socket</artifactId>
+	<version>1.0</version>
+	<packaging>jar</packaging>
+	<name>JDK Socket</name>
+	<description>JDK Socket</description>
+
+	<url>https://github.com/kylinsoong</url>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+<maven.compiler.target>1.6</maven.compiler.target>
+<maven.compiler.source>1.6</maven.compiler.source>
+<compiler.plugin.version>2.3.1</compiler.plugin.version>
+	</properties>
+   
+<build>
+<finalName>socket-conn</finalName>
+<plugins>
+<!-- Enforce Java 1.6 -->
+<plugin>
+<artifactId>maven-compiler-plugin</artifactId>
+<version>${compiler.plugin.version}</version>
+<configuration>
+<source>${maven.compiler.source}</source>
+<target>${maven.compiler.target}</target>
+</configuration>
+</plugin>
+<!-- Make jar achieve executable -->
+<plugin>
+<artifactId>maven-jar-plugin</artifactId>
+                <configuration>
+                    <archive>
+                        <manifest>
+                            <mainClass>com.kylin.jdk.socket.Main</mainClass>
+                        </manifest>
+                        <manifestEntries>
+                            <Jar-Version>${project.version}</Jar-Version>
+                            <Jar-Name>${project.artifactId}</Jar-Name>
+                        </manifestEntries>
+                    </archive>
+                </configuration>
+</plugin>
+</plugins>
+</build>	
+</project>

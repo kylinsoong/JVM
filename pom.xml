@@ -21,6 +21,7 @@
         <module>msc</module>
 	<module>vfs</module>
 	<module>jmx</module>
+	<module>jdk</module>
     </modules>
 
 </project>
