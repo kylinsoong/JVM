@@ -38,6 +38,20 @@
 	<build>
 		<finalName>msc-stu</finalName>
 		<plugins>
+			<!-- Compiler -->
+            <plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <showDeprecation>true</showDeprecation>
+                    <showWarnings>true</showWarnings>
+                </configuration>
+            </plugin>
+		
+			<!-- Source -->
+		    <plugin>
+                <artifactId>maven-source-plugin</artifactId>
+            </plugin>
+            
 			<!-- Enforce Java 1.6  -->
 			<plugin>
 				<artifactId>maven-compiler-plugin</artifactId>

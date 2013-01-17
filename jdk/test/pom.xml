@@ -5,7 +5,7 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.kylin.test</groupId>
-	<artifactId>test_jdk</artifactId>
+	<artifactId>jdk-test</artifactId>
 	<version>1.0</version>
 	<packaging>jar</packaging>
 	<name>JDK Test</name>
