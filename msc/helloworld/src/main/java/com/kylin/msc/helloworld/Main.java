@@ -7,6 +7,8 @@ public class Main {
 	public static void main(String[] args) {
 		
 		System.out.printf("\n    Modular Service Container HelloWorld Demo %s\n\n", VERSION);
+	
+		new PrintClassLoader().print();
 	}
 
 }

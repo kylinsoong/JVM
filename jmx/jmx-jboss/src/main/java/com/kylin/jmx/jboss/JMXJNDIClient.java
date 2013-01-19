@@ -5,7 +5,6 @@ import java.util.Properties;
 import javax.management.MBeanServerConnection;
 import javax.naming.Context;
 import javax.naming.InitialContext;
-import javax.naming.NamingException;
 
 public class JMXJNDIClient {
 
@@ -17,7 +16,7 @@ public class JMXJNDIClient {
         env.setProperty(Context.SECURITY_CREDENTIALS, "admin");
 
         env.setProperty("java.naming.factory.initial", "org.jboss.security.jndi.JndiLoginInitialContextFactory");
-        env.setProperty("java.naming.provider.url", "jnp://10.208.8.62:1049");
+        env.setProperty("java.naming.provider.url", "jnp://10.66.192.144:1099");
         env.setProperty("java.naming.factory.url.pkgs", "org.jboss.naming:org.jnp.interfaces");
         
         Context ctx;
