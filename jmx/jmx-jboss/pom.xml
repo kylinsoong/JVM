@@ -15,6 +15,9 @@
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<maven.compiler.target>1.6</maven.compiler.target>
+		<maven.compiler.source>1.6</maven.compiler.source>
+		<compiler.plugin.version>2.3.1</compiler.plugin.version>
 	</properties>
    
 	<dependencies>
@@ -24,5 +27,35 @@
 			<version>1.2.16</version>
 		</dependency>
 	</dependencies>
+	
+	<build>
+<finalName>testjmx</finalName>
+<plugins>
+<!-- Enforce Java 1.6 -->
+<plugin>
+<artifactId>maven-compiler-plugin</artifactId>
+<version>${compiler.plugin.version}</version>
+<configuration>
+<source>${maven.compiler.source}</source>
+<target>${maven.compiler.target}</target>
+</configuration>
+</plugin>
+<!-- Make jar achieve executable -->
+<plugin>
+<artifactId>maven-jar-plugin</artifactId>
+                <configuration>
+                    <archive>
+                        <manifest>
+                            <mainClass>com.kylin.jmx.jboss.JMXJNDIClient</mainClass>
+                        </manifest>
+                        <manifestEntries>
+                            <Jar-Version>${project.version}</Jar-Version>
+                            <Jar-Name>${project.artifactId}</Jar-Name>
+                        </manifestEntries>
+                    </archive>
+                </configuration>
+</plugin>
+</plugins>
+</build>
 	
 </project>

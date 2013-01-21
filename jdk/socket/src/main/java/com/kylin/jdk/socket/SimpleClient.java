@@ -9,7 +9,7 @@ public class SimpleClient {
 
 	Socket socket = null;
 	
-	final static String TEST_STR = "Test Success";
+	final static String TEST_STR = "\n    Test TCP Comunication[java socketss] Success\n";
 
 	public void start(String ip, int port) {
 

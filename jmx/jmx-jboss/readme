@@ -1,0 +1,6 @@
+1. What's this?
+   This contain simple to java application use JNDI lookup a MBeanServerConnection implementaion, via MBeanServerConnection interact with JBoss.
+2. How to run?
+   1) mvn clean install dependency:copy-dependencies
+   2) java -cp dependency/*:testjmx.jar com.kylin.jmx.jboss.testjmx -b 10.66.192.144 -p 1099
+   3) java -cp dependency/*:testjmx.jar com.kylin.jmx.jboss.testconnection -b 10.66.192.144 -p 1099
