@@ -1,0 +1,9 @@
+1. What's this?
+   This is a simple java application force cpu usag is very high.
+
+2. How to run?
+   java -jar highCPUUsage.jar <thread count> 
+ Note: if thread count is larger than you cpu count, your cpu will 100% be used.
+
+3. use linux comand will check cpu usage
+   top -p <PID>
