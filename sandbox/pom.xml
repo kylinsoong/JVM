@@ -17,7 +17,8 @@
     </properties>
 
     <modules>
-        <module>lab-threaddump</module>
+	<module>applePassing</module>
+        <module>lab-thread</module>
         <module>lab-crash</module>
 	<module>lab-heap</module>
 	<module>lab-cpu</module>
