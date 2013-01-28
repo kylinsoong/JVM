@@ -7,8 +7,6 @@ import org.jboss.modules.Module;
 import org.jboss.modules.ModuleLoader;
 import org.jboss.modules.filter.PathFilters;
 
-import com.kylin.msc.helloworld.PrintClassLoader;
-
 public class LocalModuleLoaderTest extends TestBase {
 	
 	protected void test() throws Exception {
@@ -20,7 +18,7 @@ public class LocalModuleLoaderTest extends TestBase {
 		Module module = moduleLoader.loadModule(MODULE_ID);
 		
 		pauseln("Print ClassLoader Hierarchy");
-		new PrintClassLoader().printClassLoader(module.getClassLoader());
+//		new PrintClassLoader().printClassLoader(module.getClassLoader());
 		
 		pauseln("\nPrint ModuleLoader");
 		ModuleLoader loader1 = Module.getBootModuleLoader();

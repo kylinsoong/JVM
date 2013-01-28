@@ -1,14 +1,13 @@
 package com.kylin.msc.helloworld;
 
+import com.kylin.msc.Version;
+
 public class Main {
 	
-	private final static String VERSION = "1.0.0";
-
 	public static void main(String[] args) {
 		
-		System.out.printf("\n    Modular Service Container HelloWorld Demo %s\n\n", VERSION);
+		System.out.printf("\n    Welcome to Modular Service Container HelloWorld Demo %s\n\n", Version.VERSION);
 	
-		new PrintClassLoader().print();
 	}
 
 }
