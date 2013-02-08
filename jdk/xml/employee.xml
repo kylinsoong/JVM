@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<employee id="100">
+	<name>
+		Kylin Soong
+	</name>
+	<age>
+		28
+	</age>
+	<gender>
+		Male
+	</gender>
+	<role>
+		Java Developer
+	</role>
+</employee>

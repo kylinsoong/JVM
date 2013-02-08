@@ -19,6 +19,7 @@
     <modules>
         <module>test</module>
 	<module>socket</module>
+	<module>xml</module>
     </modules>
 
 </project>
