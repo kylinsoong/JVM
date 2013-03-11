@@ -1,4 +1,4 @@
-<module xmlns="urn:jboss:module:1.0" name="com.kylin.subsystem">
+<module xmlns="urn:jboss:module:1.0" name="com.kylin.msc.tracker">
     <resources>
         <resource-root path="msc-subsystem.jar"/>
     </resources>

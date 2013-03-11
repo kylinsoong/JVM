@@ -49,7 +49,7 @@ public class TrackerExtension implements Extension {
 		final ManagementResourceRegistration registration = subsystem.registerSubsystemModel(TrackerDefinition.INSTANCE);
 		
 		ManagementResourceRegistration typeChild = registration.registerSubModel(TypeDefinition.INSTANCE);
-		
+		subsystem.registerXMLElementWriter(parser);
 	}
 
 	public void initializeParsers(ExtensionParsingContext context) {

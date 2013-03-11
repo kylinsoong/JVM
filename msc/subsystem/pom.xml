@@ -23,7 +23,7 @@
     <properties>
         <version.jboss.as>7.1.1.Final</version.jboss.as>
         <version.junit>4.8.2</version.junit>
-        <module.name>com.kylin.subsystem</module.name>
+        <module.name>com.kylin.msc.tracker</module.name>
     </properties>
     
 

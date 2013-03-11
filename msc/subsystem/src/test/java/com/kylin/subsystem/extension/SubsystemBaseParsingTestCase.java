@@ -10,17 +10,16 @@ import java.io.IOException;
  * If you need more control over what happens in tests look at  {@link SubsystemParsingTestCase}
  * @author <a href="mailto:tomaz.cerar@redhat.com">Tomaz Cerar</a>
  */
-public class SubsystemBaseParsingTestCase extends AbstractSubsystemBaseTest {
-
-    public SubsystemBaseParsingTestCase() {
-        super(SubsystemExtension.SUBSYSTEM_NAME, new SubsystemExtension());
-    }
-
-
-    @Override
-    protected String getSubsystemXml() throws IOException {
-        return "<subsystem xmlns=\"" + SubsystemExtension.NAMESPACE + "\">" +
-                "</subsystem>";
-    }
-
-}
+//public class SubsystemBaseParsingTestCase extends AbstractSubsystemBaseTest {
+//
+//    public SubsystemBaseParsingTestCase() {
+//        super(TrackerExtension.SUBSYSTEM_NAME, new TrackerExtension());
+//    }
+//
+//
+//    @Override
+//    protected String getSubsystemXml() throws IOException {
+//    	return readResource("subsystem.xml");
+//    }
+//
+//}
