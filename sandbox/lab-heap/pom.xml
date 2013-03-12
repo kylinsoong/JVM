@@ -17,6 +17,7 @@
     </properties>
 
     <modules>
+	<module>heapusage</module>
     </modules>
 
 </project>

@@ -1,0 +1,14 @@
+-verbose:gc -Xloggc:gc.log -XX:+PrintGCDetails -XX:+PrintGCDateStamps
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+----
+2013-03-12T14:47:00.733+0800: 331.682: [Full GC [PSYoungGen: 2064K->0K(14656K)] [PSOldGen: 329172K->331173K(341376K)] 331236K->331173K(356032K) [PSPermGen: 1934K->1934K(16384K)], 0.0040140 secs] [Times: user=0.00 sys=0.00, real=0.01 secs]
+----
+
+* Full GC happened at 2013-03-12T14:47:00.733+0800, after JVM run 331.682 seconds
+* Current heap size was changed by GC: 331236K->331173K
+* Max heap size: 356032K
+* Current permanent size was changed: 1934K->1934K
+* Max permanent area size: 16384K
+* Full GC took 0.0040140 secs
+ 
