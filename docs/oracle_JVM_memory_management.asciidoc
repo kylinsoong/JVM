@@ -34,8 +34,14 @@ Enable GC log
 +++++++++++++
 
 ----
+-verbose:gc -Xloggc:gc.log
+-verbose:gc -Xloggc:gc.log -XX:+PrintGCDetails
 -verbose:gc -Xloggc:gc.log -XX:+PrintGCDetails -XX:+PrintGCDateStamps
 ----
+
+link:gc-log-demo.asciidoc[GC Log Demo]
+
+link:gc.asciidoc[What's GC]
 
 Enable heap dump
 ++++++++++++++++
@@ -44,6 +50,26 @@ Enable heap dump
 -XX:+HeapDumpOnOutOfMemoryError
 ----
 
+Heap Reference
+++++++++++++++
+
+* initial java heap size
+----
+-Xms
+----
+
+* maximum java heap size
+----
+-Xmx
+----
+
+* the size of the heap for the young generation
+----
+-Xmn
+----
+
+Perm Reference
+++++++++++++++
 
 
 Others
