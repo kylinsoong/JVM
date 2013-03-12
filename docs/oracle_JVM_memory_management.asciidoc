@@ -6,7 +6,8 @@ The Sun JVM is generational, meaning that objects are created in one space and g
 * Old generation
 * Permanent generation
 
-image::img/jvm-memory-management-1.png[Figure 1 illustrates the breakdown of the Sun heap's generations and spaces]
+Figure 1 illustrates the breakdown of the Sun heap's generations and spaces
+image::img/jvm-memory-management-1.png[]
 
 Objects are created in Eden. When Eden is full, the garbage collector iterates over all objects in Eden, copies live objects to the first survivor space, and frees memory for any dead objects. When Eden again becomes full, it repeats the process by copying live objects from Eden to the second survivor space, and then copying live objects from the first survivor space to the second survivor space.If the second survivor space fills and live objects remain in Eden or in the first survivor space, then these objects are tenured (that is, they are copied to the old generation).
 
