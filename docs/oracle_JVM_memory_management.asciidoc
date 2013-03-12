@@ -83,6 +83,19 @@ Perm Reference
 ++++++++++++++
 
 
+Enable jconsole
++++++++++++++++
+
+* jconsole monitor j2se app
+----
+-Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=9010 -Dcom.sun.management.jmxremote.local.only=false -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false
+----
+
+* jconsole monitor JBoss 6 and previous version JBoss
+----
+-Djboss.platform.mbeanserver
+----
+
 Others
 ------
 http://www.oracle.com/technetwork/java/javase/tech/vmoptions-jsp-140102.html
