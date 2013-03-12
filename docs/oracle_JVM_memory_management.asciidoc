@@ -27,8 +27,27 @@ Therefore, we want to track the effectiveness of garbage collection in the old g
 
 image::img/jvm-memory-management-5.png[Figure 5. The shaded objects are those that have survived multiple major collections and are potential memory leaks]
 
-JVM OPTS
---------
+JVM OPTS & Commands
+-------------------
+
+Enable GC log
++++++++++++++
+
+----
+-verbose:gc -Xloggc:gc.log -XX:+PrintGCDetails -XX:+PrintGCDateStamps
+----
+
+Enable heap dump
+++++++++++++++++
+
+----
+-XX:+HeapDumpOnOutOfMemoryError
+----
+
+
+
+Others
+------
 http://www.oracle.com/technetwork/java/javase/tech/vmoptions-jsp-140102.html
 
 
