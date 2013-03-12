@@ -1,6 +1,7 @@
 Oracle JVM memory management
 ----------------------------
 The Sun JVM is generational, meaning that objects are created in one space and given several chances to die before they are tenured into a long-term space. Specifically, the Sun JVM is broken into the following spaces: 
+
 * Young generation, including Eden and two survivor spaces (the From space and the To space)
 * Old generation
 * Permanent generation
