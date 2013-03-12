@@ -7,20 +7,24 @@ The Sun JVM is generational, meaning that objects are created in one space and g
 * Permanent generation
 
 Figure 1 illustrates the breakdown of the Sun heap's generations and spaces
-image::img/jvm-memory-management-1.png[]
+
+image::img/jvm-memory-management-1.png[illustrates the breakdown of the Sun heap's generations and spaces]
 
 Objects are created in Eden. When Eden is full, the garbage collector iterates over all objects in Eden, copies live objects to the first survivor space, and frees memory for any dead objects. When Eden again becomes full, it repeats the process by copying live objects from Eden to the second survivor space, and then copying live objects from the first survivor space to the second survivor space.If the second survivor space fills and live objects remain in Eden or in the first survivor space, then these objects are tenured (that is, they are copied to the old generation).
 
 Figure 2. Objects are created in Eden until it is full
-image::img/jvm-memory-management-2.png[]
+
+image::img/jvm-memory-management-2.png[Objects are created in Eden until it is full]
 
 Figure 3. The order of processing is important: The garbage collector first traverses Eden and then the survivor space; this ensures that objects are given ample opportunity to die before being tenured
-image::img/jvm-memory-management-3.png[]
+
+image::img/jvm-memory-management-3.png[The order of processing is important: The garbage collector first traverses Eden and then the survivor space; this ensures that objects are given ample opportunity to die before being tenured]
 
 When the garbage collector cannot reclaim enough memory by executing this type of minor collection, also known as a copy collection, then it performs a major collection, also known as a stop-the-world collection. During the stop-the-world collection, the garbage collector suspends all threads and performs a mark-and-sweep collection on the entire heap, leaving the entire young generation empty and ready to restart this process. 
 
 Figure 4. When the garbage collector frees all dead objects and moves all live objects to a newly compacted tenured space, it leaves Eden and both survivor spaces empty
-image::img/jvm-memory-management-4.png[]
+
+image::img/jvm-memory-management-4.png[When the garbage collector frees all dead objects and moves all live objects to a newly compacted tenured space, it leaves Eden and both survivor spaces empty]
 
 From Sun's implementation of garbage collection, you can see that objects in the old generation can be collected only by a major collection. Long-lived objects are expensive to clean up, so you want to ensure that short-lived objects die in a timely manner before they have a chance to be tenured, and hence require a major garbage collection to reclaim their memory. 
 
@@ -31,7 +35,8 @@ Figure 5 highlights potential candidates for leaked objects: objects that surviv
 Therefore, we want to track the effectiveness of garbage collection in the old generation: each time that a major garbage collection runs, how much memory is it able to reclaim? Is the memory use in the old generation growing according to any discernable pattern? 
 
 Figure 5. The shaded objects are those that have survived multiple major collections and are potential memory leaks
-image::img/jvm-memory-management-5.png[]
+
+image::img/jvm-memory-management-5.png[The shaded objects are those that have survived multiple major collections and are potential memory leaks]
 
 JVM OPTS & Commands
 -------------------
