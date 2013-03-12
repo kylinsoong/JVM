@@ -2,7 +2,9 @@ package com.kylin.jvm.lab.heap;
 
 /**
  * 
- * -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=9010 -Dcom.sun.management.jmxremote.local.only=false -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false
+ * How to Run?
+ * 
+ * java -Dcom.sun.management.jmxremote -Xms1303m -Xmx1303m -XX:MaxPermSize=256m -verbose:gc -Xloggc:gc.log -XX:+PrintGCDetails -XX:+PrintGCDateStamps -jar ./target/heapusage.jar 1000 1000
  * 
  * @author kylin
  *

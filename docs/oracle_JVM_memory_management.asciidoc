@@ -96,6 +96,18 @@ Enable jconsole
 -Djboss.platform.mbeanserver
 ----
 
+Use jmap
+++++++++
+
+* print java heap summary
+----
+jmap -heap <PID>
+----
+
+link:heap-summary-demo[Heap Summary Demo]
+
+
+
 Others
 ------
 http://www.oracle.com/technetwork/java/javase/tech/vmoptions-jsp-140102.html

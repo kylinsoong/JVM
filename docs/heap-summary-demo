@@ -1,0 +1,48 @@
+$JAVA_HOME/bin/jmap -heap 17081
+Attaching to process ID 17081, please wait...
+Debugger attached successfully.
+Server compiler detected.
+JVM version is 20.6-b01
+
+using thread-local object allocation.
+Parallel GC with 4 thread(s)
+
+Heap Configuration:
+   MinHeapFreeRatio = 40
+   MaxHeapFreeRatio = 70
+   MaxHeapSize      = 1367343104 (1304.0MB)
+   NewSize          = 1048576 (1.0MB)
+   MaxNewSize       = 4294901760 (4095.9375MB)
+   OldSize          = 4194304 (4.0MB)
+   NewRatio         = 2
+   SurvivorRatio    = 8
+   PermSize         = 16777216 (16.0MB)
+   MaxPermSize      = 268435456 (256.0MB)
+
+Heap Usage:
+PS Young Generation
+Eden Space:
+   capacity = 341639168 (325.8125MB)
+   used     = 160286464 (152.861083984375MB)
+   free     = 181352704 (172.951416015625MB)
+   46.91688746882793% used
+From Space:
+   capacity = 56885248 (54.25MB)
+   used     = 0 (0.0MB)
+   free     = 56885248 (54.25MB)
+   0.0% used
+To Space:
+   capacity = 56885248 (54.25MB)
+   used     = 0 (0.0MB)
+   free     = 56885248 (54.25MB)
+   0.0% used
+PS Old Generation
+   capacity = 911605760 (869.375MB)
+   used     = 910143416 (867.9804000854492MB)
+   free     = 1462344 (1.3945999145507812MB)
+   99.83958591924649% used
+PS Perm Generation
+   capacity = 16777216 (16.0MB)
+   used     = 5554048 (5.2967529296875MB)
+   free     = 11223168 (10.7032470703125MB)
+   33.104705810546875% used
