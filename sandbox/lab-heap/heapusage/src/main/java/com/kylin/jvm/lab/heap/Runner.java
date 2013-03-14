@@ -1,5 +1,7 @@
 package com.kylin.jvm.lab.heap;
 
+import java.io.IOException;
+
 /**
  * 
  * How to Run?
@@ -12,7 +14,7 @@ package com.kylin.jvm.lab.heap;
 
 public class Runner {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException {
 
 		if(args.length != 2) {
 			help();
@@ -21,9 +23,13 @@ public class Runner {
 		try {
 			int times = Integer.parseInt(args[0]);
 			int interval = Integer.parseInt(args[1]);
+			System.out.println("Press Enter to continue");
+			System.in.read();
 			new HeapUsage(times, interval).run();
 		} catch (NumberFormatException e) {
 			help();
+		} catch (IOException e) {
+			throw e ;
 		}
 	}
 
