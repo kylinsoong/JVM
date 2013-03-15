@@ -3,11 +3,11 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.kylin.jvm</groupId>
-    <artifactId>JVM</artifactId>
+    <groupId>com.kylin.lab</groupId>
+    <artifactId>threaddump</artifactId>
     <version>1.0</version>
-    <name>Parent</name>
-    <description>Parent of JVM</description>
+    <name>ThreadDump parent</name>
+    <description>ThreadDump parent</description>
     <packaging>pom</packaging>
 
     <url>https://github.com/kylinsoong</url>
@@ -17,11 +17,11 @@
     </properties>
 
     <modules>
-        <module>jvm</module>
-        <module>msc</module>
-	<module>vfs</module>
-	<module>jmx</module>
-	<module>jdk</module>
+        <module>deadlock</module>
+        <module>infiniteloop</module>
+        <module>sleeping</module>
+	<module>threadpool</module>
+	<module>applePassing</module>
     </modules>
 
 </project>
