@@ -7,15 +7,15 @@ public class BootStrap {
 	
 	private static final int T_THREAD = 20 ;
 
-	public void boot() {
-		
-		Threshold threshold = new Threshold();
-		
+	@SuppressWarnings("static-access")
+	public void boot() throws InterruptedException {
+				
 		ExecutorService executor = Executors.newFixedThreadPool(T_THREAD);
 		
 		for(int i = 0 ; i < T_THREAD ; i ++) {
-			HeapTestThread thread = new HeapTestThread(i,threshold);
+			HeapTestThread thread = new HeapTestThread(i);
 			executor.execute(thread);
+			Thread.currentThread().sleep(1000 * 10);
 		}
 	}
 }

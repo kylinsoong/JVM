@@ -1,0 +1,50 @@
+What's this?
+------------
+
+This is lab show basic troubleshooting procedure for JVM heap related problem. 
+
+Navigate to jvm/heap/heapusage, build and generate archive jar as below:
+
+----
+mvn clean install
+----
+
+Start JVM Heap Analysis Lab Application use below commands:
+
+----
+java -Dcom.sun.management.jmxremote -Xms512m -Xmx512m -XX:MaxPermSize=128m -XX:+HeapDumpOnOutOfMemoryError -verbose:gc -Xloggc:gc.log -XX:+PrintGCDetails -XX:+PrintGCDateStamps -cp ./target/heapusage.jar MAT
+----
+
+Lab Environment
+---------------
+
+* java
+
+----
+java version "1.6.0_31"
+Java(TM) SE Runtime Environment (build 1.6.0_31-b04)
+Java HotSpot(TM) Server VM (build 20.6-b01, mixed mode)
+----
+
+* OS
+
+----
+Linux localhost.localdomain 2.6.43.8-1.fc15.i686.PAE #1 SMP Mon Jun 4 20:21:39 UTC 2012 i686 i686 i386 GNU/Linux
+----
+
+Use Eclipse MAT Analysising Heap Dump
+-------------------------------------
+
+Generate Heap Dump
++++++++++++++++++++
+
+Due to we use Sun JDK 1.6, so we can use the following commands to generate a heap dump:
+----
+jmap -dump:format=b,file=heap.hprof JAVA_PID
+----
+
+NOTE: `jmap -J-d64 -dump:format=b,file=heap.hprof JAVA_PID` for Sun JDK 1.6, OpenJDK 64-bit, Linux OS
+
+
+
+

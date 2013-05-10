@@ -12,13 +12,13 @@ public class BeanSerializer {
 		this.response = response;
 	}
 	
-	private String content;
+	private Object content;
 
-	public String getContent() {
+	public Object getContent() {
 		return content;
 	}
 
-	public void setContent(String content) {
+	public void setContent(Object content) {
 		this.content = content;
 	}
 

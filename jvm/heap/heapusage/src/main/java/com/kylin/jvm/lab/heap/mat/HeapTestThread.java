@@ -1,22 +1,22 @@
 package com.kylin.jvm.lab.heap.mat;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 
 import com.kylin.jvm.lab.heap.util.Util;
 
 public class HeapTestThread implements Runnable {
-	
-	private static final int T_THREAD = 20 ;
-	
+		
 	private int id;
-	
-	private Threshold threshold;
+		
+	List<BeanSerializer> list = new ArrayList<BeanSerializer>();
 
-	public HeapTestThread(int id, Threshold threshold) {
+	public HeapTestThread(int id) {
 		this.id = id ;
-		this.threshold = threshold ;
 	}
 
+	@SuppressWarnings("static-access")
 	public void run() {
 
 		Thread.currentThread().setName("heap-lab-" + id);
@@ -24,27 +24,26 @@ public class HeapTestThread implements Runnable {
 		BeanSerializer serializer = new BeanSerializer();
 		DocResponse doc = new DocResponse();
 		
-		int i = new Random().nextInt(T_THREAD);
-		if((i > 10) && (i % 2 == 0) && threshold.isSet()){
-			threshold.setSet(false);
-			String str = Util.getMBString(100);
-			byte[] buf = Util.getMBbyte(150);
+		if(id == 10){
+			byte[] buf = Util.getMBbyte(100);
 			doc.setBuffer(buf);
 			serializer.setResponse(doc);
-			serializer.setContent(str);
-		} else if(i % 3 == 0){
-			String str = Util.getKBString(100);
-			byte[] buf = Util.getKBbyte(150);
+			serializer.setContent(Util.getMBbyte(100));
+		} else if(id % 3 == 0){
+			byte[] buf = Util.getMBbyte(10);
 			doc.setBuffer(buf);
 			serializer.setResponse(doc);
-			serializer.setContent(str);
+			serializer.setContent(Util.getMBbyte(10));
 		} else {
-			String str = Util.getMBString(1);
 			byte[] buf = Util.getMBbyte(1);
 			doc.setBuffer(buf);
 			serializer.setResponse(doc);
-			serializer.setContent(str);
+			serializer.setContent(Util.getMBbyte(1));
 		}
+		
+		list.add(serializer);
+		
+		System.out.println(Thread.currentThread().getName() + " is sleeping");
 		
 		try {
 			Thread.currentThread().sleep(Long.MAX_VALUE);
