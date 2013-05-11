@@ -126,7 +126,7 @@ Use gedit open Garbage Collection log
 gedit gc-heapusage.log &
 ----
 
-NOTE: start heapusage app generate `gc-heapusage.log` in app run folder; gedit will send a notification when the opened file was modified, so we can chack the GC log if GC happened
+Note that start heapusage app generate `gc-heapusage.log` in app run folder; gedit will send a notification when the opened file was modified, so we can chack the GC log if GC happened
 
 Press Enter in heapusage start Terminal
 +++++++++++++++++++++++++++++++++++++++
