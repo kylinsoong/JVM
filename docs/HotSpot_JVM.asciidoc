@@ -3,9 +3,9 @@ Basic conception, instruction
 
 link:jvm-architecture.asciidoc[HotSpot JVM Architecture]
 
-link:oracle_JVM_memory_management.asciidoc[Oracle JVM Memory Management]
-
 link:gc.asciidoc[Java Garbage Collection Basics]
+
+link:oracle_JVM_memory_management.asciidoc[Oracle JVM Memory Management]
 
 
 JVM OPTS & Commands
