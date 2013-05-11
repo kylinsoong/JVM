@@ -1,0 +1,12 @@
+2013-05-11T18:18:20.946+0800: 4201.419: [GC [PSYoungGen: 115200K->768K(134400K)] 115200K->768K(390400K), 0.0035320 secs] [Times: user=0.01 sys=0.01, real=0.01 secs] 
+2013-05-11T18:27:30.866+0800: 4751.339: [GC [PSYoungGen: 30148K->568K(134400K)] 30148K->568K(390400K), 0.0028660 secs] [Times: user=0.01 sys=0.00, real=0.00 secs] 
+2013-05-11T18:27:30.869+0800: 4751.342: [Full GC (System) [PSYoungGen: 568K->0K(134400K)] [PSOldGen: 0K->475K(256000K)] 568K->475K(390400K) [PSPermGen: 5422K->5422K(65536K)], 0.0146190 secs] [Times: user=0.01 sys=0.00, real=0.02 secs] 
+Heap
+ PSYoungGen      total 134400K, used 48281K [0xaa300000, 0xb3900000, 0xb3900000)
+  eden space 115200K, 41% used [0xaa300000,0xad2266d8,0xb1380000)
+  from space 19200K, 0% used [0xb2640000,0xb2640000,0xb3900000)
+  to   space 19200K, 0% used [0xb1380000,0xb1380000,0xb2640000)
+ PSOldGen        total 256000K, used 475K [0x9a900000, 0xaa300000, 0xaa300000)
+  object space 256000K, 0% used [0x9a900000,0x9a976ce8,0xaa300000)
+ PSPermGen       total 65536K, used 5881K [0x96900000, 0x9a900000, 0x9a900000)
+  object space 65536K, 8% used [0x96900000,0x96ebe700,0x9a900000)

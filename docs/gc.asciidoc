@@ -4,3 +4,5 @@ link:Automatic_Garbage_Collection.asciidoc[Automatic Garbage Collection]
 link:jvm-generation.asciidoc[JVM Generation]
 
 link:garbage-collection-process.asciidoc[Generational Garbage Collection Process]
+
+link:lab-heap-usage.asciidoc[Generational Garbage Collection Process Lab]

@@ -1,0 +1,14 @@
+2682 intern Strings occupying 200352 bytes.
+class_loader	classes	bytes	parent_loader	alive?	type
+
+<bootstrap>	1043	4070000	  null  	live	<internal>
+0xab2df530	1	2080	  null  	dead	sun/reflect/DelegatingClassLoader@0x96949c30
+0xaa3ea0d0	4	9160	  null  	dead	javax/management/remote/rmi/NoCallStackClassLoader@0x96ce99c8
+0xaa3eec60	1	1800	  null  	dead	sun/reflect/DelegatingClassLoader@0x96949c30
+0xaa3f2be8	1	1800	  null  	dead	sun/reflect/DelegatingClassLoader@0x96949c30
+0xaa3f8558	1	1800	  null  	dead	sun/reflect/DelegatingClassLoader@0x96949c30
+0xaa3eae48	2	24600	  null  	dead	javax/management/remote/rmi/NoCallStackClassLoader@0x96ce99c8
+0xaa329a28	21	161176	0xaa323a00	live	sun/misc/Launcher$AppClassLoader@0x96a8afb8
+0xaa323a00	0	0	  null  	live	sun/misc/Launcher$ExtClassLoader@0x96a3e9f8
+
+total = 9	1074	4272416	    N/A    	alive=3, dead=6	    N/A    

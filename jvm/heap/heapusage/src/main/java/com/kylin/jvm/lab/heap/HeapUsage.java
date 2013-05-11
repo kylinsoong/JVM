@@ -5,7 +5,7 @@ import java.util.Map;
 
 public class HeapUsage {
 
-	private static final int INIT_SIZE = 1024 * 1000 ;
+	private static final int INIT_SIZE = 1024 * 1024 ;
 	
 	Map<String, Object> map = new HashMap<String, Object>();
 	
