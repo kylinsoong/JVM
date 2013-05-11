@@ -107,6 +107,6 @@ Useful Link
 * Solving common Java EE performance problems: http://www.javaworld.com/javaworld/jw-06-2006/jw-0619-tuning.html
 * Java® Virtual Machine Specification: http://docs.oracle.com/javase/specs/jvms/se7/html/
 * Java Garbage Collection Tutorial: http://www.oracle.com/webfolder/technetwork/tutorials/obe/java/gc01/index.html
-
+* Tuning JVM: http://www.oracle.com/webfolder/technetwork/tutorials/obe/java/gc01/index.html 
 
 

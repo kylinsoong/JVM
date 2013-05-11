@@ -1,1 +1,4 @@
-root
+
+link:Automatic_Garbage_Collection.asciidoc[Automatic Garbage Collection]
+
+link:jvm-generation.asciidoc[JVM Generation]
