@@ -22,6 +22,7 @@ There are many different command line switches that can be used with Java. This 
 * *-XX:PermSize* - Sets the starting size of the Permanent Generation
 * *-XX:MaxPermSize* - Sets the maximum size of the Permanent Generation       
 
+link:lab-heap-usage.asciidoc[Common Heap Related Switches Demo]
 
 Enable GC log
 +++++++++++++
