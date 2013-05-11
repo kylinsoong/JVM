@@ -15,15 +15,12 @@ Common Heap Related Switches
 ++++++++++++++++++++++++++++
 
 There are many different command line switches that can be used with Java. This section describes some of the more commonly used switches:
-
-|====================================================================
-|*Switch*         |*Description*                          
-|-Xms             |Sets the initial heap size for when the JVM starts            
-|-Xmx             |Sets the maximum heap size
-|-Xmn             |Sets the size of the Young Generation
-|-XX:PermSize     |Sets the starting size of the Permanent Generation
-|-XX:MaxPermSize  |Sets the maximum size of the Permanent Generation       
-|=====================================================================
+                      
+* -Xms             Sets the initial heap size for when the JVM starts            
+* -Xmx             Sets the maximum heap size
+* -Xmn             Sets the size of the Young Generation
+* -XX:PermSize     Sets the starting size of the Permanent Generation
+* -XX:MaxPermSize  Sets the maximum size of the Permanent Generation       
 
 
 Enable GC log
