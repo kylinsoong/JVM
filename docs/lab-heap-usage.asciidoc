@@ -115,9 +115,6 @@ Visual GC plugin for Visual VM provides a graphical representation of the garbag
 . From the menu select Tools --> Plugins, the Plugins Dialog pop up
 . In Available Plugins page, select Visual GC, click install button, the Plugin Installer Wizard pop up
 . In Plugin Installer Wizard, click next finisih the installation
-
-* Use Visual GC Analyze heapusage application
-
 . First, right click the `com.kylin.jvm.lab.heap.Runner` in the Local applications list of the Applications tab. Select Open.
 . The application is loaded into Visual VM. Notice a number of tabs are loaded on the right side of the interface. Click the Visual GC tab.
 . The Visual GC tab shows all the activity going on in the Garbage Collector. You can watch as the Eden space is filled up and data is moved between the two survivor spaces S1 and S0. In addition, graphs and stats of related to the garbage collector are shown at the right.
