@@ -99,6 +99,8 @@ NOTE: `PID` should be heapuasage PID, `jmap-heapusage-heap.out` contain all heap
 
 Check the output file jmap-heapusage-heap.out, record the details of Heap Configuration(MinHeapFreeRatio,MaxHeapFreeRatio,MaxHeapSize,NewSize,MaxNewSize,OldSize,NewRatio,SurvivorRatio,MaxPermSize), record the size of Heap Usage(Eden Space,From Space,To Space,PS Old Generation,PS Perm Generation).
 
+link:jmap-heapusage-heap.out[jmap-heapusage-heap.out]
+
 Start jvisualvm
 +++++++++++++++
 
@@ -134,6 +136,32 @@ NOTE: start heapusage app generate `gc-heapusage.log` in app run folder; gedit w
 Press Enter in heapusage start Terminal
 +++++++++++++++++++++++++++++++++++++++
 
+* Screenshot from visualvm
 
-ANALYSING
----------
+image::img/vmgc-1.PNG[S0, Tenured, Eden be used]
+
+Above diagram show Survivor S0, Eden, Tenured be used
+
+* Screenshot from jconsole
+
+image::img/vmgc-2.PNG[heap usage]
+
+Above diagram show Heap Memory Usage
+
+image::img/vmgc-3.PNG[eden usage]
+
+Above diagram show PS Eden Space Usage
+
+image::img/vmgc-4.PNG[tenured usage]
+
+Above diagram show Tenured Space Usage
+
+* jmap output
+
+link:jmap-heapusage-heap.out[jmap-heapusage-heap.out]
+
+* JVM Garbage Collection log
+
+link:gc-heapusage.log[gc-heapusage.log] 
+
+
