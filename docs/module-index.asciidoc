@@ -1,0 +1,13 @@
+JBoss Modular Class Loader
+--------------------------
+
+* ResourceLoader
+
+A loader for resources from a specific resource root within a module. Using the ResourceLoader we can:
+
+. Get the name of the root represented by this resource loader.
+. Get the class specification for the given class name.  If no matching class is found, null is returned.
+. Get the package specification for the given directory name.  Always returns a package specification; this method cannot be used to test for the existence of a package. A package spec should always be acquired from he same resource loader which provided the class specification.  The directory name will always be specified using `/` separators.
+. Get a resource with the given name.  If no such resource is available, null is returned. The resource name will always be specified using `/` separators for the directory segments.
+. Get the absolute physical filesystem path for a library with the given name.  The resultant path should be path-separated using `/` characters.
+. Get the collection of resource paths.  Called one time only when the resource loader is initialized.  The paths should use `/` characters to separate the path segments.
