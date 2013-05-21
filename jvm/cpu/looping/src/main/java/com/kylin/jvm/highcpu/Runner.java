@@ -26,7 +26,7 @@ public class Runner {
 
 	private static void usage() {
 		System.out.println("Run application with threadCount parameters");
-		System.out.println("	java -jar highCPUUsage.jar 10");
+		System.out.println("	java -jar jvm-highcpu-looping.jar 10");
 		System.out.println("Application exit");
 		Runtime.getRuntime().exit(0);
 	}

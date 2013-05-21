@@ -17,7 +17,8 @@
     </properties>
 
     <modules>
-        <module>highCpuUsage</module>
+        <module>looping</module>
+	<module>tools</module>
     </modules>
 
 </project>
