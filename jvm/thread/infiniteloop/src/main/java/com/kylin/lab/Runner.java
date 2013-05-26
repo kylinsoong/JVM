@@ -6,12 +6,11 @@ public class Runner {
 
 	public static void main(String[] args) {
 		
-		System.out.print("\n  Threaddump infiniteloop test start...\n");
+		Thread.currentThread().setName("lab-thread-infiniteloop-main");
 		
-		Thread t1 = new Thread(new InfiniteLoopThread("lab-threaddump-thread-infiniteloop"));
-		t1.start();
+		System.out.print("\n  Thread infiniteloop Lab start...\n");
 		
-		Thread.currentThread().setName("lab-threaddump-thread-infiniteloop-main");
+		new Thread(new InfiniteLoopThread("lab-thread-infiniteloop")).start();
 		
 		while(true) {
 			

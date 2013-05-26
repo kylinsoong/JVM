@@ -1,7 +1,9 @@
 OBJECTIVE
 ---------
 * What's the java thread deadlock
+* Illustrating Thread in `waiting for monitor entry` status
 * Troubleshooting java thread deadlock
+* Analysing java thread dump while thread deadlock occurring
 
 PREREQUISITE
 -------------

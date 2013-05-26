@@ -1,0 +1,101 @@
+OBJECTIVE
+---------
+* Illustrating Thread in `runnable` status
+* Analysing java thread dump while thread infinite loop occurring.
+
+PREREQUISITE
+-------------
+
+* Maven 3.0 or latter.
+* Eclipse
+* threadDump analysing tools
+
+DESCRIPTION
+-----------
+
+We will start 2 threads 'lab-thread-infiniteloop' and 'lab-thread-infiniteloop-main', which both threads keep infinite loop.
+
+Lab Source Code: .../jvm/thread/infiniteloop
+
+LAB STEPS
+---------
+
+I - Build and generate executable jar
++++++++++++++++++++++++++++++++++++++
+
+----
+mvn clean install
+----
+
+thread-infiniteloop.jar will be generated.
+
+II - Show Java Threads in `runnable` status
++++++++++++++++++++++++++++++++++++++++++++
+
+----
+java -jar thread-infiniteloop.jar
+----
+
+This will start both 'lab-thread-infiniteloop' and 'lab-thread-infiniteloop-main', these 2 threads keep infinitely looping.
+
+III - Generate thread dump
+++++++++++++++++++++++++++
+
+----
+jstack -l <PID> > infiniteloop.out
+----
+
+will generate thread dump file `infiniteloop.out`
+
+IV - Show CPU usage in OS side
+++++++++++++++++++++++++++++++
+
+----
+top -H -p <PID>
+----
+
+will list cpu usage in OS side as below diagram:
+
+image::img/jvm-thread-infiniteloop-1.png[CPU Usage in OS side]
+
+ANALYSING
+---------
+
+* Both 'lab-thread-infiniteloop' and 'lab-thread-infiniteloop-main' are in `runnable` status.
+
+----
+"lab-thread-infiniteloop-main" prio=10 tid=0xb6904800 nid=0x26bd runnable [0xb6b41000]
+   java.lang.Thread.State: RUNNABLE
+        at com.kylin.lab.Runner.main(Runner.java:15)
+
+   Locked ownable synchronizers:
+        - None
+
+"lab-thread-infiniteloop" prio=10 tid=0xb69eac00 nid=0x26ca runnable [0x6ee7e000]
+   java.lang.Thread.State: RUNNABLE
+        at com.kylin.lab.threaddump.infiniteloop.InfiniteLoopThread.run(InfiniteLoopThread.java:16)
+        at java.lang.Thread.run(Thread.java:662)
+
+   Locked ownable synchronizers:
+        - None
+----
+
+* Java thread infinite loop
+
+From *LAB STEPS* Show CPU usage diagram we can find java threads 9917 and 9930 cpu usage approach 100%.
+
+9917 and 9930 are Decimal, we need covert it to Hexadecimal:
+  9917 -> 26bd
+  9930 -> 26ca
+
+It's easy to find:
+
+  26bd -> lab-thread-infiniteloop-main
+  26ca -> lab-thread-infiniteloop
+
+This can get a conclusion: java threads infinite loop will consume huge CPU
+
+* Full thread dump file view
+
+link:infiniteloop.out[Ininite loop thread dump file]
+

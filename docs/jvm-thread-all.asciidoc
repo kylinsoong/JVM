@@ -1,2 +1,4 @@
 
-link:lab-thread-deadlock.asciidoc[Java Threads Deadlock]
+link:lab-thread-deadlock.asciidoc[Java Thread `waiting for monitor entry` status, Java Threads Deadlock]
+
+link:lab-thread-infiniteloop.asciidoc[Java Thread `runnable` status, Java Threads Infinite Loop]
