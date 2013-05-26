@@ -5,16 +5,11 @@ link:HotSpot_JVM.asciidoc[HotSpot JVM]
 
 
 
-ThreadDump Test Lab
---------------------
+Java Thread
+-----------
 
-link:lab-threaddump-deadlock.asciidoc[lab-threaddump-deadlock]
+link:jvm-thread-all.asciidoc[Java Thread All]
 
-link:lab-threaddump-infiniteloop.asciidoc[lab-threaddump-infiniteloop]
-
-link:lab-threaddump-sleeping.asciidoc[lab-threaddump-sleeping]
-
-link:lab-threaddump-threadpool.asciidoc[lab-threaddump-threadpool]
 
 
 Memory Type

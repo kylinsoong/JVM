@@ -17,6 +17,8 @@ Java Thread in `waiting on condition` means: either Waiting until it reaches con
 
 We will start 2 threads lab-thread-sleeping and lab-thread-sleeping-main, which both in sleeping status.
 
+link:lab-thread-threadpool.asciidoc[Waiting until it reaches condition cause thread in `waiting on condition` status]
+
 Lab Source Code: .../jvm/thread/sleeping
 
 LAB STEPS

@@ -26,7 +26,7 @@ public class ThreadPoolTest {
 		init();
 		
 		for (int i = 0 ; i < POOL_SIZE ; i ++) {
-			String threadName = "pool-sleeping-thread-" + i ;
+			String threadName = "lab-thread-threadpool-" + i ;
 			SleepingThread thread = new SleepingThread(threadName, queue);
 			threadExecutor.execute(thread);
 		}

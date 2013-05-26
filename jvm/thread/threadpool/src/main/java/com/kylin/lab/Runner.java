@@ -7,7 +7,7 @@ public class Runner {
 
 	public static void main(String[] args) {
 		
-		System.out.print("\n  Threaddump threadpool test start...\n\n");
+		System.out.print("\n  Thread threadpool Lab start...\n\n");
 		
 		new ThreadPoolTest().startThread();
 	}

@@ -7,6 +7,8 @@ link:lab-thread-infiniteloop.asciidoc[Java Threads Infinite Loop]
 
 link:lab-thread-sleeping.asciidoc[Java Threads Sleeping]
 
+link:lab-thread-threadpool.asciidoc[Java Threads in Thread Pool]
+
 
 Java Threads Status
 -------------------
