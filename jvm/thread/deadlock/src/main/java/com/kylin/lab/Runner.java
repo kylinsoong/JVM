@@ -12,7 +12,6 @@ public class Runner {
 			System.out.println("\t <1> indicate run Thread 1");
 			System.out.println("\t <2> indicate run Thread 2");
 			System.out.println("\t <a> indicate run both Thread 1 and Thread 2");
-			System.out.println("Run ResourceRunner Demo: com.kylin.lab.Runner a");
 			Runtime.getRuntime().exit(0);
 		}
 

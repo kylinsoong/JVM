@@ -15,9 +15,7 @@ public class Resource {
 	public synchronized void lock(String threadName, Resource resource) {
 		
 		System.out.println("\n  " + threadName  + " locked " + resource.getName());
-		
-//		Util.sleep(threadName, 1000L);
-		
+				
 		Util.prepare(threadName, this);
 		
 		resource.lockInternal(threadName, this);
@@ -25,6 +23,6 @@ public class Resource {
 	
 	public synchronized void lockInternal(String threadName, Resource resource) {
 		
-		System.out.println("\n  " + threadName  + " locked " + resource.getName());
+		System.out.println("\n  " + threadName  + " locked " + resource.getName() + "\n");
 	}
 }

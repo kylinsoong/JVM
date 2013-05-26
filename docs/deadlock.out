@@ -1,127 +1,127 @@
-2012-08-30 14:36:58
+2013-05-26 12:13:18
 Full thread dump Java HotSpot(TM) Server VM (20.6-b01 mixed mode):
 
-"Attach Listener" daemon prio=10 tid=0x6e703c00 nid=0x31ef waiting on condition [0x00000000]
+"Attach Listener" daemon prio=10 tid=0x6e803c00 nid=0x18c3 waiting on condition [0x00000000]
    java.lang.Thread.State: RUNNABLE
 
    Locked ownable synchronizers:
 	- None
 
-"DestroyJavaVM" prio=10 tid=0xb6904800 nid=0x31a4 waiting on condition [0x00000000]
+"DestroyJavaVM" prio=10 tid=0xb6a04800 nid=0x175e waiting on condition [0x00000000]
    java.lang.Thread.State: RUNNABLE
 
    Locked ownable synchronizers:
 	- None
 
-"lab-threaddump-thread-2" prio=10 tid=0xb69e0800 nid=0x31b2 waiting for monitor entry [0x6e42c000]
+"lab-threaddump-thread-2" prio=10 tid=0xb6aec000 nid=0x176c waiting for monitor entry [0x6e97d000]
    java.lang.Thread.State: BLOCKED (on object monitor)
 	at com.kylin.lab.threaddump.deadlock.Resource.lockInternal(Resource.java:28)
-	- waiting to lock <0x9e32bbe8> (a com.kylin.lab.threaddump.deadlock.Resource)
+	- waiting to lock <0x9e3efa18> (a com.kylin.lab.threaddump.deadlock.Resource)
 	at com.kylin.lab.threaddump.deadlock.Resource.lock(Resource.java:23)
-	- locked <0x9e32bbd8> (a com.kylin.lab.threaddump.deadlock.Resource)
+	- locked <0x9e3efa08> (a com.kylin.lab.threaddump.deadlock.Resource)
 	at com.kylin.lab.threaddump.deadlock.ResourceThread.run(ResourceThread.java:28)
 	at java.lang.Thread.run(Thread.java:662)
 
    Locked ownable synchronizers:
 	- None
 
-"lab-threaddump-thread-1" prio=10 tid=0xb69df400 nid=0x31b1 waiting for monitor entry [0x6e47d000]
+"lab-threaddump-thread-1" prio=10 tid=0xb6aeac00 nid=0x176b waiting for monitor entry [0x6eb5c000]
    java.lang.Thread.State: BLOCKED (on object monitor)
 	at com.kylin.lab.threaddump.deadlock.Resource.lockInternal(Resource.java:28)
-	- waiting to lock <0x9e32bbd8> (a com.kylin.lab.threaddump.deadlock.Resource)
+	- waiting to lock <0x9e3efa08> (a com.kylin.lab.threaddump.deadlock.Resource)
 	at com.kylin.lab.threaddump.deadlock.Resource.lock(Resource.java:23)
-	- locked <0x9e32bbe8> (a com.kylin.lab.threaddump.deadlock.Resource)
+	- locked <0x9e3efa18> (a com.kylin.lab.threaddump.deadlock.Resource)
 	at com.kylin.lab.threaddump.deadlock.ResourceThread.run(ResourceThread.java:26)
 	at java.lang.Thread.run(Thread.java:662)
 
    Locked ownable synchronizers:
 	- None
 
-"Low Memory Detector" daemon prio=10 tid=0xb69bbc00 nid=0x31af runnable [0x00000000]
+"Low Memory Detector" daemon prio=10 tid=0xb6abbc00 nid=0x1769 runnable [0x00000000]
    java.lang.Thread.State: RUNNABLE
 
    Locked ownable synchronizers:
 	- None
 
-"C2 CompilerThread1" daemon prio=10 tid=0xb69ba000 nid=0x31ae waiting on condition [0x00000000]
+"C2 CompilerThread1" daemon prio=10 tid=0xb6aba000 nid=0x1768 waiting on condition [0x00000000]
    java.lang.Thread.State: RUNNABLE
 
    Locked ownable synchronizers:
 	- None
 
-"C2 CompilerThread0" daemon prio=10 tid=0xb69b8000 nid=0x31ad waiting on condition [0x00000000]
+"C2 CompilerThread0" daemon prio=10 tid=0xb6ab8400 nid=0x1767 waiting on condition [0x00000000]
    java.lang.Thread.State: RUNNABLE
 
    Locked ownable synchronizers:
 	- None
 
-"Signal Dispatcher" daemon prio=10 tid=0xb69b6800 nid=0x31ac runnable [0x00000000]
+"Signal Dispatcher" daemon prio=10 tid=0xb6ab6800 nid=0x1766 runnable [0x00000000]
    java.lang.Thread.State: RUNNABLE
 
    Locked ownable synchronizers:
 	- None
 
-"Finalizer" daemon prio=10 tid=0xb69a8400 nid=0x31ab in Object.wait() [0x6f07d000]
+"Finalizer" daemon prio=10 tid=0xb6aa8400 nid=0x1765 in Object.wait() [0x6f465000]
    java.lang.Thread.State: WAITING (on object monitor)
 	at java.lang.Object.wait(Native Method)
-	- waiting on <0x9e2f1150> (a java.lang.ref.ReferenceQueue$Lock)
+	- waiting on <0x9e3b1150> (a java.lang.ref.ReferenceQueue$Lock)
 	at java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:118)
-	- locked <0x9e2f1150> (a java.lang.ref.ReferenceQueue$Lock)
+	- locked <0x9e3b1150> (a java.lang.ref.ReferenceQueue$Lock)
 	at java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:134)
 	at java.lang.ref.Finalizer$FinalizerThread.run(Finalizer.java:159)
 
    Locked ownable synchronizers:
 	- None
 
-"Reference Handler" daemon prio=10 tid=0xb69a6c00 nid=0x31aa in Object.wait() [0x6eae1000]
+"Reference Handler" daemon prio=10 tid=0xb6aa7000 nid=0x1764 in Object.wait() [0x6ebad000]
    java.lang.Thread.State: WAITING (on object monitor)
 	at java.lang.Object.wait(Native Method)
-	- waiting on <0x9e2f1050> (a java.lang.ref.Reference$Lock)
+	- waiting on <0x9e3b1050> (a java.lang.ref.Reference$Lock)
 	at java.lang.Object.wait(Object.java:485)
 	at java.lang.ref.Reference$ReferenceHandler.run(Reference.java:116)
-	- locked <0x9e2f1050> (a java.lang.ref.Reference$Lock)
+	- locked <0x9e3b1050> (a java.lang.ref.Reference$Lock)
 
    Locked ownable synchronizers:
 	- None
 
-"VM Thread" prio=10 tid=0xb69a3000 nid=0x31a9 runnable 
+"VM Thread" prio=10 tid=0xb6aa3400 nid=0x1763 runnable 
 
-"GC task thread#0 (ParallelGC)" prio=10 tid=0xb690b800 nid=0x31a5 runnable 
+"GC task thread#0 (ParallelGC)" prio=10 tid=0xb6a0b800 nid=0x175f runnable 
 
-"GC task thread#1 (ParallelGC)" prio=10 tid=0xb690d000 nid=0x31a6 runnable 
+"GC task thread#1 (ParallelGC)" prio=10 tid=0xb6a0d000 nid=0x1760 runnable 
 
-"GC task thread#2 (ParallelGC)" prio=10 tid=0xb690e400 nid=0x31a7 runnable 
+"GC task thread#2 (ParallelGC)" prio=10 tid=0xb6a0e400 nid=0x1761 runnable 
 
-"GC task thread#3 (ParallelGC)" prio=10 tid=0xb690fc00 nid=0x31a8 runnable 
+"GC task thread#3 (ParallelGC)" prio=10 tid=0xb6a0fc00 nid=0x1762 runnable 
 
-"VM Periodic Task Thread" prio=10 tid=0xb69bdc00 nid=0x31b0 waiting on condition 
+"VM Periodic Task Thread" prio=10 tid=0xb6abdc00 nid=0x176a waiting on condition 
 
-JNI global references: 906
+JNI global references: 899
 
 
 Found one Java-level deadlock:
 =============================
 "lab-threaddump-thread-2":
-  waiting to lock monitor 0x6e702100 (object 0x9e32bbe8, a com.kylin.lab.threaddump.deadlock.Resource),
+  waiting to lock monitor 0x6e802100 (object 0x9e3efa18, a com.kylin.lab.threaddump.deadlock.Resource),
   which is held by "lab-threaddump-thread-1"
 "lab-threaddump-thread-1":
-  waiting to lock monitor 0x6e7037a8 (object 0x9e32bbd8, a com.kylin.lab.threaddump.deadlock.Resource),
+  waiting to lock monitor 0x6e8037a8 (object 0x9e3efa08, a com.kylin.lab.threaddump.deadlock.Resource),
   which is held by "lab-threaddump-thread-2"
 
 Java stack information for the threads listed above:
 ===================================================
 "lab-threaddump-thread-2":
 	at com.kylin.lab.threaddump.deadlock.Resource.lockInternal(Resource.java:28)
-	- waiting to lock <0x9e32bbe8> (a com.kylin.lab.threaddump.deadlock.Resource)
+	- waiting to lock <0x9e3efa18> (a com.kylin.lab.threaddump.deadlock.Resource)
 	at com.kylin.lab.threaddump.deadlock.Resource.lock(Resource.java:23)
-	- locked <0x9e32bbd8> (a com.kylin.lab.threaddump.deadlock.Resource)
+	- locked <0x9e3efa08> (a com.kylin.lab.threaddump.deadlock.Resource)
 	at com.kylin.lab.threaddump.deadlock.ResourceThread.run(ResourceThread.java:28)
 	at java.lang.Thread.run(Thread.java:662)
 "lab-threaddump-thread-1":
 	at com.kylin.lab.threaddump.deadlock.Resource.lockInternal(Resource.java:28)
-	- waiting to lock <0x9e32bbd8> (a com.kylin.lab.threaddump.deadlock.Resource)
+	- waiting to lock <0x9e3efa08> (a com.kylin.lab.threaddump.deadlock.Resource)
 	at com.kylin.lab.threaddump.deadlock.Resource.lock(Resource.java:23)
-	- locked <0x9e32bbe8> (a com.kylin.lab.threaddump.deadlock.Resource)
+	- locked <0x9e3efa18> (a com.kylin.lab.threaddump.deadlock.Resource)
 	at com.kylin.lab.threaddump.deadlock.ResourceThread.run(ResourceThread.java:26)
 	at java.lang.Thread.run(Thread.java:662)
 
