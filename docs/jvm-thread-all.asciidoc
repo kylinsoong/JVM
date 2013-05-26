@@ -13,6 +13,6 @@ Java Threads Status
 
 link:lab-thread-infiniteloop.asciidoc[runnable]
 
-link:lab-thread-deadlock.asciidoc[waiting for monitor entry]
+link:lab-thread-waitingForMonitorEntry.asciidoc[waiting for monitor entry]
 
 link:lab-thread-sleeping.asciidoc[waiting on condition]

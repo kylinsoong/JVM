@@ -20,6 +20,7 @@
         <module>deadlock</module>
         <module>infiniteloop</module>
         <module>sleeping</module>
+	<module>status</module>
 	<module>threadpool</module>
 	<module>applePassing</module>
     </modules>

@@ -1,0 +1,114 @@
+2013-05-26 16:30:19
+Full thread dump Java HotSpot(TM) Server VM (20.6-b01 mixed mode):
+
+"Attach Listener" daemon prio=10 tid=0x6e703c00 nid=0x4738 runnable [0x00000000]
+   java.lang.Thread.State: RUNNABLE
+
+   Locked ownable synchronizers:
+	- None
+
+"DestroyJavaVM" prio=10 tid=0xb6904800 nid=0x46e5 waiting on condition [0x00000000]
+   java.lang.Thread.State: RUNNABLE
+
+   Locked ownable synchronizers:
+	- None
+
+"lab-thread-waitingForMonitorEntry-2" prio=10 tid=0xb69ef400 nid=0x46f5 waiting for monitor entry [0x6e3fc000]
+   java.lang.Thread.State: BLOCKED (on object monitor)
+	at com.kylin.lab.thread.waitingForMonitorEntry.Resource.lock(Resource.java:18)
+	- waiting to lock <0x9e333aa8> (a com.kylin.lab.thread.waitingForMonitorEntry.Resource)
+	at com.kylin.lab.thread.waitingForMonitorEntry.LockThread.run(LockThread.java:19)
+	at java.lang.Thread.run(Thread.java:662)
+
+   Locked ownable synchronizers:
+	- None
+
+"lab-thread-waitingForMonitorEntry-1" prio=10 tid=0xb69edc00 nid=0x46f4 waiting on condition [0x6e87d000]
+   java.lang.Thread.State: TIMED_WAITING (sleeping)
+	at java.lang.Thread.sleep(Native Method)
+	at com.kylin.lab.thread.waitingForMonitorEntry.Resource.lock(Resource.java:21)
+	- locked <0x9e333aa8> (a com.kylin.lab.thread.waitingForMonitorEntry.Resource)
+	at com.kylin.lab.thread.waitingForMonitorEntry.LockThread.run(LockThread.java:19)
+	at java.lang.Thread.run(Thread.java:662)
+
+   Locked ownable synchronizers:
+	- None
+
+"lab-thread-waitingOnCondition" prio=10 tid=0xb69ec400 nid=0x46f3 waiting on condition [0x6ea5c000]
+   java.lang.Thread.State: TIMED_WAITING (sleeping)
+	at java.lang.Thread.sleep(Native Method)
+	at com.kylin.lab.thread.waitingOnCondition.SleepingThread.run(SleepingThread.java:18)
+	at java.lang.Thread.run(Thread.java:662)
+
+   Locked ownable synchronizers:
+	- None
+
+"lab-thread-runnable" prio=10 tid=0xb69eac00 nid=0x46f2 runnable [0x6ee7e000]
+   java.lang.Thread.State: RUNNABLE
+	at com.kylin.lab.thread.runnable.RunnableThread.run(RunnableThread.java:16)
+	at java.lang.Thread.run(Thread.java:662)
+
+   Locked ownable synchronizers:
+	- None
+
+"Low Memory Detector" daemon prio=10 tid=0xb69bbc00 nid=0x46f0 runnable [0x00000000]
+   java.lang.Thread.State: RUNNABLE
+
+   Locked ownable synchronizers:
+	- None
+
+"C2 CompilerThread1" daemon prio=10 tid=0xb69ba000 nid=0x46ef waiting on condition [0x00000000]
+   java.lang.Thread.State: RUNNABLE
+
+   Locked ownable synchronizers:
+	- None
+
+"C2 CompilerThread0" daemon prio=10 tid=0xb69b8400 nid=0x46ee waiting on condition [0x00000000]
+   java.lang.Thread.State: RUNNABLE
+
+   Locked ownable synchronizers:
+	- None
+
+"Signal Dispatcher" daemon prio=10 tid=0xb69b6800 nid=0x46ed runnable [0x00000000]
+   java.lang.Thread.State: RUNNABLE
+
+   Locked ownable synchronizers:
+	- None
+
+"Finalizer" daemon prio=10 tid=0xb69a8400 nid=0x46ec in Object.wait() [0xb6a7a000]
+   java.lang.Thread.State: WAITING (on object monitor)
+	at java.lang.Object.wait(Native Method)
+	- waiting on <0x9e2f1150> (a java.lang.ref.ReferenceQueue$Lock)
+	at java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:118)
+	- locked <0x9e2f1150> (a java.lang.ref.ReferenceQueue$Lock)
+	at java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:134)
+	at java.lang.ref.Finalizer$FinalizerThread.run(Finalizer.java:159)
+
+   Locked ownable synchronizers:
+	- None
+
+"Reference Handler" daemon prio=10 tid=0xb69a7000 nid=0x46eb in Object.wait() [0x6eaad000]
+   java.lang.Thread.State: WAITING (on object monitor)
+	at java.lang.Object.wait(Native Method)
+	- waiting on <0x9e2f1050> (a java.lang.ref.Reference$Lock)
+	at java.lang.Object.wait(Object.java:485)
+	at java.lang.ref.Reference$ReferenceHandler.run(Reference.java:116)
+	- locked <0x9e2f1050> (a java.lang.ref.Reference$Lock)
+
+   Locked ownable synchronizers:
+	- None
+
+"VM Thread" prio=10 tid=0xb69a3400 nid=0x46ea runnable 
+
+"GC task thread#0 (ParallelGC)" prio=10 tid=0xb690b800 nid=0x46e6 runnable 
+
+"GC task thread#1 (ParallelGC)" prio=10 tid=0xb690d000 nid=0x46e7 runnable 
+
+"GC task thread#2 (ParallelGC)" prio=10 tid=0xb690e400 nid=0x46e8 runnable 
+
+"GC task thread#3 (ParallelGC)" prio=10 tid=0xb690fc00 nid=0x46e9 runnable 
+
+"VM Periodic Task Thread" prio=10 tid=0xb69bdc00 nid=0x46f1 waiting on condition 
+
+JNI global references: 886
+

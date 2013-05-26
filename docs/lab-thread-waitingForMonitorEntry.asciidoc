@@ -1,0 +1,89 @@
+OBJECTIVE
+---------
+* Illustrating Thread in `waiting for monitor entry` status
+* Analysing java thread dump while threads in `waiting for monitor entry` status
+
+PREREQUISITE
+-------------
+
+* Maven 3.0 or latter.
+* Eclipse
+* threadDump analysing tools
+
+Java Thread Deadlock
+--------------------
+
+Java Thread Status in `waiting for monitor entry` means:
+
+* Waiting for releasing of a lock object
+* It is going to call the synchronized method (or block)
+
+image::img/jvm-thread-waitingForMonitorEntry.png[java thread waiting for monitor entry]
+
+As above diagram, Thread 1 locked Resource A then do some business logic, at the same time Thread 2 try to lock Resource A as well, as a consequence, Thread 2 waiting for releasing of Thread 1 lock and in `waiting for monitor entry` status.
+
+Lab Source Code: .../jvm/thread/status
+
+
+Lab
+---
+
+We have 2 threads lab-thread-waitingForMonitorEntry-1 and lab-thread-waitingForMonitorEntry-2, The lab procedure as below:
+
+*lab-thread-waitingForMonitorEntry-1 lock Resource A* -> *lab-thread-waitingForMonitorEntry-1 do some business logic(never end)* -> *lab-thread-waitingForMonitorEntry-2 try to lock Resource A*
+
+
+I - Build and generate executable jar
++++++++++++++++++++++++++++++++++++++
+
+----
+mvn clean install
+----
+
+thread-status.jar will be generated.
+
+II - Show threads `waiting for monitor entry` status
+++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+----
+java -jar thread-status.jar
+----
+
+will cause lab-thread-waitingForMonitorEntry-2 in `waiting for monitor entry` status.
+
+V - Generate thread dump
+++++++++++++++++++++++++
+
+----
+jstack -l <PID> > waitingForMonitorEntry.out
+----
+
+will generate thread dump file `waitingForMonitorEntry.out`
+
+
+ANALYSING
+---------
+
+* Thread lab-thread-waitingForMonitorEntry-2 is in `waiting for monitor entry` status
+----
+"lab-thread-waitingForMonitorEntry-2" prio=10 tid=0xb69ef400 nid=0x46f5 waiting for monitor entry [0x6e3fc000]
+   java.lang.Thread.State: BLOCKED (on object monitor)
+        at com.kylin.lab.thread.waitingForMonitorEntry.Resource.lock(Resource.java:18)
+        - waiting to lock <0x9e333aa8> (a com.kylin.lab.thread.waitingForMonitorEntry.Resource)
+        at com.kylin.lab.thread.waitingForMonitorEntry.LockThread.run(LockThread.java:19)
+        at java.lang.Thread.run(Thread.java:662)
+
+   Locked ownable synchronizers:
+        - None
+----
+
+* Note That
+
+link:lab-thread-sleeping.asciidoc[Why lab-thread-waitingForMonitorEntry-1's status is `waiting on condition`]
+
+link:lab-thread-deadlock.asciidoc[Deadlock threads's thread status]
+
+* Full thread dump file view
+
+link:waitingForMonitorEntry.out[Full thread dump file]
+
