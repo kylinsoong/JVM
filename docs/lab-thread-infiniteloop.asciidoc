@@ -85,10 +85,11 @@ ANALYSING
 From *LAB STEPS* Show CPU usage diagram we can find java threads 9917 and 9930 cpu usage approach 100%.
 
 9917 and 9930 are Decimal, we need covert it to Hexadecimal:
+
   9917 -> 26bd
   9930 -> 26ca
 
-It's easy to find:
+It's easy to find 26bd and 26ca corresponding to 2 infinite looping threads:
 
   26bd -> lab-thread-infiniteloop-main
   26ca -> lab-thread-infiniteloop
