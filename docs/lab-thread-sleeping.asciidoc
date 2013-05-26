@@ -34,6 +34,7 @@ mvn clean install
 thread-sleeping.jar will be generated.
 
 II - Show Java Threads in `waiting on condition` status
++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 ----
 java -jar thread-sleeping.jar
