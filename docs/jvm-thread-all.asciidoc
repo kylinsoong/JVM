@@ -10,8 +10,8 @@ link:lab-thread-sleeping.asciidoc[Java Threads Sleeping]
 link:lab-thread-threadpool.asciidoc[Java Threads in Thread Pool]
 
 
-Java Threads Status
--------------------
+HotSpot JVM Java Threads Status
+--------------------------------
 
 link:lab-thread-infiniteloop.asciidoc[runnable]
 
