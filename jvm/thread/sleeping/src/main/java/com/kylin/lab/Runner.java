@@ -6,17 +6,18 @@ public class Runner {
 
 	public static void main(String[] args) {
 		
-		System.out.print("\n  Threaddump sleeping test start...\n");
+		System.out.print("\n  Thread sleeping Lab start...\n");
 		
-		Thread t1 = new Thread(new SleepingThread("lab-threaddump-thread-sleeping"));
-		t1.start();
+		Thread.currentThread().setName("lab-thread-sleeping-main");
 		
-		Thread.currentThread().setName("lab-threaddump-thread-sleeping-main");
+		new Thread(new SleepingThread("lab-thread-sleeping")).start();		
+		
+//		new Thread(new ConditionThread("lab-thread-condition")).start();	
 		
 		try {
 			Thread.sleep(Long.MAX_VALUE);
 		} catch (InterruptedException e) {
-			e.printStackTrace();
+			Thread.currentThread().interrupt();
 		}
 	}
 

@@ -9,6 +9,7 @@ public class SleepingThread implements Runnable {
 		this.threadName = threadName;
 	}
 
+	@SuppressWarnings("static-access")
 	public void run() {
 		
 		Thread.currentThread().setName(threadName);
@@ -16,7 +17,7 @@ public class SleepingThread implements Runnable {
 		try {
 			Thread.currentThread().sleep(Long.MAX_VALUE);
 		} catch (InterruptedException e) {
-			e.printStackTrace();
+			Thread.currentThread().interrupt();
 		}
 	}
 

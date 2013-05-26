@@ -1,0 +1,77 @@
+OBJECTIVE
+---------
+* Illustrating Thread in `waiting on condition` status
+* Analysing java thread dump while thread sleeping occurring
+
+
+PREREQUISITE
+-------------
+* Maven 3.0 or latter.
+* Eclipse
+* threadDump analysing tools
+
+DESCRIPTION
+-----------
+
+Java Thread in `waiting on condition` means: either Waiting until it reaches condition, or Thread.sleep() is called.
+
+We will start 2 threads lab-thread-sleeping and lab-thread-sleeping-main, which both in sleeping status.
+
+Lab Source Code: .../jvm/thread/sleeping
+
+LAB STEPS
+---------
+
+I - Build and generate executable jar
++++++++++++++++++++++++++++++++++++++
+
+----
+mvn clean install
+----
+
+thread-sleeping.jar will be generated.
+
+II - Show Java Threads in `waiting on condition` status
+
+----
+java -jar thread-sleeping.jar
+----
+
+This will start lab-thread-sleeping and lab-thread-sleeping-main, both threads in `waiting on condition` status(Thread.sleep() is called).
+
+III - Generate thread dump
+++++++++++++++++++++++++++
+
+----
+jstack -l <PID> > sleeping.out
+----
+
+will generate thread dump file `sleeping.out`
+
+ANALYSING
+---------
+
+* lab-thread-sleeping and lab-thread-sleeping-main are in `waiting on condition` status:
+
+----
+"lab-thread-sleeping" prio=10 tid=0xb69eac00 nid=0x39bd waiting on condition [0x6ea5c000]
+   java.lang.Thread.State: TIMED_WAITING (sleeping)
+        at java.lang.Thread.sleep(Native Method)
+        at com.kylin.lab.threaddump.sleeping.SleepingThread.run(SleepingThread.java:18)
+        at java.lang.Thread.run(Thread.java:662)
+
+   Locked ownable synchronizers:
+        - None
+
+"lab-thread-sleeping-main" prio=10 tid=0xb6904800 nid=0x39b0 waiting on condition [0xb6aeb000]
+   java.lang.Thread.State: TIMED_WAITING (sleeping)
+        at java.lang.Thread.sleep(Native Method)
+        at com.kylin.lab.Runner.main(Runner.java:18)
+
+   Locked ownable synchronizers:
+        - None
+----
+
+* Full thread dump view
+
+link:sleeping.out[sleeping thread dump file]

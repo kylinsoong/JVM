@@ -13,6 +13,8 @@ PREREQUISITE
 DESCRIPTION
 -----------
 
+Java Thread in `runnable` means: Java code is running or processing in native code.
+
 We will start 2 threads 'lab-thread-infiniteloop' and 'lab-thread-infiniteloop-main', which both threads keep infinite loop.
 
 Lab Source Code: .../jvm/thread/infiniteloop
