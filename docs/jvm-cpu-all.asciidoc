@@ -1,0 +1,2 @@
+
+link:lab-cpu-identify.asciidoc[How to identify which Java Thread is consuming most CPU]

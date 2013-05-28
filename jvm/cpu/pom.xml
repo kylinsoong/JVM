@@ -18,6 +18,7 @@
 
     <modules>
         <module>looping</module>
+	<module>identify</module>
 	<module>tools</module>
     </modules>
 

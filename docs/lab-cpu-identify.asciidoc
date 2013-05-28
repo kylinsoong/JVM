@@ -1,0 +1,110 @@
+A Test Application
+------------------
+
+In order to test this, we need a test application. So I will give you one. It consists of 3 classes:
+A HeavyThread class that does something CPU intensive (computing MD5 hashes), a LightThread class that does something not-so-cpu-intensive (counting and sleeping). And a final class to start 1 cpu intensive and several light threads. Detailed code please refer to .../jvm/cpu/identify
+
+----
+mvn clean install
+----
+
+will generate executable jvm-highcpu-identify.jar,
+
+----
+java -jar jvm-highcpu-identify.jar
+----
+
+will start the test application
+
+Top view cpu usage in OS side
+-----------------------------
+
+----
+top -H -p <PID>
+----
+
+NOTE: -H : Threads toggle. Starts top with the last remembered 'H' state reversed.  When this  toggle is On, all individual threads will be displayed. Otherwise, top displays a summation of all threads in a process.
+
+And now in my top with Threads display turned ON i see:
+
+image::img/jvm-cpu-1.PNG[top -H -p]
+
+
+convert PID to HEX
+------------------
+
+5019 -> 139b
+5008 -> 1390
+5007 -> 138f
+5009 -> 1391
+5011 -> 1393
+5020 -> 139c
+5023 -> 139f
+5010 -> 1392
+5018 -> 139a
+5021 -> 139d
+5022 -> 139e
+
+match thread dump nid
+---------------------
+
+----
+"lab-cpu-heavyThread" prio=10 tid=0xb6aeac00 nid=0x139b runnable [0x6eb5c000]
+   java.lang.Thread.State: RUNNABLE
+        at java.lang.StringBuilder.append(StringBuilder.java:119)
+        at com.kylin.jvm.highcpu.HeavyThread.run(HeavyThread.java:25)
+        at java.lang.Thread.run(Thread.java:662)
+
+   Locked ownable synchronizers:
+        - None
+
+"GC task thread#1 (ParallelGC)" prio=10 tid=0xb6a0d000 nid=0x1390 runnable
+
+"GC task thread#0 (ParallelGC)" prio=10 tid=0xb6a0b800 nid=0x138f runnable
+
+"GC task thread#2 (ParallelGC)" prio=10 tid=0xb6a0e400 nid=0x1391 runnable
+
+"VM Thread" prio=10 tid=0xb6aa3400 nid=0x1393 runnable
+
+"lab-cpu-lightThread-0" prio=10 tid=0xb6aec000 nid=0x139c sleeping[0x6e97e000]
+   java.lang.Thread.State: TIMED_WAITING (sleeping)
+        at java.lang.Thread.sleep(Native Method)
+        at com.kylin.jvm.highcpu.LightThread.run(LightThread.java:22)
+        at java.lang.Thread.run(Thread.java:662)
+
+   Locked ownable synchronizers:
+        - None
+
+"lab-cpu-lightThread-3" prio=10 tid=0xb6af0c00 nid=0x139f sleeping[0x6e45a000]
+   java.lang.Thread.State: TIMED_WAITING (sleeping)
+        at java.lang.Thread.sleep(Native Method)
+        at com.kylin.jvm.highcpu.LightThread.run(LightThread.java:22)
+        at java.lang.Thread.run(Thread.java:662)
+
+   Locked ownable synchronizers:
+        - None
+
+"GC task thread#3 (ParallelGC)" prio=10 tid=0xb6a0fc00 nid=0x1392 runnable
+
+"VM Periodic Task Thread" prio=10 tid=0xb6abdc00 nid=0x139a waiting on condition
+
+"lab-cpu-lightThread-1" prio=10 tid=0xb6aed800 nid=0x139d sleeping[0x6e4fc000]
+   java.lang.Thread.State: TIMED_WAITING (sleeping)
+        at java.lang.Thread.sleep(Native Method)
+        at com.kylin.jvm.highcpu.LightThread.run(LightThread.java:22)
+        at java.lang.Thread.run(Thread.java:662)
+
+   Locked ownable synchronizers:
+        - None
+
+"lab-cpu-lightThread-2" prio=10 tid=0xb6aef400 nid=0x139e sleeping[0x6e4ab000]
+   java.lang.Thread.State: TIMED_WAITING (sleeping)
+        at java.lang.Thread.sleep(Native Method)
+        at com.kylin.jvm.highcpu.LightThread.run(LightThread.java:22)
+        at java.lang.Thread.run(Thread.java:662)
+
+   Locked ownable synchronizers:
+        - None
+----
+
+

@@ -10,6 +10,13 @@ Java Thread
 [Java Thread Entry](https://github.com/kylinsoong/JVM/blob/master/docs/jvm-thread-all.asciidoc)
 
 
+High CPU Usage
+--------------
+
+[High CPU Usage Entry](https://github.com/kylinsoong/JVM/blob/master/docs/jvm-cpu-all.asciidoc)
+
+
+
 How to use CustomizedTools analysing Java thread dump?
 -----------------------------------------------------
 
