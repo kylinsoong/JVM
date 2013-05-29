@@ -23,6 +23,7 @@
 	<module>status</module>
 	<module>threadpool</module>
 	<module>applePassing</module>
+	<module>jboss</module>
     </modules>
 
 </project>
