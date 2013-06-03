@@ -26,11 +26,11 @@ public class CounterServlet extends HttpServlet {
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		System.out.println("-- request cunter start");
+		System.out.println("-- " + Thread.currentThread().getName() + " request cunter start");
 		int count = Counter.getCount();
 		request.getSession().setAttribute("count", count);
 		getServletContext().getRequestDispatcher("/index.jsp").forward(request,response);
-		System.out.println("-- request cunter end : " + count);
+		System.out.println("-- " + Thread.currentThread().getName() + " request cunter end : " + count);
 	}
 
 }

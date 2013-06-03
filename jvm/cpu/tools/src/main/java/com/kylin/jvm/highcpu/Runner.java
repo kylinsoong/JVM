@@ -13,6 +13,8 @@ public class Runner {
 		try {
 			if(args[0].compareTo("D2H") == 0) {
 				System.out.println(HighCUPTools.decimalToHexadecimal(Integer.parseInt(args[1])));
+			} else if(args[0].compareTo("H2D") == 0) {
+				System.out.println(HighCUPTools.hexadecimalToDecimal(args[1]));
 			}
 		} catch (Exception e) {
 			usage();
@@ -22,6 +24,7 @@ public class Runner {
 	private static void usage() {
 		System.out.println("Run application like <Option> <parameter>");
 		System.out.println("	java -jar jvm-highcpu-tools.jar D2H 1000  - this convert Decimal 1000 to Hexadecimal");
+		System.out.println("	java -jar jvm-highcpu-tools.jar H2D 35d4  - this convert Hexadecimal 35d4 to Decimal");
 		Runtime.getRuntime().exit(0);
 	}
 
