@@ -19,6 +19,7 @@
     <modules>
         <module>bugReproduce</module>
         <module>bugReproduce-lib</module>
+	<module>path</module>
     </modules>
 
 </project>

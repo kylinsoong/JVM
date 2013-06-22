@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jboss-web>
+	<context-root>vfs-path</context-root>
+</jboss-web> 
