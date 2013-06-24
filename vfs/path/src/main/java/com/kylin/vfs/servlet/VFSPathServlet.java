@@ -24,6 +24,9 @@ public class VFSPathServlet extends HttpServlet {
 		String tclasspath2 = VFSPathServlet.class.getClassLoader().getResource("").getPath();
 		String tclasspath3 = Thread.currentThread().getContextClassLoader().getResource("").getPath();
 		
+		URL url =Thread.currentThread().getContextClassLoader().getResource("");
+		System.out.println(url);
+		
 //		System.out.println("tclasspath1: " + tclasspath1);
 //		System.out.println("tclasspath2: " + tclasspath2);
 //		System.out.println("tclasspath3: " + tclasspath3);
