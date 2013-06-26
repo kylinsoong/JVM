@@ -20,6 +20,7 @@
         <module>test</module>
 	<module>socket</module>
 	<module>xml</module>
+	<module>port</module>
     </modules>
 
 </project>
