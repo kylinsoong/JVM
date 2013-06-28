@@ -3,6 +3,7 @@ JVM
 
 link:HotSpot_JVM.asciidoc[HotSpot JVM]
 
+link:jvm-crash-all.asciidoc[JVM Crash Lab]
 
 
 Java Thread

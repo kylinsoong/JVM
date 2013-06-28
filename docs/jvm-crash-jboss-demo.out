@@ -1,0 +1,19 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  SIGFPE (0x8) at pc=0x5180048f, pid=20194, tid=1357376368
+#
+# JRE version: 6.0_31-b04
+# Java VM: Java HotSpot(TM) Server VM (20.6-b01 mixed mode linux-x86 )
+# Problematic frame:
+# C  [libTestJniImpl.so+0x48f]  Java_com_kylin_jvm_lab_TestClass_printHello+0x17
+#
+# An error report file with more information is saved as:
+# /home/kylin/work/eap/jboss-eap-5.2/jboss-as/bin/hs_err_pid20194.log
+#
+# If you would like to submit a bug report, please visit:
+#   http://java.sun.com/webapps/bugreport/crash.jsp
+# The crash happened outside the Java Virtual Machine in native code.
+# See problematic frame for where to report the bug.
+#
+./run.sh: line 309: 20194 Aborted                 (core dumped) "/usr/java/jdk1.6.0_31/bin/java" -Dprogram.name=run.sh -server -Xms1303m -Xmx1303m -XX:MaxPermSize=256m -Djava.library.path=/home/kylin/work/project/JVM/jvm/crash/native -Dorg.jboss.resolver.warning=true -Dsun.rmi.dgc.client.gcInterval=3600000 -Dsun.rmi.dgc.server.gcInterval=3600000 -Dsun.lang.ClassLoader.allowArraySyntax=true -Djava.net.preferIPv4Stack=true -Djava.endorsed.dirs="/home/kylin/work/eap/jboss-eap-5.2/jboss-as/lib/endorsed" -classpath "/home/kylin/work/eap/jboss-eap-5.2/jboss-as/bin/run.jar:/usr/java/jdk1.6.0_31/lib/tools.jar" org.jboss.Main -c default

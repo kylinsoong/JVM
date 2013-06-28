@@ -1,0 +1,81 @@
+What's this
+-----------
+
+Primary purpose of this document including:
+
+* illustrate JVM crash
+* illustrate how to use java code call method in c library.
+
+Prerequisite
+------------
+
+* JAVA_HOME setting correct(/usr/java/jdk1.6.0_31)
+* JBoss install correct
+
+
+Run HelloJNI.java to call HelloJNI.c 
+-------------------------------------
+
+* compile HelloJNI.c to libhello.so via gcc
+----
+gcc -I"/usr/java/jdk1.6.0_31/include" -I"/usr/java/jdk1.6.0_31/include/linux" -shared -o libhello.so HelloJNI.c
+----
+
+* run HelloJNI as java application
+----
+java -cp ./target/classes/ -Djava.library.path=./native/ com.kylin.jvm.jni.HelloJNI
+----
+
+NOTE: `HelloJNI.c` can be found under jvm/crash/native
+
+* result
+
+The HelloJNI will output string as below:
+----
+Hello World JNI!
+----
+
+Run TestClassRunner.java to call TestJniImpl.c
+----------------------------------------------
+
+* compile TestJniImpl.c to libTestJniImpl.so
+----
+gcc -I"/usr/java/jdk1.6.0_31/include" -I"/usr/java/jdk1.6.0_31/include/linux" -shared -o libTestJniImpl.so TestJniImpl.c
+----
+
+NOTE: `TestJniImpl.c` can be found under jvm/crash/native
+
+* run TestClassRunner as java application
+----
+java -cp ./target/classes/ -Djava.library.path=./native/ com.kylin.jvm.lab.TestClassRunner
+----
+
+* result
+
+link:jvm-crash-java-demo.out[Java Application Crash Log]
+
+
+Java Application Cause JBoss Crash
+----------------------------------
+
+* use maven build jvm/crash
+----
+mvn clean install
+----
+This will generate `jvm-lab-crash.war`
+
+* deploy `jvm-lab-crash.war` to JBoss
+----
+cp ./target/jvm-lab-crash.war /home/kylin/work/eap/jboss-eap-5.2/jboss-as/server/default/deploy
+----
+
+* modify run.conf add below JVM_OPTS
+---- 
+-Djava.library.path=/home/kylin/work/project/JVM/sandbox/lab-crash/native
+----
+
+* start JBoss, log via http://localhost:8080/jvmCrash/, click submit button.
+
+* result
+
+link:jvm-crash-jboss-demo.out[JBoss Crash Log]

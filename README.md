@@ -3,6 +3,8 @@ JVM
 
 [HotSpot JVM Tuning Troubleshooting](https://github.com/kylinsoong/JVM/blob/master/docs/HotSpot_JVM.asciidoc)
 
+[JVM Crash Lab](https://github.com/kylinsoong/JVM/blob/master/docs/jvm-crash-all.asciidoc)
+
 
 Java Thread
 -----------

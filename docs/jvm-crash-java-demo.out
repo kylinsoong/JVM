@@ -1,0 +1,19 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  SIGFPE (0x8) at pc=0xb77e848f, pid=19827, tid=3065723760
+#
+# JRE version: 6.0_31-b04
+# Java VM: Java HotSpot(TM) Server VM (20.6-b01 mixed mode linux-x86 )
+# Problematic frame:
+# C  [libTestJniImpl.so+0x48f]  Java_com_kylin_jvm_lab_TestClass_printHello+0x17
+#
+# An error report file with more information is saved as:
+# /home/kylin/work/project/JVM/jvm/crash/hs_err_pid19827.log
+#
+# If you would like to submit a bug report, please visit:
+#   http://java.sun.com/webapps/bugreport/crash.jsp
+# The crash happened outside the Java Virtual Machine in native code.
+# See problematic frame for where to report the bug.
+#
+Aborted (core dumped)
