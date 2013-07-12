@@ -18,3 +18,9 @@ link:lab-thread-infiniteloop.asciidoc[runnable]
 link:lab-thread-waitingForMonitorEntry.asciidoc[waiting for monitor entry]
 
 link:lab-thread-sleeping.asciidoc[waiting on condition]
+
+
+JBoss Java Threads Status
+-------------------------
+
+link:lab-thread-ejb-invocation.asciidoc[JBoss AS 7, JBoss EAP 6 EJB Invocation Thread Status]
