@@ -40,6 +40,11 @@ public class Runner {
 		System.out.println("Run HeapUsage with parameter: <heap increase time> <heap increase interval>");
 		System.out.println("For example");
 		System.out.println("	java -jar heapusage.jar 1000 1000");
+		System.out.println("JVM monitor OPTS");
+		System.out.println("	-Dcom.sun.management.jmxremote");
+		System.out.println("	-Xms400m -Xmx400m -XX:PermSize=64m -XX:MaxPermSize=64m");
+		System.out.println("	-verbose:gc -Xloggc:gc-heapusage.log -XX:+PrintGCDetails -XX:+PrintGCDateStamps");
+		System.out.println("	-XX:+HeapDumpOnOutOfMemoryError");
 		Runtime.getRuntime().exit(0);
 	}
 

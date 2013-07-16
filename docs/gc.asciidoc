@@ -5,4 +5,4 @@ link:jvm-generation.asciidoc[JVM Generation]
 
 link:garbage-collection-process.asciidoc[Generational Garbage Collection Process]
 
-link:lab-heap-usage.asciidoc[Generational Garbage Collection Process Lab]
+link:lab-heap-gc-excessive.asciidoc[java.lang.OutOfMemoryError: GC overhead limit exceeded]

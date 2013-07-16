@@ -1,0 +1,24 @@
+What's Excessive GC Time and OutOfMemoryError
+---------------------------------------------
+
+The parallel collector will throw an OutOfMemoryError if too much time is being spent in garbage collection: if more than 98% of the total time is spent in garbage collection and less than 2% of the heap is recovered, an OutOfMemoryError will be thrown. This feature is designed to prevent applications from running for an extended period of time while making little or no progress because the heap is too small. If necessary, this feature can be disabled by adding the option -XX:-UseGCOverheadLimit to the command line.
+
+More details about Garbage Collection Tuning refer to http://www.oracle.com/technetwork/java/javase/gc-tuning-6-140523.html
+
+How to reproduce GC overhead limit exceeded
+-------------------------------------------
+
+* build code jvm/heap/overhead
+----
+mvn clean install
+----
+
+* Run generrated executable jar as below:
+----
+java -Xms400m -Xmx400m -XX:+HeapDumpOnOutOfMemoryError -jar overhead.jar
+----
+
+* GC overhead limit exceeded will thow like below
+----
+java.lang.OutOfMemoryError: GC overhead limit exceeded
+----

@@ -18,6 +18,7 @@
 
     <modules>
 	<module>heapusage</module>
+	<module>overhead</module>
     </modules>
 
 </project>

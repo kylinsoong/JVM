@@ -61,3 +61,7 @@ Step VIII: GC Process Summary
 So that pretty much covers the entire process with the young generation. Eventually, a major GC will be performed on the old generation which cleans up and compacts that space.
 
 image::img/gc-process-8.PNG[GC Process Summary]
+
+Step IVV: Lab Entry
+
+link:lab-heap-usage.asciidoc[*Generational Garbage Collection Process Lab*]
