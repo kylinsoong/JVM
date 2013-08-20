@@ -30,6 +30,11 @@
 			<artifactId>jboss-remoting</artifactId>
 			<version>3.2.16.GA</version>
 		</dependency>
+		<dependency>
+            <groupId>org.jboss.xnio</groupId>
+            <artifactId>xnio-nio</artifactId>
+            <version>${xnio.version}</version>
+        </dependency>
 		<!--  
         <dependency>
             <groupId>org.jboss.logging</groupId>
