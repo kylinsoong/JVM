@@ -21,6 +21,7 @@
         <module>crash</module>
 	<module>heap</module>
 	<module>cpu</module>
+        <module>agent</module>
     </modules>
 
 </project>
