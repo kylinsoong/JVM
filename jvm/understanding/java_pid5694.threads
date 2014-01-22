@@ -1,0 +1,42 @@
+Thread 0x738f1d00
+
+  locals:
+
+Thread 0x738f1d70
+  at java.lang.OutOfMemoryError.<init>()V (OutOfMemoryError.java:25)
+  at java.lang.ref.Finalizer.runFinalizer()V (Finalizer.java:82)
+  at java.lang.ref.Finalizer.access$100(Ljava/lang/ref/Finalizer;)V (Finalizer.java:14)
+  at java.lang.ref.Finalizer$FinalizerThread.run()V (Finalizer.java:160)
+
+  locals:
+    objectId=0x739c0c60, line=1
+    objectId=0x739cc6c8, line=1
+    objectId=0x739c0c60, line=2
+    objectId=0x738f1d70, line=3
+    objectId=0x739c0c60, line=3
+
+Thread 0x738f1e00
+  at java.lang.Object.wait(J)V (Native Method)
+  at java.lang.Object.wait()V (Object.java:485)
+  at java.lang.ref.Reference$ReferenceHandler.run()V (Reference.java:116)
+
+  locals:
+    objectId=0x738f1e70, line=1
+    objectId=0x738f1e00, line=2
+    objectId=0x738f1e70, line=2
+
+Thread 0x738f1f20
+
+  locals:
+    objectId=0x738f1e90, line=-1
+    objectId=0x72f13570, line=-1
+    objectId=0x738f1b98, line=-1
+    objectId=0x72fa2df8, line=-1
+    objectId=0x72f08fe8, line=-1
+    objectId=0x738f1ea8, line=-1
+    objectId=0x730cfa68, line=-1
+    objectId=0x738f1ec0, line=-1
+    objectId=0x72f361c8, line=-1
+    objectId=0x72f08fe8, line=-1
+    objectId=0x738f1f10, line=-1
+

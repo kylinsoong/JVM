@@ -22,6 +22,7 @@
 	<module>heap</module>
 	<module>cpu</module>
         <module>agent</module>
+	<module>understanding</module>
     </modules>
 
 </project>
