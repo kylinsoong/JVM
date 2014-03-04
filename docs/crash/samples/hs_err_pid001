@@ -1,0 +1,529 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x000000006dc93718, pid=7292, tid=2480
+#
+# JRE version: 6.0_38-b05
+# Java VM: Java HotSpot(TM) 64-Bit Server VM (20.13-b02 mixed mode windows-amd64 compressed oops)
+# Problematic frame:
+# V  [jvm.dll+0x3d3718]
+#
+# If you would like to submit a bug report, please visit:
+#   http://java.sun.com/webapps/bugreport/crash.jsp
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x00000000013ce800):  GCTaskThread [stack: 0x0000000006280000,0x0000000006380000] [id=2480]
+
+siginfo: ExceptionCode=0xc0000005, reading address 0x0000000000000018
+
+Registers:
+RAX=0x0000000000000000, RBX=0x00000007b0742330, RCX=0x0000000000000003, RDX=0x00000007b0742330
+RSP=0x000000000637fae0, RBP=0x0000000000000006, RSI=0x00000000013d4a30, RDI=0x00000000014a7dd0
+R8 =0x00000000013d4a30, R9 =0x0000000000000001, R10=0x0000000000000000, R11=0x0000000000000008
+R12=0x000000000fed0890, R13=0x0000004d00000000, R14=0x00000000013cf1b0, R15=0x00000000013cf500
+RIP=0x000000006dc93718, EFLAGS=0x0000000000010246
+
+Top of Stack: (sp=0x000000000637fae0)
+0x000000000637fae0:   00000007f56dc110 0000000000000004
+0x000000000637faf0:   00000000013d4a30 00000006ba1a0a38
+0x000000000637fb00:   000000000000000d 00000000013d4a30
+0x000000000637fb10:   0000000004804b00 000000006dc80eb4
+0x000000000637fb20:   00000006b3fcfed8 000000006dc6544d
+0x000000000637fb30:   0000000000000000 00000000013cf588
+0x000000000637fb40:   00000000013cf1b0 0000000000000000
+0x000000000637fb50:   000000000fed0890 000000006dc94452
+0x000000000637fb60:   0000000690e66ec0 0000000000000006
+0x000000000637fb70:   00000000013d4a30 00000000014a7dd0
+0x000000000637fb80:   0000000000000000 000000006dc975e1
+0x000000000637fb90:   0000000000000000 0000000000000006
+0x000000000637fba0:   00000000013d4a30 00000000014a7dd0
+0x000000000637fbb0:   0000000690e66ec1 000000006dc81e7d
+0x000000000637fbc0:   00000000013cf1a0 00000000013c2570
+0x000000000637fbd0:   000000000fed0890 0000000000000000 
+
+Instructions: (pc=0x000000006dc93718)
+0x000000006dc936f8:   ff 45 84 c9 74 16 0f b6 0d 3b 4b 33 00 8b 42 08
+0x000000006dc93708:   48 d3 e0 48 03 05 26 4b 33 00 eb 04 48 8b 42 08
+0x000000006dc93718:   48 63 50 18 4c 8d 40 10 8b ca c1 f9 03 85 d2 7f
+0x000000006dc93728:   61 85 d2 79 4c 45 84 c9 4c 63 0d dd a5 34 00 4c 
+
+
+Register to memory mapping:
+
+RAX=0x0000000000000000 is an unknown value
+RBX=0x00000007b0742330 is an unknown value
+RCX=0x0000000000000003 is an unknown value
+RDX=0x00000007b0742330 is an unknown value
+RSP=0x000000000637fae0 is an unknown value
+RBP=0x0000000000000006 is an unknown value
+RSI=0x00000000013d4a30 is an unknown value
+RDI=0x00000000014a7dd0 is an unknown value
+R8 =0x00000000013d4a30 is an unknown value
+R9 =0x0000000000000001 is an unknown value
+R10=0x0000000000000000 is an unknown value
+R11=0x0000000000000008 is an unknown value
+R12=0x000000000fed0890 is an unknown value
+R13=0x0000004d00000000 is an unknown value
+R14=0x00000000013cf1b0 is an unknown value
+R15=0x00000000013cf500 is an unknown value
+
+
+Stack: [0x0000000006280000,0x0000000006380000],  sp=0x000000000637fae0,  free space=1022k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [jvm.dll+0x3d3718]
+
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+  0x00000000188f3800 JavaThread "Keep-Alive-Timer" daemon [_thread_blocked, id=5172, stack(0x000000005ce30000,0x000000005cf30000)]
+  0x00000000280cb800 JavaThread "RMI TCP Connection(idle)" daemon [_thread_blocked, id=8812, stack(0x000000006a340000,0x000000006a440000)]
+  0x00000000418bc000 JavaThread "OOB-900,10.42.82.101:7900" [_thread_blocked, id=7212, stack(0x000000005cb30000,0x000000005cc30000)]
+  0x0000000048bd2800 JavaThread "http-0.0.0.0-8080-53" daemon [_thread_blocked, id=5620, stack(0x0000000090380000,0x0000000090480000)]
+  0x0000000048bd2000 JavaThread "http-0.0.0.0-8080-52" daemon [_thread_blocked, id=5460, stack(0x0000000090280000,0x0000000090380000)]
+  0x0000000048bd1000 JavaThread "http-0.0.0.0-8080-51" daemon [_thread_in_native, id=248, stack(0x0000000090180000,0x0000000090280000)]
+  0x0000000013d81000 JavaThread "http-0.0.0.0-8080-50" daemon [_thread_blocked, id=7480, stack(0x0000000090080000,0x0000000090180000)]
+  0x0000000013d80800 JavaThread "http-0.0.0.0-8080-49" daemon [_thread_blocked, id=8460, stack(0x000000008ff80000,0x0000000090080000)]
+  0x0000000013d7f800 JavaThread "http-0.0.0.0-8080-48" daemon [_thread_blocked, id=2876, stack(0x000000008fe80000,0x000000008ff80000)]
+  0x0000000013d7f000 JavaThread "http-0.0.0.0-8080-47" daemon [_thread_blocked, id=3188, stack(0x000000008fd80000,0x000000008fe80000)]
+  0x0000000013d7e800 JavaThread "http-0.0.0.0-8080-46" daemon [_thread_blocked, id=7236, stack(0x000000008fc80000,0x000000008fd80000)]
+  0x000000001583a000 JavaThread "http-0.0.0.0-8080-45" daemon [_thread_blocked, id=6904, stack(0x000000008fb80000,0x000000008fc80000)]
+  0x0000000015839000 JavaThread "http-0.0.0.0-8080-44" daemon [_thread_in_native, id=1980, stack(0x000000008fa80000,0x000000008fb80000)]
+  0x0000000015838800 JavaThread "http-0.0.0.0-8080-43" daemon [_thread_blocked, id=9152, stack(0x000000008f980000,0x000000008fa80000)]
+  0x0000000015837800 JavaThread "http-0.0.0.0-8080-42" daemon [_thread_blocked, id=8600, stack(0x000000006ad70000,0x000000006ae70000)]
+  0x0000000015837000 JavaThread "http-0.0.0.0-8080-41" daemon [_thread_blocked, id=6560, stack(0x0000000060830000,0x0000000060930000)]
+  0x000000000c094000 JavaThread "ZipFile Lock Reaper" daemon [_thread_blocked, id=4024, stack(0x000000005cf30000,0x000000005d030000)]
+  0x000000001096a800 JavaThread "TimeScheduler.Thread" daemon [_thread_blocked, id=6784, stack(0x00000000537f0000,0x00000000538f0000)]
+  0x0000000024fab000 JavaThread "Incoming-2,10.42.82.101:7900" [_thread_blocked, id=2532, stack(0x000000005cd30000,0x000000005ce30000)]
+  0x000000004aa77000 JavaThread "FD_SOCK client connection handler,DefaultPartition-JMS-DATA,10.42.82.101:7900" daemon [_thread_in_native, id=7164, stack(0x000000005c930000,0x000000005ca30000)]
+  0x0000000032d22800 JavaThread "FD_SOCK pinger,DefaultPartition-JMS-DATA,10.42.82.101:7900" daemon [_thread_in_native, id=2132, stack(0x0000000059d80000,0x0000000059e80000)]
+  0x0000000036454800 JavaThread "Incoming-1,10.42.82.101:7900" [_thread_blocked, id=5632, stack(0x0000000059b80000,0x0000000059c80000)]
+  0x0000000036454000 JavaThread "Timer-4,10.42.82.101:7900" daemon [_thread_blocked, id=5328, stack(0x0000000059980000,0x0000000059a80000)]
+  0x0000000036453800 JavaThread "Timer-3,10.42.82.101:7900" daemon [_thread_blocked, id=7520, stack(0x0000000059880000,0x0000000059980000)]
+  0x0000000024fad000 JavaThread "ConnectionTable.Connection.Receiver [10.42.82.101:7900 - 10.42.82.102:62192],10.42.82.101:7900" [_thread_in_native, id=9132, stack(0x0000000059480000,0x0000000059580000)]
+  0x0000000024fac800 JavaThread "Timer-2,10.42.82.101:7900" daemon [_thread_blocked, id=7844, stack(0x0000000059380000,0x0000000059480000)]
+  0x0000000017f26000 JavaThread "ConnectionTable.AcceptorThread,10.42.82.101:7900" [_thread_in_native, id=8012, stack(0x0000000059280000,0x0000000059380000)]
+  0x0000000017f25800 JavaThread "DiagnosticsHandler,10.42.82.101:7900" daemon [_thread_in_native, id=7100, stack(0x0000000059180000,0x0000000059280000)]
+  0x0000000017f24800 JavaThread "ReceiverThread" daemon [_thread_in_native, id=2972, stack(0x0000000059080000,0x0000000059180000)]
+  0x0000000017f23000 JavaThread "FD_SOCK server socket acceptor,null" daemon [_thread_in_native, id=2604, stack(0x0000000058f80000,0x0000000059080000)]
+  0x000000006821d800 JavaThread "Timer-1,10.42.82.101:7900" daemon [_thread_blocked, id=2096, stack(0x0000000058bc0000,0x0000000058cc0000)]
+  0x0000000017f24000 JavaThread "FD_SOCK pinger,DefaultPartition-JMS-CTRL,10.42.82.101:55200" daemon [_thread_in_native, id=8016, stack(0x000000006d480000,0x000000006d580000)]
+  0x000000002d823800 JavaThread "FD_SOCK client connection handler,DefaultPartition-JMS-CTRL,10.42.82.101:55200" daemon [_thread_in_native, id=7224, stack(0x000000006cf30000,0x000000006d030000)]
+  0x0000000027d69000 JavaThread "Incoming-20,10.42.82.101:55200" [_thread_blocked, id=2424, stack(0x000000008f480000,0x000000008f580000)]
+  0x000000006821e000 JavaThread "Incoming-19,10.42.82.101:55200" [_thread_blocked, id=2316, stack(0x0000000075f00000,0x0000000076000000)]
+  0x0000000027d68800 JavaThread "Incoming-18,10.42.82.101:55200" [_thread_blocked, id=6392, stack(0x000000008f380000,0x000000008f480000)]
+  0x00000000188f2800 JavaThread "Incoming-17,10.42.82.101:55200" [_thread_blocked, id=5664, stack(0x000000008f280000,0x000000008f380000)]
+  0x000000001294d000 JavaThread "Incoming-16,10.42.82.101:55200" [_thread_blocked, id=6376, stack(0x000000008f180000,0x000000008f280000)]
+  0x00000000360a2000 JavaThread "Incoming-15,10.42.82.101:55200" [_thread_blocked, id=9088, stack(0x000000008f080000,0x000000008f180000)]
+  0x00000000188f2000 JavaThread "Incoming-14,10.42.82.101:55200" [_thread_blocked, id=6656, stack(0x000000008ef80000,0x000000008f080000)]
+  0x00000000360a1800 JavaThread "FD_SOCK server socket acceptor,10.42.82.101:55200" daemon [_thread_in_native, id=7152, stack(0x000000008ee80000,0x000000008ef80000)]
+  0x0000000027d68000 JavaThread "Incoming-13,10.42.82.101:55200" [_thread_blocked, id=7972, stack(0x000000008ed80000,0x000000008ee80000)]
+  0x00000000188f1800 JavaThread "Incoming-12,10.42.82.101:55200" [_thread_blocked, id=7264, stack(0x000000008ec80000,0x000000008ed80000)]
+  0x0000000027d67000 JavaThread "Incoming-11,10.42.82.101:55200" [_thread_blocked, id=2032, stack(0x000000008eb80000,0x000000008ec80000)]
+  0x000000001e589000 JavaThread "Incoming-10,10.42.82.101:55200" [_thread_blocked, id=8800, stack(0x000000008ea80000,0x000000008eb80000)]
+  0x000000001294c800 JavaThread "Incoming-9,10.42.82.101:55200" [_thread_blocked, id=2772, stack(0x000000008e980000,0x000000008ea80000)]
+  0x0000000027d66800 JavaThread "Incoming-8,10.42.82.101:55200" [_thread_blocked, id=6232, stack(0x000000008e880000,0x000000008e980000)]
+  0x000000001e588800 JavaThread "OOB-20,10.42.82.101:55200" [_thread_blocked, id=8336, stack(0x000000008e780000,0x000000008e880000)]
+  0x000000002b97e800 JavaThread "OOB-19,10.42.82.101:55200" [_thread_blocked, id=7024, stack(0x000000008e680000,0x000000008e780000)]
+  0x000000001e587800 JavaThread "OOB-18,10.42.82.101:55200" [_thread_blocked, id=8452, stack(0x000000008e580000,0x000000008e680000)]
+  0x0000000049740000 JavaThread "OOB-15,10.42.82.101:55200" [_thread_blocked, id=660, stack(0x000000008e480000,0x000000008e580000)]
+  0x000000001e587000 JavaThread "Incoming-7,10.42.82.101:55200" [_thread_blocked, id=7568, stack(0x000000008e380000,0x000000008e480000)]
+  0x000000004973f800 JavaThread "OOB-17,10.42.82.101:55200" [_thread_blocked, id=6484, stack(0x000000008e280000,0x000000008e380000)]
+  0x000000004973f000 JavaThread "OOB-16,10.42.82.101:55200" [_thread_blocked, id=5672, stack(0x000000008e180000,0x000000008e280000)]
+  0x000000002b97e000 JavaThread "FD_SOCK pinger,DefaultPartition,10.42.82.101:55200" daemon [_thread_in_native, id=2220, stack(0x000000008e080000,0x000000008e180000)]
+  0x000000004973e000 JavaThread "OOB-14,10.42.82.101:55200" [_thread_blocked, id=2960, stack(0x000000008df80000,0x000000008e080000)]
+  0x000000002b97d000 JavaThread "Timer-12,10.42.82.101:55200" daemon [_thread_blocked, id=2992, stack(0x000000008de80000,0x000000008df80000)]
+  0x000000001294b800 JavaThread "OOB-13,10.42.82.101:55200" [_thread_blocked, id=7400, stack(0x000000008dd80000,0x000000008de80000)]
+  0x00000000360a0000 JavaThread "Timer-11,10.42.82.101:55200" daemon [_thread_blocked, id=6412, stack(0x000000008dc80000,0x000000008dd80000)]
+  0x000000001096c800 JavaThread "FD_SOCK pinger,DefaultPartition-HAPartitionCache,10.42.82.101:55200" daemon [_thread_in_native, id=8880, stack(0x000000008db80000,0x000000008dc80000)]
+  0x00000000360a0800 JavaThread "Timer-10,10.42.82.101:55200" daemon [_thread_blocked, id=1124, stack(0x000000008da80000,0x000000008db80000)]
+  0x0000000025cc5800 JavaThread "FD_SOCK client connection handler,DefaultPartition,10.42.82.101:55200" daemon [_thread_in_native, id=7144, stack(0x000000008d980000,0x000000008da80000)]
+  0x000000001e586000 JavaThread "Incoming-5,10.42.82.101:55200" [_thread_blocked, id=1740, stack(0x000000008d880000,0x000000008d980000)]
+  0x000000004973d800 JavaThread "Incoming-6,10.42.82.101:55200" [_thread_blocked, id=5204, stack(0x000000008d780000,0x000000008d880000)]
+  0x000000003948a000 JavaThread "Timer-9,10.42.82.101:55200" daemon [_thread_blocked, id=5764, stack(0x000000008d680000,0x000000008d780000)]
+  0x0000000067f0e000 JavaThread "Incoming-4,10.42.82.101:55200" [_thread_blocked, id=2620, stack(0x000000008d580000,0x000000008d680000)]
+  0x0000000025cc4800 JavaThread "FD_SOCK client connection handler,DefaultPartition-HAPartitionCache,10.42.82.101:55200" daemon [_thread_in_native, id=5396, stack(0x000000008d480000,0x000000008d580000)]
+  0x0000000039489800 JavaThread "OOB-12,10.42.82.101:55200" [_thread_blocked, id=6700, stack(0x000000008d380000,0x000000008d480000)]
+  0x0000000039489000 JavaThread "Incoming-3,10.42.82.101:55200" [_thread_blocked, id=8588, stack(0x000000008d280000,0x000000008d380000)]
+  0x0000000067f0d800 JavaThread "Incoming-2,10.42.82.101:55200" [_thread_blocked, id=9080, stack(0x000000008d180000,0x000000008d280000)]
+  0x0000000039488000 JavaThread "OOB-11,10.42.82.101:55200" [_thread_blocked, id=7572, stack(0x000000008d080000,0x000000008d180000)]
+  0x0000000067f0c800 JavaThread "Incoming-1,10.42.82.101:55200" [_thread_blocked, id=6132, stack(0x000000008cf80000,0x000000008d080000)]
+  0x0000000039487800 JavaThread "OOB-10,10.42.82.101:55200" [_thread_blocked, id=7540, stack(0x000000008ce80000,0x000000008cf80000)]
+  0x0000000067f0c000 JavaThread "OOB-9,10.42.82.101:55200" [_thread_blocked, id=7428, stack(0x000000008cd80000,0x000000008ce80000)]
+  0x0000000025cc4000 JavaThread "Timer-8,10.42.82.101:55200" daemon [_thread_blocked, id=8760, stack(0x000000007ee30000,0x000000007ef30000)]
+  0x0000000032d25000 JavaThread "OOB-8,10.42.82.101:55200" [_thread_blocked, id=9064, stack(0x000000007ed30000,0x000000007ee30000)]
+  0x0000000067f0b000 JavaThread "OOB-7,10.42.82.101:55200" [_thread_blocked, id=6972, stack(0x0000000076900000,0x0000000076a00000)]
+  0x0000000025cc3000 JavaThread "Timer-7,10.42.82.101:55200" daemon [_thread_blocked, id=3520, stack(0x0000000076800000,0x0000000076900000)]
+  0x000000001a348800 JavaThread "Timer-6,10.42.82.101:55200" daemon [_thread_blocked, id=6676, stack(0x0000000076700000,0x0000000076800000)]
+  0x000000001a347800 JavaThread "OOB-6,10.42.82.101:55200" [_thread_blocked, id=5260, stack(0x0000000076600000,0x0000000076700000)]
+  0x000000001a347000 JavaThread "Timer-5,10.42.82.101:55200" daemon [_thread_blocked, id=2468, stack(0x0000000076500000,0x0000000076600000)]
+  0x0000000032d24800 JavaThread "OOB-5,10.42.82.101:55200" [_thread_blocked, id=7444, stack(0x0000000076400000,0x0000000076500000)]
+  0x000000001a346000 JavaThread "OOB-4,10.42.82.101:55200" [_thread_blocked, id=6956, stack(0x0000000076300000,0x0000000076400000)]
+  0x0000000032d24000 JavaThread "OOB-3,10.42.82.101:55200" [_thread_blocked, id=7392, stack(0x0000000076200000,0x0000000076300000)]
+  0x0000000025cc2800 JavaThread "OOB-2,10.42.82.101:55200" [_thread_blocked, id=5840, stack(0x0000000076100000,0x0000000076200000)]
+  0x000000001294b000 JavaThread "OOB-1,10.42.82.101:55200" [_thread_blocked, id=412, stack(0x0000000076000000,0x0000000076100000)]
+  0x0000000032d23000 JavaThread "Timer-4,10.42.82.101:55200" daemon [_thread_blocked, id=9136, stack(0x0000000058e80000,0x0000000058f80000)]
+  0x0000000013636800 JavaThread "Timer-3,10.42.82.101:55200" daemon [_thread_blocked, id=6824, stack(0x0000000058ac0000,0x0000000058bc0000)]
+  0x0000000013636000 JavaThread "UDP mcast,10.42.82.101:55200" [_thread_blocked, id=2784, stack(0x00000000557b0000,0x00000000558b0000)]
+  0x0000000013635000 JavaThread "UDP ucast,10.42.82.101:55200" [_thread_in_native, id=7148, stack(0x0000000054750000,0x0000000054850000)]
+  0x0000000013634800 JavaThread "DiagnosticsHandler,10.42.82.101:55200" daemon [_thread_in_native, id=7380, stack(0x0000000053c20000,0x0000000053d20000)]
+  0x000000001a345800 JavaThread "FD_SOCK server socket acceptor,null" daemon [_thread_in_native, id=2928, stack(0x0000000052820000,0x0000000052920000)]
+  0x0000000013634000 JavaThread "FD_SOCK server socket acceptor,null" daemon [_thread_in_native, id=2280, stack(0x0000000052720000,0x0000000052820000)]
+  0x0000000024fae000 JavaThread "Timer-2,10.42.82.101:55200" daemon [_thread_blocked, id=2224, stack(0x0000000052620000,0x0000000052720000)]
+  0x0000000068220000 JavaThread "Timer-1,10.42.82.101:55200" daemon [_thread_blocked, id=7180, stack(0x0000000052420000,0x0000000052520000)]
+  0x000000001acfd800 JavaThread "DefaultMessageListenerContainer-30" [_thread_blocked, id=8832, stack(0x000000005c730000,0x000000005c830000)]
+  0x0000000010b20000 JavaThread "DefaultMessageListenerContainer-29" [_thread_blocked, id=432, stack(0x000000005ca30000,0x000000005cb30000)]
+  0x0000000036f46800 JavaThread "DefaultMessageListenerContainer-28" [_thread_blocked, id=6756, stack(0x000000005c830000,0x000000005c930000)]
+  0x000000004e591000 JavaThread "DefaultMessageListenerContainer-27" [_thread_blocked, id=3800, stack(0x000000005c630000,0x000000005c730000)]
+  0x000000003f5f9800 JavaThread "DefaultMessageListenerContainer-26" [_thread_blocked, id=2768, stack(0x000000005cc30000,0x000000005cd30000)]
+  0x000000001096b000 JavaThread "DefaultMessageListenerContainer-25" [_thread_blocked, id=5044, stack(0x000000006ae70000,0x000000006af70000)]
+  0x000000003609f800 JavaThread "DefaultMessageListenerContainer-24" [_thread_blocked, id=7904, stack(0x0000000064b70000,0x0000000064c70000)]
+  0x0000000024fab800 JavaThread "DefaultMessageListenerContainer-23" [_thread_blocked, id=6408, stack(0x0000000060230000,0x0000000060330000)]
+  0x000000006821f800 JavaThread "DefaultMessageListenerContainer-22" [_thread_blocked, id=5344, stack(0x000000005e830000,0x000000005e930000)]
+  0x000000003509f000 JavaThread "DefaultMessageListenerContainer-21" [_thread_blocked, id=3504, stack(0x000000005c430000,0x000000005c530000)]
+  0x0000000016fe8800 JavaThread "InactivityMonitor WriteCheck" daemon [_thread_blocked, id=5464, stack(0x000000005a860000,0x000000005a960000)]
+  0x0000000016fe4000 JavaThread "InactivityMonitor ReadCheck" daemon [_thread_blocked, id=1628, stack(0x0000000059c80000,0x0000000059d80000)]
+  0x000000003509e000 JavaThread "ActiveMQ Transport: tcp://fscnbesa3027/10.42.82.132:61616" [_thread_blocked, id=2064, stack(0x0000000059580000,0x0000000059680000)]
+  0x000000003509d800 JavaThread "ActiveMQConnection[ID:FSCNBESA3021-50204-1392817653562-0:20] Scheduler" daemon [_thread_blocked, id=6500, stack(0x00000000556b0000,0x00000000557b0000)]
+  0x000000003f5fa800 JavaThread "WorkerThread#3[10.42.82.101:62277]" [_thread_blocked, id=6540, stack(0x000000005c530000,0x000000005c630000)]
+  0x000000003f5fb800 JavaThread "WorkerThread#2[10.42.82.101:51108]" [_thread_blocked, id=7936, stack(0x000000006a240000,0x000000006a340000)]
+  0x0000000016451800 JavaThread "http-0.0.0.0-8080-40" daemon [_thread_blocked, id=876, stack(0x000000006a140000,0x000000006a240000)]
+  0x00000000156d8000 JavaThread "http-0.0.0.0-8080-39" daemon [_thread_blocked, id=5968, stack(0x0000000069e40000,0x0000000069f40000)]
+  0x000000000c996800 JavaThread "http-0.0.0.0-8080-38" daemon [_thread_in_native, id=3036, stack(0x000000006a040000,0x000000006a140000)]
+  0x000000000c99c000 JavaThread "http-0.0.0.0-8080-37" daemon [_thread_in_native, id=7896, stack(0x0000000069f40000,0x000000006a040000)]
+  0x00000000342ce000 JavaThread "http-0.0.0.0-8080-36" daemon [_thread_blocked, id=7756, stack(0x0000000069d40000,0x0000000069e40000)]
+  0x00000000342ca800 JavaThread "http-0.0.0.0-8080-35" daemon [_thread_blocked, id=7488, stack(0x0000000064c70000,0x0000000064d70000)]
+  0x0000000016450800 JavaThread "http-0.0.0.0-8080-34" daemon [_thread_blocked, id=6404, stack(0x0000000064a70000,0x0000000064b70000)]
+  0x0000000016454800 JavaThread "http-0.0.0.0-8080-33" daemon [_thread_blocked, id=5692, stack(0x0000000064970000,0x0000000064a70000)]
+  0x0000000016fea000 JavaThread "http-0.0.0.0-8080-32" daemon [_thread_blocked, id=8260, stack(0x0000000064870000,0x0000000064970000)]
+  0x0000000016fec000 JavaThread "http-0.0.0.0-8080-31" daemon [_thread_blocked, id=5284, stack(0x0000000060730000,0x0000000060830000)]
+  0x0000000016fea800 JavaThread "http-0.0.0.0-8080-30" daemon [_thread_blocked, id=6704, stack(0x000000005e030000,0x000000005e130000)]
+  0x0000000016fdf000 JavaThread "http-0.0.0.0-8080-29" daemon [_thread_blocked, id=5852, stack(0x000000005d630000,0x000000005d730000)]
+  0x0000000016feb800 JavaThread "JBoss System Threads(1)-7" daemon [_thread_blocked, id=7176, stack(0x000000005e630000,0x000000005e730000)]
+  0x0000000016fed000 JavaThread "http-0.0.0.0-8080-28" daemon [_thread_blocked, id=8868, stack(0x0000000060030000,0x0000000060130000)]
+  0x0000000016fe3800 JavaThread "http-0.0.0.0-8080-27" daemon [_thread_blocked, id=5584, stack(0x0000000056bd0000,0x0000000056cd0000)]
+  0x0000000016451000 JavaThread "ActiveMQ Connection Executor: tcp://fscnbesa3027/10.42.82.132:61616" daemon [_thread_blocked, id=6672, stack(0x000000005c330000,0x000000005c430000)]
+  0x00000000342cd800 JavaThread "http-0.0.0.0-8080-26" daemon [_thread_blocked, id=7484, stack(0x0000000060330000,0x0000000060430000)]
+  0x0000000016fe0800 JavaThread "http-0.0.0.0-8080-25" daemon [_thread_in_native, id=6076, stack(0x000000005ff30000,0x0000000060030000)]
+  0x0000000016fe2800 JavaThread "pool-20-thread-10" [_thread_blocked, id=7900, stack(0x0000000060630000,0x0000000060730000)]
+  0x0000000016fe2000 JavaThread "http-0.0.0.0-8080-24" daemon [_thread_blocked, id=6396, stack(0x0000000060130000,0x0000000060230000)]
+  0x0000000016fe0000 JavaThread "pool-20-thread-9" [_thread_blocked, id=6016, stack(0x0000000060430000,0x0000000060530000)]
+  0x0000000016318800 JavaThread "http-0.0.0.0-8080-23" daemon [_thread_in_native, id=5432, stack(0x000000005fb30000,0x000000005fc30000)]
+  0x000000000c998000 JavaThread "pool-20-thread-8" [_thread_blocked, id=7112, stack(0x000000005fc30000,0x000000005fd30000)]
+  0x00000000342cf800 JavaThread "pool-20-thread-7" [_thread_blocked, id=5880, stack(0x000000005f930000,0x000000005fa30000)]
+  0x000000001631f000 JavaThread "pool-20-thread-6" [_thread_blocked, id=7692, stack(0x000000005fe30000,0x000000005ff30000)]
+  0x00000000342c9000 JavaThread "pool-20-thread-5" [_thread_blocked, id=6776, stack(0x000000005fd30000,0x000000005fe30000)]
+  0x00000000342c8800 JavaThread "pool-20-thread-4" [_thread_blocked, id=7696, stack(0x000000005f830000,0x000000005f930000)]
+  0x00000000342cf000 JavaThread "pool-20-thread-3" [_thread_blocked, id=3048, stack(0x000000005eb30000,0x000000005ec30000)]
+  0x00000000342c5800 JavaThread "http-0.0.0.0-8080-22" daemon [_thread_blocked, id=8216, stack(0x000000005f730000,0x000000005f830000)]
+  0x00000000342cc800 JavaThread "http-0.0.0.0-8080-21" daemon [_thread_blocked, id=8828, stack(0x000000005f630000,0x000000005f730000)]
+  0x00000000342c9800 JavaThread "http-0.0.0.0-8080-20" daemon [_thread_blocked, id=8624, stack(0x000000005f230000,0x000000005f330000)]
+  0x00000000342cc000 JavaThread "pool-20-thread-2" [_thread_blocked, id=3016, stack(0x000000005fa30000,0x000000005fb30000)]
+  0x00000000342c7000 JavaThread "pool-19-thread-10" [_thread_in_native, id=7956, stack(0x000000005f530000,0x000000005f630000)]
+  0x00000000342c6000 JavaThread "pool-19-thread-9" [_thread_blocked, id=280, stack(0x000000005f430000,0x000000005f530000)]
+  0x00000000342c3000 JavaThread "pool-19-thread-8" [_thread_in_native, id=9200, stack(0x000000005d930000,0x000000005da30000)]
+  0x00000000342c4800 JavaThread "pool-19-thread-7" [_thread_in_native, id=3532, stack(0x000000005f330000,0x000000005f430000)]
+  0x00000000342c2800 JavaThread "http-0.0.0.0-8080-19" daemon [_thread_in_native, id=2272, stack(0x000000005f130000,0x000000005f230000)]
+  0x00000000342c2000 JavaThread "http-0.0.0.0-8080-18" daemon [_thread_blocked, id=3516, stack(0x000000005f030000,0x000000005f130000)]
+  0x00000000342c1000 JavaThread "http-0.0.0.0-8080-17" daemon [_thread_blocked, id=3084, stack(0x000000005ef30000,0x000000005f030000)]
+  0x00000000342c0800 JavaThread "http-0.0.0.0-8080-16" daemon [_thread_blocked, id=7660, stack(0x000000005ee30000,0x000000005ef30000)]
+  0x0000000041af9800 JavaThread "http-0.0.0.0-8080-15" daemon [_thread_blocked, id=7552, stack(0x000000005ed30000,0x000000005ee30000)]
+  0x000000000907a000 JavaThread "http-0.0.0.0-8080-14" daemon [_thread_blocked, id=8996, stack(0x000000005ec30000,0x000000005ed30000)]
+  0x000000000c995800 JavaThread "http-0.0.0.0-8080-13" daemon [_thread_blocked, id=5492, stack(0x000000005ea30000,0x000000005eb30000)]
+  0x000000001631f800 JavaThread "http-0.0.0.0-8080-12" daemon [_thread_blocked, id=8280, stack(0x000000005e930000,0x000000005ea30000)]
+  0x000000001631e000 JavaThread "http-0.0.0.0-8080-11" daemon [_thread_blocked, id=7716, stack(0x000000005e730000,0x000000005e830000)]
+  0x000000001631b000 JavaThread "http-0.0.0.0-8080-10" daemon [_thread_blocked, id=9120, stack(0x0000000054550000,0x0000000054650000)]
+  0x0000000016319000 JavaThread "http-0.0.0.0-8080-9" daemon [_thread_blocked, id=5704, stack(0x0000000009910000,0x0000000009a10000)]
+  0x000000001631d800 JavaThread "http-0.0.0.0-8080-8" daemon [_thread_blocked, id=7032, stack(0x000000005e430000,0x000000005e530000)]
+  0x0000000016319800 JavaThread "pool-19-thread-6" [_thread_in_native, id=8940, stack(0x000000005e330000,0x000000005e430000)]
+  0x000000001631c800 JavaThread "pool-19-thread-5" [_thread_in_native, id=2952, stack(0x00000000125d0000,0x00000000126d0000)]
+  0x000000001631c000 JavaThread "pool-19-thread-4" [_thread_in_native, id=6504, stack(0x000000005e230000,0x000000005e330000)]
+  0x000000001631a800 JavaThread "pool-19-thread-3" [_thread_in_native, id=7356, stack(0x000000005e130000,0x000000005e230000)]
+  0x000000000c99b800 JavaThread "pool-19-thread-2" [_thread_blocked, id=6636, stack(0x000000005e530000,0x000000005e630000)]
+  0x000000001644f000 JavaThread "http-0.0.0.0-8080-7" daemon [_thread_blocked, id=2588, stack(0x000000005d430000,0x000000005d530000)]
+  0x000000000906d000 JavaThread "http-0.0.0.0-8080-6" daemon [_thread_blocked, id=6116, stack(0x000000005d830000,0x000000005d930000)]
+  0x00000000156d6800 JavaThread "http-0.0.0.0-8080-5" daemon [_thread_blocked, id=6128, stack(0x000000005d730000,0x000000005d830000)]
+  0x000000000c991800 JavaThread "http-0.0.0.0-8080-4" daemon [_thread_blocked, id=8612, stack(0x000000005d530000,0x000000005d630000)]
+  0x000000000c992800 JavaThread "http-0.0.0.0-8080-3" daemon [_thread_blocked, id=9144, stack(0x000000005d330000,0x000000005d430000)]
+  0x00000000156d5800 JavaThread "WorkerThread#1[10.42.82.101:63576]" [_thread_blocked, id=9124, stack(0x000000005d230000,0x000000005d330000)]
+  0x00000000156db800 JavaThread "JBoss System Threads(1)-6" daemon [_thread_blocked, id=6808, stack(0x000000005d130000,0x000000005d230000)]
+  0x00000000156da800 JavaThread "WorkerThread#0[10.42.82.101:51109]" [_thread_blocked, id=5276, stack(0x000000005d030000,0x000000005d130000)]
+  0x00000000156da000 JavaThread "parser" daemon [_thread_in_native, id=3464, stack(0x000000005c030000,0x000000005c130000)]
+  0x00000000156d7000 JavaThread "formatter" daemon [_thread_in_native, id=7268, stack(0x000000005b8f0000,0x000000005b9f0000)]
+  0x000000000dd2b000 JavaThread "AWT-Windows" daemon [_thread_in_native, id=6152, stack(0x000000005a660000,0x000000005a760000)]
+  0x000000000dd29800 JavaThread "Java2D Disposer" daemon [_thread_blocked, id=8532, stack(0x0000000059680000,0x0000000059780000)]
+  0x000000000dd27800 JavaThread "ajp-0.0.0.0-8009-Acceptor-0" daemon [_thread_in_native, id=7812, stack(0x000000005df30000,0x000000005e030000)]
+  0x000000000dd27000 JavaThread "http-0.0.0.0-8080-2" daemon [_thread_blocked, id=6388, stack(0x000000005de30000,0x000000005df30000)]
+  0x000000000dd26000 JavaThread "http-0.0.0.0-8080-1" daemon [_thread_blocked, id=5728, stack(0x000000005dd30000,0x000000005de30000)]
+  0x000000000dd25800 JavaThread "http-0.0.0.0-8080-Acceptor-0" daemon [_thread_blocked, id=8052, stack(0x000000005dc30000,0x000000005dd30000)]
+  0x000000000dd24800 JavaThread "JBossLifeThread" [_thread_blocked, id=7188, stack(0x000000005db30000,0x000000005dc30000)]
+  0x000000000dd24000 JavaThread "Thread-51" [_thread_in_native, id=8332, stack(0x000000005da30000,0x000000005db30000)]
+  0x000000001644f800 JavaThread "ActiveMQConnection[ID:FSCNBESA3021-50204-1392817653562-0:1] Scheduler" daemon [_thread_blocked, id=7920, stack(0x000000005c130000,0x000000005c230000)]
+  0x000000000c3a8800 JavaThread "ClientConnectionHandler" daemon [_thread_in_native, id=2384, stack(0x000000005bf30000,0x000000005c030000)]
+  0x000000001644c800 JavaThread "FD_SOCK Ping thread" daemon [_thread_in_native, id=2256, stack(0x000000005be30000,0x000000005bf30000)]
+  0x000000001644b000 JavaThread "PullPushAdapterThread" daemon [_thread_blocked, id=7436, stack(0x000000005b9f0000,0x000000005baf0000)]
+  0x000000001644a800 JavaThread "ServerSocket acceptor thread" daemon [_thread_in_native, id=8128, stack(0x000000005bd30000,0x000000005be30000)]
+  0x000000001644a000 JavaThread "UDP mcast receiver" daemon [_thread_in_native, id=5740, stack(0x000000005bc30000,0x000000005bd30000)]
+  0x00000000182ff800 JavaThread "UDP.UcastReceiverThread" daemon [_thread_in_native, id=5768, stack(0x000000005bb30000,0x000000005bc30000)]
+  0x00000000182fe000 JavaThread "UpHandler (GMS)" daemon [_thread_blocked, id=9084, stack(0x000000005b7f0000,0x000000005b8f0000)]
+  0x00000000182fd000 JavaThread "DownHandler (GMS)" daemon [_thread_blocked, id=5628, stack(0x000000005b6f0000,0x000000005b7f0000)]
+  0x00000000182fc800 JavaThread "UpHandler (STABLE)" daemon [_thread_blocked, id=6004, stack(0x000000005b5f0000,0x000000005b6f0000)]
+  0x00000000182fc000 JavaThread "DownHandler (STABLE)" daemon [_thread_blocked, id=6512, stack(0x000000005b4f0000,0x000000005b5f0000)]
+  0x00000000182fb000 JavaThread "UpHandler (UNICAST)" daemon [_thread_blocked, id=2956, stack(0x000000005b3f0000,0x000000005b4f0000)]
+  0x00000000182fa800 JavaThread "DownHandler (UNICAST)" daemon [_thread_blocked, id=2968, stack(0x000000005b2f0000,0x000000005b3f0000)]
+  0x00000000182f9800 JavaThread "UpHandler (NAKACK)" daemon [_thread_blocked, id=8324, stack(0x000000005b1f0000,0x000000005b2f0000)]
+  0x00000000182f9000 JavaThread "DownHandler (NAKACK)" daemon [_thread_blocked, id=8056, stack(0x000000005b0f0000,0x000000005b1f0000)]
+  0x00000000182f8000 JavaThread "UpHandler (VERIFY_SUSPECT)" daemon [_thread_blocked, id=7232, stack(0x000000005aff0000,0x000000005b0f0000)]
+  0x00000000182f7800 JavaThread "DownHandler (VERIFY_SUSPECT)" daemon [_thread_blocked, id=3512, stack(0x000000005aef0000,0x000000005aff0000)]
+  0x00000000182f6800 JavaThread "UpHandler (FD_SOCK)" daemon [_thread_blocked, id=5320, stack(0x000000005adf0000,0x000000005aef0000)]
+  0x00000000182f6000 JavaThread "DownHandler (FD_SOCK)" daemon [_thread_blocked, id=8152, stack(0x000000005acf0000,0x000000005adf0000)]
+  0x00000000182f5800 JavaThread "UpHandler (PING)" daemon [_thread_blocked, id=6368, stack(0x000000005abf0000,0x000000005acf0000)]
+  0x00000000182f4800 JavaThread "DownHandler (PING)" daemon [_thread_blocked, id=9112, stack(0x000000005aaf0000,0x000000005abf0000)]
+  0x00000000182f4000 JavaThread "DownHandler (UDP)" daemon [_thread_blocked, id=6652, stack(0x000000005a9f0000,0x000000005aaf0000)]
+  0x00000000182f3000 JavaThread "IdleRemover" daemon [_thread_blocked, id=8572, stack(0x000000005a760000,0x000000005a860000)]
+  0x0000000041afc000 JavaThread "pool-20-thread-1" [_thread_blocked, id=7324, stack(0x0000000059a80000,0x0000000059b80000)]
+  0x00000000182f1800 JavaThread "pool-19-thread-1" [_thread_in_native, id=8512, stack(0x000000005a460000,0x000000005a560000)]
+  0x000000001764a800 JavaThread "Thread-28" [_thread_in_native, id=1004, stack(0x0000000059f60000,0x000000005a060000)]
+  0x00000000182f1000 JavaThread "EDMSExceptionProcessor" [_thread_blocked, id=8064, stack(0x000000005a360000,0x000000005a460000)]
+  0x00000000182f0000 JavaThread "EDMSFileProcessor" [_thread_blocked, id=1592, stack(0x000000005a260000,0x000000005a360000)]
+  0x0000000041b00800 JavaThread "EDMSDirectoryMonitor" [_thread_blocked, id=6712, stack(0x000000005a160000,0x000000005a260000)]
+  0x0000000041b00000 JavaThread "EDMSSourceSystemsMonitor" [_thread_blocked, id=2304, stack(0x000000005a060000,0x000000005a160000)]
+  0x0000000041538800 JavaThread "pool-12-thread-1" [_thread_blocked, id=5564, stack(0x00000000589c0000,0x0000000058ac0000)]
+  0x0000000041538000 JavaThread "Thread-23" daemon [_thread_blocked, id=5700, stack(0x00000000588c0000,0x00000000589c0000)]
+  0x0000000041537800 JavaThread "JCA PoolFiller" [_thread_blocked, id=8296, stack(0x0000000058d80000,0x0000000058e80000)]
+  0x0000000041536800 JavaThread "HSQLDB Timer @4d62193b" daemon [_thread_blocked, id=6200, stack(0x0000000057b30000,0x0000000057c30000)]
+  0x0000000041536000 JavaThread "DefaultQuartzScheduler_QuartzSchedulerThread" [_thread_blocked, id=3140, stack(0x0000000057d80000,0x0000000057e80000)]
+  0x0000000041535000 JavaThread "DefaultQuartzScheduler_Worker-9" [_thread_blocked, id=3768, stack(0x00000000587c0000,0x00000000588c0000)]
+  0x0000000041534800 JavaThread "DefaultQuartzScheduler_Worker-8" [_thread_blocked, id=7272, stack(0x00000000586c0000,0x00000000587c0000)]
+  0x0000000041533800 JavaThread "DefaultQuartzScheduler_Worker-7" [_thread_blocked, id=428, stack(0x00000000585c0000,0x00000000586c0000)]
+  0x0000000041533000 JavaThread "DefaultQuartzScheduler_Worker-6" [_thread_blocked, id=3756, stack(0x00000000584c0000,0x00000000585c0000)]
+  0x0000000041532000 JavaThread "DefaultQuartzScheduler_Worker-5" [_thread_blocked, id=5856, stack(0x00000000583c0000,0x00000000584c0000)]
+  0x0000000041531800 JavaThread "DefaultQuartzScheduler_Worker-4" [_thread_blocked, id=8368, stack(0x00000000582c0000,0x00000000583c0000)]
+  0x0000000041531000 JavaThread "DefaultQuartzScheduler_Worker-3" [_thread_blocked, id=7312, stack(0x00000000581c0000,0x00000000582c0000)]
+  0x000000001764e000 JavaThread "DefaultQuartzScheduler_Worker-2" [_thread_blocked, id=8256, stack(0x00000000580c0000,0x00000000581c0000)]
+  0x000000001764d800 JavaThread "DefaultQuartzScheduler_Worker-1" [_thread_blocked, id=3080, stack(0x0000000057fc0000,0x00000000580c0000)]
+  0x000000001764c800 JavaThread "DefaultQuartzScheduler_Worker-0" [_thread_blocked, id=1936, stack(0x0000000057ec0000,0x0000000057fc0000)]
+  0x000000001764c000 JavaThread "WorkManager(2)-1" daemon [_thread_blocked, id=5524, stack(0x0000000057c80000,0x0000000057d80000)]
+  0x000000001764b000 JavaThread "AOPListner" daemon [_thread_blocked, id=5960, stack(0x0000000057a30000,0x0000000057b30000)]
+  0x000000001764a000 JavaThread "ContainerBackgroundProcessor[StandardEngine[jboss.web]]" daemon [_thread_blocked, id=1812, stack(0x0000000057930000,0x0000000057a30000)]
+  0x0000000017649000 JavaThread "PooledInvokerAcceptor#0-4448" [_thread_in_native, id=5312, stack(0x0000000057830000,0x0000000057930000)]
+  0x0000000017648800 JavaThread "PooledInvokerAcceptor#0-4445" [_thread_in_native, id=8120, stack(0x0000000057730000,0x0000000057830000)]
+  0x0000000017647800 JavaThread "RMI TCP Accept-4447" daemon [_thread_in_native, id=8944, stack(0x0000000057630000,0x0000000057730000)]
+  0x0000000017647000 JavaThread "RMI TCP Accept-4444" daemon [_thread_in_native, id=8556, stack(0x0000000057530000,0x0000000057630000)]
+  0x0000000017646000 JavaThread "Thread-20" [_thread_blocked, id=9104, stack(0x0000000057430000,0x0000000057530000)]
+  0x0000000017645800 JavaThread "Listener:4712" daemon [_thread_in_native, id=8844, stack(0x0000000057330000,0x0000000057430000)]
+  0x0000000017644800 JavaThread "Thread-19" daemon [_thread_blocked, id=1680, stack(0x0000000057230000,0x0000000057330000)]
+  0x0000000017644000 JavaThread "Thread-18" daemon [_thread_blocked, id=1972, stack(0x0000000057130000,0x0000000057230000)]
+  0x0000000017643800 JavaThread "Thread-17" daemon [_thread_blocked, id=2360, stack(0x0000000056f10000,0x0000000057010000)]
+  0x000000000c3ab800 JavaThread "Listener:4713" daemon [_thread_in_native, id=6696, stack(0x0000000056ad0000,0x0000000056bd0000)]
+  0x0000000017642800 JavaThread "AcceptorThread[ServerSocket[addr=/0.0.0.0,port=0,localport=4446]]" [_thread_in_native, id=3020, stack(0x0000000056470000,0x0000000056570000)]
+  0x0000000017642000 JavaThread "ServerSocketRefresh" daemon [_thread_blocked, id=7884, stack(0x00000000560b0000,0x00000000561b0000)]
+  0x0000000017641000 JavaThread "HDScanner" [_thread_blocked, id=8428, stack(0x0000000057030000,0x0000000057130000)]
+  0x0000000017640800 JavaThread "JBoss System Threads(1)-5" daemon [_thread_in_native, id=3216, stack(0x0000000056e10000,0x0000000056f10000)]
+  0x000000001763f800 JavaThread "JBoss System Threads(1)-4" daemon [_thread_in_native, id=2284, stack(0x0000000056d10000,0x0000000056e10000)]
+  0x000000001cea9000 JavaThread "RMI TCP Accept-1101" daemon [_thread_in_native, id=6864, stack(0x00000000565d0000,0x00000000566d0000)]
+  0x000000001ceac800 JavaThread "AsynchViewChangeHandler Thread" [_thread_blocked, id=7964, stack(0x00000000569d0000,0x0000000056ad0000)]
+  0x000000001ceac000 JavaThread "AsynchKeyChangeHandler Thread" [_thread_blocked, id=1084, stack(0x00000000568d0000,0x00000000569d0000)]
+  0x000000001ceab000 JavaThread "Incoming-20,10.42.82.101:55200" [_thread_blocked, id=8584, stack(0x00000000567d0000,0x00000000568d0000)]
+  0x000000001ceaa800 JavaThread "Incoming-19,10.42.82.101:55200" [_thread_blocked, id=2936, stack(0x00000000566d0000,0x00000000567d0000)]
+  0x000000001cea9800 JavaThread "Incoming-18,10.42.82.101:55200" [_thread_blocked, id=1656, stack(0x0000000056370000,0x0000000056470000)]
+  0x000000001cea8800 JavaThread "RMI RenewClean-[FSCNBESA3022:1101]" daemon [_thread_blocked, id=7056, stack(0x0000000056270000,0x0000000056370000)]
+  0x000000001cea7800 JavaThread "Incoming-17,10.42.82.101:55200" [_thread_blocked, id=8672, stack(0x0000000055fb0000,0x00000000560b0000)]
+  0x000000001cea7000 JavaThread "Incoming-16,10.42.82.101:55200" [_thread_blocked, id=5612, stack(0x0000000055eb0000,0x0000000055fb0000)]
+  0x000000001cea6000 JavaThread "Incoming-15,10.42.82.101:55200" [_thread_blocked, id=6056, stack(0x0000000055db0000,0x0000000055eb0000)]
+  0x000000001cea5800 JavaThread "Incoming-14,10.42.82.101:55200" [_thread_blocked, id=5828, stack(0x0000000055cb0000,0x0000000055db0000)]
+  0x000000001cea4800 JavaThread "Incoming-13,10.42.82.101:55200" [_thread_blocked, id=5288, stack(0x0000000055bb0000,0x0000000055cb0000)]
+  0x000000001cea4000 JavaThread "Incoming-12,10.42.82.101:55200" [_thread_blocked, id=8448, stack(0x0000000055ab0000,0x0000000055bb0000)]
+  0x000000001cea3000 JavaThread "Incoming-11,10.42.82.101:55200" [_thread_blocked, id=7720, stack(0x0000000055150000,0x0000000055250000)]
+  0x000000001cea2800 JavaThread "Incoming-10,10.42.82.101:55200" [_thread_blocked, id=1920, stack(0x00000000529e0000,0x0000000052ae0000)]
+  0x000000001cea2000 JavaThread "Incoming-9,10.42.82.101:55200" [_thread_blocked, id=7796, stack(0x0000000052520000,0x0000000052620000)]
+  0x000000001cea1000 JavaThread "Incoming-8,10.42.82.101:55200" [_thread_blocked, id=772, stack(0x00000000559b0000,0x0000000055ab0000)]
+  0x000000001cea0800 JavaThread "OOB-20,10.42.82.101:55200" [_thread_blocked, id=7888, stack(0x00000000558b0000,0x00000000559b0000)]
+  0x000000001ce9e000 JavaThread "Incoming-7,10.42.82.101:55200" [_thread_blocked, id=3680, stack(0x00000000555b0000,0x00000000556b0000)]
+  0x000000001ce9d800 JavaThread "OOB-19,10.42.82.101:55200" [_thread_blocked, id=3132, stack(0x00000000554b0000,0x00000000555b0000)]
+  0x000000003fb68800 JavaThread "OOB-18,10.42.82.101:55200" [_thread_blocked, id=5868, stack(0x00000000553b0000,0x00000000554b0000)]
+  0x000000003fb68000 JavaThread "Incoming-6,10.42.82.101:55200" [_thread_blocked, id=8476, stack(0x00000000552b0000,0x00000000553b0000)]
+  0x000000003fb67000 JavaThread "Incoming-5,10.42.82.101:55200" [_thread_blocked, id=2940, stack(0x00000000538f0000,0x00000000539f0000)]
+  0x000000003fb66800 JavaThread "OOB-17,10.42.82.101:55200" [_thread_blocked, id=2848, stack(0x0000000055050000,0x0000000055150000)]
+  0x000000003fb65800 JavaThread "Timer-12,10.42.82.101:55200" daemon [_thread_blocked, id=7456, stack(0x0000000054f50000,0x0000000055050000)]
+  0x000000003fb65000 JavaThread "Timer-11,10.42.82.101:55200" daemon [_thread_blocked, id=6080, stack(0x0000000054e50000,0x0000000054f50000)]
+  0x000000003fb64000 JavaThread "OOB-16,10.42.82.101:55200" [_thread_blocked, id=9016, stack(0x0000000054d50000,0x0000000054e50000)]
+  0x000000003fb63800 JavaThread "OOB-15,10.42.82.101:55200" [_thread_blocked, id=3824, stack(0x0000000054c50000,0x0000000054d50000)]
+  0x000000003fb62800 JavaThread "OOB-14,10.42.82.101:55200" [_thread_blocked, id=6604, stack(0x0000000054b50000,0x0000000054c50000)]
+  0x000000003fb62000 JavaThread "OOB-13,10.42.82.101:55200" [_thread_blocked, id=8708, stack(0x0000000054a50000,0x0000000054b50000)]
+  0x000000003fb61800 JavaThread "Timer-10,10.42.82.101:55200" daemon [_thread_blocked, id=5436, stack(0x0000000054950000,0x0000000054a50000)]
+  0x000000003fb60800 JavaThread "Incoming-4,10.42.82.101:55200" [_thread_blocked, id=5192, stack(0x0000000054850000,0x0000000054950000)]
+  0x000000003fb5f000 JavaThread "OOB-12,10.42.82.101:55200" [_thread_blocked, id=8220, stack(0x0000000054650000,0x0000000054750000)]
+  0x000000003fb5e800 JavaThread "Timer-9,10.42.82.101:55200" daemon [_thread_blocked, id=3044, stack(0x0000000054450000,0x0000000054550000)]
+  0x000000003fb5d800 JavaThread "Timer-8,10.42.82.101:55200" daemon [_thread_blocked, id=1096, stack(0x0000000054220000,0x0000000054320000)]
+  0x000000003fb5d000 JavaThread "OOB-11,10.42.82.101:55200" [_thread_blocked, id=8248, stack(0x0000000054120000,0x0000000054220000)]
+  0x000000003fb5c000 JavaThread "OOB-10,10.42.82.101:55200" [_thread_blocked, id=8620, stack(0x0000000054020000,0x0000000054120000)]
+  0x000000003fb5b800 JavaThread "OOB-9,10.42.82.101:55200" [_thread_blocked, id=6428, stack(0x0000000053f20000,0x0000000054020000)]
+  0x000000003fb5a800 JavaThread "OOB-8,10.42.82.101:55200" [_thread_blocked, id=9072, stack(0x0000000053e20000,0x0000000053f20000)]
+  0x000000003fb5a000 JavaThread "Timer-7,10.42.82.101:55200" daemon [_thread_blocked, id=2016, stack(0x0000000053d20000,0x0000000053e20000)]
+  0x0000000012958800 JavaThread "Timer-6,10.42.82.101:55200" daemon [_thread_blocked, id=6228, stack(0x0000000053b20000,0x0000000053c20000)]
+  0x0000000012958000 JavaThread "Timer-5,10.42.82.101:55200" daemon [_thread_blocked, id=9192, stack(0x0000000053a20000,0x0000000053b20000)]
+  0x0000000012956800 JavaThread "Incoming-3,10.42.82.101:55200" [_thread_blocked, id=7388, stack(0x00000000536f0000,0x00000000537f0000)]
+  0x0000000012956000 JavaThread "OOB-7,10.42.82.101:55200" [_thread_blocked, id=5160, stack(0x00000000535f0000,0x00000000536f0000)]
+  0x0000000012955000 JavaThread "OOB-6,10.42.82.101:55200" [_thread_blocked, id=8580, stack(0x00000000534f0000,0x00000000535f0000)]
+  0x0000000012954800 JavaThread "Incoming-2,10.42.82.101:55200" [_thread_blocked, id=5356, stack(0x00000000533f0000,0x00000000534f0000)]
+  0x0000000012953800 JavaThread "Incoming-1,10.42.82.101:55200" [_thread_blocked, id=8436, stack(0x00000000532f0000,0x00000000533f0000)]
+  0x0000000012953000 JavaThread "OOB-5,10.42.82.101:55200" [_thread_blocked, id=7296, stack(0x00000000531f0000,0x00000000532f0000)]
+  0x0000000012952000 JavaThread "Timer-4,10.42.82.101:55200" daemon [_thread_blocked, id=7652, stack(0x00000000530f0000,0x00000000531f0000)]
+  0x0000000012951800 JavaThread "Timer-3,10.42.82.101:55200" daemon [_thread_blocked, id=3884, stack(0x0000000052ff0000,0x00000000530f0000)]
+  0x0000000012951000 JavaThread "OOB-4,10.42.82.101:55200" [_thread_blocked, id=6212, stack(0x0000000052ef0000,0x0000000052ff0000)]
+  0x0000000012950000 JavaThread "OOB-3,10.42.82.101:55200" [_thread_blocked, id=8024, stack(0x0000000052df0000,0x0000000052ef0000)]
+  0x000000001294f800 JavaThread "OOB-2,10.42.82.101:55200" [_thread_blocked, id=1080, stack(0x0000000052cf0000,0x0000000052df0000)]
+  0x000000001294e800 JavaThread "OOB-1,10.42.82.101:55200" [_thread_blocked, id=7668, stack(0x0000000052bf0000,0x0000000052cf0000)]
+  0x000000001294e000 JavaThread "Timer-2,10.42.82.101:55200" daemon [_thread_blocked, id=5012, stack(0x0000000052af0000,0x0000000052bf0000)]
+  0x000000001294a000 JavaThread "Timer-1,10.42.82.101:55200" daemon [_thread_blocked, id=9060, stack(0x0000000052320000,0x0000000052420000)]
+  0x000000000c3ac000 JavaThread "JBoss System Threads(1)-3" daemon [_thread_blocked, id=3012, stack(0x0000000052220000,0x0000000052320000)]
+  0x0000000012949800 JavaThread "AcceptorThread[ServerSocket[addr=/0.0.0.0,port=0,localport=3873]]" [_thread_in_native, id=8792, stack(0x0000000052120000,0x0000000052220000)]
+  0x0000000009078800 JavaThread "ServerSocketRefresh" daemon [_thread_blocked, id=6680, stack(0x0000000052020000,0x0000000052120000)]
+  0x0000000009079800 JavaThread "main-FastReceiver" [_thread_in_native, id=6216, stack(0x0000000051f20000,0x0000000052020000)]
+  0x0000000009073000 JavaThread "SnmpPortal--1" [_thread_blocked, id=8348, stack(0x0000000051e20000,0x0000000051f20000)]
+  0x0000000009070000 JavaThread "SnmpTimer" daemon [_thread_blocked, id=9204, stack(0x0000000051d20000,0x0000000051e20000)]
+  0x000000000c3b7000 JavaThread "main-FastReceiver" [_thread_in_native, id=7576, stack(0x0000000051c20000,0x0000000051d20000)]
+  0x000000000c3b6800 JavaThread "SnmpPortal--1" [_thread_blocked, id=8804, stack(0x0000000051b20000,0x0000000051c20000)]
+  0x000000000c3b5800 JavaThread "Timer-1" [_thread_blocked, id=5516, stack(0x0000000051a20000,0x0000000051b20000)]
+  0x000000000c3b5000 JavaThread "main-FastReceiver" [_thread_in_native, id=8748, stack(0x0000000051920000,0x0000000051a20000)]
+  0x000000000c3b4000 JavaThread "SnmpPortal--1" [_thread_blocked, id=5760, stack(0x0000000051820000,0x0000000051920000)]
+  0x000000000c3b2800 JavaThread "secondaryServerSocketThread[0]" daemon [_thread_in_native, id=5820, stack(0x0000000051720000,0x0000000051820000)]
+  0x000000000c3aa800 JavaThread "AcceptorThread[ServerSocket[addr=/0.0.0.0,port=0,localport=4457]]" [_thread_in_native, id=8484, stack(0x0000000051620000,0x0000000051720000)]
+  0x000000000c3a9800 JavaThread "ServerSocketRefresh" daemon [_thread_blocked, id=6348, stack(0x0000000051520000,0x0000000051620000)]
+  0x000000000c3b3800 JavaThread "RequestController-7" daemon [_thread_blocked, id=5732, stack(0x0000000051420000,0x0000000051520000)]
+  0x000000000c3b2000 JavaThread "RequestController-6" daemon [_thread_blocked, id=2088, stack(0x0000000051320000,0x0000000051420000)]
+  0x000000000c3b1000 JavaThread "RequestController-5" daemon [_thread_blocked, id=9128, stack(0x0000000051220000,0x0000000051320000)]
+  0x000000000c3b0000 JavaThread "RequestController-4" daemon [_thread_blocked, id=8608, stack(0x0000000051020000,0x0000000051120000)]
+  0x000000000c3b0800 JavaThread "ORB thread" [_thread_blocked, id=2560, stack(0x0000000051120000,0x0000000051220000)]
+  0x000000000c3af000 JavaThread "RequestController-3" daemon [_thread_blocked, id=7916, stack(0x0000000050f20000,0x0000000051020000)]
+  0x000000000c3ae800 JavaThread "RequestController-2" daemon [_thread_blocked, id=6276, stack(0x0000000050e20000,0x0000000050f20000)]
+  0x000000000c3ad800 JavaThread "ServerSocketListener" daemon [_thread_in_native, id=2932, stack(0x0000000050d20000,0x0000000050e20000)]
+  0x000000000c3ad000 JavaThread "RequestController-1" daemon [_thread_blocked, id=6344, stack(0x00000000331a0000,0x00000000332a0000)]
+  0x000000000907b000 JavaThread "RMI Scheduler(0)" daemon [_thread_blocked, id=7960, stack(0x00000000126d0000,0x00000000127d0000)]
+  0x0000000009073800 JavaThread "JBoss System Threads(1)-2" daemon [_thread_in_native, id=5048, stack(0x00000000124d0000,0x00000000125d0000)]
+  0x0000000009078000 JavaThread "GC Daemon" daemon [_thread_blocked, id=8988, stack(0x00000000123d0000,0x00000000124d0000)]
+  0x0000000009077800 JavaThread "RMI Reaper" [_thread_blocked, id=6196, stack(0x00000000122d0000,0x00000000123d0000)]
+  0x0000000009076800 JavaThread "RMI TCP Accept-1098" daemon [_thread_in_native, id=6240, stack(0x00000000121d0000,0x00000000122d0000)]
+  0x0000000009076000 JavaThread "JBoss System Threads(1)-1" daemon [_thread_in_native, id=8112, stack(0x00000000120d0000,0x00000000121d0000)]
+  0x0000000009075000 JavaThread "Timer-Log4jService" daemon [_thread_blocked, id=6624, stack(0x000000000e000000,0x000000000e100000)]
+  0x0000000009074800 JavaThread "Dispatcher-Thread-3" daemon [_thread_blocked, id=5388, stack(0x000000000df00000,0x000000000e000000)]
+  0x0000000009071800 JavaThread "AuthenticationCacheFlushThread" [_thread_blocked, id=8836, stack(0x000000000cde0000,0x000000000cee0000)]
+  0x000000000906e800 JavaThread "Timer-0" daemon [_thread_blocked, id=5544, stack(0x000000000aaa0000,0x000000000aba0000)]
+  0x000000000906e000 JavaThread "DestroyJavaVM" [_thread_blocked, id=2916, stack(0x00000000012b0000,0x00000000013b0000)]
+  0x000000000906c800 JavaThread "Low Memory Detector" daemon [_thread_blocked, id=8212, stack(0x0000000009710000,0x0000000009810000)]
+  0x0000000009083000 JavaThread "C2 CompilerThread1" daemon [_thread_blocked, id=9044, stack(0x0000000009610000,0x0000000009710000)]
+  0x000000000907c800 JavaThread "C2 CompilerThread0" daemon [_thread_blocked, id=568, stack(0x0000000009510000,0x0000000009610000)]
+  0x000000000906b800 JavaThread "Attach Listener" daemon [_thread_blocked, id=7316, stack(0x0000000009410000,0x0000000009510000)]
+  0x000000000901b000 JavaThread "Finalizer" daemon [_thread_blocked, id=7360, stack(0x0000000009310000,0x0000000009410000)]
+  0x0000000009015000 JavaThread "Reference Handler" daemon [_thread_blocked, id=5904, stack(0x0000000009210000,0x0000000009310000)]
+
+Other Threads:
+  0x00000000014ad800 VMThread [stack: 0x0000000008f10000,0x0000000009010000] [id=6288]
+  0x000000000909c000 WatcherThread [stack: 0x0000000009810000,0x0000000009910000] [id=8440]
+
+=>0x00000000013ce800 (exited) GCTaskThread [stack: 0x0000000006280000,0x0000000006380000] [id=2480]
+
+VM state:at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread:  ([mutex/lock_event])
+[0x000000000038cf50] Threads_lock - owner thread: 0x00000000014ad800
+[0x000000000038d450] Heap_lock - owner thread: 0x00000000342ca800
+
+Heap
+ PSYoungGen      total 1278528K, used 1173867K [0x00000007a0000000, 0x0000000800000000, 0x0000000800000000)
+  eden space 1005440K, 100% used [0x00000007a0000000,0x00000007dd5e0000,0x00000007dd5e0000)
+  from space 273088K, 61% used [0x00000007ef550000,0x00000007f99cadc0,0x0000000800000000)
+  to   space 283712K, 32% used [0x00000007dd5e0000,0x00000007e2ef7cb8,0x00000007eeaf0000)
+ PSOldGen        total 4718592K, used 968310K [0x0000000680000000, 0x00000007a0000000, 0x00000007a0000000)
+  object space 4718592K, 20% used [0x0000000680000000,0x00000006bb19d8a8,0x00000007a0000000)
+ PSPermGen       total 275712K, used 195455K [0x0000000660000000, 0x0000000670d40000, 0x0000000680000000)
+  object space 275712K, 70% used [0x0000000660000000,0x000000066bedff80,0x0000000670d40000)
+
+Code Cache  [0x00000000014b0000, 0x0000000003a00000, 0x00000000044b0000)
+ total_blobs=9388 nmethods=8674 adapters=665 free_code_cache=11737600 largest_free_block=57280
+
+Dynamic libraries:
+0x0000000000400000 - 0x000000000042f000 	C:\Program Files\Java\jdk1.6.0_38\bin\java.exe
+0x0000000076d00000 - 0x0000000076ea9000 	C:\Windows\SYSTEM32\ntdll.dll
+0x0000000076ae0000 - 0x0000000076bff000 	C:\Windows\system32\kernel32.dll
+0x000007fefcdc0000 - 0x000007fefce2b000 	C:\Windows\system32\KERNELBASE.dll
+0x000007fefd1c0000 - 0x000007fefd29b000 	C:\Windows\system32\ADVAPI32.dll
+0x000007fefdb70000 - 0x000007fefdc0f000 	C:\Windows\system32\msvcrt.dll
+0x000007fefeff0000 - 0x000007feff00f000 	C:\Windows\SYSTEM32\sechost.dll
+0x000007fefd690000 - 0x000007fefd7bd000 	C:\Windows\system32\RPCRT4.dll
+0x000000006d8c0000 - 0x000000006e07b000 	C:\Program Files\Java\jdk1.6.0_38\jre\bin\server\jvm.dll
+0x0000000076c00000 - 0x0000000076cfa000 	C:\Windows\system32\USER32.dll
+0x000007fefde70000 - 0x000007fefded7000 	C:\Windows\system32\GDI32.dll
+0x000007fefda30000 - 0x000007fefda3e000 	C:\Windows\system32\LPK.dll
+0x000007fefef20000 - 0x000007fefefe9000 	C:\Windows\system32\USP10.dll
+0x000007fef4640000 - 0x000007fef467b000 	C:\Windows\system32\WINMM.dll
+0x000007fefd660000 - 0x000007fefd68e000 	C:\Windows\system32\IMM32.DLL
+0x000007fefd480000 - 0x000007fefd589000 	C:\Windows\system32\MSCTF.dll
+0x000000006d830000 - 0x000000006d83e000 	C:\Program Files\Java\jdk1.6.0_38\jre\bin\verify.dll
+0x000000006d450000 - 0x000000006d477000 	C:\Program Files\Java\jdk1.6.0_38\jre\bin\java.dll
+0x000000006d880000 - 0x000000006d892000 	C:\Program Files\Java\jdk1.6.0_38\jre\bin\zip.dll
+0x000000006d6b0000 - 0x000000006d6c7000 	C:\Program Files\Java\jdk1.6.0_38\jre\bin\net.dll
+0x000007fefd590000 - 0x000007fefd5dd000 	C:\Windows\system32\WS2_32.dll
+0x000007fefda20000 - 0x000007fefda28000 	C:\Windows\system32\NSI.dll
+0x000007fefc480000 - 0x000007fefc4d5000 	C:\Windows\system32\mswsock.dll
+0x000007fefc470000 - 0x000007fefc477000 	C:\Windows\System32\wship6.dll
+0x000007fefb580000 - 0x000007fefb595000 	C:\Windows\system32\NLAapi.dll
+0x000007fef96f0000 - 0x000007fef9705000 	C:\Windows\system32\napinsp.dll
+0x000007fefc300000 - 0x000007fefc35b000 	C:\Windows\system32\DNSAPI.dll
+0x000007fef9720000 - 0x000007fef972b000 	C:\Windows\System32\winrnr.dll
+0x000007fefa610000 - 0x000007fefa637000 	C:\Windows\system32\IPHLPAPI.DLL
+0x000007fefa600000 - 0x000007fefa60b000 	C:\Windows\system32\WINNSI.DLL
+0x000007fef9fc0000 - 0x000007fefa013000 	C:\Windows\System32\fwpuclnt.dll
+0x000007fef9810000 - 0x000007fef9818000 	C:\Windows\system32\rasadhlp.dll
+0x000000006d5f0000 - 0x000000006d5fa000 	C:\Program Files\Java\jdk1.6.0_38\jre\bin\management.dll
+0x000007fefbe60000 - 0x000007fefbe67000 	C:\Windows\System32\wshtcpip.dll
+0x000007fefc4e0000 - 0x000007fefc4f7000 	C:\Windows\system32\CRYPTSP.dll
+0x000007fefc1e0000 - 0x000007fefc227000 	C:\Windows\system32\rsaenh.dll
+0x000007fefbf80000 - 0x000007fefbf9e000 	C:\Windows\system32\USERENV.dll
+0x000007fefcc50000 - 0x000007fefcc5f000 	C:\Windows\system32\profapi.dll
+0x000007fefcb40000 - 0x000007fefcb4f000 	C:\Windows\system32\CRYPTBASE.dll
+0x000007fef9fa0000 - 0x000007fef9fb1000 	C:\Windows\system32\dhcpcsvc6.DLL
+0x000007fef9da0000 - 0x000007fef9db8000 	C:\Windows\system32\dhcpcsvc.DLL
+0x000000006d750000 - 0x000000006d756000 	C:\Program Files\Java\jdk1.6.0_38\jre\bin\rmi.dll
+0x000000006d0a0000 - 0x000000006d264000 	C:\Program Files\Java\jdk1.6.0_38\jre\bin\awt.dll
+0x000007fef3d40000 - 0x000007fef3db1000 	C:\Windows\system32\WINSPOOL.DRV
+0x000007fefed10000 - 0x000007fefef13000 	C:\Windows\system32\ole32.dll
+0x000007fefdf00000 - 0x000007fefec88000 	C:\Windows\system32\SHELL32.dll
+0x000007fefd5e0000 - 0x000007fefd651000 	C:\Windows\system32\SHLWAPI.dll
+0x000007fefb6d0000 - 0x000007fefb8c4000 	C:\Windows\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.7601.17514_none_fa396087175ac9ac\COMCTL32.dll
+0x000000006d6d0000 - 0x000000006d6dc000 	C:\Program Files\Java\jdk1.6.0_38\jre\bin\nio.dll
+0x000007fefb480000 - 0x000007fefb498000 	C:\Windows\system32\DWMAPI.DLL
+0x000000006d340000 - 0x000000006d3a7000 	C:\Program Files\Java\jdk1.6.0_38\jre\bin\fontmanager.dll
+0x000000006d270000 - 0x000000006d2ad000 	C:\Program Files\Java\jdk1.6.0_38\jre\bin\cmm.dll
+0x000000000e180000 - 0x000000000e187000 	C:\Windows\system32\PSAPI.DLL
+
+VM Arguments:
+jvm_args: -Xrs -Xms6144m -Xmx6144m -XX:MaxPermSize=512m -Dorg.jboss.resolver.warning=true -Dsun.rmi.dgc.client.gcInterval=3600000 -Dsun.rmi.dgc.server.gcInterval=3600000 -Dsun.lang.ClassLoader.allowArraySyntax=true -verbose:gc -Xloggc:D:\p\jboss\jboss-as\server\production\log\gc.log -XX:+PrintGCTimeStamps -XX:+PrintGCDetails -XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=D:\p\jboss\jboss-as\server\production\log\ -XX:+UseParallelGC -XX:ParallelGCThreads=24 -XX:NewRatio=3 -Dsun.rmi.dgc.client.gcInterval=3600000 -Dsun.rmi.dgc.server.gcInterval=3600000 -Dorg.jboss.resolver.warning=true -Djava.net.preferIPv4Stack=true -Dprogram.name=run.bat -Djava.endorsed.dirs=D:\p\jboss\jboss-as\lib\endorsed 
+java_command: org.jboss.Main -c production -b 0.0.0.0
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+JAVA_HOME=C:\Program Files\Java\jdk1.6.0_38
+PATH=C:\Program Files\HP\NCU;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\System Center Operations Manager 2007\;C:\Program Files\Java\jdk1.6.0_38\bin;D:\WCG\util\apache-ant-1.8.3\bin;;d:\wcg\bin;d:\wcg\bin
+USERNAME=DKX4S00077
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 44 Stepping 2, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows NT 6.1 , 64 bit Build 7601 Service Pack 1
+
+CPU:total 24 (6 cores per cpu, 2 threads per core) family 6 model 44 stepping 2, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, ht
+
+Memory: 4k page, physical 33543988k(219528k free), swap 67096560k(56161300k free)
+
+vm_info: Java HotSpot(TM) 64-Bit Server VM (20.13-b02) for windows-amd64 JRE (1.6.0_38-b05), built on Nov 14 2012 00:54:08 by "java_re" with MS VC++ 8.0 (VS2005)
+
+time: Tue Mar 04 09:33:55 2014
+elapsed time: 1079264 seconds
+
