@@ -1,0 +1,1371 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  SIGSEGV (0xb) at pc=0x00002b92c2489618, pid=28292, tid=47909616302400
+#
+# JRE version: 7.0_15-b03
+# Java VM: Java HotSpot(TM) 64-Bit Server VM (23.7-b01 mixed mode linux-amd64 compressed oops)
+# Problematic frame:
+# J  org.apache.http.client.protocol.RequestAddCookies.process(Lorg/apache/http/HttpRequest;Lorg/apache/http/protocol/HttpContext;)V
+#
+# Failed to write core dump. Core dumps have been disabled. To enable core dumping, try "ulimit -c unlimited" before starting Java again
+#
+# If you would like to submit a bug report, please visit:
+#   http://bugreport.sun.com/bugreport/crash.jsp
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x00002b92e18b8000):  JavaThread "pool-13-thread-4" [_thread_in_Java, id=28572, stack(0x00002b92d3993000,0x00002b92d3a94000)]
+
+siginfo:si_signo=SIGSEGV: si_errno=0, si_code=1 (SEGV_MAPERR), si_addr=0x00000005d85ad688
+
+Registers:
+RAX=0x00000007355eb780, RBX=0x0000000000000000, RCX=0x00000000bb0b5ad0, RDX=0x0000000000000002
+RSP=0x00002b92d3a92090, RBP=0x0000000000000001, RSI=0x0000000735286918, RDI=0x0000000735286914
+R8 =0x000000000000000a, R9 =0x0000000000000002, R10=0x0000000000000002, R11=0x0000000000000002
+R12=0x0000000000000000, R13=0x00000007c6b48aa0, R14=0x0000000000000000, R15=0x00002b92e18b8000
+RIP=0x00002b92c2489618, EFLAGS=0x0000000000010203, CSGSFS=0x0000000000000033, ERR=0x0000000000000004
+  TRAPNO=0x000000000000000e
+
+Top of Stack: (sp=0x00002b92d3a92090)
+0x00002b92d3a92090:   00000007c6b3e978 00000007c6b49f70
+0x00002b92d3a920a0:   00000007c6a2e210 0000000200000001
+0x00002b92d3a920b0:   00000007c6b49ed0 00000007c6b49eb0
+0x00002b92d3a920c0:   bb0b5ad0f8d693f1 0000000200000000
+0x00002b92d3a920d0:   f8d693f100000000 0000000000000002
+0x00002b92d3a920e0:   00000007c6b49ed0 00000007c6b49ed0
+0x00002b92d3a920f0:   00000007c6b49f88 0000000000000007
+0x00002b92d3a92100:   00000007c6b49f70 0000000700000000
+0x00002b92d3a92110:   00000007c6b3ec50 00000007c6b3dea0
+0x00002b92d3a92120:   00000007c6b3ec18 00000007c6b3ec50
+0x00002b92d3a92130:   0000000000000006 00002b92c0ac6f58
+0x00002b92d3a92140:   00000007c6b3ea28 00000007c6b3ec50
+0x00002b92d3a92150:   00000007c6a2e210 0000000000000000
+0x00002b92d3a92160:   00000007c6b3eec0 00002b92c17b0120
+0x00002b92d3a92170:   00000007458eb150 00002b92c17b1814
+0x00002b92d3a92180:   00002b92e18b8000 00002b92e18b8aa0
+0x00002b92d3a92190:   00002b92d3a92260 00002b92ba9161ee
+0x00002b92d3a921a0:   00000007c6b3d588 00000007c6b3dce8
+0x00002b92d3a921b0:   00000007c6b3d4f8 0000008e0000004a
+0x00002b92d3a921c0:   00000000409d0528 00000007438ccdb8
+0x00002b92d3a921d0:   00000007c6b3d3d8 0000004600000001
+0x00002b92d3a921e0:   00000007c6b3d3d8 00000007438c0178
+0x00002b92d3a921f0:   0000000740357390 00002b92d3a921a8
+0x00002b92d3a92200:   0000000745d2dbe0 0000000800000001
+0x00002b92d3a92210:   00000007c6b3d100 0000001e0000009e
+0x00002b92d3a92220:   0000000745d25910 00000016e8ba4b25
+0x00002b92d3a92230:   00000007c6b3eba0 00000007c6a2d200
+0x00002b92d3a92240:   00000007c6a2e1f0 00000007c6a2e210
+0x00002b92d3a92250:   00000007c6b3ec30 00000007c6a2d200
+0x00002b92d3a92260:   00000007c6b3ec50 0000000000000000
+0x00002b92d3a92270:   00000007c6b3ed10 0000000000000000
+0x00002b92d3a92280:   00000007c6b3ec50 00000007c6b3ed28 
+
+Instructions: (pc=0x00002b92c2489618)
+0x00002b92c24895f8:   44 8b 4c 24 18 46 8b 4c 8f 10 44 89 4c 24 34 44
+0x00002b92c2489608:   8b 4c 24 18 41 ff c1 44 89 4c 24 3c 8b 4c 24 34
+0x00002b92c2489618:   41 8b 4c cc 08 81 f9 23 0d a5 e6 0f 85 47 27 00
+0x00002b92c2489628:   00 48 be 18 69 28 35 07 00 00 00 48 b8 80 b7 5e 
+
+Register to memory mapping:
+
+RAX=0x00000007355eb780 is an oop
+{instance class} 
+ - klass: {other class}
+RBX=0x0000000000000000 is an unknown value
+RCX=0x00000000bb0b5ad0 is an unknown value
+RDX=0x0000000000000002 is an unknown value
+RSP=0x00002b92d3a92090 is pointing into the stack for thread: 0x00002b92e18b8000
+RBP=0x0000000000000001 is an unknown value
+RSI=0x0000000735286918 is an oop
+{instance class} 
+ - klass: {other class}
+RDI=0x0000000735286914 is an oop
+[[I 
+ - klass: 'java/lang/Object'[]
+ - length: 5
+R8 =0x000000000000000a is an unknown value
+R9 =0x0000000000000002 is an unknown value
+R10=0x0000000000000002 is an unknown value
+R11=0x0000000000000002 is an unknown value
+R12=0x0000000000000000 is an unknown value
+R13=0x00000007c6b48aa0 is an oop
+java.lang.String 
+ - klass: 'java/lang/String'
+R14=0x0000000000000000 is an unknown value
+R15=0x00002b92e18b8000 is a thread
+
+
+Stack: [0x00002b92d3993000,0x00002b92d3a94000],  sp=0x00002b92d3a92090,  free space=1020k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+J  org.apache.http.client.protocol.RequestAddCookies.process(Lorg/apache/http/HttpRequest;Lorg/apache/http/protocol/HttpContext;)V
+
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+  0x0000000006278800 JavaThread "Thread-15 (HornetQ-remoting-threads-HornetQServerImpl::serverUUID=b501bfa1-b0b0-11e3-b0aa-0050568500ba-1169733082-1638604536)" [_thread_blocked, id=2885, stack(0x00002b92e4d0d000,0x00002b92e4e0e000)]
+  0x000000000627a800 JavaThread "Thread-13 (HornetQ-client-global-threads-9938336)" daemon [_thread_blocked, id=2758, stack(0x00002b92e6929000,0x00002b92e6a2a000)]
+  0x0000000006279800 JavaThread "Thread-14 (HornetQ-remoting-threads-HornetQServerImpl::serverUUID=b501bfa1-b0b0-11e3-b0aa-0050568500ba-1169733082-1638604536)" [_thread_blocked, id=2651, stack(0x00002b92e6a2a000,0x00002b92e6b2b000)]
+  0x00002b92dbbf9800 JavaThread "Thread-19 (HornetQ-AIO-poller-pool689292896-2040508612)" daemon [_thread_blocked, id=2494, stack(0x00002b92e6626000,0x00002b92e6727000)]
+  0x0000000005424800 JavaThread "Thread-12 (HornetQ-client-global-threads-9938336)" daemon [_thread_blocked, id=2050, stack(0x00002b92d2c81000,0x00002b92d2d82000)]
+  0x0000000006312800 JavaThread "Thread-15 (HornetQ-AIO-poller-pool689292896-2040508612)" daemon [_thread_in_native, id=1918, stack(0x00002b92e6525000,0x00002b92e6626000)]
+  0x00002b92d4c3f000 JavaThread "Thread-11 (HornetQ-client-global-threads-9938336)" daemon [_thread_blocked, id=582, stack(0x00002b92e4f0f000,0x00002b92e5010000)]
+  0x0000000004e58800 JavaThread "btpool1-2" [_thread_blocked, id=29030, stack(0x00002b92d1dea000,0x00002b92d1eeb000)]
+  0x00002b92d4cbd000 JavaThread "AD Thread Pool-CSS1" daemon [_thread_blocked, id=28877, stack(0x00002b92dc808000,0x00002b92dc909000)]
+  0x00000000044cb000 JavaThread "AD Thread Pool-CGG0" daemon [_thread_blocked, id=28847, stack(0x00002b92dc606000,0x00002b92dc707000)]
+  0x00000000043cc000 JavaThread "AD Thread Pool-CSS0" daemon [_thread_blocked, id=28846, stack(0x00002b92dc505000,0x00002b92dc606000)]
+  0x0000000003bd3000 JavaThread "pool-13-thread-10" [_thread_blocked, id=28690, stack(0x00002b92dc101000,0x00002b92dc202000)]
+  0x0000000003dbd000 JavaThread "pool-13-thread-9" [_thread_blocked, id=28688, stack(0x00002b92dc404000,0x00002b92dc505000)]
+  0x0000000004955800 JavaThread "pool-13-thread-8" [_thread_blocked, id=28685, stack(0x00002b92d3c96000,0x00002b92d3d97000)]
+  0x00002b92e8834800 JavaThread "pool-13-thread-7" [_thread_blocked, id=28684, stack(0x00002b92d3a94000,0x00002b92d3b95000)]
+  0x0000000003dbc800 JavaThread "pool-13-thread-6" [_thread_blocked, id=28683, stack(0x00002b92d3b95000,0x00002b92d3c96000)]
+  0x0000000003db9000 JavaThread "pool-13-thread-5" [_thread_blocked, id=28647, stack(0x00002b92d1b4c000,0x00002b92d1c4d000)]
+=>0x00002b92e18b8000 JavaThread "pool-13-thread-4" [_thread_in_Java, id=28572, stack(0x00002b92d3993000,0x00002b92d3a94000)]
+  0x0000000003db7800 JavaThread "Thread-29 (HornetQ-server-HornetQServerImpl::serverUUID=b501bfa1-b0b0-11e3-b0aa-0050568500ba-1314046183)" [_thread_blocked, id=28570, stack(0x00002b92d3892000,0x00002b92d3993000)]
+  0x0000000003db7000 JavaThread "Thread-28 (HornetQ-server-HornetQServerImpl::serverUUID=b501bfa1-b0b0-11e3-b0aa-0050568500ba-1314046183)" [_thread_blocked, id=28569, stack(0x00002b92d358f000,0x00002b92d3690000)]
+  0x0000000003db6800 JavaThread "Thread-27 (HornetQ-server-HornetQServerImpl::serverUUID=b501bfa1-b0b0-11e3-b0aa-0050568500ba-1314046183)" [_thread_blocked, id=28568, stack(0x00002b92d348e000,0x00002b92d358f000)]
+  0x0000000003eb9800 JavaThread "Thread-26 (HornetQ-server-HornetQServerImpl::serverUUID=b501bfa1-b0b0-11e3-b0aa-0050568500ba-1314046183)" [_thread_blocked, id=28567, stack(0x00002b92d3d97000,0x00002b92d3e98000)]
+  0x0000000003eb8800 JavaThread "Thread-25 (HornetQ-server-HornetQServerImpl::serverUUID=b501bfa1-b0b0-11e3-b0aa-0050568500ba-1314046183)" [_thread_blocked, id=28566, stack(0x00002b92dcc0c000,0x00002b92dcd0d000)]
+  0x0000000003eb8000 JavaThread "Thread-24 (HornetQ-server-HornetQServerImpl::serverUUID=b501bfa1-b0b0-11e3-b0aa-0050568500ba-1314046183)" [_thread_blocked, id=28565, stack(0x00002b92d3e98000,0x00002b92d3f99000)]
+  0x0000000003e98000 JavaThread "JournalImpl::CompactorExecutor" [_thread_blocked, id=28563, stack(0x00002b92d338d000,0x00002b92d348e000)]
+  0x0000000003e97000 JavaThread "JournalImpl::FilesExecutor" [_thread_blocked, id=28562, stack(0x00002b92dc202000,0x00002b92dc303000)]
+  0x0000000003e94800 JavaThread "Thread-23 (HornetQ-server-HornetQServerImpl::serverUUID=b501bfa1-b0b0-11e3-b0aa-0050568500ba-1314046183)" [_thread_blocked, id=28558, stack(0x00002b92dc303000,0x00002b92dc404000)]
+  0x0000000003e93800 JavaThread "Thread-22 (HornetQ-server-HornetQServerImpl::serverUUID=b501bfa1-b0b0-11e3-b0aa-0050568500ba-1314046183)" [_thread_blocked, id=28557, stack(0x00002b92d3690000,0x00002b92d3791000)]
+  0x0000000003e92800 JavaThread "Thread-21 (HornetQ-server-HornetQServerImpl::serverUUID=b501bfa1-b0b0-11e3-b0aa-0050568500ba-1314046183)" [_thread_blocked, id=28556, stack(0x00002b92dcb0b000,0x00002b92dcc0c000)]
+  0x0000000003e92000 JavaThread "Thread-20 (HornetQ-server-HornetQServerImpl::serverUUID=b501bfa1-b0b0-11e3-b0aa-0050568500ba-1314046183)" [_thread_blocked, id=28555, stack(0x00002b92dca0a000,0x00002b92dcb0b000)]
+  0x00000000040fb000 JavaThread "Thread-19 (HornetQ-server-HornetQServerImpl::serverUUID=b501bfa1-b0b0-11e3-b0aa-0050568500ba-1314046183)" [_thread_blocked, id=28554, stack(0x00002b92dc707000,0x00002b92dc808000)]
+  0x00000000040fa000 JavaThread "Thread-18 (HornetQ-server-HornetQServerImpl::serverUUID=b501bfa1-b0b0-11e3-b0aa-0050568500ba-1314046183)" [_thread_blocked, id=28553, stack(0x00002b92d3791000,0x00002b92d3892000)]
+  0x00000000040f8800 JavaThread "Thread-17 (HornetQ-server-HornetQServerImpl::serverUUID=b501bfa1-b0b0-11e3-b0aa-0050568500ba-1314046183)" [_thread_blocked, id=28551, stack(0x00002b92dc909000,0x00002b92dca0a000)]
+  0x00000000040f7800 JavaThread "Thread-16 (HornetQ-server-HornetQServerImpl::serverUUID=b501bfa1-b0b0-11e3-b0aa-0050568500ba-1314046183)" [_thread_blocked, id=28550, stack(0x00002b92d1ef0000,0x00002b92d1ff1000)]
+  0x0000000003c01800 JavaThread "Thread-15 (HornetQ-server-HornetQServerImpl::serverUUID=b501bfa1-b0b0-11e3-b0aa-0050568500ba-1314046183)" [_thread_blocked, id=28549, stack(0x00002b92d2534000,0x00002b92d2635000)]
+  0x0000000003c01000 JavaThread "Thread-14 (HornetQ-server-HornetQServerImpl::serverUUID=b501bfa1-b0b0-11e3-b0aa-0050568500ba-1314046183)" [_thread_blocked, id=28548, stack(0x00002b92d232f000,0x00002b92d2430000)]
+  0x0000000003c00000 JavaThread "Thread-13 (HornetQ-server-HornetQServerImpl::serverUUID=b501bfa1-b0b0-11e3-b0aa-0050568500ba-1314046183)" [_thread_blocked, id=28547, stack(0x00002b92d1946000,0x00002b92d1a47000)]
+  0x00000000040f5800 JavaThread "Thread-12 (HornetQ-server-HornetQServerImpl::serverUUID=b501bfa1-b0b0-11e3-b0aa-0050568500ba-1314046183)" [_thread_blocked, id=28546, stack(0x00002b92d2017000,0x00002b92d2118000)]
+  0x0000000003c04000 JavaThread "Hashed wheel timer #1" [_thread_blocked, id=28542, stack(0x00002b92d2430000,0x00002b92d2531000)]
+  0x00000000059c7800 JavaThread "Thread-11 (HornetQ-server-HornetQServerImpl::serverUUID=b501bfa1-b0b0-11e3-b0aa-0050568500ba-1314046183)" [_thread_blocked, id=28541, stack(0x00002b92d26da000,0x00002b92d27db000)]
+  0x00000000059c6800 JavaThread "Thread-10 (HornetQ-server-HornetQServerImpl::serverUUID=b501bfa1-b0b0-11e3-b0aa-0050568500ba-1314046183)" [_thread_blocked, id=28540, stack(0x00002b92d1845000,0x00002b92d1946000)]
+  0x00000000059c6000 JavaThread "Thread-9 (HornetQ-server-HornetQServerImpl::serverUUID=b501bfa1-b0b0-11e3-b0aa-0050568500ba-1314046183)" [_thread_blocked, id=28539, stack(0x00002b92d2a7d000,0x00002b92d2b7e000)]
+  0x0000000004423800 JavaThread "Thread-8 (HornetQ-server-HornetQServerImpl::serverUUID=b501bfa1-b0b0-11e3-b0aa-0050568500ba-1314046183)" [_thread_blocked, id=28538, stack(0x00002b92d1ce9000,0x00002b92d1dea000)]
+  0x0000000004423000 JavaThread "pool-13-thread-3" [_thread_blocked, id=28537, stack(0x00002b92d211c000,0x00002b92d221d000)]
+  0x00002b92d4cad800 JavaThread "Thread-80" daemon [_thread_blocked, id=28536, stack(0x00002b92d222b000,0x00002b92d232c000)]
+  0x0000000004422800 JavaThread "Thread-7 (HornetQ-server-HornetQServerImpl::serverUUID=b501bfa1-b0b0-11e3-b0aa-0050568500ba-1314046183)" [_thread_blocked, id=28535, stack(0x00002b92d297c000,0x00002b92d2a7d000)]
+  0x0000000004421000 JavaThread "Thread-6 (HornetQ-server-HornetQServerImpl::serverUUID=b501bfa1-b0b0-11e3-b0aa-0050568500ba-1314046183)" [_thread_blocked, id=28534, stack(0x00002b92d2b80000,0x00002b92d2c81000)]
+  0x0000000004f6d000 JavaThread "Thread-5 (HornetQ-server-HornetQServerImpl::serverUUID=b501bfa1-b0b0-11e3-b0aa-0050568500ba-1314046183)" [_thread_blocked, id=28531, stack(0x00002b92d161c000,0x00002b92d171d000)]
+  0x000000000616f800 JavaThread "Thread-4 (HornetQ-server-HornetQServerImpl::serverUUID=b501bfa1-b0b0-11e3-b0aa-0050568500ba-1314046183)" [_thread_blocked, id=28530, stack(0x00002b92d151b000,0x00002b92d161c000)]
+  0x0000000004403800 JavaThread "Thread-4 (HornetQ-client-global-scheduled-threads-1677372333)" daemon [_thread_blocked, id=28526, stack(0x00002b92d2d82000,0x00002b92d2e83000)]
+  0x0000000007c73000 JavaThread "Thread-3 (HornetQ-server-HornetQServerImpl::serverUUID=b501bfa1-b0b0-11e3-b0aa-0050568500ba-1314046183)" [_thread_blocked, id=28525, stack(0x00002b92d173f000,0x00002b92d1840000)]
+  0x0000000004874800 JavaThread "Thread-2 (HornetQ-server-HornetQServerImpl::serverUUID=b501bfa1-b0b0-11e3-b0aa-0050568500ba-1314046183)" [_thread_blocked, id=28524, stack(0x00002b92d2e83000,0x00002b92d2f84000)]
+  0x0000000004b63000 JavaThread "Thread-3 (HornetQ-client-global-scheduled-threads-1677372333)" daemon [_thread_blocked, id=28523, stack(0x00002b92d3085000,0x00002b92d3186000)]
+  0x0000000004b61800 JavaThread "Thread-2 (HornetQ-client-global-scheduled-threads-1677372333)" daemon [_thread_blocked, id=28522, stack(0x00002b92d2f84000,0x00002b92d3085000)]
+  0x00002b92d45f7800 JavaThread "AD Thread-Top Backends Processor0" daemon [_thread_blocked, id=28513, stack(0x00002b92d3186000,0x00002b92d3287000)]
+  0x00002b92e0939000 JavaThread "btpool1-0 - Acceptor0 SelectChannelConnector@0.0.0.0:8181" [_thread_in_native, id=28505, stack(0x00002b92e6424000,0x00002b92e6525000)]
+  0x00002b92d42a4800 JavaThread "pool-10-thread-1" [_thread_blocked, id=28500, stack(0x00002b92e6323000,0x00002b92e6424000)]
+  0x00002b92d4339800 JavaThread "New I/O server boss #15" [_thread_in_native, id=28499, stack(0x00002b92e6222000,0x00002b92e6323000)]
+  0x0000000007a5b000 JavaThread "New I/O server boss #13" [_thread_in_native, id=28498, stack(0x00002b92e6121000,0x00002b92e6222000)]
+  0x00002b92d4335800 JavaThread "New I/O worker #14" [_thread_in_native, id=28497, stack(0x00002b92e6020000,0x00002b92e6121000)]
+  0x00002b92d4338000 JavaThread "New I/O worker #12" [_thread_in_native, id=28496, stack(0x00002b92e5f1f000,0x00002b92e6020000)]
+  0x00002b92d4453800 JavaThread "New I/O worker #11" [_thread_in_Java, id=28495, stack(0x00002b92e5e1e000,0x00002b92e5f1f000)]
+  0x00002b92d4453000 JavaThread "New I/O worker #7" [_thread_in_native, id=28494, stack(0x00002b92e5d1d000,0x00002b92e5e1e000)]
+  0x0000000004a37800 JavaThread "New I/O worker #10" [_thread_in_native, id=28493, stack(0x00002b92e5c1c000,0x00002b92e5d1d000)]
+  0x0000000004e6c800 JavaThread "New I/O worker #9" [_thread_in_native, id=28492, stack(0x00002b92e5b1b000,0x00002b92e5c1c000)]
+  0x0000000007a5c800 JavaThread "New I/O worker #8" [_thread_in_native, id=28491, stack(0x00002b92e5a1a000,0x00002b92e5b1b000)]
+  0x0000000007c20800 JavaThread "New I/O worker #6" [_thread_in_native, id=28490, stack(0x00002b92e5919000,0x00002b92e5a1a000)]
+  0x00002b92d437c000 JavaThread "New I/O boss #5" [_thread_in_native, id=28489, stack(0x00002b92e5818000,0x00002b92e5919000)]
+  0x00002b92d42c7800 JavaThread "New I/O worker #4" [_thread_in_native, id=28486, stack(0x00002b92e5717000,0x00002b92e5818000)]
+  0x00002b92d42aa800 JavaThread "New I/O worker #3" [_thread_in_native, id=28485, stack(0x00002b92e5616000,0x00002b92e5717000)]
+  0x00002b92d473e000 JavaThread "New I/O worker #2" [_thread_in_native, id=28484, stack(0x00002b92e5515000,0x00002b92e5616000)]
+  0x00002b92d4742000 JavaThread "New I/O worker #1" [_thread_in_native, id=28483, stack(0x00002b92e5414000,0x00002b92e5515000)]
+  0x00002b92d824b000 JavaThread "pool-13-thread-2" [_thread_blocked, id=28482, stack(0x00002b92e5313000,0x00002b92e5414000)]
+  0x00002b92d8249000 JavaThread "pool-13-thread-1" [_thread_blocked, id=28481, stack(0x00002b92e5212000,0x00002b92e5313000)]
+  0x00000000044d2000 JavaThread "pool-12-thread-1" [_thread_blocked, id=28480, stack(0x00002b92e5111000,0x00002b92e5212000)]
+  0x00002b92d834d000 JavaThread "pool-1-thread-1" [_thread_blocked, id=28479, stack(0x00002b92d131a000,0x00002b92d151b000)]
+  0x00002b92d8e28000 JavaThread "OSGi FrameworkEvent Thread" daemon [_thread_blocked, id=28476, stack(0x00002b92e5010000,0x00002b92e5111000)]
+  0x0000000007c6e800 JavaThread "Thread-1 (HornetQ-client-global-scheduled-threads-1677372333)" daemon [_thread_blocked, id=28474, stack(0x00002b92e4e0e000,0x00002b92e4f0f000)]
+  0x000000000881f000 JavaThread "Thread-0 (HornetQ-client-global-scheduled-threads-1677372333)" daemon [_thread_blocked, id=28472, stack(0x00002b92e4c0c000,0x00002b92e4d0d000)]
+  0x00002b92d96a0800 JavaThread "Timer-2" daemon [_thread_blocked, id=28463, stack(0x00002b92e4b0b000,0x00002b92e4c0c000)]
+  0x00002b92d968b800 JavaThread "Timer-1" daemon [_thread_blocked, id=28462, stack(0x00002b92e4a0a000,0x00002b92e4b0b000)]
+  0x0000000004d2d800 JavaThread "btpool0-1" [_thread_blocked, id=28461, stack(0x00002b92e4909000,0x00002b92e4a0a000)]
+  0x000000000485d800 JavaThread "btpool0-0 - Acceptor0 NIOSocketConnectorWrapper@0.0.0.0:8090" [_thread_in_native, id=28460, stack(0x00002b92e4808000,0x00002b92e4909000)]
+  0x00002b92d95f0000 JavaThread "{felix.fileinstall.dir=/usr/local/jboss7_ngcs_prod/standalone/configuration}" [_thread_blocked, id=28457, stack(0x00002b92e4707000,0x00002b92e4808000)]
+  0x00002b92d955f800 JavaThread "Configuration Updater" [_thread_blocked, id=28456, stack(0x00002b92e4606000,0x00002b92e4707000)]
+  0x00002b92d9604800 JavaThread "CM Event Dispatcher" daemon [_thread_blocked, id=28455, stack(0x00002b92e4505000,0x00002b92e4606000)]
+  0x00002b92d95fa800 JavaThread "CM Configuration Updater" daemon [_thread_blocked, id=28454, stack(0x00002b92e4404000,0x00002b92e4505000)]
+  0x00002b92d9577000 JavaThread "Thread-71" [_thread_blocked, id=28453, stack(0x00002b92e4303000,0x00002b92e4404000)]
+  0x00002b92d95cc000 JavaThread "fileinstall-/usr/local/jboss7_ngcs_prod/standalone/configuration" daemon [_thread_blocked, id=28452, stack(0x00002b92e4202000,0x00002b92e4303000)]
+  0x00002b92d912e800 JavaThread "OSGi BundleEvent Thread" daemon [_thread_blocked, id=28451, stack(0x00002b92e4101000,0x00002b92e4202000)]
+  0x00002b92d85f3000 JavaThread "Thread-69" [_thread_blocked, id=28450, stack(0x00002b92e4000000,0x00002b92e4101000)]
+  0x00002b92d8e0d000 JavaThread "ClassLoader Thread" daemon [_thread_blocked, id=28449, stack(0x00002b92dfe74000,0x00002b92dff75000)]
+  0x00002b92e051d800 JavaThread "hornetq-failure-check-thread" [_thread_blocked, id=28442, stack(0x00002b92dfd73000,0x00002b92dfe74000)]
+  0x00002b92e0519000 JavaThread "Old I/O server boss ([id: 0x45f57e58, /0.0.0.0:5445])" [_thread_in_native, id=28441, stack(0x00002b92dfb7e000,0x00002b92dfc7f000)]
+  0x00002b92e060c800 JavaThread "Old I/O server boss ([id: 0x6d2cc7e1, /0.0.0.0:5455])" [_thread_in_native, id=28440, stack(0x00002b92dfa7d000,0x00002b92dfb7e000)]
+  0x00002b92e050d000 JavaThread "Thread-1 (HornetQ-server-HornetQServerImpl::serverUUID=b501bfa1-b0b0-11e3-b0aa-0050568500ba-1314046183)" [_thread_blocked, id=28439, stack(0x00002b92df554000,0x00002b92df655000)]
+  0x00002b92e050c000 JavaThread "Thread-0 (HornetQ-server-HornetQServerImpl::serverUUID=b501bfa1-b0b0-11e3-b0aa-0050568500ba-1314046183)" [_thread_blocked, id=28438, stack(0x00002b92df453000,0x00002b92df554000)]
+  0x00002b92e0543800 JavaThread "Thread-0 (HornetQ-Asynchronous-Persistent-Writes689292896-33783479)" daemon [_thread_blocked, id=28436, stack(0x00002b92df87b000,0x00002b92df97c000)]
+  0x00002b92e0540800 JavaThread "Thread-4 (HornetQ-scheduled-threads-1815998050)" [_thread_blocked, id=28434, stack(0x00002b92df678000,0x00002b92df779000)]
+  0x0000000004d30000 JavaThread "Thread-3 (HornetQ-scheduled-threads-1815998050)" [_thread_blocked, id=28433, stack(0x00002b92df352000,0x00002b92df453000)]
+  0x0000000004e68800 JavaThread "Thread-2 (HornetQ-scheduled-threads-1815998050)" [_thread_blocked, id=28430, stack(0x00002b92df251000,0x00002b92df352000)]
+  0x00002b92e0404800 JavaThread "Thread-1 (HornetQ-scheduled-threads-1815998050)" [_thread_blocked, id=28429, stack(0x00002b92df05c000,0x00002b92df15d000)]
+  0x00002b92e021c800 JavaThread "Thread-0 (HornetQ-scheduled-threads-1815998050)" [_thread_blocked, id=28428, stack(0x00002b92def01000,0x00002b92df002000)]
+  0x00002b92e0218800 JavaThread "hornetq-expiry-reaper-thread" [_thread_blocked, id=28427, stack(0x00002b92dee00000,0x00002b92def01000)]
+  0x0000000004e94800 JavaThread "DeploymentScanner-threads - 2" [_thread_blocked, id=28426, stack(0x00002b92decff000,0x00002b92dee00000)]
+  0x00002b92e0214800 JavaThread "Transaction Reaper Worker 0" daemon [_thread_blocked, id=28425, stack(0x00002b92debfe000,0x00002b92decff000)]
+  0x00002b92e0214000 JavaThread "Transaction Reaper" daemon [_thread_blocked, id=28424, stack(0x00002b92deafd000,0x00002b92debfe000)]
+  0x00002b92e0207000 JavaThread "hornetq-buffer-timeout" [_thread_blocked, id=28423, stack(0x00002b92de9fc000,0x00002b92deafd000)]
+  0x00002b92d4783800 JavaThread "Thread-66" [_thread_in_native, id=28422, stack(0x00002b92de8fb000,0x00002b92de9fc000)]
+  0x00002b92d477a800 JavaThread "server-timer1" daemon [_thread_blocked, id=28421, stack(0x00002b92de753000,0x00002b92de854000)]
+  0x00002b92d478b000 JavaThread "server-timer" daemon [_thread_blocked, id=28420, stack(0x00002b92de652000,0x00002b92de753000)]
+  0x00002b92e01c7000 JavaThread "Periodic Recovery" [_thread_blocked, id=28419, stack(0x00002b92de551000,0x00002b92de652000)]
+  0x00002b92e01aa000 JavaThread "Transaction Expired Entry Monitor" daemon [_thread_blocked, id=28418, stack(0x00002b92de450000,0x00002b92de551000)]
+  0x00002b92d955e000 JavaThread "DeploymentScanner-threads - 1" [_thread_blocked, id=28417, stack(0x00002b92de34f000,0x00002b92de450000)]
+  0x00002b92d4707000 JavaThread "Timer-0" [_thread_blocked, id=28414, stack(0x00002b92dd718000,0x00002b92dd819000)]
+  0x0000000004ed7000 JavaThread "Remoting "us1-ecocom-p01" write-1" [_thread_in_native, id=28413, stack(0x00002b92dd5fd000,0x00002b92dd6fe000)]
+  0x0000000004ee4000 JavaThread "Remoting "us1-ecocom-p01" read-1" [_thread_in_native, id=28412, stack(0x00002b92dd4fc000,0x00002b92dd5fd000)]
+  0x00002b92d4658000 JavaThread "Remoting "us1-ecocom-p01:MANAGEMENT" write-1" [_thread_in_native, id=28411, stack(0x00002b92dd3fb000,0x00002b92dd4fc000)]
+  0x00002b92d4663800 JavaThread "Remoting "us1-ecocom-p01:MANAGEMENT" read-1" [_thread_in_native, id=28410, stack(0x00002b92dd2fa000,0x00002b92dd3fb000)]
+  0x00002b92d4669800 JavaThread "ConnectionValidator" daemon [_thread_blocked, id=28409, stack(0x00002b92dd1f9000,0x00002b92dd2fa000)]
+  0x00002b92d469a000 JavaThread "http--0.0.0.0-8080-Acceptor-0" daemon [_thread_in_native, id=28408, stack(0x00002b92dd0f8000,0x00002b92dd1f9000)]
+  0x00002b92e008e000 JavaThread "IdleRemover" daemon [_thread_blocked, id=28407, stack(0x00002b92dcff7000,0x00002b92dd0f8000)]
+  0x00002b92d9441000 JavaThread "http--0.0.0.0-8080-Poller" daemon [_thread_blocked, id=28406, stack(0x00002b92dcef6000,0x00002b92dcff7000)]
+  0x00002b92d4675000 JavaThread "ContainerBackgroundProcessor[StandardEngine[jboss.web]]" daemon [_thread_blocked, id=28405, stack(0x00002b92dcd0d000,0x00002b92dce0e000)]
+  0x00002b92d449a000 JavaThread "DestroyJavaVM" [_thread_blocked, id=28293, stack(0x00002b92bb3bd000,0x00002b92bb4be000)]
+  0x00000000047e7800 JavaThread "MSC service thread 1-4" [_thread_blocked, id=28348, stack(0x00002b92d1219000,0x00002b92d131a000)]
+  0x00000000048eb000 JavaThread "MSC service thread 1-3" [_thread_blocked, id=28347, stack(0x00002b92d1118000,0x00002b92d1219000)]
+  0x000000000476e000 JavaThread "MSC service thread 1-2" [_thread_blocked, id=28346, stack(0x00002b92d0f7d000,0x00002b92d107e000)]
+  0x00002b92d445b000 JavaThread "MSC service thread 1-1" [_thread_blocked, id=28345, stack(0x00002b92d0e28000,0x00002b92d0f29000)]
+  0x00002b92d404f000 JavaThread "Reference Reaper" daemon [_thread_blocked, id=28338, stack(0x00002b92dc000000,0x00002b92dc101000)]
+  0x00002b92d4001000 JavaThread "Service Thread" daemon [_thread_blocked, id=28320, stack(0x00002b92d0b5c000,0x00002b92d0c5d000)]
+  0x00000000043ba000 JavaThread "C1 CompilerThread1" daemon [_thread_blocked, id=28319, stack(0x00002b92d0a5b000,0x00002b92d0b5c000)]
+  0x00000000043b9800 JavaThread "C2 CompilerThread0" daemon [_thread_blocked, id=28318, stack(0x00002b92cf83c000,0x00002b92cf93d000)]
+  0x0000000004269800 JavaThread "MultiThreadedHttpConnectionManager cleanup" daemon [_thread_blocked, id=28311, stack(0x00002b92d095a000,0x00002b92d0a5b000)]
+  0x0000000004056000 JavaThread "AD Thread Pool-Global1" daemon [_thread_blocked, id=28310, stack(0x00002b92d0859000,0x00002b92d095a000)]
+  0x000000000405c000 JavaThread "AD Thread-Metric Reporter0" daemon [_thread_blocked, id=28309, stack(0x00002b92d0758000,0x00002b92d0859000)]
+  0x0000000004059000 JavaThread "AD Thread Pool-Global0" daemon [_thread_blocked, id=28308, stack(0x00002b92d0657000,0x00002b92d0758000)]
+  0x000000000402b800 JavaThread "AD Thread-Config Poller" daemon [_thread_blocked, id=28307, stack(0x00002b92d0556000,0x00002b92d0657000)]
+  0x0000000003f08800 JavaThread "Thread-1" daemon [_thread_blocked, id=28301, stack(0x00002b92cfddd000,0x00002b92cfede000)]
+  0x0000000003d00800 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=28299, stack(0x00002b92cf5fb000,0x00002b92cf6fc000)]
+  0x0000000003cae800 JavaThread "Finalizer" daemon [_thread_blocked, id=28298, stack(0x00002b92cf4fa000,0x00002b92cf5fb000)]
+  0x0000000003cac800 JavaThread "Reference Handler" daemon [_thread_blocked, id=28297, stack(0x00002b92cf3f9000,0x00002b92cf4fa000)]
+
+Other Threads:
+  0x0000000003ca5000 VMThread [stack: 0x00002b92cf2f8000,0x00002b92cf3f9000] [id=28296]
+  0x00002b92d4004000 WatcherThread [stack: 0x00002b92d0c5d000,0x00002b92d0d5e000] [id=28321]
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+Heap
+ PSYoungGen      total 133184K, used 117601K [0x00000007c0000000, 0x00000007c9ea0000, 0x0000000800000000)
+  eden space 130368K, 88% used [0x00000007c0000000,0x00000007c7020770,0x00000007c7f50000)
+  from space 2816K, 98% used [0x00000007c97e0000,0x00000007c9a98000,0x00000007c9aa0000)
+  to   space 4096K, 0% used [0x00000007c9aa0000,0x00000007c9aa0000,0x00000007c9ea0000)
+ ParOldGen       total 262144K, used 198626K [0x0000000740000000, 0x0000000750000000, 0x00000007c0000000)
+  object space 262144K, 75% used [0x0000000740000000,0x000000074c1f8b50,0x0000000750000000)
+ PSPermGen       total 104576K, used 104449K [0x0000000730000000, 0x0000000736620000, 0x0000000740000000)
+  object space 104576K, 99% used [0x0000000730000000,0x0000000736600490,0x0000000736620000)
+
+Card table byte_map: [0x00002b92c58ac000,0x00002b92c5f2d000] byte_map_base: 0x00002b92c1f2c000
+
+Polling page: 0x00002b92bbb10000
+
+Code Cache  [0x00002b92bf72c000, 0x00002b92c249c000, 0x00002b92c572c000)
+ total_blobs=12991 nmethods=12364 adapters=544 free_code_cache=52326Kb largest_free_block=53032064
+
+Compilation events (10 events):
+Event: 2816.263 Thread 0x00000000043b9800 16398       4       sun.security.provider.NativePRNG$RandomIO::readFully (61 bytes)
+Event: 2816.265 Thread 0x00000000043b9800 nmethod 16398 0x00002b92c033add0 code [0x00002b92c033af20, 0x00002b92c033b008]
+Event: 2816.276 Thread 0x00000000043b9800 16399   !   4       org.apache.http.client.protocol.RequestAddCookies::process (830 bytes)
+Event: 2816.964 Thread 0x00000000043b9800 nmethod 16399 0x00002b92c2484450 code [0x00002b92c2484f80, 0x00002b92c248cd40]
+Event: 2818.886 Thread 0x00000000043ba000 16400       3       java.nio.Bits::swap (5 bytes)
+Event: 2818.887 Thread 0x00000000043ba000 nmethod 16400 0x00002b92c0a3f250 code [0x00002b92c0a3f3c0, 0x00002b92c0a3f548]
+Event: 2818.893 Thread 0x00000000043ba000 16401       3       java.nio.DirectByteBuffer::<init> (24 bytes)
+Event: 2818.894 Thread 0x00000000043ba000 nmethod 16401 0x00002b92c01d8910 code [0x00002b92c01d8a80, 0x00002b92c01d8d88]
+Event: 2821.075 Thread 0x00000000043b9800 16402       4       java.util.Formatter$FormatSpecifier::print (59 bytes)
+Event: 2821.077 Thread 0x00000000043b9800 nmethod 16402 0x00002b92c0542d90 code [0x00002b92c0542ee0, 0x00002b92c0542f88]
+
+GC Heap History (10 events):
+Event: 2717.957 GC heap before
+{Heap before GC invocations=127 (full 0):
+ PSYoungGen      total 152064K, used 152064K [0x00000007c0000000, 0x00000007ca420000, 0x0000000800000000)
+  eden space 151296K, 100% used [0x00000007c0000000,0x00000007c93c0000,0x00000007c93c0000)
+  from space 768K, 100% used [0x00000007ca360000,0x00000007ca420000,0x00000007ca420000)
+  to   space 3584K, 0% used [0x00000007c9d20000,0x00000007c9d20000,0x00000007ca0a0000)
+ ParOldGen       total 262144K, used 195092K [0x0000000740000000, 0x0000000750000000, 0x00000007c0000000)
+  object space 262144K, 74% used [0x0000000740000000,0x000000074be851b0,0x0000000750000000)
+ PSPermGen       total 104384K, used 104270K [0x0000000730000000, 0x00000007365f0000, 0x0000000740000000)
+  object space 104384K, 99% used [0x0000000730000000,0x00000007365d38c0,0x00000007365f0000)
+Event: 2717.979 GC heap after
+Heap after GC invocations=127 (full 0):
+ PSYoungGen      total 148736K, used 1984K [0x00000007c0000000, 0x00000007ca370000, 0x0000000800000000)
+  eden space 146752K, 0% used [0x00000007c0000000,0x00000007c0000000,0x00000007c8f50000)
+  from space 1984K, 100% used [0x00000007c9d20000,0x00000007c9f10000,0x00000007c9f10000)
+  to   space 3456K, 0% used [0x00000007ca010000,0x00000007ca010000,0x00000007ca370000)
+ ParOldGen       total 262144K, used 195364K [0x0000000740000000, 0x0000000750000000, 0x00000007c0000000)
+  object space 262144K, 74% used [0x0000000740000000,0x000000074bec91b0,0x0000000750000000)
+ PSPermGen       total 104384K, used 104270K [0x0000000730000000, 0x00000007365f0000, 0x0000000740000000)
+  object space 104384K, 99% used [0x0000000730000000,0x00000007365d38c0,0x00000007365f0000)
+}
+Event: 2735.497 GC heap before
+{Heap before GC invocations=128 (full 0):
+ PSYoungGen      total 148736K, used 148736K [0x00000007c0000000, 0x00000007ca370000, 0x0000000800000000)
+  eden space 146752K, 100% used [0x00000007c0000000,0x00000007c8f50000,0x00000007c8f50000)
+  from space 1984K, 100% used [0x00000007c9d20000,0x00000007c9f10000,0x00000007c9f10000)
+  to   space 3456K, 0% used [0x00000007ca010000,0x00000007ca010000,0x00000007ca370000)
+ ParOldGen       total 262144K, used 195364K [0x0000000740000000, 0x0000000750000000, 0x00000007c0000000)
+  object space 262144K, 74% used [0x0000000740000000,0x000000074bec91b0,0x0000000750000000)
+ PSPermGen       total 104384K, used 104312K [0x0000000730000000, 0x00000007365f0000, 0x0000000740000000)
+  object space 104384K, 99% used [0x0000000730000000,0x00000007365de340,0x00000007365f0000)
+Event: 2735.527 GC heap after
+Heap after GC invocations=128 (full 0):
+ PSYoungGen      total 145024K, used 2592K [0x00000007c0000000, 0x00000007ca2a0000, 0x0000000800000000)
+  eden space 142400K, 0% used [0x00000007c0000000,0x00000007c0000000,0x00000007c8b10000)
+  from space 2624K, 98% used [0x00000007ca010000,0x00000007ca298000,0x00000007ca2a0000)
+  to   space 3520K, 0% used [0x00000007c9bc0000,0x00000007c9bc0000,0x00000007c9f30000)
+ ParOldGen       total 262144K, used 195612K [0x0000000740000000, 0x0000000750000000, 0x00000007c0000000)
+  object space 262144K, 74% used [0x0000000740000000,0x000000074bf071b0,0x0000000750000000)
+ PSPermGen       total 104384K, used 104312K [0x0000000730000000, 0x00000007365f0000, 0x0000000740000000)
+  object space 104384K, 99% used [0x0000000730000000,0x00000007365de340,0x00000007365f0000)
+}
+Event: 2751.961 GC heap before
+{Heap before GC invocations=129 (full 0):
+ PSYoungGen      total 145024K, used 144992K [0x00000007c0000000, 0x00000007ca2a0000, 0x0000000800000000)
+  eden space 142400K, 100% used [0x00000007c0000000,0x00000007c8b10000,0x00000007c8b10000)
+  from space 2624K, 98% used [0x00000007ca010000,0x00000007ca298000,0x00000007ca2a0000)
+  to   space 3520K, 0% used [0x00000007c9bc0000,0x00000007c9bc0000,0x00000007c9f30000)
+ ParOldGen       total 262144K, used 195612K [0x0000000740000000, 0x0000000750000000, 0x00000007c0000000)
+  object space 262144K, 74% used [0x0000000740000000,0x000000074bf071b0,0x0000000750000000)
+ PSPermGen       total 104384K, used 104353K [0x0000000730000000, 0x00000007365f0000, 0x0000000740000000)
+  object space 104384K, 99% used [0x0000000730000000,0x00000007365e8750,0x00000007365f0000)
+Event: 2751.985 GC heap after
+Heap after GC invocations=129 (full 0):
+ PSYoungGen      total 141120K, used 2880K [0x00000007c0000000, 0x00000007ca020000, 0x0000000800000000)
+  eden space 138240K, 0% used [0x00000007c0000000,0x00000007c0000000,0x00000007c8700000)
+  from space 2880K, 100% used [0x00000007c9bc0000,0x00000007c9e90000,0x00000007c9e90000)
+  to   space 1600K, 0% used [0x00000007c9e90000,0x00000007c9e90000,0x00000007ca020000)
+ ParOldGen       total 262144K, used 195844K [0x0000000740000000, 0x0000000750000000, 0x00000007c0000000)
+  object space 262144K, 74% used [0x0000000740000000,0x000000074bf411b0,0x0000000750000000)
+ PSPermGen       total 104384K, used 104353K [0x0000000730000000, 0x00000007365f0000, 0x0000000740000000)
+  object space 104384K, 99% used [0x0000000730000000,0x00000007365e8750,0x00000007365f0000)
+}
+Event: 2785.965 GC heap before
+{Heap before GC invocations=130 (full 0):
+ PSYoungGen      total 141120K, used 141120K [0x00000007c0000000, 0x00000007ca020000, 0x0000000800000000)
+  eden space 138240K, 100% used [0x00000007c0000000,0x00000007c8700000,0x00000007c8700000)
+  from space 2880K, 100% used [0x00000007c9bc0000,0x00000007c9e90000,0x00000007c9e90000)
+  to   space 1600K, 0% used [0x00000007c9e90000,0x00000007c9e90000,0x00000007ca020000)
+ ParOldGen       total 262144K, used 195844K [0x0000000740000000, 0x0000000750000000, 0x00000007c0000000)
+  object space 262144K, 74% used [0x0000000740000000,0x000000074bf411b0,0x0000000750000000)
+ PSPermGen       total 104384K, used 104375K [0x0000000730000000, 0x00000007365f0000, 0x0000000740000000)
+  object space 104384K, 99% used [0x0000000730000000,0x00000007365edf80,0x00000007365f0000)
+Event: 2785.992 GC heap after
+Heap after GC invocations=130 (full 0):
+ PSYoungGen      total 135808K, used 1600K [0x00000007c0000000, 0x00000007ca020000, 0x0000000800000000)
+  eden space 134208K, 0% used [0x00000007c0000000,0x00000007c0000000,0x00000007c8310000)
+  from space 1600K, 100% used [0x00000007c9e90000,0x00000007ca020000,0x00000007ca020000)
+  to   space 4224K, 0% used [0x00000007c97e0000,0x00000007c97e0000,0x00000007c9c00000)
+ ParOldGen       total 262144K, used 198474K [0x0000000740000000, 0x0000000750000000, 0x00000007c0000000)
+  object space 262144K, 75% used [0x0000000740000000,0x000000074c1d2b50,0x0000000750000000)
+ PSPermGen       total 104384K, used 104375K [0x0000000730000000, 0x00000007365f0000, 0x0000000740000000)
+  object space 104384K, 99% used [0x0000000730000000,0x00000007365edf80,0x00000007365f0000)
+}
+Event: 2803.733 GC heap before
+{Heap before GC invocations=131 (full 0):
+ PSYoungGen      total 135808K, used 135808K [0x00000007c0000000, 0x00000007ca020000, 0x0000000800000000)
+  eden space 134208K, 100% used [0x00000007c0000000,0x00000007c8310000,0x00000007c8310000)
+  from space 1600K, 100% used [0x00000007c9e90000,0x00000007ca020000,0x00000007ca020000)
+  to   space 4224K, 0% used [0x00000007c97e0000,0x00000007c97e0000,0x00000007c9c00000)
+ ParOldGen       total 262144K, used 198474K [0x0000000740000000, 0x0000000750000000, 0x00000007c0000000)
+  object space 262144K, 75% used [0x0000000740000000,0x000000074c1d2b50,0x0000000750000000)
+ PSPermGen       total 104576K, used 104408K [0x0000000730000000, 0x0000000736620000, 0x0000000740000000)
+  object space 104576K, 99% used [0x0000000730000000,0x00000007365f6170,0x0000000736620000)
+Event: 2803.757 GC heap after
+Heap after GC invocations=131 (full 0):
+ PSYoungGen      total 133184K, used 2784K [0x00000007c0000000, 0x00000007c9ea0000, 0x0000000800000000)
+  eden space 130368K, 0% used [0x00000007c0000000,0x00000007c0000000,0x00000007c7f50000)
+  from space 2816K, 98% used [0x00000007c97e0000,0x00000007c9a98000,0x00000007c9aa0000)
+  to   space 4096K, 0% used [0x00000007c9aa0000,0x00000007c9aa0000,0x00000007c9ea0000)
+ ParOldGen       total 262144K, used 198626K [0x0000000740000000, 0x0000000750000000, 0x00000007c0000000)
+  object space 262144K, 75% used [0x0000000740000000,0x000000074c1f8b50,0x0000000750000000)
+ PSPermGen       total 104576K, used 104408K [0x0000000730000000, 0x0000000736620000, 0x0000000740000000)
+  object space 104576K, 99% used [0x0000000730000000,0x00000007365f6170,0x0000000736620000)
+}
+
+Deoptimization events (10 events):
+Event: 2681.676 Thread 0x00002b92d4c3f000 Uncommon trap -34 fr.pc 0x00002b92c0a3f414
+Event: 2681.676 Thread 0x00002b92d4c3f000 Uncommon trap -34 fr.pc 0x00002b92c0a3f414
+Event: 2706.152 Thread 0x0000000006313000 Uncommon trap -34 fr.pc 0x00002b92c149f264
+Event: 2706.152 Thread 0x0000000006313000 Uncommon trap -34 fr.pc 0x00002b92c149f264
+Event: 2706.615 Thread 0x0000000006313000 Uncommon trap -34 fr.pc 0x00002b92c149f264
+Event: 2706.615 Thread 0x0000000006313000 Uncommon trap -34 fr.pc 0x00002b92c149f264
+Event: 2791.215 Thread 0x0000000006279800 Uncommon trap -34 fr.pc 0x00002b92c24341c4
+Event: 2791.215 Thread 0x0000000006279800 Uncommon trap -34 fr.pc 0x00002b92c24341c4
+Event: 2791.946 Thread 0x0000000006279800 Uncommon trap -34 fr.pc 0x00002b92c24341c4
+Event: 2791.947 Thread 0x0000000006279800 Uncommon trap -34 fr.pc 0x00002b92c24341c4
+
+Internal exceptions (10 events):
+Event: 2816.631 Thread 0x00002b92e0519000 Threw 0x00000007c2ffbae0 at /HUDSON/workspace/jdk7u15-2-build-linux-amd64-product/jdk7u15/hotspot/src/share/vm/prims/jni.cpp:742
+Event: 2817.394 Thread 0x00002b92e060c800 Threw 0x00000007c4591af0 at /HUDSON/workspace/jdk7u15-2-build-linux-amd64-product/jdk7u15/hotspot/src/share/vm/prims/jni.cpp:742
+Event: 2817.631 Thread 0x00002b92e0519000 Threw 0x00000007c4592be0 at /HUDSON/workspace/jdk7u15-2-build-linux-amd64-product/jdk7u15/hotspot/src/share/vm/prims/jni.cpp:742
+Event: 2818.395 Thread 0x00002b92e060c800 Threw 0x00000007c4591d90 at /HUDSON/workspace/jdk7u15-2-build-linux-amd64-product/jdk7u15/hotspot/src/share/vm/prims/jni.cpp:742
+Event: 2818.630 Thread 0x00002b92e0519000 Threw 0x00000007c4592e80 at /HUDSON/workspace/jdk7u15-2-build-linux-amd64-product/jdk7u15/hotspot/src/share/vm/prims/jni.cpp:742
+Event: 2819.394 Thread 0x00002b92e060c800 Threw 0x00000007c4592030 at /HUDSON/workspace/jdk7u15-2-build-linux-amd64-product/jdk7u15/hotspot/src/share/vm/prims/jni.cpp:742
+Event: 2819.630 Thread 0x00002b92e0519000 Threw 0x00000007c4593120 at /HUDSON/workspace/jdk7u15-2-build-linux-amd64-product/jdk7u15/hotspot/src/share/vm/prims/jni.cpp:742
+Event: 2820.394 Thread 0x00002b92e060c800 Threw 0x00000007c5c7a090 at /HUDSON/workspace/jdk7u15-2-build-linux-amd64-product/jdk7u15/hotspot/src/share/vm/prims/jni.cpp:742
+Event: 2820.630 Thread 0x00002b92e0519000 Threw 0x00000007c5d14110 at /HUDSON/workspace/jdk7u15-2-build-linux-amd64-product/jdk7u15/hotspot/src/share/vm/prims/jni.cpp:742
+Event: 2821.394 Thread 0x00002b92e060c800 Threw 0x00000007c5c7a330 at /HUDSON/workspace/jdk7u15-2-build-linux-amd64-product/jdk7u15/hotspot/src/share/vm/prims/jni.cpp:742
+
+Events (10 events):
+Event: 2821.341 loading class 0x00002b92d8961d80
+Event: 2821.341 loading class 0x00002b92d8961d80 done
+Event: 2821.363 loading class 0x00002b92d4095010
+Event: 2821.363 loading class 0x00002b92d4095010 done
+Event: 2821.365 loading class 0x00002b92d46a7a10
+Event: 2821.365 loading class 0x00002b92d46a7a10 done
+Event: 2821.394 Executing VM operation: RevokeBias
+Event: 2821.396 Executing VM operation: RevokeBias done
+Event: 2821.414 loading class 0x00002b92d8961d80
+Event: 2821.414 loading class 0x00002b92d8961d80 done
+
+
+Dynamic libraries:
+00400000-00401000 r-xp 00000000 fd:05 787678                             /usr/java/jdk-7u15-linux-x64/bin/java
+00600000-00601000 rw-p 00000000 fd:05 787678                             /usr/java/jdk-7u15-linux-x64/bin/java
+03b87000-08979000 rw-p 03b87000 00:00 0                                  [heap]
+730000000-736620000 rw-p 730000000 00:00 0 
+736620000-740000000 rw-p 736620000 00:00 0 
+740000000-750000000 rw-p 740000000 00:00 0 
+750000000-7c0000000 rw-p 750000000 00:00 0 
+7c0000000-7c9ea0000 rw-p 7c0000000 00:00 0 
+7c9ea0000-800000000 ---p 7c9ea0000 00:00 0 
+2b92b9853000-2b92b986f000 r-xp 00000000 fd:00 491525                     /lib64/ld-2.5.so
+2b92b986f000-2b92b9871000 rw-p 2b92b986f000 00:00 0 
+2b92b9a6f000-2b92b9a70000 r--p 0001c000 fd:00 491525                     /lib64/ld-2.5.so
+2b92b9a70000-2b92b9a71000 rw-p 0001d000 fd:00 491525                     /lib64/ld-2.5.so
+2b92b9a71000-2b92b9a87000 r-xp 00000000 fd:00 491702                     /lib64/libpthread-2.5.so
+2b92b9a87000-2b92b9c87000 ---p 00016000 fd:00 491702                     /lib64/libpthread-2.5.so
+2b92b9c87000-2b92b9c88000 r--p 00016000 fd:00 491702                     /lib64/libpthread-2.5.so
+2b92b9c88000-2b92b9c89000 rw-p 00017000 fd:00 491702                     /lib64/libpthread-2.5.so
+2b92b9c89000-2b92b9c8d000 rw-p 2b92b9c89000 00:00 0 
+2b92b9c8d000-2b92b9ca3000 r-xp 00000000 fd:05 721544                     /usr/java/jdk-7u15-linux-x64/jre/lib/amd64/jli/libjli.so
+2b92b9ca3000-2b92b9ea3000 ---p 00016000 fd:05 721544                     /usr/java/jdk-7u15-linux-x64/jre/lib/amd64/jli/libjli.so
+2b92b9ea3000-2b92b9ea4000 rw-p 00016000 fd:05 721544                     /usr/java/jdk-7u15-linux-x64/jre/lib/amd64/jli/libjli.so
+2b92b9ea4000-2b92b9ea5000 rw-p 2b92b9ea4000 00:00 0 
+2b92b9ea5000-2b92b9ea7000 r-xp 00000000 fd:00 491566                     /lib64/libdl-2.5.so
+2b92b9ea7000-2b92ba0a7000 ---p 00002000 fd:00 491566                     /lib64/libdl-2.5.so
+2b92ba0a7000-2b92ba0a8000 r--p 00002000 fd:00 491566                     /lib64/libdl-2.5.so
+2b92ba0a8000-2b92ba0a9000 rw-p 00003000 fd:00 491566                     /lib64/libdl-2.5.so
+2b92ba0a9000-2b92ba1f8000 r-xp 00000000 fd:00 491555                     /lib64/libc-2.5.so
+2b92ba1f8000-2b92ba3f8000 ---p 0014f000 fd:00 491555                     /lib64/libc-2.5.so
+2b92ba3f8000-2b92ba3fc000 r--p 0014f000 fd:00 491555                     /lib64/libc-2.5.so
+2b92ba3fc000-2b92ba3fd000 rw-p 00153000 fd:00 491555                     /lib64/libc-2.5.so
+2b92ba3fd000-2b92ba404000 rw-p 2b92ba3fd000 00:00 0 
+2b92ba404000-2b92bae4b000 r-xp 00000000 fd:05 721592                     /usr/java/jdk-7u15-linux-x64/jre/lib/amd64/server/libjvm.so
+2b92bae4b000-2b92bb04b000 ---p 00a47000 fd:05 721592                     /usr/java/jdk-7u15-linux-x64/jre/lib/amd64/server/libjvm.so
+2b92bb04b000-2b92bb0ee000 rw-p 00a47000 fd:05 721592                     /usr/java/jdk-7u15-linux-x64/jre/lib/amd64/server/libjvm.so
+2b92bb0ee000-2b92bb12a000 rw-p 2b92bb0ee000 00:00 0 
+2b92bb13a000-2b92bb1bc000 r-xp 00000000 fd:00 491570                     /lib64/libm-2.5.so
+2b92bb1bc000-2b92bb3bb000 ---p 00082000 fd:00 491570                     /lib64/libm-2.5.so
+2b92bb3bb000-2b92bb3bc000 r--p 00081000 fd:00 491570                     /lib64/libm-2.5.so
+2b92bb3bc000-2b92bb3bd000 rw-p 00082000 fd:00 491570                     /lib64/libm-2.5.so
+2b92bb3bd000-2b92bb3c0000 ---p 2b92bb3bd000 00:00 0 
+2b92bb3c0000-2b92bb4be000 rw-p 2b92bb3c0000 00:00 0 
+2b92bb4ce000-2b92bb4d5000 r-xp 00000000 fd:00 491709                     /lib64/librt-2.5.so
+2b92bb4d5000-2b92bb6d5000 ---p 00007000 fd:00 491709                     /lib64/librt-2.5.so
+2b92bb6d5000-2b92bb6d6000 r--p 00007000 fd:00 491709                     /lib64/librt-2.5.so
+2b92bb6d6000-2b92bb6d7000 rw-p 00008000 fd:00 491709                     /lib64/librt-2.5.so
+2b92bb6d7000-2b92bb6e4000 r-xp 00000000 fd:05 721576                     /usr/java/jdk-7u15-linux-x64/jre/lib/amd64/libverify.so
+2b92bb6e4000-2b92bb8e3000 ---p 0000d000 fd:05 721576                     /usr/java/jdk-7u15-linux-x64/jre/lib/amd64/libverify.so
+2b92bb8e3000-2b92bb8e5000 rw-p 0000c000 fd:05 721576                     /usr/java/jdk-7u15-linux-x64/jre/lib/amd64/libverify.so
+2b92bb8e5000-2b92bb90e000 r-xp 00000000 fd:05 721573                     /usr/java/jdk-7u15-linux-x64/jre/lib/amd64/libjava.so
+2b92bb90e000-2b92bbb0e000 ---p 00029000 fd:05 721573                     /usr/java/jdk-7u15-linux-x64/jre/lib/amd64/libjava.so
+2b92bbb0e000-2b92bbb10000 rw-p 00029000 fd:05 721573                     /usr/java/jdk-7u15-linux-x64/jre/lib/amd64/libjava.so
+2b92bbb10000-2b92bbb11000 r--p 2b92bbb10000 00:00 0 
+2b92bbb11000-2b92bbb12000 rw-p 2b92bbb11000 00:00 0 
+2b92bbb12000-2b92bbb1c000 r-xp 00000000 fd:05 721563                     /usr/java/jdk-7u15-linux-x64/jre/lib/amd64/libinstrument.so
+2b92bbb1c000-2b92bbd1b000 ---p 0000a000 fd:05 721563                     /usr/java/jdk-7u15-linux-x64/jre/lib/amd64/libinstrument.so
+2b92bbd1b000-2b92bbd1c000 rw-p 00009000 fd:05 721563                     /usr/java/jdk-7u15-linux-x64/jre/lib/amd64/libinstrument.so
+2b92bbd1c000-2b92bf2f6000 r--p 00000000 fd:05 1019433                    /usr/lib/locale/locale-archive
+2b92bf2f6000-2b92bf2fe000 rw-s 00000000 fd:02 32775                      /tmp/hsperfdata_jboss/28292
+2b92bf306000-2b92bf310000 r-xp 00000000 fd:00 491594                     /lib64/libnss_files-2.5.so
+2b92bf310000-2b92bf50f000 ---p 0000a000 fd:00 491594                     /lib64/libnss_files-2.5.so
+2b92bf50f000-2b92bf510000 r--p 00009000 fd:00 491594                     /lib64/libnss_files-2.5.so
+2b92bf510000-2b92bf511000 rw-p 0000a000 fd:00 491594                     /lib64/libnss_files-2.5.so
+2b92bf511000-2b92bf52b000 r-xp 00000000 fd:05 721553                     /usr/java/jdk-7u15-linux-x64/jre/lib/amd64/libzip.so
+2b92bf52b000-2b92bf72b000 ---p 0001a000 fd:05 721553                     /usr/java/jdk-7u15-linux-x64/jre/lib/amd64/libzip.so
+2b92bf72b000-2b92bf72c000 rw-p 0001a000 fd:05 721553                     /usr/java/jdk-7u15-linux-x64/jre/lib/amd64/libzip.so
+2b92bf72c000-2b92c249c000 rwxp 2b92bf72c000 00:00 0 
+2b92c249c000-2b92c572c000 rw-p 2b92c249c000 00:00 0 
+2b92c572c000-2b92c57e2000 rw-p 2b92c572c000 00:00 0 
+2b92c57e2000-2b92c58ac000 rw-p 2b92c57e2000 00:00 0 
+2b92c58ac000-2b92c58e0000 rw-p 2b92c58ac000 00:00 0 
+2b92c58e0000-2b92c592c000 rw-p 2b92c58e0000 00:00 0 
+2b92c592c000-2b92c59ac000 rw-p 2b92c592c000 00:00 0 
+2b92c59ac000-2b92c5d2c000 rw-p 2b92c59ac000 00:00 0 
+2b92c5d2c000-2b92c5d7c000 rw-p 2b92c5d2c000 00:00 0 
+2b92c5d7c000-2b92c5f2c000 ---p 2b92c5d7c000 00:00 0 
+2b92c5f2c000-2b92c5fad000 rw-p 2b92c5f2c000 00:00 0 
+2b92c5fad000-2b92c632d000 rw-p 2b92c5fad000 00:00 0 
+2b92c632d000-2b92c6361000 rw-p 2b92c632d000 00:00 0 
+2b92c6361000-2b92c63ad000 rw-p 2b92c6361000 00:00 0 
+2b92c63ad000-2b92c63ae000 ---p 2b92c63ad000 00:00 0 
+2b92c63ae000-2b92c64ae000 rw-p 2b92c63ae000 00:00 0 
+2b92c64ae000-2b92c64af000 ---p 2b92c64ae000 00:00 0 
+2b92c64af000-2b92ce7af000 rw-p 2b92c64af000 00:00 0 
+2b92ce7af000-2b92ce7b4000 r--s 00029000 fd:05 820764                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/org/jboss/logmanager/main/jboss-logmanager-1.2.2.GA.jar
+2b92ce7b4000-2b92ce7b6000 r--s 00003000 fd:05 820761                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/org/jboss/logmanager/log4j/main/jboss-logmanager-log4j-1.0.0.GA.jar
+2b92ce7b6000-2b92ce7bf000 r--s 0006d000 fd:05 820365                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/org/apache/log4j/main/log4j-1.2.16.jar
+2b92ce7bf000-2b92ce97c000 r--s 039da000 fd:05 721628                     /usr/java/jdk-7u15-linux-x64/jre/lib/rt.jar
+2b92ce97c000-2b92ce9ec000 rw-p 2b92ce97c000 00:00 0 
+2b92ce9ec000-2b92ce9ef000 r--s 00014000 fd:05 852046                     /usr/local/appdynamics_ngcs_prod-3.7.16/javaagent.jar
+2b92ce9ef000-2b92cf2f8000 rw-p 2b92ce9ef000 00:00 0 
+2b92cf2f8000-2b92cf2f9000 ---p 2b92cf2f8000 00:00 0 
+2b92cf2f9000-2b92cf3f9000 rw-p 2b92cf2f9000 00:00 0 
+2b92cf3f9000-2b92cf3fc000 ---p 2b92cf3f9000 00:00 0 
+2b92cf3fc000-2b92cf4fa000 rw-p 2b92cf3fc000 00:00 0 
+2b92cf4fa000-2b92cf4fd000 ---p 2b92cf4fa000 00:00 0 
+2b92cf4fd000-2b92cf5fb000 rw-p 2b92cf4fd000 00:00 0 
+2b92cf5fb000-2b92cf5fe000 ---p 2b92cf5fb000 00:00 0 
+2b92cf5fe000-2b92cf6fc000 rw-p 2b92cf5fe000 00:00 0 
+2b92cf6fc000-2b92cf766000 r--s 00e18000 fd:05 787632                     /usr/java/jdk-7u15-linux-x64/lib/tools.jar
+2b92cf766000-2b92cf770000 r--s 00254000 fd:05 721626                     /usr/java/jdk-7u15-linux-x64/jre/lib/resources.jar
+2b92cf770000-2b92cf7e2000 r--s 00599000 fd:05 852047                     /usr/local/appdynamics_ngcs_prod-3.7.16/lib/appagent.jar
+2b92cf7e2000-2b92cf7eb000 r--s 00050000 fd:05 852048                     /usr/local/appdynamics_ngcs_prod-3.7.16/lib/singularity-log4j.jar
+2b92cf7eb000-2b92cf80f000 r--s 00154000 fd:05 852059                     /usr/local/appdynamics_ngcs_prod-3.7.16/lib/tp/singularity-xml.jar
+2b92cf80f000-2b92cf820000 r--s 000bb000 fd:05 852057                     /usr/local/appdynamics_ngcs_prod-3.7.16/lib/tp/commons-math-2.1.jar
+2b92cf820000-2b92cf822000 r--s 0000d000 fd:05 852054                     /usr/local/appdynamics_ngcs_prod-3.7.16/lib/tp/commons-logging-1.1.1.jar
+2b92cf822000-2b92cf823000 r--s 00006000 fd:05 852055                     /usr/local/appdynamics_ngcs_prod-3.7.16/lib/tp/commons-logging-adapters-1.1.1.jar
+2b92cf823000-2b92cf826000 r--s 00018000 fd:05 852053                     /usr/local/appdynamics_ngcs_prod-3.7.16/lib/tp/commons-io-1.4.jar
+2b92cf826000-2b92cf82c000 r--s 00047000 fd:05 852049                     /usr/local/appdynamics_ngcs_prod-3.7.16/lib/tp/asm-3.3.1.jar
+2b92cf82c000-2b92cf82f000 r--s 0001e000 fd:05 852058                     /usr/local/appdynamics_ngcs_prod-3.7.16/lib/tp/servlet-api-2.5-6.1.3.jar
+2b92cf82f000-2b92cf831000 r--s 0000b000 fd:05 852056                     /usr/local/appdynamics_ngcs_prod-3.7.16/lib/tp/commons-logging-api-1.1.1.jar
+2b92cf831000-2b92cf834000 r--s 0000c000 fd:05 852051                     /usr/local/appdynamics_ngcs_prod-3.7.16/lib/tp/commons-fileupload-1.2.1.jar
+2b92cf834000-2b92cf83a000 r--s 00045000 fd:05 852052                     /usr/local/appdynamics_ngcs_prod-3.7.16/lib/tp/commons-httpclient-3.1.jar
+2b92cf83a000-2b92cf83c000 r--s 0000a000 fd:05 852050                     /usr/local/appdynamics_ngcs_prod-3.7.16/lib/tp/commons-codec-1.3.jar
+2b92cf83c000-2b92cf83f000 ---p 2b92cf83c000 00:00 0 
+2b92cf83f000-2b92cf93d000 rw-p 2b92cf83f000 00:00 0 
+2b92cf93d000-2b92cf94d000 r-xp 00000000 fd:05 721572                     /usr/java/jdk-7u15-linux-x64/jre/lib/amd64/libnio.so
+2b92cf94d000-2b92cfb4d000 ---p 00010000 fd:05 721572                     /usr/java/jdk-7u15-linux-x64/jre/lib/amd64/libnio.so
+2b92cfb4d000-2b92cfb4e000 rw-p 00010000 fd:05 721572                     /usr/java/jdk-7u15-linux-x64/jre/lib/amd64/libnio.so
+2b92cfb4e000-2b92cfb63000 r-xp 00000000 fd:05 721569                     /usr/java/jdk-7u15-linux-x64/jre/lib/amd64/libnet.so
+2b92cfb63000-2b92cfd63000 ---p 00015000 fd:05 721569                     /usr/java/jdk-7u15-linux-x64/jre/lib/amd64/libnet.so
+2b92cfd63000-2b92cfd64000 rw-p 00015000 fd:05 721569                     /usr/java/jdk-7u15-linux-x64/jre/lib/amd64/libnet.so
+2b92cfd64000-2b92cfddd000 rw-p 2b92cfd64000 00:00 0 
+2b92cfddd000-2b92cfde0000 ---p 2b92cfddd000 00:00 0 
+2b92cfde0000-2b92cfede000 rw-p 2b92cfde0000 00:00 0 
+2b92cfede000-2b92cfee2000 r--s 0008a000 fd:05 721634                     /usr/java/jdk-7u15-linux-x64/jre/lib/jsse.jar
+2b92cfee2000-2b92cfeea000 r-xp 00000000 fd:05 721548                     /usr/java/jdk-7u15-linux-x64/jre/lib/amd64/libmanagement.so
+2b92cfeea000-2b92d00e9000 ---p 00008000 fd:05 721548                     /usr/java/jdk-7u15-linux-x64/jre/lib/amd64/libmanagement.so
+2b92d00e9000-2b92d00ea000 rw-p 00007000 fd:05 721548                     /usr/java/jdk-7u15-linux-x64/jre/lib/amd64/libmanagement.so
+2b92d00ea000-2b92d00ec000 r--s 00019000 fd:05 721616                     /usr/java/jdk-7u15-linux-x64/jre/lib/jce.jar
+2b92d00ec000-2b92d00f0000 r--s 00037000 fd:05 787089                     /usr/java/jdk-7u15-linux-x64/jre/lib/ext/sunpkcs11.jar
+2b92d00f0000-2b92d00f1000 r--s 00003000 fd:05 787085                     /usr/java/jdk-7u15-linux-x64/jre/lib/ext/sunec.jar
+2b92d00f1000-2b92d0123000 r-xp 00000000 fd:05 721579                     /usr/java/jdk-7u15-linux-x64/jre/lib/amd64/libsunec.so
+2b92d0123000-2b92d0322000 ---p 00032000 fd:05 721579                     /usr/java/jdk-7u15-linux-x64/jre/lib/amd64/libsunec.so
+2b92d0322000-2b92d0328000 rw-p 00031000 fd:05 721579                     /usr/java/jdk-7u15-linux-x64/jre/lib/amd64/libsunec.so
+2b92d0328000-2b92d0338000 rw-p 2b92d0328000 00:00 0 
+2b92d0338000-2b92d033c000 r--s 0002d000 fd:05 787083                     /usr/java/jdk-7u15-linux-x64/jre/lib/ext/sunjce_provider.jar
+2b92d033c000-2b92d0340000 r--s 00042000 fd:05 820384                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/org/apache/xalan/main/serializer-2.7.1.jbossorg-1.jar
+2b92d0340000-2b92d0345000 r--s 00029000 fd:05 820764                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/org/jboss/logmanager/main/jboss-logmanager-1.2.2.GA.jar
+2b92d0345000-2b92d0348000 r--s 00018000 fd:05 820565                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/org/jboss/as/jmx/main/jboss-as-jmx-7.1.1.Final.jar
+2b92d0348000-2b92d0355000 r-xp 00000000 fd:00 491524                     /lib64/libgcc_s-4.1.2-20080825.so.1
+2b92d0355000-2b92d0555000 ---p 0000d000 fd:00 491524                     /lib64/libgcc_s-4.1.2-20080825.so.1
+2b92d0555000-2b92d0556000 rw-p 0000d000 fd:00 491524                     /lib64/libgcc_s-4.1.2-20080825.so.1
+2b92d0556000-2b92d0559000 ---p 2b92d0556000 00:00 0 
+2b92d0559000-2b92d0657000 rw-p 2b92d0559000 00:00 0 
+2b92d0657000-2b92d065a000 ---p 2b92d0657000 00:00 0 
+2b92d065a000-2b92d0758000 rw-p 2b92d065a000 00:00 0 
+2b92d0758000-2b92d075b000 ---p 2b92d0758000 00:00 0 
+2b92d075b000-2b92d0859000 rw-p 2b92d075b000 00:00 0 
+2b92d0859000-2b92d085c000 ---p 2b92d0859000 00:00 0 
+2b92d085c000-2b92d095a000 rw-p 2b92d085c000 00:00 0 
+2b92d095a000-2b92d095d000 ---p 2b92d095a000 00:00 0 
+2b92d095d000-2b92d0a5b000 rw-p 2b92d095d000 00:00 0 
+2b92d0a5b000-2b92d0a5e000 ---p 2b92d0a5b000 00:00 0 
+2b92d0a5e000-2b92d0b5c000 rw-p 2b92d0a5e000 00:00 0 
+2b92d0b5c000-2b92d0b5f000 ---p 2b92d0b5c000 00:00 0 
+2b92d0b5f000-2b92d0c5d000 rw-p 2b92d0b5f000 00:00 0 
+2b92d0c5d000-2b92d0c5e000 ---p 2b92d0c5d000 00:00 0 
+2b92d0c5e000-2b92d0d5e000 rw-p 2b92d0c5e000 00:00 0 
+2b92d0d5e000-2b92d0d63000 r--s 0003d000 fd:05 820121                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/jboss-modules.jar
+2b92d0d63000-2b92d0d88000 r--s 002ef000 fd:05 820386                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/org/apache/xalan/main/xalan-2.7.1.jbossorg-1.jar
+2b92d0d88000-2b92d0d9f000 r--s 0018c000 fd:05 820389                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/org/apache/xerces/main/xercesImpl-2.9.1-jbossas-1.jar
+2b92d0d9f000-2b92d0da4000 r--s 00070000 fd:05 820412                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/org/codehaus/woodstox/main/woodstox-core-asl-4.1.1.jar
+2b92d0da4000-2b92d0da8000 r--s 00029000 fd:05 820410                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/org/codehaus/woodstox/main/stax2-api-3.1.1.jar
+2b92d0da8000-2b92d0db3000 r--s 00085000 fd:05 820641                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/org/jboss/as/server/main/jboss-as-server-7.1.1.Final.jar
+2b92d0db3000-2b92d0db7000 r--s 00030000 fd:05 820785                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/org/jboss/msc/main/jboss-msc-1.0.2.GA.jar
+2b92d0db7000-2b92d0dba000 r--s 000f7000 fd:05 787086                     /usr/java/jdk-7u15-linux-x64/jre/lib/ext/localedata.jar
+2b92d0dba000-2b92d0dbc000 r--s 00007000 fd:05 820897                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/org/jboss/staxmapper/main/staxmapper-1.1.0.Final.jar
+2b92d0dbc000-2b92d0dcc000 r--s 000ae000 fd:05 820515                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/org/jboss/as/controller/main/jboss-as-controller-7.1.1.Final.jar
+2b92d0dcc000-2b92d0dd1000 r--s 00022000 fd:05 820518                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/org/jboss/as/controller-client/main/jboss-as-controller-client-7.1.1.Final.jar
+2b92d0dd1000-2b92d0dd3000 r--s 00008000 fd:05 820614                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/org/jboss/as/network/main/jboss-as-network-7.1.1.Final.jar
+2b92d0dd3000-2b92d0dd6000 r--s 00021000 fd:05 820632                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/org/jboss/as/remoting/main/jboss-as-remoting-7.1.1.Final.jar
+2b92d0dd6000-2b92d0ddc000 r--s 00033000 fd:05 820821                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/org/jboss/remoting3/main/jboss-remoting-3.2.3.GA.jar
+2b92d0ddc000-2b92d0de2000 r--s 00032000 fd:05 820767                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/org/jboss/marshalling/main/jboss-marshalling-1.3.11.GA.jar
+2b92d0de2000-2b92d0de7000 r--s 00036000 fd:05 820960                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/org/jboss/xnio/main/xnio-api-3.0.3.GA.jar
+2b92d0de7000-2b92d0dec000 r--s 00021000 fd:05 820825                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/org/jboss/remoting3/remoting-jmx/main/remoting-jmx-1.0.2.Final.jar
+2b92d0dec000-2b92d0dee000 r--s 00005000 fd:05 820521                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/org/jboss/as/deployment-repository/main/jboss-as-deployment-repository-7.1.1.Final.jar
+2b92d0dee000-2b92d0df1000 r--s 00011000 fd:05 820531                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/org/jboss/as/domain-http-interface/main/jboss-as-domain-http-interface-7.1.1.Final.jar
+2b92d0df1000-2b92d0df5000 r--s 00021000 fd:05 820534                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/org/jboss/as/domain-management/main/jboss-as-domain-management-7.1.1.Final.jar
+2b92d0df5000-2b92d0df7000 r--s 00008000 fd:05 820545                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/org/jboss/as/embedded/main/jboss-as-embedded-7.1.1.Final.jar
+2b92d0df7000-2b92d0dfa000 r--s 0001b000 fd:05 820620                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/org/jboss/as/platform-mbean/main/jboss-as-platform-mbean-7.1.1.Final.jar
+2b92d0dfa000-2b92d0dfe000 r--s 0001f000 fd:05 820626                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/org/jboss/as/process-controller/main/jboss-as-process-controller-7.1.1.Final.jar
+2b92d0dfe000-2b92d0e01000 r--s 00013000 fd:05 820629                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/org/jboss/as/protocol/main/jboss-as-protocol-7.1.1.Final.jar
+2b92d0e01000-2b92d0e05000 r--s 0002e000 fd:05 820638                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/org/jboss/as/security/main/jboss-as-security-7.1.1.Final.jar
+2b92d0e05000-2b92d0e17000 r--s 000b9000 fd:05 820985                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/org/picketbox/main/picketbox-4.0.7.Final.jar
+2b92d0e17000-2b92d0e19000 r--s 00004000 fd:05 820989                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/org/picketbox/main/picketbox-infinispan-4.0.7.Final.jar
+2b92d0e19000-2b92d0e1b000 r--s 00004000 fd:05 820987                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/org/picketbox/main/picketbox-commons-1.0.0.final.jar
+2b92d0e1b000-2b92d0e27000 r--s 0007a000 fd:05 820695                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/org/jboss/common-core/main/jboss-common-core-2.2.17.GA.jar
+2b92d0e27000-2b92d0e28000 r--s 00000000 fd:05 820175                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/javax/inject/api/main/javax.inject-1.jar
+2b92d0e28000-2b92d0e2b000 ---p 2b92d0e28000 00:00 0 
+2b92d0e2b000-2b92d0f29000 rw-p 2b92d0e2b000 00:00 0 
+2b92d0f29000-2b92d0f2b000 r--s 00005000 fd:05 820205                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/javax/security/jacc/api/main/jboss-jacc-api_1.4_spec-1.0.1.Final.jar
+2b92d0f2b000-2b92d0f2e000 r--s 0000f000 fd:05 820209                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/javax/servlet/api/main/jboss-servlet-api_3.0_spec-1.0.0.Final.jar
+2b92d0f2e000-2b92d0f2f000 r--s 00002000 fd:05 820219                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/javax/transaction/api/main/jboss-transaction-api_1.1_spec-1.0.0.Final.jar
+2b92d0f2f000-2b92d0f51000 r--s 001c3000 fd:05 820451                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/org/infinispan/main/infinispan-core-5.1.2.FINAL.jar
+2b92d0f51000-2b92d0f57000 r--s 0003b000 fd:05 820482                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/org/jboss/as/clustering/infinispan/main/jboss-as-clustering-infinispan-7.1.1.Final.jar
+2b92d0f57000-2b92d0f5f000 r--s 00056000 fd:05 820539                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/org/jboss/as/ee/main/jboss-as-ee-7.1.1.Final.jar
+2b92d0f5f000-2b92d0f64000 r--s 00029000 fd:05 820611                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/org/jboss/as/naming/main/jboss-as-naming-7.1.1.Final.jar
+2b92d0f64000-2b92d0f66000 r--s 00010000 fd:05 820648                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/org/jboss/as/transactions/main/jboss-as-transactions-7.1.1.Final.jar
+2b92d0f66000-2b92d0f68000 r--s 00014000 fd:05 820698                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/org/jboss/dmr/main/jboss-dmr-1.1.1.Final.jar
+2b92d0f68000-2b92d0f6a000 r--s 0000d000 fd:05 820758                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/org/jboss/logging/main/jboss-logging-3.1.0.GA.jar
+2b92d0f6a000-2b92d0f6d000 r--s 0000e000 fd:05 820718                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/org/jboss/invocation/main/jboss-invocation-1.1.1.Final.jar
+2b92d0f6d000-2b92d0f6f000 r--s 00010000 fd:05 820740                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/org/jboss/jandex/main/jandex-1.0.3.Final.jar
+2b92d0f6f000-2b92d0f72000 r--s 00012000 fd:05 820770                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/org/jboss/marshalling/river/main/jboss-marshalling-river-1.3.11.GA.jar
+2b92d0f72000-2b92d0f74000 r--s 00014000 fd:05 820873                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/org/jboss/sasl/main/jboss-sasl-1.0.0.Final.jar
+2b92d0f74000-2b92d0f76000 r--s 00003000 fd:05 820899                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/org/jboss/stdio/main/jboss-stdio-1.0.1.GA.jar
+2b92d0f76000-2b92d0f7a000 r--s 0001a000 fd:05 820902                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/org/jboss/threads/main/jboss-threads-2.0.0.GA.jar
+2b92d0f7a000-2b92d0f7d000 r--s 00018000 fd:05 820905                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/org/jboss/vfs/main/jboss-vfs-3.1.0.Final.jar
+2b92d0f7d000-2b92d0f80000 ---p 2b92d0f7d000 00:00 0 
+2b92d0f80000-2b92d107e000 rw-p 2b92d0f80000 00:00 0 
+2b92d107e000-2b92d1087000 r--s 00057000 fd:05 820775                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/org/jboss/metadata/main/jboss-metadata-common-7.0.1.Final.jar
+2b92d1087000-2b92d1089000 r--s 00004000 fd:05 820773                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/org/jboss/metadata/main/jboss-metadata-appclient-7.0.1.Final.jar
+2b92d1089000-2b92d1092000 r--s 0008f000 fd:05 820779                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/org/jboss/metadata/main/jboss-metadata-ejb-7.0.1.Final.jar
+2b92d1092000-2b92d1099000 r--s 0005c000 fd:05 820781                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/org/jboss/metadata/main/jboss-metadata-web-7.0.1.Final.jar
+2b92d1099000-2b92d109c000 r--s 0000e000 fd:05 820777                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/org/jboss/metadata/main/jboss-metadata-ear-7.0.1.Final.jar
+2b92d109c000-2b92d109e000 r--s 00007000 fd:05 820876                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/org/jboss/security/negotiation/main/jboss-negotiation-common-2.2.0.SP1.jar
+2b92d109e000-2b92d10a0000 r--s 00003000 fd:05 820878                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/org/jboss/security/negotiation/main/jboss-negotiation-extras-2.2.0.SP1.jar
+2b92d10a0000-2b92d10a2000 r--s 00003000 fd:05 820880                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/org/jboss/security/negotiation/main/jboss-negotiation-net-2.2.0.SP1.jar
+2b92d10a2000-2b92d10a4000 r--s 00002000 fd:05 820882                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/org/jboss/security/negotiation/main/jboss-negotiation-ntlm-2.2.0.SP1.jar
+2b92d10a4000-2b92d10a6000 r--s 00005000 fd:05 820884                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/org/jboss/security/negotiation/main/jboss-negotiation-spnego-2.2.0.SP1.jar
+2b92d10a6000-2b92d10a9000 r--s 00015000 fd:05 820524                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/org/jboss/as/deployment-scanner/main/jboss-as-deployment-scanner-7.1.1.Final.jar
+2b92d10a9000-2b92d10b4000 r--s 0007c000 fd:05 820509                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/org/jboss/as/connector/main/jboss-as-connector-7.1.1.Final.jar
+2b92d10b4000-2b92d10b7000 r--s 0000c000 fd:05 820196                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/javax/resource/api/main/jboss-connector-api_1.6_spec-1.0.0.Final.jar
+2b92d10b7000-2b92d10b9000 r--s 00001000 fd:05 820154                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/javax/annotation/api/main/jboss-annotations-api_1.1_spec-1.0.0.Final.jar
+2b92d10b9000-2b92d10bc000 r--s 00009000 fd:05 820223                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/javax/validation/api/main/validation-api-1.0.0.GA.jar
+2b92d10bc000-2b92d10d5000 r--s 0011c000 fd:05 820542                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/org/jboss/as/ejb3/main/jboss-as-ejb3-7.1.1.Final.jar
+2b92d10d5000-2b92d10d8000 r--s 00009000 fd:05 820158                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/javax/ejb/api/main/jboss-ejb-api_3.1_spec-1.0.1.Final.jar
+2b92d10d8000-2b92d10db000 r--s 00005000 fd:05 820238                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/javax/xml/rpc/api/main/jboss-jaxrpc-api_1.1_spec-1.0.0.Final.jar
+2b92d10db000-2b92d10dc000 r--s 00005000 fd:05 820241                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/javax/xml/soap/api/main/jboss-saaj-api_1.3_spec-1.0.1.Final.jar
+2b92d10dc000-2b92d10de000 r--s 0001a000 fd:05 820440                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/org/hornetq/ra/main/hornetq-ra-2.2.13.Final.jar
+2b92d10de000-2b92d10ed000 r--s 000b3000 fd:05 820789                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/org/jboss/netty/main/netty-3.2.6.Final.jar
+2b92d10ed000-2b92d10f0000 r--s 00035000 fd:05 820728                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/org/jboss/ironjacamar/impl/main/ironjacamar-common-impl-1.0.9.Final.jar
+2b92d10f0000-2b92d10f5000 r--s 0003a000 fd:05 820730                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/org/jboss/ironjacamar/impl/main/ironjacamar-core-impl-1.0.9.Final.jar
+2b92d10f5000-2b92d10f7000 r--s 0000c000 fd:05 820732                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/org/jboss/ironjacamar/impl/main/ironjacamar-deployers-common-1.0.9.Final.jar
+2b92d10f7000-2b92d10f9000 r--s 0000c000 fd:05 820734                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/org/jboss/ironjacamar/impl/main/ironjacamar-validator-1.0.9.Final.jar
+2b92d10f9000-2b92d10fe000 r--s 00026000 fd:05 820721                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/org/jboss/ironjacamar/api/main/ironjacamar-common-api-1.0.9.Final.jar
+2b92d10fe000-2b92d10ff000 r--s 00000000 fd:05 820723                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/org/jboss/ironjacamar/api/main/ironjacamar-common-spi-1.0.9.Final.jar
+2b92d10ff000-2b92d1102000 r--s 00006000 fd:05 820725                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/org/jboss/ironjacamar/api/main/ironjacamar-core-api-1.0.9.Final.jar
+2b92d1102000-2b92d110b000 r--s 00096000 fd:05 820457                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/org/javassist/main/javassist-3.15.0-GA.jar
+2b92d110b000-2b92d1111000 r--s 00039000 fd:05 820701                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/org/jboss/ejb-client/main/jboss-ejb-client-1.0.5.Final.jar
+2b92d1111000-2b92d1114000 r--s 0000c000 fd:05 820712                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/org/jboss/interceptor/main/jboss-interceptor-core-2.0.0.Final.jar
+2b92d1114000-2b92d1115000 r--s 00001000 fd:05 820715                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/org/jboss/interceptor/spi/main/jboss-interceptor-spi-2.0.0.Final.jar
+2b92d1115000-2b92d1116000 r--s 0000a000 fd:05 820123                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/asm/asm/main/asm-3.3.1.jar
+2b92d1116000-2b92d1118000 r--s 00003000 fd:05 820761                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/org/jboss/logmanager/log4j/main/jboss-logmanager-log4j-1.0.0.GA.jar
+2b92d1118000-2b92d111b000 ---p 2b92d1118000 00:00 0 
+2b92d111b000-2b92d1219000 rw-p 2b92d111b000 00:00 0 
+2b92d1219000-2b92d121c000 ---p 2b92d1219000 00:00 0 
+2b92d121c000-2b92d131a000 rw-p 2b92d121c000 00:00 0 
+2b92d131a000-2b92d131d000 ---p 2b92d131a000 00:00 0 
+2b92d131d000-2b92d151b000 rw-p 2b92d131d000 00:00 0 
+2b92d151b000-2b92d151e000 ---p 2b92d151b000 00:00 0 
+2b92d151e000-2b92d161c000 rw-p 2b92d151e000 00:00 0 
+2b92d161c000-2b92d161f000 ---p 2b92d161c000 00:00 0 
+2b92d161f000-2b92d171d000 rw-p 2b92d161f000 00:00 0 
+2b92d171d000-2b92d171e000 r--s 00000000 fd:05 820251                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/net/jcip/main/jcip-annotations-1.0.jar
+2b92d171e000-2b92d1720000 r--s 00016000 fd:05 820443                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/org/infinispan/cachestore/jdbc/main/infinispan-cachestore-jdbc-5.1.2.FINAL.jar
+2b92d1720000-2b92d1721000 r--s 00009000 fd:05 820446                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/org/infinispan/cachestore/remote/main/infinispan-cachestore-remote-5.1.2.FINAL.jar
+2b92d1721000-2b92d1723000 r--s 00006000 fd:05 820473                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/org/jboss/as/clustering/common/main/jboss-as-clustering-common-7.1.1.Final.jar
+2b92d1723000-2b92d1727000 r--s 0001a000 fd:05 820485                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/org/jboss/as/clustering/jgroups/main/jboss-as-clustering-jgroups-7.1.1.Final.jar
+2b92d1727000-2b92d172a000 r--s 0001b000 fd:05 820645                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/org/jboss/as/threads/main/jboss-as-threads-7.1.1.Final.jar
+2b92d172a000-2b92d172c000 r--s 00004000 fd:05 820746                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/org/jboss/jboss-transaction-spi/main/jboss-transaction-spi-7.0.0.Final.jar
+2b92d172c000-2b92d173f000 r--s 0019e000 fd:05 820974                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/org/jgroups/main/jgroups-3.0.6.Final.jar
+2b92d173f000-2b92d1742000 ---p 2b92d173f000 00:00 0 
+2b92d1742000-2b92d1840000 rw-p 2b92d1742000 00:00 0 
+2b92d1840000-2b92d1843000 r--s 00009000 fd:05 820506                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/org/jboss/as/configadmin/main/jboss-as-configadmin-7.1.1.Final.jar
+2b92d1843000-2b92d1845000 r--s 00009000 fd:05 820810                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/org/jboss/osgi/spi/main/jbosgi-spi-3.0.1.Final.jar
+2b92d1845000-2b92d1848000 ---p 2b92d1845000 00:00 0 
+2b92d1848000-2b92d1946000 rw-p 2b92d1848000 00:00 0 
+2b92d1946000-2b92d1949000 ---p 2b92d1946000 00:00 0 
+2b92d1949000-2b92d1a47000 rw-p 2b92d1949000 00:00 0 
+2b92d1a47000-2b92d1a49000 r--s 00001000 fd:05 820178                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/javax/interceptor/api/main/jboss-interceptors-api_1.1_spec-1.0.0.Final.jar
+2b92d1a49000-2b92d1a4c000 ---p 2b92d1a49000 00:00 0 
+2b92d1a4c000-2b92d1b4a000 rw-p 2b92d1a4c000 00:00 0 
+2b92d1b4a000-2b92d1b4c000 r--s 0000b000 fd:05 820557                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/org/jboss/as/jaxrs/main/jboss-as-jaxrs-7.1.1.Final.jar
+2b92d1b4c000-2b92d1b4f000 ---p 2b92d1b4c000 00:00 0 
+2b92d1b4f000-2b92d1c4d000 rw-p 2b92d1b4f000 00:00 0 
+2b92d1c4d000-2b92d1c4f000 r--s 00008000 fd:05 820560                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/org/jboss/as/jdr/main/jboss-as-jdr-7.1.1.Final.jar
+2b92d1c4f000-2b92d1c52000 r--s 00039000 fd:05 820562                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/org/jboss/as/jdr/main/jboss-as-sos-7.1.1.Final.jar
+2b92d1c52000-2b92d1c54000 r--s 00009000 fd:05 820265                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/org/apache/commons/cli/main/commons-cli-1.2.jar
+2b92d1c54000-2b92d1ce9000 r--s 0093a000 fd:05 820998                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/org/python/jython/standalone/main/jython-standalone-2.5.2.jar
+2b92d1ce9000-2b92d1cec000 ---p 2b92d1ce9000 00:00 0 
+2b92d1cec000-2b92d1dea000 rw-p 2b92d1cec000 00:00 0 
+2b92d1dea000-2b92d1ded000 ---p 2b92d1dea000 00:00 0 
+2b92d1ded000-2b92d1eeb000 rw-p 2b92d1ded000 00:00 0 
+2b92d1eeb000-2b92d1ef0000 r--s 00036000 fd:05 820588                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/org/jboss/as/logging/main/jboss-as-logging-7.1.1.Final.jar
+2b92d1ef0000-2b92d1ef3000 ---p 2b92d1ef0000 00:00 0 
+2b92d1ef3000-2b92d1ff1000 rw-p 2b92d1ef3000 00:00 0 
+2b92d1ff1000-2b92d1ffa000 r--s 0006f000 fd:05 820597                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/org/jboss/as/messaging/main/jboss-as-messaging-7.1.1.Final.jar
+2b92d1ffa000-2b92d2012000 r--s 0014d000 fd:05 820432                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/org/hornetq/main/hornetq-core-2.2.13.Final.jar
+2b92d2012000-2b92d2017000 r--s 00034000 fd:05 820434                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/org/hornetq/main/hornetq-jms-2.2.13.Final.jar
+2b92d2017000-2b92d201a000 ---p 2b92d2017000 00:00 0 
+2b92d201a000-2b92d2118000 rw-p 2b92d201a000 00:00 0 
+2b92d2118000-2b92d211c000 r--s 0001f000 fd:05 820818                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/org/jboss/remote-naming/main/jboss-remote-naming-1.0.2.Final.jar
+2b92d211c000-2b92d211f000 ---p 2b92d211c000 00:00 0 
+2b92d211f000-2b92d221d000 rw-p 2b92d211f000 00:00 0 
+2b92d221d000-2b92d2221000 r--s 00026000 fd:05 820617                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/org/jboss/as/osgi/main/jboss-as-osgi-service-7.1.1.Final.jar
+2b92d2221000-2b92d2223000 r--s 00004000 fd:05 820791                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/org/jboss/osgi/framework/main/jbosgi-deployment-1.0.12.Final.jar
+2b92d2223000-2b92d2229000 r--s 0004d000 fd:05 820793                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/org/jboss/osgi/framework/main/jbosgi-framework-core-1.1.8.Final.jar
+2b92d2229000-2b92d222b000 r--s 00002000 fd:05 820795                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/org/jboss/osgi/framework/main/jbosgi-resolver-api-1.0.13.Final.jar
+2b92d222b000-2b92d222e000 ---p 2b92d222b000 00:00 0 
+2b92d222e000-2b92d232c000 rw-p 2b92d222e000 00:00 0 
+2b92d232c000-2b92d232f000 r--s 0001c000 fd:05 820623                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/org/jboss/as/pojo/main/jboss-as-pojo-7.1.1.Final.jar
+2b92d232f000-2b92d2332000 ---p 2b92d232f000 00:00 0 
+2b92d2332000-2b92d2430000 rw-p 2b92d2332000 00:00 0 
+2b92d2430000-2b92d2433000 ---p 2b92d2430000 00:00 0 
+2b92d2433000-2b92d2531000 rw-p 2b92d2433000 00:00 0 
+2b92d2531000-2b92d2534000 r--s 0000e000 fd:05 820635                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/org/jboss/as/sar/main/jboss-as-sar-7.1.1.Final.jar
+2b92d2534000-2b92d2537000 ---p 2b92d2534000 00:00 0 
+2b92d2537000-2b92d2635000 rw-p 2b92d2537000 00:00 0 
+2b92d2635000-2b92d2637000 r--s 0000f000 fd:05 820151                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/javax/activation/api/main/activation-1.1.1.jar
+2b92d2637000-2b92d264c000 r--s 000e6000 fd:05 820199                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/javax/rmi/api/main/jboss-rmi-api_1.0_spec-1.0.4.Final.jar
+2b92d264c000-2b92d26bf000 r--s 004ee000 fd:05 820454                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/org/jacorb/main/jacorb-2.3.1.jbossorg-1.jar
+2b92d26bf000-2b92d26da000 r--s 00154000 fd:05 820752                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/org/jboss/jts/main/jbossjts-4.16.2.Final.jar
+2b92d26da000-2b92d26dd000 ---p 2b92d26da000 00:00 0 
+2b92d26dd000-2b92d27db000 rw-p 2b92d26dd000 00:00 0 
+2b92d27db000-2b92d27e2000 r--s 0006b000 fd:05 820653                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/org/jboss/as/web/main/jboss-as-web-7.1.1.Final.jar
+2b92d27e2000-2b92d27ef000 r--s 00167000 fd:05 820651                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/org/jboss/as/web/main/jasper-jdt-7.0.3.Final.jar
+2b92d27ef000-2b92d280d000 r--s 0020a000 fd:05 820655                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/org/jboss/as/web/main/jbossweb-7.0.13.Final.jar
+2b92d280d000-2b92d2825000 r--s 001c6000 fd:05 820137                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/com/sun/jsf-impl/main/jsf-impl-2.1.7-jbossorg-2.jar
+2b92d2825000-2b92d2831000 r--s 0009f000 fd:05 820172                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/javax/faces/api/main/jboss-jsf-api_2.1_spec-2.0.1.Final.jar
+2b92d2831000-2b92d2833000 r--s 00007000 fd:05 820161                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/javax/el/api/main/jboss-el-api_2.2_spec-1.0.0.Final.jar
+2b92d2833000-2b92d2835000 r--s 0000a000 fd:05 820212                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/javax/servlet/jsp/api/main/jboss-jsp-api_2.2_spec-1.0.0.Final.jar
+2b92d2835000-2b92d283e000 r--s 00065000 fd:05 820215                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/javax/servlet/jstl/api/main/jboss-jstl-api_1.2_spec-1.0.2.Final.jar
+2b92d283e000-2b92d2840000 r--s 00004000 fd:05 820202                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/javax/security/auth/message/api/main/jboss-jaspi-api_1.0_spec-1.0.0.Final.jar
+2b92d2840000-2b92d2843000 r--s 0000c000 fd:05 820470                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/org/jboss/as/clustering/api/main/jboss-as-clustering-api-7.1.1.Final.jar
+2b92d2843000-2b92d2847000 r--s 00024000 fd:05 820683                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/org/jboss/as/weld/main/jboss-as-weld-7.1.1.Final.jar
+2b92d2847000-2b92d2849000 r--s 00006000 fd:05 820126                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/ch/qos/cal10n/main/cal10n-api-0.7.3.jar
+2b92d2849000-2b92d286a000 r--s 00172000 fd:05 820129                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/com/google/guava/main/guava-11.0.2.jar
+2b92d286a000-2b92d286e000 r--s 00026000 fd:05 820574                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/org/jboss/as/jpa/main/jboss-as-jpa-7.1.1.Final.jar
+2b92d286e000-2b92d2873000 r--s 00015000 fd:05 820193                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/javax/persistence/api/main/hibernate-jpa-2.0-api-1.0.1.Final.jar
+2b92d2873000-2b92d2881000 r--s 0007f000 fd:05 820271                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/org/apache/commons/collections/main/commons-collections-3.2.1.jar
+2b92d2881000-2b92d2883000 r--s 00008000 fd:05 820591                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/org/jboss/as/mail/main/jboss-as-mail-7.1.1.Final.jar
+2b92d2883000-2b92d288a000 r--s 00072000 fd:05 820187                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/javax/mail/api/main/mail-1.4.4.jar
+2b92d288a000-2b92d288c000 r--s 0000a000 fd:05 820749                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/org/jboss/jts/integration/main/jbossjts-integration-4.16.2.Final.jar
+2b92d288c000-2b92d2893000 r--s 00042000 fd:05 820676                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/org/jboss/as/webservices/main/jboss-as-webservices-server-integration-7.1.1.Final.jar
+2b92d2893000-2b92d2895000 r--s 00000000 fd:05 820678                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/org/jboss/as/webservices/main/jbossws-cxf-resources-4.0.2.GA-jboss711.jar
+2b92d2895000-2b92d2896000 r--s 00001000 fd:05 820184                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/javax/jws/api/main/jsr181-api-1.0-MR1.jar
+2b92d2896000-2b92d2899000 r--s 00009000 fd:05 820245                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/javax/xml/ws/api/main/jboss-jaxws-api_2.2_spec-2.0.0.Final.jar
+2b92d2899000-2b92d289c000 r--s 00014000 fd:05 820231                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/javax/xml/bind/api/main/jboss-jaxb-api_2.2_spec-1.0.3.Final.jar
+2b92d289c000-2b92d289d000 r--s 00001000 fd:05 820704                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/org/jboss/ejb3/main/jboss-ejb3-ext-api-2.0.0.jar
+2b92d289d000-2b92d28a0000 r--s 0000a000 fd:05 820917                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/org/jboss/ws/api/main/jbossws-api-1.0.0.GA.jar
+2b92d28a0000-2b92d28a6000 r--s 00034000 fd:05 820920                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/org/jboss/ws/common/main/jbossws-common-2.0.2.GA.jar
+2b92d28a6000-2b92d28ab000 r--s 00019000 fd:05 820949                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/org/jboss/ws/spi/main/jbossws-spi-2.0.3.GA.jar
+2b92d28ab000-2b92d28b4000 r--s 00051000 fd:05 820429                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/org/hibernate/validator/main/hibernate-validator-4.2.0.Final.jar
+2b92d28b4000-2b92d28b5000 r--s 00005000 fd:05 820579                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/org/jboss/as/jpa/spi/main/jboss-as-jpa-spi-7.1.1.Final.jar
+2b92d28b5000-2b92d28b6000 r--s 00000000 fd:05 820582                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/org/jboss/as/jpa/util/main/jboss-as-jpa-util-7.1.1.Final.jar
+2b92d28b6000-2b92d28b8000 r--s 00005000 fd:05 820181                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/javax/jms/api/main/jboss-jms-api_1.1_spec-1.0.0.Final.jar
+2b92d28b8000-2b92d2901000 r--s 003c6000 fd:05 820422                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/org/hibernate/main/hibernate-core-4.0.1.Final.jar
+2b92d2901000-2b92d2904000 r--s 00011000 fd:05 820420                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/org/hibernate/main/hibernate-commons-annotations-4.0.1.Final.jar
+2b92d2904000-2b92d290e000 r--s 0006b000 fd:05 820424                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/org/hibernate/main/hibernate-entitymanager-4.0.1.Final.jar
+2b92d290e000-2b92d2911000 r--s 0000e000 fd:05 820426                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/org/hibernate/main/hibernate-infinispan-4.0.1.Final.jar
+2b92d2911000-2b92d2914000 r--s 0000a000 fd:05 820164                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/javax/enterprise/api/main/cdi-api-1.0-SP4.jar
+2b92d2914000-2b92d2917000 r--s 00009000 fd:05 820225                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/javax/ws/rs/api/main/jboss-jaxrs-api_1.1_spec-1.0.0.Final.jar
+2b92d2917000-2b92d2918000 r--s 00001000 fd:05 820846                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/org/jboss/resteasy/resteasy-jaxrs/main/async-http-servlet-3.0-2.3.2.Final.jar
+2b92d2918000-2b92d2924000 r--s 00087000 fd:05 820851                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/org/jboss/resteasy/resteasy-jaxrs/main/resteasy-jaxrs-2.3.2.Final.jar
+2b92d2924000-2b92d2925000 r--s 00001000 fd:05 820849                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/org/jboss/resteasy/resteasy-jaxrs/main/resteasy-jaxrs-2.3.2.Final-jandex.jar
+2b92d2925000-2b92d2927000 r--s 00003000 fd:05 820833                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/org/jboss/resteasy/resteasy-cdi/main/resteasy-cdi-2.3.2.Final.jar
+2b92d2927000-2b92d292b000 r--s 0000a000 fd:05 820915                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/org/jboss/weld/spi/main/weld-spi-1.1.Final.jar
+2b92d292b000-2b92d292f000 r--s 0002d000 fd:05 820737                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/org/jboss/ironjacamar/jdbcadapters/main/ironjacamar-jdbc-1.0.9.Final.jar
+2b92d292f000-2b92d2931000 r--s 00007000 fd:05 820799                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/org/jboss/osgi/framework/main/jbosgi-resolver-spi-1.0.13.Final.jar
+2b92d2931000-2b92d2933000 r--s 00004000 fd:05 820909                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/org/jboss/weld/api/main/weld-api-1.1.Final.jar
+2b92d2933000-2b92d2942000 r--s 000b2000 fd:05 820912                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/org/jboss/weld/core/main/weld-core-1.1.5.AS71.Final.jar
+2b92d2942000-2b92d2944000 r--s 00005000 fd:05 821014                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/org/slf4j/main/slf4j-api-1.6.1.jar
+2b92d2944000-2b92d2946000 r--s 00009000 fd:05 821005                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/org/slf4j/ext/main/slf4j-ext-1.6.1.jar
+2b92d2946000-2b92d2947000 r--s 00006000 fd:05 820476                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/org/jboss/as/clustering/ejb3/infinispan/main/jboss-as-clustering-ejb3-infinispan-7.1.1.Final.jar
+2b92d2947000-2b92d2949000 r--s 00005000 fd:05 820500                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/org/jboss/as/clustering/web/spi/main/jboss-as-clustering-web-spi-7.1.1.Final.jar
+2b92d2949000-2b92d294b000 r--s 00003000 fd:05 820488                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/org/jboss/as/clustering/registry/main/jboss-as-clustering-registry-7.1.1.Final.jar
+2b92d294b000-2b92d2950000 r--s 00049000 fd:05 820551                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/org/jboss/as/jacorb/main/jboss-as-jacorb-7.1.1.Final.jar
+2b92d2950000-2b92d2953000 r--s 00017000 fd:05 820689                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/org/jboss/classfilewriter/main/jboss-classfilewriter-1.0.1.Final.jar
+2b92d2953000-2b92d2955000 r--s 00001000 fd:05 820707                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/org/jboss/iiop-client/main/jboss-iiop-client-1.0.0.Final.jar
+2b92d2955000-2b92d2958000 r--s 0001b000 fd:05 820797                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/org/jboss/osgi/framework/main/jbosgi-resolver-felix-1.0.13.Final.jar
+2b92d2958000-2b92d295a000 r--s 0000a000 fd:05 820802                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/org/jboss/osgi/metadata/main/jbosgi-metadata-2.0.3.Final.jar
+2b92d295a000-2b92d295f000 r--s 00038000 fd:05 820982                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/org/osgi/core/main/org.osgi.core-4.2.0.jar
+2b92d295f000-2b92d2960000 r--s 00001000 fd:05 820813                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/org/jboss/osgi/vfs/main/jbosgi-vfs-1.0.7.Final.jar
+2b92d2960000-2b92d2961000 r--s 00003000 fd:05 820815                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/org/jboss/osgi/vfs/main/jbosgi-vfs30-1.0.7.Final.jar
+2b92d2961000-2b92d2964000 r--s 0000e000 fd:05 820805                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/org/jboss/osgi/repository/main/jbosgi-repository-api-1.0.5.jar
+2b92d2964000-2b92d2965000 r--s 00002000 fd:05 820807                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/org/jboss/osgi/repository/main/jbosgi-repository-core-1.0.5.jar
+2b92d2965000-2b92d296a000 r--s 00068000 fd:05 820260                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/org/antlr/main/antlr-2.7.7.jar
+2b92d296a000-2b92d296f000 r--s 00048000 fd:05 820414                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/org/dom4j/main/dom4j-1.6.1.jar
+2b92d296f000-2b92d2973000 r--s 00017000 fd:05 820571                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/org/jboss/as/jpa/hibernate/4/jboss-as-jpa-hibernate4-7.1.1.Final.jar
+2b92d2973000-2b92d297c000 r--s 00057000 fd:05 820417                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/org/hibernate/envers/main/hibernate-envers-4.0.1.Final.jar
+2b92d297c000-2b92d297f000 ---p 2b92d297c000 00:00 0 
+2b92d297f000-2b92d2a7d000 rw-p 2b92d297f000 00:00 0 
+2b92d2a7d000-2b92d2a80000 ---p 2b92d2a7d000 00:00 0 
+2b92d2a80000-2b92d2b7e000 rw-p 2b92d2a80000 00:00 0 
+2b92d2b7e000-2b92d2b80000 r--s 00003000 fd:05 821010                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/org/slf4j/jcl-over-slf4j/main/jcl-over-slf4j-1.6.1.jar
+2b92d2b80000-2b92d2b83000 ---p 2b92d2b80000 00:00 0 
+2b92d2b83000-2b92d2c81000 rw-p 2b92d2b83000 00:00 0 
+2b92d2c81000-2b92d2c84000 ---p 2b92d2c81000 00:00 0 
+2b92d2c84000-2b92d2d82000 rw-p 2b92d2c84000 00:00 0 
+2b92d2d82000-2b92d2d85000 ---p 2b92d2d82000 00:00 0 
+2b92d2d85000-2b92d2e83000 rw-p 2b92d2d85000 00:00 0 
+2b92d2e83000-2b92d2e86000 ---p 2b92d2e83000 00:00 0 
+2b92d2e86000-2b92d2f84000 rw-p 2b92d2e86000 00:00 0 
+2b92d2f84000-2b92d2f87000 ---p 2b92d2f84000 00:00 0 
+2b92d2f87000-2b92d3085000 rw-p 2b92d2f87000 00:00 0 
+2b92d3085000-2b92d3088000 ---p 2b92d3085000 00:00 0 
+2b92d3088000-2b92d3186000 rw-p 2b92d3088000 00:00 0 
+2b92d3186000-2b92d3189000 ---p 2b92d3186000 00:00 0 
+2b92d3189000-2b92d3287000 rw-p 2b92d3189000 00:00 0 
+2b92d3287000-2b92d3289000 r--s 00012000 fd:05 820963                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/org/jboss/xnio/nio/main/xnio-nio-3.0.3.GA.jar
+2b92d3289000-2b92d328c000 r--s 00017000 fd:05 820692                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/org/jboss/com/sun/httpserver/main/httpserver-1.0.0.Final.jar
+2b92d328c000-2b92d3294000 rw-p 2b92d328c000 00:00 0 
+2b92d3294000-2b92d3296000 r--s 0000b000 fd:05 820497                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/org/jboss/as/clustering/web/infinispan/main/jboss-as-clustering-web-infinispan-7.1.1.Final.jar
+2b92d338d000-2b92d3390000 ---p 2b92d338d000 00:00 0 
+2b92d3390000-2b92d348e000 rw-p 2b92d3390000 00:00 0 
+2b92d348e000-2b92d3491000 ---p 2b92d348e000 00:00 0 
+2b92d3491000-2b92d358f000 rw-p 2b92d3491000 00:00 0 
+2b92d358f000-2b92d3592000 ---p 2b92d358f000 00:00 0 
+2b92d3592000-2b92d3690000 rw-p 2b92d3592000 00:00 0 
+2b92d3690000-2b92d3693000 ---p 2b92d3690000 00:00 0 
+2b92d3693000-2b92d3791000 rw-p 2b92d3693000 00:00 0 
+2b92d3791000-2b92d3794000 ---p 2b92d3791000 00:00 0 
+2b92d3794000-2b92d3892000 rw-p 2b92d3794000 00:00 0 
+2b92d3892000-2b92d3895000 ---p 2b92d3892000 00:00 0 
+2b92d3895000-2b92d3993000 rw-p 2b92d3895000 00:00 0 
+2b92d3993000-2b92d3996000 ---p 2b92d3993000 00:00 0 
+2b92d3996000-2b92d3a94000 rw-p 2b92d3996000 00:00 0 
+2b92d3a94000-2b92d3a97000 ---p 2b92d3a94000 00:00 0 
+2b92d3a97000-2b92d3b95000 rw-p 2b92d3a97000 00:00 0 
+2b92d3b95000-2b92d3b98000 ---p 2b92d3b95000 00:00 0 
+2b92d3b98000-2b92d3c96000 rw-p 2b92d3b98000 00:00 0 
+2b92d3c96000-2b92d3c99000 ---p 2b92d3c96000 00:00 0 
+2b92d3c99000-2b92d3d97000 rw-p 2b92d3c99000 00:00 0 
+2b92d3d97000-2b92d3d9a000 ---p 2b92d3d97000 00:00 0 
+2b92d3d9a000-2b92d3e98000 rw-p 2b92d3d9a000 00:00 0 
+2b92d3e98000-2b92d3e9b000 ---p 2b92d3e98000 00:00 0 
+2b92d3e9b000-2b92d3f99000 rw-p 2b92d3e9b000 00:00 0 
+2b92d3f99000-2b92d3f9e000 r--s 00020000 fd:05 820229                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/javax/wsdl4j/api/main/wsdl4j-1.6.2.jar
+2b92d3f9e000-2b92d3fa0000 r--s 00006000 fd:05 820743                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/org/jboss/jaxbintros/main/jboss-jaxb-intros-1.0.2.GA.jar
+2b92d3fa0000-2b92d3fa2000 r--s 00004000 fd:05 820167                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/javax/enterprise/deploy/api/main/jboss-jad-api_1.2_spec-1.0.0.Final.jar
+2b92d3fa2000-2b92d3fa4000 r--s 00002000 fd:05 820190                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/javax/management/j2ee/api/main/jboss-j2eemgmt-api_1.1_spec-1.0.0.Final.jar
+2b92d3fa4000-2b92d3fa7000 r--s 00005000 fd:05 820235                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/javax/xml/registry/api/main/jboss-jaxr-api_1.0_spec-1.0.1.Final.jar
+2b92d3fa7000-2b92d3fb4000 r--s 00088000 fd:05 820372                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/org/apache/santuario/xmlsec/main/xmlsec-1.5.1.jar
+2b92d3fb4000-2b92d3fb6000 r--s 00013000 fd:05 820392                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/org/apache/xml-resolver/main/xml-resolver-1.2.jar
+2b92d3fb6000-2b92d3fbb000 r--s 00023000 fd:05 820381                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/org/apache/ws/xmlschema/main/xmlschema-core-2.0.jar
+2b92d3fbb000-2b92d3fbf000 r--s 0004a000 fd:05 950350                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/net/sourceforge/jtds/main/jtds-1.3.0.jar
+2b92d3fbf000-2b92d3fc0000 r--s 00000000 fd:05 820942                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/org/jboss/ws/native/jbossws-native-factories/main/jbossws-native-factories-4.0.2.GA.jar
+2b92d3fc0000-2b92d3fda000 r--s 00188000 fd:05 820939                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/org/jboss/ws/native/jbossws-native-core/main/jbossws-native-core-4.0.2.GA.jar
+2b92d3fda000-2b92d3fdb000 r--s 00000000 fd:05 820945                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/org/jboss/ws/native/jbossws-native-services/main/jbossws-native-services-4.0.2.GA.jar
+2b92d3fdb000-2b92d3fdd000 r--s 00011000 fd:05 820406                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/org/codehaus/jettison/main/jettison-1.3.1.jar
+2b92d3fdd000-2b92d3fe8000 r--s 00084000 fd:05 820956                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/org/jboss/xb/main/jbossxb-2.0.3.GA.jar
+2b92d3fe8000-2b92d3feb000 r--s 0000d000 fd:05 820890                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/org/jboss/shrinkwrap/core/main/shrinkwrap-api-1.0.0-cr-1.jar
+2b92d3feb000-2b92d3fec000 r--s 00000000 fd:05 820894                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/org/jboss/shrinkwrap/core/main/shrinkwrap-spi-1.0.0-cr-1.jar
+2b92d3fec000-2b92d3ff0000 r--s 00020000 fd:05 820892                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/org/jboss/shrinkwrap/core/main/shrinkwrap-impl-base-1.0.0-cr-1.jar
+2b92d3ff0000-2b92d3ffa000 r--s 0004d000 fd:05 950362                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/standalone/tmp/vfs/osgitmp-78ef2f1aef9dd617/org.osgi.enterprise-4.2.0.jar-c0927c349f2482/org.osgi.enterprise-4.2.0.jar
+2b92d3ffa000-2b92d3ffd000 r--s 00018000 fd:05 950365                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/standalone/tmp/vfs/osgitmp-78ef2f1aef9dd617/jbosgi-http-api-1.0.5.jar-9ffd0bbce80378cd/jbosgi-http-api-1.0.5.jar
+2b92d3ffd000-2b92d3fff000 r--s 00000000 fd:05 950474                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/standalone/tmp/vfs/osgitmp-78ef2f1aef9dd617/nexus-service-api-2.2.0-SNAPSHOT.jar-44ba1187937ea0c9/nexus-service-api-2.2.0-SNAPSHOT.jar
+2b92d3fff000-2b92d4000000 r--s 00000000 fd:05 950477                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/standalone/tmp/vfs/osgitmp-78ef2f1aef9dd617/ngcs-service-api-2.2.0-SNAPSHOT.jar-b370db2f29250077/ngcs-service-api-2.2.0-SNAPSHOT.jar
+2b92d4000000-2b92d6ed8000 rw-p 2b92d4000000 00:00 0 
+2b92d6ed8000-2b92d8000000 ---p 2b92d6ed8000 00:00 0 
+2b92d8000000-2b92dbffd000 rw-p 2b92d8000000 00:00 0 
+2b92dbffd000-2b92dc000000 ---p 2b92dbffd000 00:00 0 
+2b92dc000000-2b92dc003000 ---p 2b92dc000000 00:00 0 
+2b92dc003000-2b92dc101000 rw-p 2b92dc003000 00:00 0 
+2b92dc101000-2b92dc104000 ---p 2b92dc101000 00:00 0 
+2b92dc104000-2b92dc202000 rw-p 2b92dc104000 00:00 0 
+2b92dc202000-2b92dc205000 ---p 2b92dc202000 00:00 0 
+2b92dc205000-2b92dc303000 rw-p 2b92dc205000 00:00 0 
+2b92dc303000-2b92dc306000 ---p 2b92dc303000 00:00 0 
+2b92dc306000-2b92dc404000 rw-p 2b92dc306000 00:00 0 
+2b92dc404000-2b92dc407000 ---p 2b92dc404000 00:00 0 
+2b92dc407000-2b92dc505000 rw-p 2b92dc407000 00:00 0 
+2b92dc505000-2b92dc508000 ---p 2b92dc505000 00:00 0 
+2b92dc508000-2b92dc606000 rw-p 2b92dc508000 00:00 0 
+2b92dc606000-2b92dc609000 ---p 2b92dc606000 00:00 0 
+2b92dc609000-2b92dc707000 rw-p 2b92dc609000 00:00 0 
+2b92dc707000-2b92dc70a000 ---p 2b92dc707000 00:00 0 
+2b92dc70a000-2b92dc808000 rw-p 2b92dc70a000 00:00 0 
+2b92dc808000-2b92dc80b000 ---p 2b92dc808000 00:00 0 
+2b92dc80b000-2b92dc909000 rw-p 2b92dc80b000 00:00 0 
+2b92dc909000-2b92dc90c000 ---p 2b92dc909000 00:00 0 
+2b92dc90c000-2b92dca0a000 rw-p 2b92dc90c000 00:00 0 
+2b92dca0a000-2b92dca0d000 ---p 2b92dca0a000 00:00 0 
+2b92dca0d000-2b92dcb0b000 rw-p 2b92dca0d000 00:00 0 
+2b92dcb0b000-2b92dcb0e000 ---p 2b92dcb0b000 00:00 0 
+2b92dcb0e000-2b92dcc0c000 rw-p 2b92dcb0e000 00:00 0 
+2b92dcc0c000-2b92dcc0f000 ---p 2b92dcc0c000 00:00 0 
+2b92dcc0f000-2b92dcd0d000 rw-p 2b92dcc0f000 00:00 0 
+2b92dcd0d000-2b92dcd10000 ---p 2b92dcd0d000 00:00 0 
+2b92dcd10000-2b92dce0e000 rw-p 2b92dcd10000 00:00 0 
+2b92dce0e000-2b92dce10000 r--s 0000d000 fd:05 820268                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/org/apache/commons/codec/main/commons-codec-1.4.jar
+2b92dce10000-2b92dce18000 r--s 0004e000 fd:05 820346                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/org/apache/httpcomponents/main/httpclient-4.1.2.jar
+2b92dce18000-2b92dce1d000 r--s 00028000 fd:05 820348                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/org/apache/httpcomponents/main/httpcore-4.1.4.jar
+2b92dce1d000-2b92dce1f000 r--s 00005000 fd:05 820350                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/org/apache/httpcomponents/main/httpmime-4.1.2.jar
+2b92dce1f000-2b92dce28000 r--s 0006d000 fd:05 820365                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/org/apache/log4j/main/log4j-1.2.16.jar
+2b92dce28000-2b92dce2a000 r--s 00003000 fd:05 821002                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/org/scannotation/scannotation/main/scannotation-1.0.2.jar
+2b92dce2a000-2b92dce3c000 r--s 000c9000 fd:05 820140                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/com/sun/xml/bind/main/jaxb-impl-2.2.4.jar
+2b92dce3c000-2b92dce77000 r--s 002cc000 fd:05 820142                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/com/sun/xml/bind/main/jaxb-xjc-2.2.4.jar
+2b92dce77000-2b92dce7a000 r--s 00010000 fd:05 820933                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/org/jboss/ws/jaxws-client/main/jbossws-cxf-client-4.0.2.GA.jar
+2b92dce7a000-2b92dce7b000 r--s 00000000 fd:05 820924                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/org/jboss/ws/cxf/jbossws-cxf-factories/main/jbossws-cxf-factories-4.0.2.GA.jar
+2b92dce7b000-2b92dce7d000 r--s 00002000 fd:05 820930                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/org/jboss/ws/cxf/jbossws-cxf-transports-httpserver/main/jbossws-cxf-transports-httpserver-4.0.2.GA.jar
+2b92dce7d000-2b92dce80000 r--s 00019000 fd:05 820927                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/org/jboss/ws/cxf/jbossws-cxf-server/main/jbossws-cxf-server-4.0.2.GA.jar
+2b92dce80000-2b92dce8a000 r--s 0004f000 fd:05 820285                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/org/apache/cxf/main/cxf-api-2.4.6.jar
+2b92dce8a000-2b92dce90000 r--s 0004e000 fd:05 820287                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/org/apache/cxf/main/cxf-common-utilities-2.4.6.jar
+2b92dce90000-2b92dce92000 r--s 00007000 fd:05 820289                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/org/apache/cxf/main/cxf-rt-bindings-coloc-2.4.6.jar
+2b92dce92000-2b92dce94000 r--s 0000a000 fd:05 820291                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/org/apache/cxf/main/cxf-rt-bindings-http-2.4.6.jar
+2b92dce94000-2b92dce96000 r--s 00005000 fd:05 820293                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/org/apache/cxf/main/cxf-rt-bindings-object-2.4.6.jar
+2b92dce96000-2b92dce9a000 r--s 00027000 fd:05 820295                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/org/apache/cxf/main/cxf-rt-bindings-soap-2.4.6.jar
+2b92dce9a000-2b92dce9c000 r--s 00008000 fd:05 820297                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/org/apache/cxf/main/cxf-rt-bindings-xml-2.4.6.jar
+2b92dce9c000-2b92dcea6000 r--s 00076000 fd:05 820299                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/org/apache/cxf/main/cxf-rt-core-2.4.6.jar
+2b92dcea6000-2b92dceaa000 r--s 00036000 fd:05 820301                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/org/apache/cxf/main/cxf-rt-databinding-aegis-2.4.6.jar
+2b92dceaa000-2b92dceac000 r--s 00017000 fd:05 820303                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/org/apache/cxf/main/cxf-rt-databinding-jaxb-2.4.6.jar
+2b92dceac000-2b92dceb2000 r--s 00051000 fd:05 820305                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/org/apache/cxf/main/cxf-rt-frontend-jaxws-2.4.6.jar
+2b92dceb2000-2b92dceb4000 r--s 00017000 fd:05 820307                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/org/apache/cxf/main/cxf-rt-frontend-simple-2.4.6.jar
+2b92dceb4000-2b92dceb7000 r--s 0000e000 fd:05 820309                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/org/apache/cxf/main/cxf-rt-management-2.4.6.jar
+2b92dceb7000-2b92dceb9000 r--s 00003000 fd:05 820311                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/org/apache/cxf/main/cxf-rt-transports-common-2.4.6.jar
+2b92dceb9000-2b92dcebd000 r--s 0002f000 fd:05 820313                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/org/apache/cxf/main/cxf-rt-transports-http-2.4.6.jar
+2b92dcebd000-2b92dcec0000 r--s 0001f000 fd:05 820315                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/org/apache/cxf/main/cxf-rt-transports-jms-2.4.6.jar
+2b92dcec0000-2b92dcec1000 r--s 00005000 fd:05 820317                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/org/apache/cxf/main/cxf-rt-transports-local-2.4.6.jar
+2b92dcec1000-2b92dcec4000 r--s 00013000 fd:05 820319                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/org/apache/cxf/main/cxf-rt-ws-addr-2.4.6.jar
+2b92dcec4000-2b92dcec8000 r--s 00024000 fd:05 820321                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/org/apache/cxf/main/cxf-rt-ws-policy-2.4.6.jar
+2b92dcec8000-2b92dcecd000 r--s 0002e000 fd:05 820323                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/org/apache/cxf/main/cxf-rt-ws-rm-2.4.6.jar
+2b92dcecd000-2b92dced7000 r--s 0007a000 fd:05 820325                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/org/apache/cxf/main/cxf-rt-ws-security-2.4.6.jar
+2b92dced7000-2b92dcedb000 r--s 00024000 fd:05 820327                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/org/apache/cxf/main/cxf-tools-common-2.4.6.jar
+2b92dcedb000-2b92dcede000 r--s 0001a000 fd:05 820329                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/org/apache/cxf/main/cxf-tools-java2ws-2.4.6.jar
+2b92dcede000-2b92dcee0000 r--s 0000f000 fd:05 820331                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/org/apache/cxf/main/cxf-tools-validator-2.4.6.jar
+2b92dcee0000-2b92dcee2000 r--s 0000b000 fd:05 820333                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/org/apache/cxf/main/cxf-tools-wsdlto-core-2.4.6.jar
+2b92dcee2000-2b92dcee4000 r--s 00008000 fd:05 820335                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/org/apache/cxf/main/cxf-tools-wsdlto-databinding-jaxb-2.4.6.jar
+2b92dcee4000-2b92dcee8000 r--s 00024000 fd:05 820337                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/org/apache/cxf/main/cxf-tools-wsdlto-frontend-jaxws-2.4.6.jar
+2b92dcee8000-2b92dcee9000 r--s 00002000 fd:05 820339                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/org/apache/cxf/main/cxf-xjc-boolean-2.4.0.jar
+2b92dcee9000-2b92dceea000 r--s 00003000 fd:05 820341                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/org/apache/cxf/main/cxf-xjc-dv-2.4.0.jar
+2b92dceea000-2b92dceeb000 r--s 00002000 fd:05 820343                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/org/apache/cxf/main/cxf-xjc-ts-2.4.0.jar
+2b92dceeb000-2b92dcef0000 r--s 00042000 fd:05 820146                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/com/sun/xml/messaging/saaj/main/saaj-impl-1.3.16-jbossorg-1.jar
+2b92dcef0000-2b92dcef6000 r--s 0005f000 fd:05 820378                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/org/apache/ws/security/main/wss4j-1.6.5.jar
+2b92dcef6000-2b92dcef9000 ---p 2b92dcef6000 00:00 0 
+2b92dcef9000-2b92dcff7000 rw-p 2b92dcef9000 00:00 0 
+2b92dcff7000-2b92dcffa000 ---p 2b92dcff7000 00:00 0 
+2b92dcffa000-2b92dd0f8000 rw-p 2b92dcffa000 00:00 0 
+2b92dd0f8000-2b92dd0fb000 ---p 2b92dd0f8000 00:00 0 
+2b92dd0fb000-2b92dd1f9000 rw-p 2b92dd0fb000 00:00 0 
+2b92dd1f9000-2b92dd1fc000 ---p 2b92dd1f9000 00:00 0 
+2b92dd1fc000-2b92dd2fa000 rw-p 2b92dd1fc000 00:00 0 
+2b92dd2fa000-2b92dd2fd000 ---p 2b92dd2fa000 00:00 0 
+2b92dd2fd000-2b92dd3fb000 rw-p 2b92dd2fd000 00:00 0 
+2b92dd3fb000-2b92dd3fe000 ---p 2b92dd3fb000 00:00 0 
+2b92dd3fe000-2b92dd4fc000 rw-p 2b92dd3fe000 00:00 0 
+2b92dd4fc000-2b92dd4ff000 ---p 2b92dd4fc000 00:00 0 
+2b92dd4ff000-2b92dd5fd000 rw-p 2b92dd4ff000 00:00 0 
+2b92dd5fd000-2b92dd600000 ---p 2b92dd5fd000 00:00 0 
+2b92dd600000-2b92dd6fe000 rw-p 2b92dd600000 00:00 0 
+2b92dd6fe000-2b92dd708000 r--s 0012a000 fd:05 820132                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/com/h2database/h2/main/h2-1.3.161.jar
+2b92dd708000-2b92dd70d000 r--s 00041000 fd:05 820279                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/org/apache/commons/lang/main/commons-lang-2.6.jar
+2b92dd70d000-2b92dd710000 r--s 0000f000 fd:05 820369                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/org/apache/neethi/main/neethi-3.0.1.jar
+2b92dd710000-2b92dd718000 r--s 0005f000 fd:05 820375                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/org/apache/velocity/main/velocity-1.6.3.jar
+2b92dd718000-2b92dd71b000 ---p 2b92dd718000 00:00 0 
+2b92dd71b000-2b92dd819000 rw-p 2b92dd71b000 00:00 0 
+2b92dd819000-2b92dd823000 r-xp 00000000 fd:05 820437                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/org/hornetq/main/lib/linux-x86_64/libHornetQAIO64.so
+2b92dd823000-2b92dda22000 ---p 0000a000 fd:05 820437                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/org/hornetq/main/lib/linux-x86_64/libHornetQAIO64.so
+2b92dda22000-2b92dda23000 r--p 00009000 fd:05 820437                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/org/hornetq/main/lib/linux-x86_64/libHornetQAIO64.so
+2b92dda23000-2b92dda24000 rw-p 0000a000 fd:05 820437                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/org/hornetq/main/lib/linux-x86_64/libHornetQAIO64.so
+2b92dda24000-2b92dda29000 r--s 00034000 fd:05 820263                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/org/apache/commons/beanutils/main/commons-beanutils-1.8.3.jar
+2b92dda29000-2b92dda2c000 r--s 00025000 fd:05 820277                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/org/apache/commons/io/main/commons-io-2.1.jar
+2b92dda2c000-2b92dda33000 r--s 0004e000 fd:05 820353                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/org/apache/james/mime4j/main/apache-mime4j-0.6.jar
+2b92dda33000-2b92dda34000 r--s 00000000 fd:05 950480                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/standalone/tmp/vfs/osgitmp-78ef2f1aef9dd617/telco-service-api-2.2.0-SNAPSHOT.jar-120eefddd31220b9/telco-service-api-2.2.0-SNAPSHOT.jar
+2b92dda34000-2b92dda35000 r-xp 00000000 fd:05 65764                      /usr/lib64/libaio.so.1.0.1
+2b92dda35000-2b92ddc34000 ---p 00001000 fd:05 65764                      /usr/lib64/libaio.so.1.0.1
+2b92ddc34000-2b92ddc35000 rw-p 00000000 fd:05 65764                      /usr/lib64/libaio.so.1.0.1
+2b92ddc35000-2b92ddd1b000 r-xp 00000000 fd:05 66342                      /usr/lib64/libstdc++.so.6.0.8
+2b92ddd1b000-2b92ddf1a000 ---p 000e6000 fd:05 66342                      /usr/lib64/libstdc++.so.6.0.8
+2b92ddf1a000-2b92ddf20000 r--p 000e5000 fd:05 66342                      /usr/lib64/libstdc++.so.6.0.8
+2b92ddf20000-2b92ddf23000 rw-p 000eb000 fd:05 66342                      /usr/lib64/libstdc++.so.6.0.8
+2b92ddf23000-2b92ddf35000 rw-p 2b92ddf23000 00:00 0 
+2b92ddf35000-2b92ddf39000 r-xp 00000000 fd:00 491587                     /lib64/libnss_dns-2.5.so
+2b92ddf39000-2b92de138000 ---p 00004000 fd:00 491587                     /lib64/libnss_dns-2.5.so
+2b92de138000-2b92de139000 r--p 00003000 fd:00 491587                     /lib64/libnss_dns-2.5.so
+2b92de139000-2b92de13a000 rw-p 00004000 fd:00 491587                     /lib64/libnss_dns-2.5.so
+2b92de13a000-2b92de14b000 r-xp 00000000 fd:00 491706                     /lib64/libresolv-2.5.so
+2b92de14b000-2b92de34b000 ---p 00011000 fd:00 491706                     /lib64/libresolv-2.5.so
+2b92de34b000-2b92de34c000 r--p 00011000 fd:00 491706                     /lib64/libresolv-2.5.so
+2b92de34c000-2b92de34d000 rw-p 00012000 fd:00 491706                     /lib64/libresolv-2.5.so
+2b92de34d000-2b92de34f000 rw-p 2b92de34d000 00:00 0 
+2b92de34f000-2b92de352000 ---p 2b92de34f000 00:00 0 
+2b92de352000-2b92de450000 rw-p 2b92de352000 00:00 0 
+2b92de450000-2b92de453000 ---p 2b92de450000 00:00 0 
+2b92de453000-2b92de551000 rw-p 2b92de453000 00:00 0 
+2b92de551000-2b92de554000 ---p 2b92de551000 00:00 0 
+2b92de554000-2b92de652000 rw-p 2b92de554000 00:00 0 
+2b92de652000-2b92de655000 ---p 2b92de652000 00:00 0 
+2b92de655000-2b92de753000 rw-p 2b92de655000 00:00 0 
+2b92de753000-2b92de756000 ---p 2b92de753000 00:00 0 
+2b92de756000-2b92de854000 rw-p 2b92de756000 00:00 0 
+2b92de854000-2b92de8f9000 r--s 02aef000 fd:05 820512                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/org/jboss/as/console/main/jboss-as-console-1.1.0.FINAL-resources.jar
+2b92de8f9000-2b92de8fb000 r--s 0002b000 fd:05 820528                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/org/jboss/as/domain-http-error-context/main/jboss-as-domain-http-error-context-7.1.1.Final.jar
+2b92de8fb000-2b92de8fe000 ---p 2b92de8fb000 00:00 0 
+2b92de8fe000-2b92de9fc000 rw-p 2b92de8fe000 00:00 0 
+2b92de9fc000-2b92de9ff000 ---p 2b92de9fc000 00:00 0 
+2b92de9ff000-2b92deafd000 rw-p 2b92de9ff000 00:00 0 
+2b92deafd000-2b92deb00000 ---p 2b92deafd000 00:00 0 
+2b92deb00000-2b92debfe000 rw-p 2b92deb00000 00:00 0 
+2b92debfe000-2b92dec01000 ---p 2b92debfe000 00:00 0 
+2b92dec01000-2b92decff000 rw-p 2b92dec01000 00:00 0 
+2b92decff000-2b92ded02000 ---p 2b92decff000 00:00 0 
+2b92ded02000-2b92dee00000 rw-p 2b92ded02000 00:00 0 
+2b92dee00000-2b92dee03000 ---p 2b92dee00000 00:00 0 
+2b92dee03000-2b92def01000 rw-p 2b92dee03000 00:00 0 
+2b92def01000-2b92def04000 ---p 2b92def01000 00:00 0 
+2b92def04000-2b92df002000 rw-p 2b92def04000 00:00 0 
+2b92df002000-2b92df011000 r--s 00076000 fd:05 820977                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/org/joda/time/main/joda-time-1.6.2.jar
+2b92df011000-2b92df014000 r--s 0001a000 fd:05 950346                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/com/twilio/sdk/main/twilio-java-sdk-3.3.14.jar
+2b92df014000-2b92df016000 r--s 0000e000 fd:05 950368                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/standalone/tmp/vfs/osgitmp-78ef2f1aef9dd617/com.springsource.org.apache.commons.logging-1.1.1.jar-9b89947168ca3295/com.springsource.org.apache.commons.logging-1.1.1.jar
+2b92df016000-2b92df02d000 r--s 0010e000 fd:05 950371                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/standalone/tmp/vfs/osgitmp-78ef2f1aef9dd617/netty-3.6.2.Final.jar-4be3eb0dc5af8d5a/netty-3.6.2.Final.jar
+2b92df02d000-2b92df033000 r--s 0002b000 fd:05 950374                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/standalone/tmp/vfs/osgitmp-78ef2f1aef9dd617/commons-digester-2.1.jar-45c3002e60a674ba/commons-digester-2.1.jar
+2b92df033000-2b92df036000 r--s 00015000 fd:05 950377                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/standalone/tmp/vfs/osgitmp-78ef2f1aef9dd617/org.apache.felix.configadmin-1.2.8.jar-edf432489df691d6/org.apache.felix.configadmin-1.2.8.jar
+2b92df036000-2b92df038000 r--s 00016000 fd:05 950380                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/standalone/tmp/vfs/osgitmp-78ef2f1aef9dd617/org.apache.felix.fileinstall-3.2.6.jar-bc1a1cb34d520b25/org.apache.felix.fileinstall-3.2.6.jar
+2b92df038000-2b92df03a000 r--s 00004000 fd:05 950383                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/standalone/tmp/vfs/osgitmp-78ef2f1aef9dd617/org.apache.felix.log-1.0.0.jar-c5917fef1edb3808/org.apache.felix.log-1.0.0.jar
+2b92df03a000-2b92df044000 r--s 0006e000 fd:05 950386                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/standalone/tmp/vfs/osgitmp-78ef2f1aef9dd617/org.apache.felix.ipojo-1.8.6.jar-fdd38c8b1c7b2bd3/org.apache.felix.ipojo-1.8.6.jar
+2b92df044000-2b92df045000 r--s 00004000 fd:05 950389                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/standalone/tmp/vfs/osgitmp-78ef2f1aef9dd617/jackson-jaxrs-1.9.12.jar-88ff6f224f2b082c/jackson-jaxrs-1.9.12.jar
+2b92df045000-2b92df049000 r--s 00035000 fd:05 950392                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/standalone/tmp/vfs/osgitmp-78ef2f1aef9dd617/jackson-core-asl-1.9.12.jar-d7e8b3403bfa8cef/jackson-core-asl-1.9.12.jar
+2b92df049000-2b92df058000 r--s 000b0000 fd:05 950395                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/standalone/tmp/vfs/osgitmp-78ef2f1aef9dd617/jackson-mapper-asl-1.9.12.jar-35e6bc33067bebf6/jackson-mapper-asl-1.9.12.jar
+2b92df058000-2b92df059000 r--s 00001000 fd:05 950398                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/standalone/tmp/vfs/osgitmp-78ef2f1aef9dd617/jboss-as-osgi-configadmin-7.1.1.Final.jar-66917e0fa9bf9177/jboss-as-osgi-configadmin-7.1.1.Final.jar
+2b92df059000-2b92df05a000 r--s 00002000 fd:05 950401                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/standalone/tmp/vfs/osgitmp-78ef2f1aef9dd617/jboss-osgi-logging-1.0.0.jar-682f9e77bc48e5d7/jboss-osgi-logging-1.0.0.jar
+2b92df05a000-2b92df05c000 r--s 00020000 fd:05 950404                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/standalone/tmp/vfs/osgitmp-78ef2f1aef9dd617/jibx-run-1.2.5.jar-fbd583df8f401c1f/jibx-run-1.2.5.jar
+2b92df05c000-2b92df05f000 ---p 2b92df05c000 00:00 0 
+2b92df05f000-2b92df15d000 rw-p 2b92df05f000 00:00 0 
+2b92df15d000-2b92df17e000 r--s 00162000 fd:05 950407                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/standalone/tmp/vfs/osgitmp-78ef2f1aef9dd617/mockito-all-1.9.5.jar-22476b630c8c787e/mockito-all-1.9.5.jar
+2b92df17e000-2b92df182000 r--s 00012000 fd:05 950410                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/standalone/tmp/vfs/osgitmp-78ef2f1aef9dd617/org.apache.servicemix.specs.jaxb-api-2.1-1.3.0.jar-33fab0704e582c75/org.apache.servicemix.specs.jaxb-api-2.1-1.3.0.jar
+2b92df182000-2b92df184000 r--s 00007000 fd:05 950413                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/standalone/tmp/vfs/osgitmp-78ef2f1aef9dd617/geronimo-activation_1.1_spec-1.0.2.jar-44b4d6cef91b82a1/geronimo-activation_1.1_spec-1.0.2.jar
+2b92df184000-2b92df187000 r--s 00009000 fd:05 950417                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/standalone/tmp/vfs/osgitmp-78ef2f1aef9dd617/org.apache.servicemix.specs.stax-api-1.0-1.3.0.jar-fb56eecf15a3aa45/org.apache.servicemix.specs.stax-api-1.0-1.3.0.jar
+2b92df187000-2b92df199000 r--s 000c6000 fd:05 950420                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/standalone/tmp/vfs/osgitmp-78ef2f1aef9dd617/org.apache.servicemix.bundles.jaxb-impl-2.1.6_1.jar-9d3f649cd9eb92fc/org.apache.servicemix.bundles.jaxb-impl-2.1.6_1.jar
+2b92df199000-2b92df1a0000 r--s 0007d000 fd:05 950423                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/standalone/tmp/vfs/osgitmp-78ef2f1aef9dd617/org.apache.servicemix.bundles.woodstox-3.2.7_1.jar-f76d87117e1f033e/org.apache.servicemix.bundles.woodstox-3.2.7_1.jar
+2b92df1a0000-2b92df1a4000 r--s 009a5000 fd:05 950426                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/standalone/tmp/vfs/osgitmp-78ef2f1aef9dd617/cxf-dosgi-ri-singlebundle-distribution-1.2.jar-dd23df7eb79bf899/cxf-dosgi-ri-singlebundle-distribution-1.2.jar
+2b92df1a4000-2b92df1a6000 r--s 00006000 fd:05 950429                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/standalone/tmp/vfs/osgitmp-78ef2f1aef9dd617/org.apache.felix.ipojo.handler.jmx-1.4.0.jar-2e98233ff1817ed5/org.apache.felix.ipojo.handler.jmx-1.4.0.jar
+2b92df1a6000-2b92df1b3000 r--s 0008a000 fd:05 950432                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/standalone/tmp/vfs/osgitmp-78ef2f1aef9dd617/org.springframework.beans-3.2.3.RELEASE.jar-6318e91293491352/org.springframework.beans-3.2.3.RELEASE.jar
+2b92df1b3000-2b92df1c7000 r--s 000c2000 fd:05 950435                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/standalone/tmp/vfs/osgitmp-78ef2f1aef9dd617/org.springframework.context-3.2.3.RELEASE.jar-2906af90628e6c68/org.springframework.context-3.2.3.RELEASE.jar
+2b92df1c7000-2b92df1d9000 r--s 000c5000 fd:05 950438                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/standalone/tmp/vfs/osgitmp-78ef2f1aef9dd617/org.springframework.core-3.2.3.RELEASE.jar-6683f732c925a894/org.springframework.core-3.2.3.RELEASE.jar
+2b92df1d9000-2b92df1de000 r--s 0002c000 fd:05 950441                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/standalone/tmp/vfs/osgitmp-78ef2f1aef9dd617/org.springframework.expression-3.2.3.RELEASE.jar-cae089d554c88fa7/org.springframework.expression-3.2.3.RELEASE.jar
+2b92df1de000-2b92df1e6000 r--s 00035000 fd:05 950444                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/standalone/tmp/vfs/osgitmp-78ef2f1aef9dd617/org.springframework.transaction-3.2.3.RELEASE.jar-1670528b30ce4065/org.springframework.transaction-3.2.3.RELEASE.jar
+2b92df1e6000-2b92df1ef000 r--s 0004b000 fd:05 950447                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/standalone/tmp/vfs/osgitmp-78ef2f1aef9dd617/org.springframework.aop-3.2.3.RELEASE.jar-3504b43911c56f2f/org.springframework.aop-3.2.3.RELEASE.jar
+2b92df1ef000-2b92df1f9000 r--s 0004f000 fd:05 950450                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/standalone/tmp/vfs/osgitmp-78ef2f1aef9dd617/org.springframework.osgi.core-1.2.1.jar-dddeea6b0b06cea7/org.springframework.osgi.core-1.2.1.jar
+2b92df1f9000-2b92df1fa000 r--s 00008000 fd:05 950453                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/standalone/tmp/vfs/osgitmp-78ef2f1aef9dd617/org.springframework.osgi.io-1.2.1.jar-678dff28de146977/org.springframework.osgi.io-1.2.1.jar
+2b92df1fa000-2b92df1fc000 r--s 00000000 fd:05 950456                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/standalone/tmp/vfs/osgitmp-78ef2f1aef9dd617/com.springsource.org.aopalliance-1.0.0.jar-811f11dce0d32c9d/com.springsource.org.aopalliance-1.0.0.jar
+2b92df1fc000-2b92df227000 r--s 0020e000 fd:05 950459                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/standalone/tmp/vfs/osgitmp-78ef2f1aef9dd617/camel-core-2.11.0.jar-ba1b5e8ed087b3ef/camel-core-2.11.0.jar
+2b92df227000-2b92df22b000 r--s 0000e000 fd:05 950462                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/standalone/tmp/vfs/osgitmp-78ef2f1aef9dd617/flowgen-metadata-2.2.0-SNAPSHOT.jar-ca4d79f9a7df26ae/flowgen-metadata-2.2.0-SNAPSHOT.jar
+2b92df22b000-2b92df22e000 r--s 0000d000 fd:05 950465                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/standalone/tmp/vfs/osgitmp-78ef2f1aef9dd617/ngcs-common-2.2.0-SNAPSHOT.jar-812bde45caeba866/ngcs-common-2.2.0-SNAPSHOT.jar
+2b92df22e000-2b92df230000 r--s 00003000 fd:05 950468                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/standalone/tmp/vfs/osgitmp-78ef2f1aef9dd617/ngcs-services-2.2.0-SNAPSHOT.jar-2f17fd7944332269/ngcs-services-2.2.0-SNAPSHOT.jar
+2b92df230000-2b92df231000 r--s 00001000 fd:05 950471                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/standalone/tmp/vfs/osgitmp-78ef2f1aef9dd617/ngcs-flowgen-services-2.2.0-SNAPSHOT.jar-18e0e9c9cd1b04ab/ngcs-flowgen-services-2.2.0-SNAPSHOT.jar
+2b92df231000-2b92df233000 r--s 00004000 fd:05 950483                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/standalone/tmp/vfs/osgitmp-78ef2f1aef9dd617/ngcs-flowgen-s9autoset-2.2.0-SNAPSHOT.jar-8fbf0553db245d89/ngcs-flowgen-s9autoset-2.2.0-SNAPSHOT.jar
+2b92df233000-2b92df234000 r--s 00004000 fd:05 950486                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/standalone/tmp/vfs/osgitmp-78ef2f1aef9dd617/ngcs-flowgen-s9elite-2.2.0-SNAPSHOT.jar-c7d3ce106b3625d9/ngcs-flowgen-s9elite-2.2.0-SNAPSHOT.jar
+2b92df234000-2b92df235000 r--s 00004000 fd:05 950489                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/standalone/tmp/vfs/osgitmp-78ef2f1aef9dd617/ngcs-flowgen-s9escape-2.2.0-SNAPSHOT.jar-f22dad57afb4d613/ngcs-flowgen-s9escape-2.2.0-SNAPSHOT.jar
+2b92df235000-2b92df236000 r--s 00004000 fd:05 950492                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/standalone/tmp/vfs/osgitmp-78ef2f1aef9dd617/ngcs-flowgen-s9escapeauto-2.2.0-SNAPSHOT.jar-1e05b62401256782/ngcs-flowgen-s9escapeauto-2.2.0-SNAPSHOT.jar
+2b92df236000-2b92df237000 r--s 00004000 fd:05 950495                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/standalone/tmp/vfs/osgitmp-78ef2f1aef9dd617/ngcs-flowgen-s9vpapauto-2.2.0-SNAPSHOT.jar-6211a74adae68d54/ngcs-flowgen-s9vpapauto-2.2.0-SNAPSHOT.jar
+2b92df237000-2b92df238000 r--s 00004000 fd:05 950498                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/standalone/tmp/vfs/osgitmp-78ef2f1aef9dd617/ngcs-flowgen-s9vpapst-2.2.0-SNAPSHOT.jar-5febd46370cc6c08/ngcs-flowgen-s9vpapst-2.2.0-SNAPSHOT.jar
+2b92df238000-2b92df239000 r--s 00004000 fd:05 950501                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/standalone/tmp/vfs/osgitmp-78ef2f1aef9dd617/ngcs-flowgen-s9vpapadapt-2.2.0-SNAPSHOT.jar-40768a27ed656685/ngcs-flowgen-s9vpapadapt-2.2.0-SNAPSHOT.jar
+2b92df239000-2b92df23a000 r--s 00004000 fd:05 950504                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/standalone/tmp/vfs/osgitmp-78ef2f1aef9dd617/ngcs-flowgen-s9vpapseasyb-2.2.0-SNAPSHOT.jar-f8184e72c8d1143e/ngcs-flowgen-s9vpapseasyb-2.2.0-SNAPSHOT.jar
+2b92df23a000-2b92df23b000 r--s 00004000 fd:05 950507                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/standalone/tmp/vfs/osgitmp-78ef2f1aef9dd617/ngcs-flowgen-s9vpapadaptasvauto-2.2.0-SNAPSHOT.jar-f45daf02a08465f9/ngcs-flowgen-s9vpapadaptasvauto-2.2.0-SNAPSHOT.jar
+2b92df23b000-2b92df23c000 r--s 00004000 fd:05 950510                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/standalone/tmp/vfs/osgitmp-78ef2f1aef9dd617/ngcs-flowgen-s9vpapstaus-2.2.0-SNAPSHOT.jar-4fb6f7a42a88db3e/ngcs-flowgen-s9vpapstaus-2.2.0-SNAPSHOT.jar
+2b92df23c000-2b92df23d000 r--s 00004000 fd:05 950513                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/standalone/tmp/vfs/osgitmp-78ef2f1aef9dd617/ngcs-flowgen-s9vpapsaus-2.2.0-SNAPSHOT.jar-44916f7e0a3b807f/ngcs-flowgen-s9vpapsaus-2.2.0-SNAPSHOT.jar
+2b92df23d000-2b92df23e000 r--s 00004000 fd:05 950516                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/standalone/tmp/vfs/osgitmp-78ef2f1aef9dd617/ngcs-flowgen-s9vautoeu-2.2.0-SNAPSHOT.jar-e22276891cacce69/ngcs-flowgen-s9vautoeu-2.2.0-SNAPSHOT.jar
+2b92df23e000-2b92df23f000 r--s 00004000 fd:05 950519                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/standalone/tmp/vfs/osgitmp-78ef2f1aef9dd617/ngcs-flowgen-s9vpapstrow-2.2.0-SNAPSHOT.jar-5ac9578162287d0a/ngcs-flowgen-s9vpapstrow-2.2.0-SNAPSHOT.jar
+2b92df23f000-2b92df240000 r--s 00004000 fd:05 950522                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/standalone/tmp/vfs/osgitmp-78ef2f1aef9dd617/ngcs-flowgen-s9vpapadaptdrop2-2.2.0-SNAPSHOT.jar-242dafcb4f0681ac/ngcs-flowgen-s9vpapadaptdrop2-2.2.0-SNAPSHOT.jar
+2b92df240000-2b92df241000 r--s 00004000 fd:05 950525                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/standalone/tmp/vfs/osgitmp-78ef2f1aef9dd617/ngcs-flowgen-s9vpapsta-2.2.0-SNAPSHOT.jar-9e733e296e89cc94/ngcs-flowgen-s9vpapsta-2.2.0-SNAPSHOT.jar
+2b92df241000-2b92df242000 r--s 00004000 fd:05 950528                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/standalone/tmp/vfs/osgitmp-78ef2f1aef9dd617/ngcs-flowgen-s9vpapsti-2.2.0-SNAPSHOT.jar-7188a395f418405/ngcs-flowgen-s9vpapsti-2.2.0-SNAPSHOT.jar
+2b92df242000-2b92df244000 r--s 00004000 fd:05 950531                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/standalone/tmp/vfs/osgitmp-78ef2f1aef9dd617/ngcs-flowgen-jms-service-provider-2.2.0-SNAPSHOT.jar-924079ffee347c3e/ngcs-flowgen-jms-service-provider-2.2.0-SNAPSHOT.jar
+2b92df244000-2b92df246000 r--s 00004000 fd:05 950534                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/standalone/tmp/vfs/osgitmp-78ef2f1aef9dd617/ngcs-flowgen-telco-service-provider-2.2.0-SNAPSHOT.jar-7f04602207c11845/ngcs-flowgen-telco-service-provider-2.2.0-SNAPSHOT.jar
+2b92df246000-2b92df247000 r--s 00001000 fd:05 950537                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/standalone/tmp/vfs/osgitmp-78ef2f1aef9dd617/ngcs-gam-commserver-service-providers-2.2.0-SNAPSHOT.jar-15d5a46f40f4a5bb/ngcs-gam-commserver-service-providers-2.2.0-SNAPSHOT.jar
+2b92df247000-2b92df249000 r--s 00002000 fd:05 950540                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/standalone/tmp/vfs/osgitmp-78ef2f1aef9dd617/ngcs-flowgen-cal-service-providers-2.2.0-SNAPSHOT.jar-2d2db1e669123617/ngcs-flowgen-cal-service-providers-2.2.0-SNAPSHOT.jar
+2b92df249000-2b92df24b000 r--s 0000e000 fd:05 950543                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/standalone/tmp/vfs/osgitmp-78ef2f1aef9dd617/ngcs-flowgen-service-providers-2.2.0-SNAPSHOT.jar-7feea0702cda01ef/ngcs-flowgen-service-providers-2.2.0-SNAPSHOT.jar
+2b92df24b000-2b92df24d000 r--s 0000b000 fd:05 950546                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/standalone/tmp/vfs/osgitmp-78ef2f1aef9dd617/ngcs-gam-service-providers-2.2.0-SNAPSHOT.jar-9475edca418e1740/ngcs-gam-service-providers-2.2.0-SNAPSHOT.jar
+2b92df24d000-2b92df24e000 r--s 00001000 fd:05 950549                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/standalone/tmp/vfs/osgitmp-78ef2f1aef9dd617/telco-service-provider-2.2.0-SNAPSHOT.jar-8c2fd886d2e881d2/telco-service-provider-2.2.0-SNAPSHOT.jar
+2b92df24e000-2b92df24f000 r--s 0000d000 fd:05 950552                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/standalone/tmp/vfs/osgitmp-78ef2f1aef9dd617/ngcs-gam-server-2.2.0-SNAPSHOT.jar-9c21610bd541d527/ngcs-gam-server-2.2.0-SNAPSHOT.jar
+2b92df24f000-2b92df250000 r--s 00001000 fd:05 950555                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/standalone/tmp/vfs/osgitmp-78ef2f1aef9dd617/camel-service-provider-2.2.0-SNAPSHOT.jar-ddf8e7f1babf119a/camel-service-provider-2.2.0-SNAPSHOT.jar
+2b92df250000-2b92df251000 r--s 00002000 fd:05 950558                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/standalone/tmp/vfs/osgitmp-78ef2f1aef9dd617/ngcs-health-check-2.2.0-SNAPSHOT.jar-765aa636b673da98/ngcs-health-check-2.2.0-SNAPSHOT.jar
+2b92df251000-2b92df254000 ---p 2b92df251000 00:00 0 
+2b92df254000-2b92df352000 rw-p 2b92df254000 00:00 0 
+2b92df352000-2b92df355000 ---p 2b92df352000 00:00 0 
+2b92df355000-2b92df453000 rw-p 2b92df355000 00:00 0 
+2b92df453000-2b92df456000 ---p 2b92df453000 00:00 0 
+2b92df456000-2b92df554000 rw-p 2b92df456000 00:00 0 
+2b92df554000-2b92df557000 ---p 2b92df554000 00:00 0 
+2b92df557000-2b92df655000 rw-p 2b92df557000 00:00 0 
+2b92df655000-2b92df657000 r--s 00009000 fd:05 951113                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/standalone/tmp/vfs/osgitmp-78ef2f1aef9dd617/org.apache.servicemix.specs.saaj-api-1.3-1.3.0.jar-ac6ecb68f8553425/org.apache.servicemix.specs.saaj-api-1.3-1.3.0.jar
+2b92df657000-2b92df65e000 r--s 0005a000 fd:05 951116                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/standalone/tmp/vfs/osgitmp-78ef2f1aef9dd617/com.springsource.org.apache.log4j-1.2.15.jar-f42eb9bb94939f83/com.springsource.org.apache.log4j-1.2.15.jar
+2b92df65e000-2b92df660000 r--s 0000e000 fd:05 951119                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/standalone/tmp/vfs/osgitmp-78ef2f1aef9dd617/com.springsource.org.apache.commons.logging-1.1.1.jar-1c0d0ca63292c4ea/com.springsource.org.apache.commons.logging-1.1.1.jar
+2b92df660000-2b92df662000 r--s 0000b000 fd:05 951122                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/standalone/tmp/vfs/osgitmp-78ef2f1aef9dd617/cxf-dosgi-ri-discovery-distributed-1.2.jar-2ec74a1acf257945/cxf-dosgi-ri-discovery-distributed-1.2.jar
+2b92df662000-2b92df669000 r--s 0007d000 fd:05 951125                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/standalone/tmp/vfs/osgitmp-78ef2f1aef9dd617/org.apache.servicemix.bundles.woodstox-3.2.7_1.jar-befe126ae93fb183/org.apache.servicemix.bundles.woodstox-3.2.7_1.jar
+2b92df669000-2b92df66c000 r--s 0000d000 fd:05 951128                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/standalone/tmp/vfs/osgitmp-78ef2f1aef9dd617/org.apache.servicemix.specs.jsr311-api-1.0-1.3.0.jar-131afcc3d9e11b73/org.apache.servicemix.specs.jsr311-api-1.0-1.3.0.jar
+2b92df66c000-2b92df66e000 r--s 00000000 fd:05 951131                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/standalone/tmp/vfs/osgitmp-78ef2f1aef9dd617/com.springsource.org.aopalliance-1.0.0.jar-3360fe935202982b/com.springsource.org.aopalliance-1.0.0.jar
+2b92df66e000-2b92df673000 r--s 00029000 fd:05 951134                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/standalone/tmp/vfs/osgitmp-78ef2f1aef9dd617/org.apache.servicemix.bundles.asm-2.2.3_1.jar-7ebcbcd6d0e13e50/org.apache.servicemix.bundles.asm-2.2.3_1.jar
+2b92df673000-2b92df676000 r--s 0001c000 fd:05 951137                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/standalone/tmp/vfs/osgitmp-78ef2f1aef9dd617/cxf-dosgi-ri-dsw-cxf-1.2.jar-604f11aa6b5534f0/cxf-dosgi-ri-dsw-cxf-1.2.jar
+2b92df676000-2b92df677000 r--s 00007000 fd:05 951140                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/standalone/tmp/vfs/osgitmp-78ef2f1aef9dd617/org.apache.felix.fileinstall-1.0.0.jar-8f410d7d71da0bdc/org.apache.felix.fileinstall-1.0.0.jar
+2b92df677000-2b92df678000 r--s 00002000 fd:05 821008                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/modules/org/slf4j/impl/main/slf4j-jboss-logmanager-1.0.0.GA.jar
+2b92df678000-2b92df67b000 ---p 2b92df678000 00:00 0 
+2b92df67b000-2b92df779000 rw-p 2b92df67b000 00:00 0 
+2b92df77a000-2b92df77d000 ---p 2b92df77a000 00:00 0 
+2b92df77d000-2b92df87b000 rw-p 2b92df77d000 00:00 0 
+2b92df87b000-2b92df87e000 ---p 2b92df87b000 00:00 0 
+2b92df87e000-2b92df97c000 rw-p 2b92df87e000 00:00 0 
+2b92df97c000-2b92df97f000 ---p 2b92df97c000 00:00 0 
+2b92df97f000-2b92dfa7d000 rw-p 2b92df97f000 00:00 0 
+2b92dfa7d000-2b92dfa80000 ---p 2b92dfa7d000 00:00 0 
+2b92dfa80000-2b92dfb7e000 rw-p 2b92dfa80000 00:00 0 
+2b92dfb7e000-2b92dfb81000 ---p 2b92dfb7e000 00:00 0 
+2b92dfb81000-2b92dfc7f000 rw-p 2b92dfb81000 00:00 0 
+2b92dfc7f000-2b92dfc8b000 r--s 00069000 fd:05 951143                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/standalone/tmp/vfs/osgitmp-78ef2f1aef9dd617/spring-context-2.5.6.jar-30711ae67daa4496/spring-context-2.5.6.jar
+2b92dfc8b000-2b92dfc8d000 r--s 00002000 fd:05 951146                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/standalone/tmp/vfs/osgitmp-78ef2f1aef9dd617/geronimo-annotation_1.0_spec-1.1.1.jar-8b687cf3f5001757/geronimo-annotation_1.0_spec-1.1.1.jar
+2b92dfc8d000-2b92dfc8e000 r--s 00005000 fd:05 951149                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/standalone/tmp/vfs/osgitmp-78ef2f1aef9dd617/com.springsource.slf4j.api-1.5.10.jar-14677356b95431bb/com.springsource.slf4j.api-1.5.10.jar
+2b92dfc8e000-2b92dfc92000 r--s 00019000 fd:05 951152                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/standalone/tmp/vfs/osgitmp-78ef2f1aef9dd617/spring-osgi-extender-1.2.0.jar-3315b4eb10e8c908/spring-osgi-extender-1.2.0.jar
+2b92dfc92000-2b92dfc93000 r--s 00008000 fd:05 951155                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/standalone/tmp/vfs/osgitmp-78ef2f1aef9dd617/spring-osgi-io-1.2.0.jar-9ad9f85ccb46f03b/spring-osgi-io-1.2.0.jar
+2b92dfc93000-2b92dfc9b000 r--s 00048000 fd:05 951158                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/standalone/tmp/vfs/osgitmp-78ef2f1aef9dd617/spring-aop-2.5.6.jar-3923bc0f261f423a/spring-aop-2.5.6.jar
+2b92dfc9b000-2b92dfc9e000 r--s 00010000 fd:05 951161                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/standalone/tmp/vfs/osgitmp-78ef2f1aef9dd617/org.apache.felix.configadmin-1.0.10.jar-6f68b95adf91aad5/org.apache.felix.configadmin-1.0.10.jar
+2b92dfc9e000-2b92dfca1000 r--s 0000c000 fd:05 951164                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/standalone/tmp/vfs/osgitmp-78ef2f1aef9dd617/org.apache.servicemix.specs.jaxws-api-2.1-1.3.0.jar-ee663ce57154fd86/org.apache.servicemix.specs.jaxws-api-2.1-1.3.0.jar
+2b92dfca1000-2b92dfcda000 r--s 0033b000 fd:05 951167                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/standalone/tmp/vfs/osgitmp-78ef2f1aef9dd617/cxf-bundle-minimal-2.2.9.jar-200d4ca90713270e/cxf-bundle-minimal-2.2.9.jar
+2b92dfcda000-2b92dfce4000 r--s 0004f000 fd:05 951170                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/standalone/tmp/vfs/osgitmp-78ef2f1aef9dd617/spring-osgi-core-1.2.0.jar-6f66e5d993c5af58/spring-osgi-core-1.2.0.jar
+2b92dfce4000-2b92dfce8000 r--s 0002d000 fd:05 951173                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/standalone/tmp/vfs/osgitmp-78ef2f1aef9dd617/geronimo-javamail_1.4_spec-1.2.jar-5d07ffce10b60355/geronimo-javamail_1.4_spec-1.2.jar
+2b92dfce8000-2b92dfcf1000 r--s 00086000 fd:05 951176                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/standalone/tmp/vfs/osgitmp-78ef2f1aef9dd617/cxf-dosgi-ri-discovery-distributed-zookeeper-wrapper-1.2.jar-c4103696a4da2aab/cxf-dosgi-ri-discovery-distributed-zookeeper-wrapper-1.2.jar
+2b92dfcf1000-2b92dfcfb000 r--s 0006e000 fd:05 951179                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/standalone/tmp/vfs/osgitmp-78ef2f1aef9dd617/spring-beans-2.5.6.jar-b17356eebbb03367/spring-beans-2.5.6.jar
+2b92dfcfb000-2b92dfcff000 r--s 0001f000 fd:05 951182                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/standalone/tmp/vfs/osgitmp-78ef2f1aef9dd617/org.apache.servicemix.bundles.xmlschema-1.4.3_1.jar-b2a74e9a3e8e4e16/org.apache.servicemix.bundles.xmlschema-1.4.3_1.jar
+2b92dfcff000-2b92dfd02000 r--s 00009000 fd:05 951185                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/standalone/tmp/vfs/osgitmp-78ef2f1aef9dd617/org.apache.servicemix.specs.stax-api-1.0-1.3.0.jar-554b8f817a135ef4/org.apache.servicemix.specs.stax-api-1.0-1.3.0.jar
+2b92dfd02000-2b92dfd04000 r--s 00007000 fd:05 951188                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/standalone/tmp/vfs/osgitmp-78ef2f1aef9dd617/org.apache.servicemix.bundles.neethi-2.0.4_1.jar-c37b9101bbda3d0c/org.apache.servicemix.bundles.neethi-2.0.4_1.jar
+2b92dfd04000-2b92dfd0a000 r--s 00040000 fd:05 951191                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/standalone/tmp/vfs/osgitmp-78ef2f1aef9dd617/spring-core-2.5.6.jar-c5f1a456fb20682/spring-core-2.5.6.jar
+2b92dfd0a000-2b92dfd0c000 r--s 00014000 fd:05 951194                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/standalone/tmp/vfs/osgitmp-78ef2f1aef9dd617/org.apache.servicemix.bundles.xmlresolver-1.2_1.jar-61cc31a8dd9f695f/org.apache.servicemix.bundles.xmlresolver-1.2_1.jar
+2b92dfd0c000-2b92dfd0d000 r--s 00001000 fd:05 951197                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/standalone/tmp/vfs/osgitmp-78ef2f1aef9dd617/com.springsource.slf4j.jcl-1.5.10.jar-93784075bb379292/com.springsource.slf4j.jcl-1.5.10.jar
+2b92dfd0d000-2b92dfd0f000 r--s 0000c000 fd:05 951200                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/standalone/tmp/vfs/osgitmp-78ef2f1aef9dd617/cxf-dosgi-ri-topology-manager-1.2.jar-c5d0ff76b39e3106/cxf-dosgi-ri-topology-manager-1.2.jar
+2b92dfd0f000-2b92dfd1c000 r--s 000d4000 fd:05 951203                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/standalone/tmp/vfs/osgitmp-78ef2f1aef9dd617/pax-web-service-0.5.1.jar-e55f683a948fb100/pax-web-service-0.5.1.jar
+2b92dfd1c000-2b92dfd1e000 r--s 00007000 fd:05 951206                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/standalone/tmp/vfs/osgitmp-78ef2f1aef9dd617/geronimo-activation_1.1_spec-1.0.2.jar-94d4fff57401141f/geronimo-activation_1.1_spec-1.0.2.jar
+2b92dfd1e000-2b92dfd22000 r--s 00023000 fd:05 951209                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/standalone/tmp/vfs/osgitmp-78ef2f1aef9dd617/org.apache.servicemix.bundles.wsdl4j-1.6.1_1.jar-5758ac62369ba4af/org.apache.servicemix.bundles.wsdl4j-1.6.1_1.jar
+2b92dfd22000-2b92dfd25000 r--s 00023000 fd:05 951212                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/standalone/tmp/vfs/osgitmp-78ef2f1aef9dd617/com.springsource.org.jdom-1.0.0.jar-ec26b01f9956c736/com.springsource.org.jdom-1.0.0.jar
+2b92dfd25000-2b92dfd29000 r--s 00012000 fd:05 951215                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/standalone/tmp/vfs/osgitmp-78ef2f1aef9dd617/org.apache.servicemix.specs.jaxb-api-2.1-1.3.0.jar-d7b6bb4e98fa6b65/org.apache.servicemix.specs.jaxb-api-2.1-1.3.0.jar
+2b92dfd29000-2b92dfd2c000 r--s 00015000 fd:05 951218                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/standalone/tmp/vfs/osgitmp-78ef2f1aef9dd617/org.apache.servicemix.bundles.commons-pool-1.5.4_1.jar-f38afe7f6ca4a5c7/org.apache.servicemix.bundles.commons-pool-1.5.4_1.jar
+2b92dfd2c000-2b92dfd3e000 r--s 000c6000 fd:05 951221                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/standalone/tmp/vfs/osgitmp-78ef2f1aef9dd617/org.apache.servicemix.bundles.jaxb-impl-2.1.6_1.jar-544831318b92ddf2/org.apache.servicemix.bundles.jaxb-impl-2.1.6_1.jar
+2b92dfd3e000-2b92dfd3f000 r--s 00003000 fd:05 951224                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/standalone/tmp/vfs/osgitmp-78ef2f1aef9dd617/geronimo-ws-metadata_2.0_spec-1.1.2.jar-891d527713cf4901/geronimo-ws-metadata_2.0_spec-1.1.2.jar
+2b92dfd3f000-2b92dfd46000 r--s 00042000 fd:05 951227                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/standalone/tmp/vfs/osgitmp-78ef2f1aef9dd617/org.apache.servicemix.bundles.xmlsec-1.3.0_1.jar-c903e1770edd2e98/org.apache.servicemix.bundles.xmlsec-1.3.0_1.jar
+2b92dfd46000-2b92dfd48000 r--s 00009000 fd:05 951230                     /usr/local/jboss-as-7.1.1.Final_ngcs_prod/standalone/tmp/vfs/osgitmp-78ef2f1aef9dd617/cxf-dosgi-ri-discovery-local-1.2.jar-1c5834de5c2f46cc/cxf-dosgi-ri-discovery-local-1.2.jar
+2b92dfd73000-2b92dfd76000 ---p 2b92dfd73000 00:00 0 
+2b92dfd76000-2b92dfe74000 rw-p 2b92dfd76000 00:00 0 
+2b92dfe74000-2b92dfe77000 ---p 2b92dfe74000 00:00 0 
+2b92dfe77000-2b92dff75000 rw-p 2b92dfe77000 00:00 0 
+2b92e0000000-2b92e4000000 rw-p 2b92e0000000 00:00 0 
+2b92e4000000-2b92e4003000 ---p 2b92e4000000 00:00 0 
+2b92e4003000-2b92e4101000 rw-p 2b92e4003000 00:00 0 
+2b92e4101000-2b92e4104000 ---p 2b92e4101000 00:00 0 
+2b92e4104000-2b92e4202000 rw-p 2b92e4104000 00:00 0 
+2b92e4202000-2b92e4205000 ---p 2b92e4202000 00:00 0 
+2b92e4205000-2b92e4303000 rw-p 2b92e4205000 00:00 0 
+2b92e4303000-2b92e4306000 ---p 2b92e4303000 00:00 0 
+2b92e4306000-2b92e4404000 rw-p 2b92e4306000 00:00 0 
+2b92e4404000-2b92e4407000 ---p 2b92e4404000 00:00 0 
+2b92e4407000-2b92e4505000 rw-p 2b92e4407000 00:00 0 
+2b92e4505000-2b92e4508000 ---p 2b92e4505000 00:00 0 
+2b92e4508000-2b92e4606000 rw-p 2b92e4508000 00:00 0 
+2b92e4606000-2b92e4609000 ---p 2b92e4606000 00:00 0 
+2b92e4609000-2b92e4707000 rw-p 2b92e4609000 00:00 0 
+2b92e4707000-2b92e470a000 ---p 2b92e4707000 00:00 0 
+2b92e470a000-2b92e4808000 rw-p 2b92e470a000 00:00 0 
+2b92e4808000-2b92e480b000 ---p 2b92e4808000 00:00 0 
+2b92e480b000-2b92e4909000 rw-p 2b92e480b000 00:00 0 
+2b92e4909000-2b92e490c000 ---p 2b92e4909000 00:00 0 
+2b92e490c000-2b92e4a0a000 rw-p 2b92e490c000 00:00 0 
+2b92e4a0a000-2b92e4a0d000 ---p 2b92e4a0a000 00:00 0 
+2b92e4a0d000-2b92e4b0b000 rw-p 2b92e4a0d000 00:00 0 
+2b92e4b0b000-2b92e4b0e000 ---p 2b92e4b0b000 00:00 0 
+2b92e4b0e000-2b92e4c0c000 rw-p 2b92e4b0e000 00:00 0 
+2b92e4c0c000-2b92e4c0f000 ---p 2b92e4c0c000 00:00 0 
+2b92e4c0f000-2b92e4d0d000 rw-p 2b92e4c0f000 00:00 0 
+2b92e4d0d000-2b92e4d10000 ---p 2b92e4d0d000 00:00 0 
+2b92e4d10000-2b92e4e0e000 rw-p 2b92e4d10000 00:00 0 
+2b92e4e0e000-2b92e4e11000 ---p 2b92e4e0e000 00:00 0 
+2b92e4e11000-2b92e4f0f000 rw-p 2b92e4e11000 00:00 0 
+2b92e4f0f000-2b92e4f12000 ---p 2b92e4f0f000 00:00 0 
+2b92e4f12000-2b92e5010000 rw-p 2b92e4f12000 00:00 0 
+2b92e5010000-2b92e5013000 ---p 2b92e5010000 00:00 0 
+2b92e5013000-2b92e5111000 rw-p 2b92e5013000 00:00 0 
+2b92e5111000-2b92e5114000 ---p 2b92e5111000 00:00 0 
+2b92e5114000-2b92e5212000 rw-p 2b92e5114000 00:00 0 
+2b92e5212000-2b92e5215000 ---p 2b92e5212000 00:00 0 
+2b92e5215000-2b92e5313000 rw-p 2b92e5215000 00:00 0 
+2b92e5313000-2b92e5316000 ---p 2b92e5313000 00:00 0 
+2b92e5316000-2b92e5414000 rw-p 2b92e5316000 00:00 0 
+2b92e5414000-2b92e5417000 ---p 2b92e5414000 00:00 0 
+2b92e5417000-2b92e5515000 rw-p 2b92e5417000 00:00 0 
+2b92e5515000-2b92e5518000 ---p 2b92e5515000 00:00 0 
+2b92e5518000-2b92e5616000 rw-p 2b92e5518000 00:00 0 
+2b92e5616000-2b92e5619000 ---p 2b92e5616000 00:00 0 
+2b92e5619000-2b92e5717000 rw-p 2b92e5619000 00:00 0 
+2b92e5717000-2b92e571a000 ---p 2b92e5717000 00:00 0 
+2b92e571a000-2b92e5818000 rw-p 2b92e571a000 00:00 0 
+2b92e5818000-2b92e581b000 ---p 2b92e5818000 00:00 0 
+2b92e581b000-2b92e5919000 rw-p 2b92e581b000 00:00 0 
+2b92e5919000-2b92e591c000 ---p 2b92e5919000 00:00 0 
+2b92e591c000-2b92e5a1a000 rw-p 2b92e591c000 00:00 0 
+2b92e5a1a000-2b92e5a1d000 ---p 2b92e5a1a000 00:00 0 
+2b92e5a1d000-2b92e5b1b000 rw-p 2b92e5a1d000 00:00 0 
+2b92e5b1b000-2b92e5b1e000 ---p 2b92e5b1b000 00:00 0 
+2b92e5b1e000-2b92e5c1c000 rw-p 2b92e5b1e000 00:00 0 
+2b92e5c1c000-2b92e5c1f000 ---p 2b92e5c1c000 00:00 0 
+2b92e5c1f000-2b92e5d1d000 rw-p 2b92e5c1f000 00:00 0 
+2b92e5d1d000-2b92e5d20000 ---p 2b92e5d1d000 00:00 0 
+2b92e5d20000-2b92e5e1e000 rw-p 2b92e5d20000 00:00 0 
+2b92e5e1e000-2b92e5e21000 ---p 2b92e5e1e000 00:00 0 
+2b92e5e21000-2b92e5f1f000 rw-p 2b92e5e21000 00:00 0 
+2b92e5f1f000-2b92e5f22000 ---p 2b92e5f1f000 00:00 0 
+2b92e5f22000-2b92e6020000 rw-p 2b92e5f22000 00:00 0 
+2b92e6020000-2b92e6023000 ---p 2b92e6020000 00:00 0 
+2b92e6023000-2b92e6121000 rw-p 2b92e6023000 00:00 0 
+2b92e6121000-2b92e6124000 ---p 2b92e6121000 00:00 0 
+2b92e6124000-2b92e6222000 rw-p 2b92e6124000 00:00 0 
+2b92e6222000-2b92e6225000 ---p 2b92e6222000 00:00 0 
+2b92e6225000-2b92e6323000 rw-p 2b92e6225000 00:00 0 
+2b92e6323000-2b92e6326000 ---p 2b92e6323000 00:00 0 
+2b92e6326000-2b92e6424000 rw-p 2b92e6326000 00:00 0 
+2b92e6424000-2b92e6427000 ---p 2b92e6424000 00:00 0 
+2b92e6427000-2b92e6525000 rw-p 2b92e6427000 00:00 0 
+2b92e6525000-2b92e6528000 ---p 2b92e6525000 00:00 0 
+2b92e6528000-2b92e6626000 rw-p 2b92e6528000 00:00 0 
+2b92e6626000-2b92e6629000 ---p 2b92e6626000 00:00 0 
+2b92e6629000-2b92e6727000 rw-p 2b92e6629000 00:00 0 
+2b92e6727000-2b92e672a000 ---p 2b92e6727000 00:00 0 
+2b92e672a000-2b92e6828000 rw-p 2b92e672a000 00:00 0 
+2b92e6828000-2b92e682b000 ---p 2b92e6828000 00:00 0 
+2b92e682b000-2b92e6929000 rw-p 2b92e682b000 00:00 0 
+2b92e6929000-2b92e692c000 ---p 2b92e6929000 00:00 0 
+2b92e692c000-2b92e6a2a000 rw-p 2b92e692c000 00:00 0 
+2b92e6a2a000-2b92e6a2d000 ---p 2b92e6a2a000 00:00 0 
+2b92e6a2d000-2b92e6b2b000 rw-p 2b92e6a2d000 00:00 0 
+2b92e8000000-2b92e9169000 rw-p 2b92e8000000 00:00 0 
+2b92e9169000-2b92ec000000 ---p 2b92e9169000 00:00 0 
+2b92ec000000-2b92ecaae000 rw-p 2b92ec000000 00:00 0 
+2b92ecaae000-2b92f0000000 ---p 2b92ecaae000 00:00 0 
+7fff0924b000-7fff09260000 rw-p 7ffffffe9000 00:00 0                      [stack]
+7fff09386000-7fff09389000 r-xp 7fff09386000 00:00 0                      [vdso]
+ffffffffff600000-ffffffffffe00000 ---p 00000000 00:00 0                  [vsyscall]
+
+VM Arguments:
+jvm_args: -D[Standalone] -XX:+UseCompressedOops -XX:+TieredCompilation -Djava.util.logging.manager=org.jboss.logmanager.LogManager -Xbootclasspath/p:/usr/local/jboss7_ngcs_prod/modules/org/jboss/logmanager/main/jboss-logmanager-1.2.2.GA.jar:/usr/local/jboss7_ngcs_prod/modules/org/jboss/logmanager/log4j/main/jboss-logmanager-log4j-1.0.0.GA.jar:/usr/local/jboss7_ngcs_prod/modules/org/apache/log4j/main/log4j-1.2.16.jar -Xms384m -Xmx3072m -XX:MaxPermSize=256m -Djava.net.preferIPv4Stack=true -Dorg.jboss.resolver.warning=true -Dsun.rmi.dgc.client.gcInterval=3600000 -Dsun.rmi.dgc.server.gcInterval=3600000 -Djboss.modules.system.pkgs=org.jboss.byteman,com.appdynamics,com.appdynamics.,com.singularity,com.singularity.,org.jboss.logmanager,org.jboss.logmanager. -Djava.awt.headless=true -Djboss.server.default.config=standalone.xml -Dfelix.fileinstall.dir=/usr/local/jboss7_ngcs_prod/standalone/configuration -Dspring.profiles.active=jms.activemq -javaagent:/usr/local/appdynamics_ngcs_prod/javaagent.jar -Dappdynamics.http.proxyHost=172.26.6.84 -Dappdynamics.http.proxyPort=32611 -Dorg.jboss.boot.log.file=/var/log/jboss7_ngcs_prod/boot.log -Dlogging.configuration=file:/usr/local/jboss7_ngcs_prod/standalone/configuration/logging.properties 
+java_command: /usr/local/jboss7_ngcs_prod/jboss-modules.jar -mp /usr/local/jboss7_ngcs_prod/modules -jaxpmodule javax.xml.jaxp-provider org.jboss.as.standalone -Djboss.home.dir=/usr/local/jboss7_ngcs_prod -c standalone.xml -Djboss.server.log.dir=/var/log/jboss7_ngcs_prod -Djboss.socket.binding.port-offset=0 -Djboss.bind.address=0.0.0.0 -Djboss.bind.address.management=0.0.0.0
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+JAVA_HOME=/usr/java/java7
+PATH=/sbin:/usr/sbin:/bin:/usr/bin
+SHELL=/bin/bash
+
+Signal Handlers:
+SIGSEGV: [libjvm.so+0x8a5d70], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGBUS: [libjvm.so+0x8a5d70], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGFPE: [libjvm.so+0x741e50], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGPIPE: [libjvm.so+0x741e50], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGXFSZ: [libjvm.so+0x741e50], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGILL: [libjvm.so+0x741e50], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGUSR1: SIG_DFL, sa_mask[0]=0x00000000, sa_flags=0x00000000
+SIGUSR2: [libjvm.so+0x7417a0], sa_mask[0]=0x00000000, sa_flags=0x10000004
+SIGHUP: [libjvm.so+0x743b30], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGINT: SIG_IGN, sa_mask[0]=0x00000000, sa_flags=0x00000000
+SIGTERM: [libjvm.so+0x743b30], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGQUIT: [libjvm.so+0x743b30], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+
+
+---------------  S Y S T E M  ---------------
+
+OS:Red Hat Enterprise Linux Server release 5.10 (Tikanga)
+
+uname:Linux 2.6.18-371.1.2.el5 #1 SMP Mon Oct 7 16:34:35 EDT 2013 x86_64
+libc:glibc 2.5 NPTL 2.5 
+rlimit: STACK 10240k, CORE 0k, NPROC 46650, NOFILE 10240, AS infinity
+load average:0.24 0.14 0.12
+
+/proc/meminfo:
+MemTotal:      5974972 kB
+MemFree:       1254856 kB
+Buffers:        329848 kB
+Cached:        3223488 kB
+SwapCached:          0 kB
+Active:        2049924 kB
+Inactive:      2436104 kB
+HighTotal:           0 kB
+HighFree:            0 kB
+LowTotal:      5974972 kB
+LowFree:       1254856 kB
+SwapTotal:     2096472 kB
+SwapFree:      2096380 kB
+Dirty:            2980 kB
+Writeback:           0 kB
+AnonPages:      932612 kB
+Mapped:          46860 kB
+Slab:           205748 kB
+PageTables:       6568 kB
+NFS_Unstable:        0 kB
+Bounce:              0 kB
+CommitLimit:   5083956 kB
+Committed_AS:  1634056 kB
+VmallocTotal: 34359738367 kB
+VmallocUsed:    264620 kB
+VmallocChunk: 34359472731 kB
+HugePages_Total:     0
+HugePages_Free:      0
+HugePages_Rsvd:      0
+Hugepagesize:     2048 kB
+
+
+CPU:total 2 (1 cores per cpu, 1 threads per core) family 6 model 37 stepping 1, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, tsc, tscinvbit
+
+/proc/cpuinfo:
+processor	: 0
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 37
+model name	: Intel(R) Xeon(R) CPU           X5670  @ 2.93GHz
+stepping	: 1
+cpu MHz		: 2933.437
+cache size	: 12288 KB
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 11
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss syscall nx rdtscp lm constant_tsc ida nonstop_tsc arat pni ssse3 cx16 sse4_1 sse4_2 popcnt lahf_lm
+bogomips	: 5866.87
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 40 bits physical, 48 bits virtual
+power management: [8]
+
+processor	: 1
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 37
+model name	: Intel(R) Xeon(R) CPU           X5670  @ 2.93GHz
+stepping	: 1
+cpu MHz		: 2933.437
+cache size	: 12288 KB
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 11
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss syscall nx rdtscp lm constant_tsc ida nonstop_tsc arat pni ssse3 cx16 sse4_1 sse4_2 popcnt lahf_lm
+bogomips	: 5866.87
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 40 bits physical, 48 bits virtual
+power management: [8]
+
+
+
+Memory: 4k page, physical 5974972k(1254856k free), swap 2096472k(2096380k free)
+
+vm_info: Java HotSpot(TM) 64-Bit Server VM (23.7-b01) for linux-amd64 JRE (1.7.0_15-b03), built on Feb 15 2013 13:03:43 by "java_re" with gcc 4.3.0 20080428 (Red Hat 4.3.0-8)
+
+time: Thu Mar 20 22:36:35 2014
+elapsed time: 2821 seconds
+
