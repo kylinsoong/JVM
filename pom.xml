@@ -19,11 +19,11 @@
     <modules>
         <module>jvm</module>
         <module>msc</module>
-	<module>vfs</module>
-	<module>jmx</module>
-	<module>jdk</module>
-	<module>remoting</module>
+        <module>vfs</module>
+        <module>jmx</module>
+        <module>jdk</module>
+        <module>remoting</module>
+	<module>book</module>
     </modules>
 
 </project>
-
