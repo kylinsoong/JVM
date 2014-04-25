@@ -1,4 +1,4 @@
-package com.kylin.test.java7;
+package com.kylin.test.interview;
 
 public class AssertionTest {
 
@@ -8,7 +8,7 @@ public class AssertionTest {
 	}
 
 	private static boolean test() {
-		return false;
+		return true;
 	}
 
 }
