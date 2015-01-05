@@ -21,6 +21,7 @@
 	<module>socket</module>
 	<module>xml</module>
 	<module>port</module>
+	<module>concurrent</module>
     </modules>
 
 </project>

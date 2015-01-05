@@ -1,0 +1,7 @@
+1. What's this?
+   This is a simple Java Socket communication demo. Server side receive 'Test Success' notification hints test success, network connection is okay.
+2. How to run?
+   1) run server side:
+      java -jar socket-conn-v2.jar server -b 10.66.192.144 -p 1099
+   2) run client side:
+     java -jar socket-conn-v2.jar client -b 10.66.192.144 -p 1099
