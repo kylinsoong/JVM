@@ -5,32 +5,28 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
+import java.util.concurrent.FutureTask;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 
-public class TestFuturePlus {
+import org.ksoong.tutorial.java.concurrent.future.TestFuture.Task;
+
+public class TestFutureTaskCancel {
 
 	public static void main(String[] args) throws InterruptedException, ExecutionException {
 
 		ExecutorService executor = Executors.newCachedThreadPool();
         Task task = new Task();
-        Future<Integer> result = executor.submit(task);
-        executor.shutdown();
+        Future<Integer> futureTask = executor.submit(task);
         
         Thread.sleep(1000);
       
         System.out.println("主线程在执行任务");
         
-        System.out.println("task 是否结束: " + result.isDone());
-        System.out.println("task 是否取消: " + result.isCancelled());
-        try {
-			System.out.println("task运行结果" + result.get(1000, TimeUnit.MICROSECONDS));
-		} catch (TimeoutException e) {
-		}
-        result.cancel(true);
-        System.out.println("task 是否结束: " + result.isDone());
-        System.out.println("task 是否取消: " + result.isCancelled());
         
+        System.out.println("task取消结果： " + futureTask.cancel(true));
+         
+        System.out.println("所有任务执行完毕");
 	}
 	
 	static class Task implements Callable<Integer> {
@@ -38,12 +34,13 @@ public class TestFuturePlus {
 		@Override
 		public Integer call() throws Exception {
 			System.out.println("子线程在进行计算");
-	        Thread.sleep(20000);
-	        int sum = 0;
-	        for(int i=0;i<100;i++) {
-	        	sum += i;
-	        }
-	        return sum;
+			while(true){
+				int sum = 0;
+		        for(int i=0;i<100;i++) {
+		        	sum += i;
+		        }
+		        Thread.sleep(1000);
+			}
 		}
 		
 	}
